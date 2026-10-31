@@ -2,6 +2,40 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { aiConfig, validateMessages, completeChat } from "../server/ai.js";
 
+test("le flux Ollama de Local Studio provient réellement des fragments du moteur", async () => {
+  const partial = [];
+  const fetcher = async (url, options) => {
+    assert.equal(JSON.parse(options.body).stream, true);
+    return new Response(
+      '{"message":{"content":"Bon"}}\n{"message":{"content":"jour"}}\n{"done":true}\n',
+    );
+  };
+  const answer = await completeChat(
+    aiConfig({}),
+    [{ role: "user", content: "Bonjour" }],
+    "fr",
+    fetcher,
+    undefined,
+    null,
+    null,
+    (value) => partial.push(value),
+  );
+  assert.equal(answer, "Bonjour");
+  assert.deepEqual(partial, ["Bon", "Bonjour"]);
+  await assert.rejects(() =>
+    completeChat(
+      aiConfig({}),
+      [{ role: "user", content: "Bonjour" }],
+      "fr",
+      async () => new Response('{"message":{"content":"incomplet"}}\n'),
+      undefined,
+      null,
+      null,
+      () => {},
+    ),
+  );
+});
+
 test("le moteur est strictement local et sans clé renvoyée au navigateur", () => {
   const config = aiConfig({});
   assert.equal(config.base, "http://127.0.0.1:11434/v1");

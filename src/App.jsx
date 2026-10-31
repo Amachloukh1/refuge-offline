@@ -17,7 +17,7 @@ import { Dashboard } from "./Dashboard";
 import { Library, GuideReader } from "./Library";
 import { Inventory } from "./Inventory";
 import { Health, Preparation, Settings, DocumentList } from "./Pages";
-import { Assistant } from "./Assistant";
+import { Assistant } from "./StudioAssistant";
 import { Hazards } from "./Hazards.jsx";
 const pages = [
   ["home", "Home"],

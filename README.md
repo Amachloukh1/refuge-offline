@@ -30,7 +30,7 @@ Sous Ubuntu : `bash scripts/prepare-ubuntu.sh`. Le script ne télécharge pas au
 
 ## Réutilisation de Local Studio
 
-L'API est compatible avec le sous-ensemble `/v1/chat/completions` documenté dans la copie locale Nexus Local Studio. L'adaptateur conserve le modèle et la clé de projet côté serveur. Le dépôt GitHub `Amachloukh1/ai-local-text-to-image-generator` a été consulté : sa branche principale contient l'ancien générateur et pas le service `studio/` présent dans la copie locale. Aucun changement au Studio existant.
+Le véritable composant Assistant de `Amachloukh1/ai-local-text-to-image-generator`, branche `feature/nexus-local-studio`, est intégré dans la page Assistant IA. Conversations, corbeille, copie, documents TXT/PDF et affichage progressif utilisent une API embarquée compatible avec son contrat de tâches ; SQLite conserve l'historique sur le PC. Aucun lien ou iframe vers le site distant n'est utilisé pour afficher l'assistant. [Origine du code et adaptation CPU](docs/local-studio-integration.md).
 
 Copier `.env.example` en `.env`. Pour **Studio sur le même mini-PC** :
 

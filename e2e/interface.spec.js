@@ -18,7 +18,7 @@ test("parcours sans Internet : recherche, stock, persistance, documents et arabe
   const external = [];
   await page.route("**/*", (route) => {
     const u = new URL(route.request().url());
-    if (u.pathname === "/api/chat")
+    if (u.pathname.endsWith("/api/chat"))
       return route.fulfill({
         status: 503,
         contentType: "application/json",
@@ -94,6 +94,7 @@ test("parcours sans Internet : recherche, stock, persistance, documents et arabe
       exact: true,
     })
     .click();
+  await page.getByRole("button", { name: "Envoyer", exact: true }).click();
   await expect(
     page.getByText("Le moteur local est indisponible ou non configuré.", {
       exact: false,

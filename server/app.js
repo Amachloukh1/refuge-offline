@@ -6,6 +6,7 @@ import { retrieveKnowledge, validatePlanning } from "./knowledge.js";
 import { resources } from "./resources.js";
 import { serveLocalFile } from "./files.js";
 import { readWeather, refreshWeather } from "./weather.js";
+import { createStudio } from "./studio.js";
 import {
   aiConfig,
   remoteStudioConfig,
@@ -63,7 +64,8 @@ export function createApp({
   remote = remoteStudioConfig(),
 } = {}) {
   let active = false;
-  return http.createServer(async (req, res) => {
+  let studio;
+  const server = http.createServer(async (req, res) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("X-Frame-Options", "SAMEORIGIN");
     res.setHeader("Referrer-Policy", "no-referrer");
@@ -114,6 +116,43 @@ export function createApp({
           ...(await status(config)),
           remoteConfigured: Boolean(remote),
         });
+        return;
+      }
+      if (pathname.startsWith("/local-studio/")) {
+        studio ??= createStudio({
+          root,
+          generate: async (data, signal, onPartial) => {
+            if (active) throw new Error("engine_busy");
+            const selected = data.mode === "remote" ? remote : config;
+            if (!selected) throw new Error("engine_unavailable");
+            active = true;
+            try {
+              const knowledge = await retrieveKnowledge(
+                root,
+                data.messages.at(-1).content,
+                data.language,
+              );
+              const content = await completeChat(
+                selected,
+                data.messages,
+                data.language,
+                fetch,
+                signal,
+                knowledge,
+                data.planning ? validatePlanning(data.planning) : null,
+                onPartial,
+              );
+              return {
+                content,
+                references: knowledge.references,
+                remote: Boolean(selected.remote),
+              };
+            } finally {
+              active = false;
+            }
+          },
+        });
+        await studio.handle(req, res, pathname, body, json);
         return;
       }
       if (pathname === "/api/resources" && req.method === "GET") {
@@ -278,6 +317,8 @@ export function createApp({
       else res.end();
     }
   });
+  server.on("close", () => studio?.close());
+  return server;
 }
 function serverAddress(host) {
   try {

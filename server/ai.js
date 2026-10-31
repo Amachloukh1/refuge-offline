@@ -105,6 +105,7 @@ export async function completeChat(
   signal,
   knowledge = null,
   planning = null,
+  onPartial,
 ) {
   if (!validateMessages(messages)) throw new Error("invalid_messages");
   const lang = ["fr", "de", "en", "ar"].includes(language) ? language : "fr";
@@ -127,7 +128,7 @@ export async function completeChat(
   const payload = {
     model: config.model,
     messages: [{ role: "system", content: system }, ...messages],
-    stream: false,
+    stream: Boolean(native && onPartial),
     ...(native
       ? {
           think: false,
@@ -151,6 +152,42 @@ export async function completeChat(
     body: JSON.stringify(payload),
   });
   if (!response.ok) throw new Error("engine_unavailable");
+  if (native && onPartial) {
+    let pending = "",
+      answer = "",
+      done = false,
+      total = 0;
+    const decoder = new TextDecoder();
+    for await (const bytes of response.body) {
+      pending += decoder.decode(bytes, { stream: true });
+      total += bytes.length;
+      if (total > 1000000 || pending.length > 100000)
+        throw new Error("response_too_large");
+      let end;
+      while ((end = pending.indexOf("\n")) >= 0) {
+        const line = pending.slice(0, end).trim();
+        pending = pending.slice(end + 1);
+        if (!line) continue;
+        const event = JSON.parse(line);
+        if (event.error) throw new Error("engine_unavailable");
+        const text = event.message?.content || "";
+        if (typeof text !== "string") throw new Error("invalid_response");
+        answer += text;
+        if (answer.length > 12000) throw new Error("response_too_large");
+        if (text) onPartial(answer);
+        if (event.done) done = true;
+      }
+    }
+    if (pending.trim()) {
+      const event = JSON.parse(pending);
+      if (event.error) throw new Error("engine_unavailable");
+      answer += event.message?.content || "";
+      done = Boolean(event.done);
+    }
+    if (!done || !answer.trim() || answer.length > 12000)
+      throw new Error("invalid_response");
+    return answer;
+  }
   const raw = await response.text();
   if (raw.length > 100000) throw new Error("response_too_large");
   const data = JSON.parse(raw);
