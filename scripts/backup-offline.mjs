@@ -50,7 +50,9 @@ function safeRelative(value) {
 }
 async function hashFile(file, onChunk = () => {}) {
   const hash = createHash("sha256");
-  for await (const chunk of createReadStream(file)) {
+  for await (const chunk of createReadStream(file, {
+    highWaterMark: 1024 * 1024,
+  })) {
     hash.update(chunk);
     onChunk(chunk.length);
   }
@@ -139,52 +141,81 @@ async function checkSpace(target, bytes) {
     throw error;
   }
 }
+async function concurrentEntries(entries, action) {
+  let cursor = 0,
+    failure;
+  await Promise.all(
+    Array.from({ length: Math.min(8, entries.length) }, async () => {
+      while (!failure) {
+        const index = cursor++;
+        if (index >= entries.length) return;
+        try {
+          await action(entries[index]);
+        } catch (error) {
+          failure = error;
+        }
+      }
+    }),
+  );
+  if (failure) throw failure;
+}
 async function copyEntries(source, target, entries, onProgress = () => {}) {
   let completedBytes = 0;
+  let completedFiles = 0;
   const totalBytes = entries.reduce((s, e) => s + (e.bytes || 0), 0);
-  for (const entry of entries) {
-    const from = path.join(source, entry.path),
-      to = path.join(target, entry.path);
-    if (entry.type === "directory") await mkdir(to);
-    else if (entry.type === "symlink") {
-      // Relative internal links are preserved. Windows may require Developer Mode/admin.
-      const info = await lstat(await realpath(from));
-      await symlink(entry.target, to, info.isDirectory() ? "dir" : "file");
-    } else {
-      const before = await lstat(from);
-      if (
-        !before.isFile() ||
-        before.size !== entry.bytes ||
-        (entry.modified !== undefined && before.mtimeMs !== entry.modified)
-      )
-        throw new Error(`Source changed during backup: ${entry.path}`);
-      const digest = createHash("sha256");
-      await pipeline(
-        createReadStream(from),
-        new Transform({
-          transform(chunk, encoding, callback) {
-            digest.update(chunk);
-            completedBytes += chunk.length;
-            onProgress({ stage: "copy", completedBytes, totalBytes });
-            callback(null, chunk);
-          },
-        }),
-        createWriteStream(to, { flags: "wx" }),
-      );
-      const after = await lstat(from);
-      if (
-        before.size !== after.size ||
-        before.mtimeMs !== after.mtimeMs ||
-        before.ino !== after.ino
-      )
-        throw new Error(`Source changed during backup: ${entry.path}`);
-      const sha256 = digest.digest("hex");
-      if (entry.sha256 && sha256 !== entry.sha256)
-        throw new Error(`Checksum mismatch: ${entry.path}`);
-      entry.sha256 = sha256;
-      await chmod(to, entry.mode);
-    }
-  }
+  for (const entry of entries)
+    if (entry.type === "directory") await mkdir(path.join(target, entry.path));
+  await concurrentEntries(
+    entries.filter((e) => e.type !== "directory"),
+    async (entry) => {
+      const from = path.join(source, entry.path),
+        to = path.join(target, entry.path);
+      if (entry.type === "symlink") {
+        // Relative internal links are preserved. Windows may require Developer Mode/admin.
+        const info = await lstat(await realpath(from));
+        await symlink(entry.target, to, info.isDirectory() ? "dir" : "file");
+      } else {
+        const before = await lstat(from);
+        if (
+          !before.isFile() ||
+          before.size !== entry.bytes ||
+          (entry.modified !== undefined && before.mtimeMs !== entry.modified)
+        )
+          throw new Error(`Source changed during backup: ${entry.path}`);
+        const digest = createHash("sha256");
+        await pipeline(
+          createReadStream(from, { highWaterMark: 1024 * 1024 }),
+          new Transform({
+            transform(chunk, encoding, callback) {
+              digest.update(chunk);
+              completedBytes += chunk.length;
+              onProgress({
+                stage: "copy",
+                completedBytes,
+                totalBytes,
+                completedFiles,
+              });
+              callback(null, chunk);
+            },
+          }),
+          createWriteStream(to, { flags: "wx", highWaterMark: 1024 * 1024 }),
+        );
+        const after = await lstat(from);
+        if (
+          before.size !== after.size ||
+          before.mtimeMs !== after.mtimeMs ||
+          before.ino !== after.ino
+        )
+          throw new Error(`Source changed during backup: ${entry.path}`);
+        const sha256 = digest.digest("hex");
+        if (entry.sha256 && sha256 !== entry.sha256)
+          throw new Error(`Checksum mismatch: ${entry.path}`);
+        entry.sha256 = sha256;
+        await chmod(to, entry.mode);
+      }
+      completedFiles++;
+    },
+  );
   // Apply restrictive directory permissions only after writing their children.
   for (const entry of [...entries].reverse())
     if (entry.type === "directory")
@@ -201,7 +232,7 @@ export async function verify(directory, { onProgress = () => {} } = {}) {
   const seen = new Set();
   let completedBytes = 0;
   const totalBytes = manifest.entries.reduce((s, e) => s + (e.bytes || 0), 0);
-  for (const entry of manifest.entries) {
+  await concurrentEntries(manifest.entries, async (entry) => {
     safeRelative(entry.path);
     if (
       entry.path === MANIFEST ||
@@ -238,7 +269,7 @@ export async function verify(directory, { onProgress = () => {} } = {}) {
       path.win32.isAbsolute(entry.target)
     )
       throw new Error(`Symlink mismatch: ${entry.path}`);
-  }
+  });
   const actual = await inventory(root);
   if (
     actual.length !== seen.size ||
