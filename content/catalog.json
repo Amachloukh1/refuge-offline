@@ -1,0 +1,93 @@
+[
+  {
+    "bytes": 7807979,
+    "title": "Vorsorgen für Krisen und Katastrophen",
+    "filename": "bbk-preparation-de.pdf",
+    "redistribution": "check-required",
+    "publisher": "BBK",
+    "sourcePage": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/vorsorge_node.html",
+    "url": "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/BBK-Vorsorgen-fuer-Krisen-und-Katastrophen.pdf?__blob=publicationFile&v=44",
+    "id": "bbk-preparation-de",
+    "sha256": "09596c348967c576f0ad360d8b8c8577a6bdcade3db714f390239952c01937fb",
+    "downloadedAt": "2026-10-31T12:50:39.9860893Z",
+    "language": "de"
+  },
+  {
+    "bytes": 5585472,
+    "title": "Préparation aux crises et catastrophes — guide BBK",
+    "filename": "bbk-preparation-fr.pdf",
+    "redistribution": "check-required",
+    "publisher": "BBK",
+    "sourcePage": "https://www.bbk.bund.de/SiteGlobals/Forms/Suche/Mediathek/Mediathek_Formular.html?cl2Categories_Format=publication&pageLocale=de&sortOrder=dateOfIssue_dt+desc&templateQueryString=gihcarpsdmerf",
+    "url": "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/Fremdsprachen/ratgeber-franzoesisch_download.pdf?__blob=publicationFile&v=8",
+    "id": "bbk-preparation-fr",
+    "sha256": "47981466637f609d20b655afdee944562bb01dcf213f5cedc3af775bf78cf340",
+    "downloadedAt": "2026-10-31T12:50:40.3270730Z",
+    "language": "fr"
+  },
+  {
+    "bytes": 6087475,
+    "title": "Planning ahead for crises and disasters — BBK",
+    "filename": "bbk-preparation-en.pdf",
+    "redistribution": "check-required",
+    "publisher": "BBK",
+    "sourcePage": "https://www.bbk.bund.de/SiteGlobals/Forms/Suche/Mediathek/Mediathek_Formular.html?cl2Categories_Format=publication&pageLocale=de&sortOrder=dateOfIssue_dt+desc&templateQueryString=gihcarpsdmerf",
+    "url": "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/Fremdsprachen/ratgeber-englisch_download.pdf?__blob=publicationFile&v=8",
+    "id": "bbk-preparation-en",
+    "sha256": "5784037c786c41b58ae23d5d3420f0a8e7b0291e052621d27d359118b25da9d9",
+    "downloadedAt": "2026-10-31T12:50:40.7258959Z",
+    "language": "en"
+  },
+  {
+    "bytes": 5965704,
+    "title": "الاستعداد للأزمات والكوارث — BBK",
+    "filename": "bbk-preparation-ar.pdf",
+    "redistribution": "check-required",
+    "publisher": "BBK",
+    "sourcePage": "https://www.bbk.bund.de/SiteGlobals/Forms/Suche/Mediathek/Mediathek_Formular.html?cl2Categories_Format=publication&pageLocale=de&sortOrder=dateOfIssue_dt+desc&templateQueryString=gihcarpsdmerf",
+    "url": "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/Fremdsprachen/ratgeber-arabisch_download.pdf?__blob=publicationFile&v=12",
+    "id": "bbk-preparation-ar",
+    "sha256": "bf905300d56a17b564a2b11c734c75272d66e0c198bf8290f857052dbac380bb",
+    "downloadedAt": "2026-10-31T12:50:41.0523692Z",
+    "language": "ar"
+  },
+  {
+    "bytes": 363058,
+    "title": "Der kleine Rotkreuzhelfer — Premiers secours",
+    "filename": "drk-first-aid-de-fr.pdf",
+    "redistribution": "check-required",
+    "publisher": "Deutsches Rotes Kreuz",
+    "sourcePage": "https://www.drk-durlach.de/angebote/rotkreuzkurs-eh/lebensretter/",
+    "url": "https://www.drk-durlach.de/app/download/12408175223/RK_Helfer_05_DE_FRANZOESISCH.pdf?t=1450014554",
+    "id": "drk-first-aid-de-fr",
+    "sha256": "d2c99b3fa2c93c2a41c732f16d2dd1f814e370462c884b31ef903167386b5ff6",
+    "downloadedAt": "2026-10-31T12:50:41.5281782Z",
+    "language": "de-fr"
+  },
+  {
+    "bytes": 385741,
+    "title": "Der kleine Rotkreuzhelfer — الإسعافات الأولية",
+    "filename": "drk-first-aid-de-ar.pdf",
+    "redistribution": "check-required",
+    "publisher": "Deutsches Rotes Kreuz",
+    "sourcePage": "https://www.drk-durlach.de/angebote/rotkreuzkurs-eh/lebensretter/",
+    "url": "https://www.drk-durlach.de/app/download/12408168423/RK_Helfer_02_DE_ARABISCH.pdf?t=1450010703",
+    "id": "drk-first-aid-de-ar",
+    "sha256": "a3833b1754f4f7894547a88e7385848443c95231ae709c727727ffd51bb375e2",
+    "downloadedAt": "2026-10-31T12:50:41.8621705Z",
+    "language": "de-ar"
+  },
+  {
+    "bytes": 366399,
+    "title": "Der kleine Rotkreuzhelfer — First aid",
+    "filename": "drk-first-aid-de-en.pdf",
+    "redistribution": "check-required",
+    "publisher": "Deutsches Rotes Kreuz",
+    "sourcePage": "https://www.drk-durlach.de/angebote/rotkreuzkurs-eh/lebensretter/",
+    "url": "https://www.drk-durlach.de/app/download/12408166123/RK_Helfer_01_DE_ENGLISCH.pdf?t=1450010605",
+    "id": "drk-first-aid-de-en",
+    "sha256": "8afe80c2a1bd42669f776187b6ac0c3437320dd17ae3b6b92c853330982f9e07",
+    "downloadedAt": "2026-10-31T12:50:42.2269179Z",
+    "language": "de-en"
+  }
+]

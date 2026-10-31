@@ -1,0 +1,272 @@
+{
+  "en": {
+    "tsunami": {
+      "title": "Tsunami",
+      "before": ["Identify exposed coastal zones and safe places outside evacuation zones.", "Practise a walking route to high ground or far inland.", "Keep a small emergency bag accessible and agree on a meeting point."],
+      "during": ["During an earthquake, first protect yourself from falling objects.", "As soon as it is safe to move, quickly reach high ground or go inland, outside the evacuation zone.", "Near the coast, act on strong or prolonged shaking, an unusual rise or retreat of the sea, or a loud ocean roar: do not wait for an official alert.", "Once safe, listen to local instructions and stay there."],
+      "after": ["Wait for the official all-clear before returning.", "Expect several waves: the first may not be the largest.", "Avoid damaged buildings, bridges and fallen power lines."],
+      "avoid": ["Going to watch the sea.", "Returning to collect belongings.", "Assuming that retreating water means the danger has passed."],
+      "kit": ["Paper evacuation map.", "Sturdy shoes.", "Water in your bag.", "Portable radio."]
+    },
+    "heat": {
+      "title": "Heatwave",
+      "before": ["Find an accessible cool place in case your home overheats.", "Prepare drinking water and sun protection.", "Arrange regular contact with vulnerable relatives and neighbours."],
+      "during": ["Close sunshades; ventilate when the outdoor air becomes cooler than indoors.", "Drink regularly while following any personal medical fluid restriction.", "Cool yourself with water and use the coolest room.", "Move exercise and outings to cooler hours; go to a cool place if needed.", "Confusion, loss of consciousness or severe illness requires urgent help."],
+      "after": ["Continue checking on vulnerable people.", "Resume exertion gradually.", "Restock water and improve your home's sun protection."],
+      "avoid": ["Leaving a child or animal in a vehicle.", "Intense exercise during the hottest hours.", "Relying only on a fan when your home remains very hot."],
+      "kit": ["Drinking water.", "Room thermometer.", "Hat and light clothing.", "Clean cloth for wetting your skin."]
+    },
+    "cold": {
+      "title": "Extreme cold and snow",
+      "before": ["Keep dry clothes, blankets and supplies accessible.", "Check heating according to its instructions and prepare a carbon monoxide detector.", "Postpone exposed journeys and arrange contact with isolated people."],
+      "during": ["Stay indoors and limit outings.", "Outside, wear several layers, a hat and waterproof protection.", "Replace wet clothes and avoid exhaustion.", "If your home becomes too cold, move to safe accommodation following local instructions."],
+      "after": ["Clear snow in short efforts suited to your abilities.", "Check on relatives and look out for ice hazards.", "Have damaged heating checked before using it again."],
+      "avoid": ["Heating your home with an oven, barbecue or indoor generator.", "Unnecessary driving in poor visibility.", "Using alcohol to warm yourself."],
+      "kit": ["Blankets or sleeping bags.", "Dry layered clothing.", "LED torch.", "Battery-powered carbon monoxide detector."]
+    },
+    "flood": {
+      "title": "Flood and flash flood",
+      "before": ["Identify an escape route to higher ground.", "Prepare a bag, documents and accommodation outside the risk zone.", "Know local alerts; protect belongings only before water starts rising."],
+      "during": ["Quickly reach safe higher ground.", "Follow an evacuation order immediately.", "If trapped, reach the highest safe point and signal your location.", "Stay out of rooms where water reaches electrical installations."],
+      "after": ["Wait for permission before returning to an affected building.", "Have electrical installations and structural damage checked.", "Use water declared safe and follow health instructions."],
+      "avoid": ["Crossing floodwater on foot or by car, even if it looks shallow.", "Going around a road closure.", "Entering a basement to save equipment."],
+      "kit": ["Evacuation bag.", "Waterproof document pouch.", "Bottled water.", "Radio and torch."]
+    },
+    "earthquake": {
+      "title": "Earthquake",
+      "before": ["Secure tall furniture and heavy objects.", "Identify shelter under sturdy furniture, away from glass.", "Prepare a kit and practise protective actions with your household."],
+      "during": ["Indoors: drop, take cover under a sturdy table and hold on.", "Keep away from glass and falling objects; do not run outside during shaking.", "Outdoors: move to an open area away from buildings and power lines.", "Driving: stop carefully away from bridges and power lines, and stay inside until shaking stops."],
+      "after": ["Expect aftershocks and protect yourself again.", "Put on shoes; avoid damaged buildings and power lines.", "Report gas leaks or injuries; on the coast, follow the tsunami guidance."],
+      "avoid": ["Rushing onto stairs during shaking.", "Lighting a flame if a gas leak is possible.", "Entering a building declared unsafe."],
+      "kit": ["Sturdy shoes.", "Torch.", "Water.", "First aid kit."]
+    },
+    "storm": {
+      "title": "Storm and strong winds",
+      "before": ["Bring in or secure outdoor objects before winds arrive.", "Identify an interior room in a sturdy building.", "Charge devices and prepare water, food and lighting."],
+      "during": ["Take shelter in a sturdy building, away from windows.", "Listen to alerts and follow any evacuation instruction.", "Postpone journeys; if already driving, slow down and grip the steering wheel firmly.", "Keep away from trees, unstable structures and power lines."],
+      "after": ["Wait for safe conditions before going outside.", "Report fallen power lines without approaching them.", "Have serious damage assessed before starting work."],
+      "avoid": ["Climbing onto the roof during the storm.", "Sheltering under a tree.", "Touching a power line, even if it appears inactive."],
+      "kit": ["Battery-powered radio.", "LED torch.", "Power bank.", "Water and food supplies."]
+    },
+    "homefire": {
+      "title": "Home fire",
+      "before": ["Install and maintain smoke alarms.", "Keep exits clear; plan two ways out where possible.", "Practise evacuation and agree on an outdoor meeting place."],
+      "during": ["Leave immediately by a smoke-free route.", "Close doors behind you if possible without delay.", "Use stairs only if they are safe to pass; stay at the meeting point and call emergency services.", "If the exit is smoky or blocked, stay behind a closed door, call for help and signal your position at a window."],
+      "after": ["Tell firefighters about anyone missing.", "Wait for their permission before re-entering.", "Arrange safe accommodation and inspection of installations."],
+      "avoid": ["Entering a smoke-filled stairwell.", "Returning for belongings or animals.", "Using a lift unless firefighters instruct you to."],
+      "kit": ["Smoke alarms.", "Evacuation plan.", "Accessible phone.", "Easy-to-reach keys."]
+    },
+    "wildfire": {
+      "title": "Wildfire and smoke",
+      "before": ["Identify several escape routes and places to stay.", "Plan evacuation for people and animals.", "Prepare a cleaner-air room for smoke, while evacuation is not required."],
+      "during": ["Follow alerts and leave as soon as evacuation is ordered.", "Promptly report a new fire with its location.", "If only smoke affects an otherwise safe area, limit smoke entering and use suitable air filtration.", "For breathing difficulty or immediate danger, seek help and reach safe shelter."],
+      "after": ["Wait for permission to return.", "Limit exposure to remaining smoke and ash.", "Have buildings and cleanup needs assessed before moving back in."],
+      "avoid": ["Staying to defend belongings against a threatening fire.", "Blocking emergency access routes.", "Assuming a particulate respirator protects against gases or replaces evacuation."],
+      "kit": ["Evacuation bag.", "Radio.", "Properly fitted particulate respirator.", "Suitable air cleaner if power is available."]
+    },
+    "blackout": {
+      "title": "Prolonged power outage",
+      "before": ["Prepare water, food requiring no cooking and independent lighting.", "Charge batteries and plan medical device needs with the relevant professionals.", "Identify backup accommodation and keep contacts on paper."],
+      "during": ["Use LED lights and conserve batteries.", "Keep refrigerator and freezer doors closed.", "Maintain a safe temperature or move to a community shelter.", "Listen to instructions, including drinking water advice."],
+      "after": ["Check food safety: a closed refrigerator generally protects food for about four hours; never taste food to test it.", "Have damaged appliances or wiring checked.", "Recharge batteries and replenish supplies."],
+      "avoid": ["Running a generator indoors or near openings.", "Using a barbecue or camping stove inside your home.", "Touching fallen power lines."],
+      "kit": ["LED torch.", "Radio and batteries.", "Water and canned food that can be eaten cold.", "Independent carbon monoxide detector."]
+    },
+    "chemical": {
+      "title": "Chemical incident",
+      "before": ["Know local risks and alert channels.", "Identify a room that can be sealed; CDC advises an upper floor, few openings and water if possible.", "Prepare a household plan and sealing materials."],
+      "during": ["Listen to authorities: sheltering or evacuation depends on the chemical and location.", "If an indoor release exposes you, leave and move away; outdoors, move away from the release and upwind if possible.", "If told to shelter, go inside, close openings, stop incoming outside air and seal the chosen room.", "If exposure is suspected, promptly seek decontamination instructions and medical help."],
+      "after": ["Wait for the official end of sheltering instructions.", "Follow instructions on leaving and ventilating.", "Have exposure assessed and avoid contaminated objects or surfaces."],
+      "avoid": ["Going to see the release or crossing a chemical cloud.", "Automatically applying radiation sheltering rules.", "Relying on a car or dust mask as airtight protection."],
+      "kit": ["Radio.", "Bottled water.", "Pre-cut plastic sheeting.", "Duct tape and scissors."]
+    },
+    "radiation": {
+      "title": "Radiation incident",
+      "before": ["Identify a sturdy building, basement or central room.", "Prepare water and food in closed containers.", "Keep official local instructions and an independent radio available."],
+      "during": ["Get inside a building quickly; a car offers poor protection.", "Go to the basement or centre, away from exterior walls and the roof.", "Close openings and stop incoming outside air; stay informed. CDC's 24-hour guidance does not mean it is automatically safe to leave then.", "If radioactive dust is possible, carefully remove outer clothes, isolate them in a bag, wash gently and put on clean clothes."],
+      "after": ["Leave or evacuate according to official instructions.", "Follow screening and follow-up recommendations.", "Wait for instructions about local water and food."],
+      "avoid": ["Going outside to collect loved ones who are already sheltered.", "Taking iodine on your own initiative.", "Assuming boiling, masks or duct tape remove radiation."],
+      "kit": ["Battery-powered radio.", "Bottled water.", "Packaged food.", "Clean clothes and sealable bags."]
+    }
+  },
+  "de": {
+    "tsunami": {
+      "title": "Tsunami",
+      "before": ["Gefährdete Küstengebiete und sichere Orte außerhalb der Evakuierungszonen kennen.", "Einen Fußweg auf höheres Gelände oder weit ins Landesinnere üben.", "Eine kleine Notfalltasche griffbereit halten und einen Treffpunkt vereinbaren."],
+      "during": ["Bei einem Erdbeben zuerst vor herabfallenden Gegenständen schützen.", "Sobald gefahrlos möglich, schnell auf höheres Gelände oder ins Landesinnere außerhalb der Evakuierungszone gehen.", "An der Küste bei starkem oder langem Beben, ungewöhnlichem Ansteigen oder Zurückweichen des Meeres oder lautem Meeresrauschen handeln: nicht auf eine amtliche Warnung warten.", "Am sicheren Ort die örtlichen Anweisungen verfolgen und dort bleiben."],
+      "after": ["Erst nach amtlicher Entwarnung zurückkehren.", "Mit mehreren Wellen rechnen: Die erste ist nicht unbedingt die größte.", "Beschädigte Gebäude, Brücken und heruntergefallene Stromleitungen meiden."],
+      "avoid": ["Zum Meer gehen, um zuzuschauen.", "Zurückgehen, um Sachen zu holen.", "Zurückweichendes Wasser als Ende der Gefahr ansehen."],
+      "kit": ["Evakuierungskarte auf Papier.", "Feste Schuhe.", "Wasser in der Tasche.", "Tragbares Radio."]
+    },
+    "heat": {
+      "title": "Hitzewelle",
+      "before": ["Einen erreichbaren kühlen Ort für den Fall einer überhitzten Wohnung kennen.", "Trinkwasser und Sonnenschutz vorbereiten.", "Regelmäßigen Kontakt zu gefährdeten Angehörigen und Nachbarn vereinbaren."],
+      "during": ["Sonnenschutz schließen; lüften, wenn es draußen kühler als drinnen wird.", "Regelmäßig trinken und eine persönlich ärztlich verordnete Trinkmengenbegrenzung beachten.", "Den Körper mit Wasser kühlen und den kühlsten Raum nutzen.", "Anstrengungen und Ausgänge auf kühlere Stunden verschieben; bei Bedarf einen kühlen Ort aufsuchen.", "Verwirrtheit, Bewusstlosigkeit oder starkes Unwohlsein erfordern dringend Hilfe."],
+      "after": ["Weiter nach gefährdeten Personen sehen.", "Körperliche Anstrengung schrittweise wieder aufnehmen.", "Wasser auffüllen und den Sonnenschutz der Wohnung verbessern."],
+      "avoid": ["Kinder oder Tiere im Fahrzeug lassen.", "Intensiven Sport während der heißesten Stunden treiben.", "Bei anhaltend sehr heißer Wohnung allein auf einen Ventilator vertrauen."],
+      "kit": ["Trinkwasser.", "Raumthermometer.", "Hut und leichte Kleidung.", "Sauberes Tuch zum Befeuchten der Haut."]
+    },
+    "cold": {
+      "title": "Extreme Kälte und Schnee",
+      "before": ["Trockene Kleidung, Decken und Vorräte griffbereit halten.", "Die Heizung nach Anleitung prüfen und einen CO-Warnmelder bereithalten.", "Gefährdete Fahrten verschieben und Kontakt zu alleinlebenden Menschen vereinbaren."],
+      "during": ["Drinnen bleiben und Ausgänge begrenzen.", "Draußen mehrere Kleidungsschichten, Mütze und wasserfesten Schutz tragen.", "Nasse Kleidung wechseln und Erschöpfung vermeiden.", "Wird die Wohnung zu kalt, nach örtlichen Anweisungen eine sichere Unterkunft aufsuchen."],
+      "after": ["Schnee in kurzen, den eigenen Fähigkeiten angepassten Einsätzen räumen.", "Nach Angehörigen sehen und auf Eisgefahren achten.", "Beschädigte Heizungen vor erneuter Nutzung prüfen lassen."],
+      "avoid": ["Mit Backofen, Grill oder einem Generator in Innenräumen heizen.", "Bei schlechter Sicht unnötig fahren.", "Alkohol zum Aufwärmen verwenden."],
+      "kit": ["Decken oder Schlafsäcke.", "Trockene Kleidung in mehreren Schichten.", "LED-Taschenlampe.", "Batteriebetriebener CO-Warnmelder."]
+    },
+    "flood": {
+      "title": "Hochwasser und Sturzflut",
+      "before": ["Einen Fluchtweg auf höheres Gelände kennen.", "Tasche, Dokumente und Unterkunft außerhalb der Gefahrenzone vorbereiten.", "Örtliche Warnungen kennen; Sachen nur vor dem Ansteigen des Wassers sichern."],
+      "during": ["Schnell einen sicheren höher gelegenen Ort aufsuchen.", "Eine Evakuierungsanordnung sofort befolgen.", "Bei Einschluss den höchsten sicheren Punkt erreichen und den Standort melden.", "Räume meiden, in denen Wasser elektrische Anlagen erreicht."],
+      "after": ["Erst nach Freigabe in ein betroffenes Gebäude zurückkehren.", "Elektrische Anlagen und Gebäudeschäden prüfen lassen.", "Nur als sicher freigegebenes Wasser verwenden und Gesundheitsanweisungen beachten."],
+      "avoid": ["Hochwasser zu Fuß oder mit dem Auto durchqueren, auch wenn es flach aussieht.", "Straßensperren umfahren.", "Zum Retten von Gegenständen in den Keller gehen."],
+      "kit": ["Evakuierungstasche.", "Wasserdichte Dokumentenhülle.", "Wasser in Flaschen.", "Radio und Taschenlampe."]
+    },
+    "earthquake": {
+      "title": "Erdbeben",
+      "before": ["Hohe Möbel und schwere Gegenstände befestigen.", "Schutzplätze unter stabilen Möbeln und fern von Glas kennen.", "Ein Notfallset vorbereiten und Schutzmaßnahmen gemeinsam üben."],
+      "during": ["Drinnen: auf den Boden gehen, unter einem stabilen Tisch Schutz suchen und sich festhalten.", "Abstand zu Glas und herabfallenden Gegenständen halten; während des Bebens nicht hinausrennen.", "Draußen: eine freie Fläche fern von Gebäuden und Stromleitungen aufsuchen.", "Im Auto: vorsichtig fern von Brücken und Leitungen anhalten und bis zum Ende des Bebens im Fahrzeug bleiben."],
+      "after": ["Mit Nachbeben rechnen und erneut Schutz suchen.", "Schuhe anziehen; beschädigte Gebäude und Stromleitungen meiden.", "Gaslecks oder Verletzungen melden; an der Küste die Tsunami-Hinweise beachten."],
+      "avoid": ["Während des Bebens auf Treppen stürmen.", "Bei möglichem Gasleck eine Flamme anzünden.", "Ein als unsicher eingestuftes Gebäude betreten."],
+      "kit": ["Feste Schuhe.", "Taschenlampe.", "Wasser.", "Erste-Hilfe-Set."]
+    },
+    "storm": {
+      "title": "Sturm und starke Winde",
+      "before": ["Lose Gegenstände vor dem Sturm hineinholen oder befestigen.", "Einen innenliegenden Raum in einem stabilen Gebäude kennen.", "Geräte laden sowie Wasser, Lebensmittel und Beleuchtung vorbereiten."],
+      "during": ["In einem stabilen Gebäude fern von Fenstern Schutz suchen.", "Warnungen verfolgen und eine mögliche Evakuierung befolgen.", "Fahrten verschieben; unterwegs langsamer fahren und das Lenkrad festhalten.", "Bäume, instabile Bauwerke und Stromleitungen meiden."],
+      "after": ["Erst bei sicheren Bedingungen hinausgehen.", "Heruntergefallene Stromleitungen melden, ohne sich zu nähern.", "Schwere Schäden vor Arbeiten fachlich beurteilen lassen."],
+      "avoid": ["Während des Sturms aufs Dach steigen.", "Unter einem Baum Schutz suchen.", "Eine Leitung berühren, auch wenn sie stromlos erscheint."],
+      "kit": ["Batterieradio.", "LED-Taschenlampe.", "Powerbank.", "Wasser- und Lebensmittelvorrat."]
+    },
+    "homefire": {
+      "title": "Wohnungsbrand",
+      "before": ["Rauchwarnmelder installieren und warten.", "Ausgänge freihalten; möglichst zwei Fluchtwege planen.", "Evakuierung üben und einen Treffpunkt draußen vereinbaren."],
+      "during": ["Sofort über einen rauchfreien Weg hinausgehen.", "Wenn ohne Verzögerung möglich, Türen hinter sich schließen.", "Treppen nur bei sicher begehbarem Weg nutzen; am Treffpunkt bleiben und den Notruf wählen.", "Ist der Ausgang verraucht oder versperrt, hinter einer geschlossenen Tür bleiben, Hilfe rufen und sich am Fenster bemerkbar machen."],
+      "after": ["Vermisste Personen der Feuerwehr melden.", "Erst nach Erlaubnis der Feuerwehr zurückkehren.", "Eine sichere Unterkunft und die Prüfung der Anlagen organisieren."],
+      "avoid": ["Einen verrauchten Treppenraum betreten.", "Für Gegenstände oder Tiere zurückgehen.", "Ohne Anweisung der Feuerwehr den Aufzug benutzen."],
+      "kit": ["Rauchwarnmelder.", "Fluchtplan.", "Erreichbares Telefon.", "Griffbereite Schlüssel."]
+    },
+    "wildfire": {
+      "title": "Waldbrand und Rauch",
+      "before": ["Mehrere Fluchtwege und Unterkünfte kennen.", "Die Evakuierung von Menschen und Tieren vorbereiten.", "Einen Raum mit saubererer Luft gegen Rauch vorbereiten, solange keine Evakuierung nötig ist."],
+      "during": ["Warnungen verfolgen und bei Evakuierungsanordnung sofort aufbrechen.", "Einen entstehenden Brand schnell mit genauer Ortsangabe melden.", "Betrifft nur Rauch ein ansonsten sicheres Gebiet, Raucheintritt begrenzen und geeignete Luftfilterung nutzen.", "Bei Atemnot oder unmittelbarer Gefahr Hilfe suchen und einen sicheren Schutzort erreichen."],
+      "after": ["Erst nach Freigabe zurückkehren.", "Kontakt mit verbliebenem Rauch und Asche begrenzen.", "Gebäude und Reinigungsbedarf vor erneutem Einzug beurteilen lassen."],
+      "avoid": ["Bei bedrohlichem Feuer zum Schutz des Eigentums bleiben.", "Rettungszufahrten blockieren.", "Annehmen, eine Partikelmaske schütze vor Gasen oder ersetze die Evakuierung."],
+      "kit": ["Evakuierungstasche.", "Radio.", "Gut sitzende Partikelschutzmaske.", "Geeigneter Luftreiniger bei verfügbarer Stromversorgung."]
+    },
+    "blackout": {
+      "title": "Längerer Stromausfall",
+      "before": ["Wasser, Lebensmittel ohne Kochbedarf und unabhängige Beleuchtung vorbereiten.", "Akkus laden und den Bedarf medizinischer Geräte mit Fachpersonal planen.", "Eine Ersatzunterkunft kennen und Kontakte auf Papier aufbewahren."],
+      "during": ["LED-Licht nutzen und Akkus schonen.", "Kühlschrank und Gefrierschrank geschlossen halten.", "Eine sichere Raumtemperatur halten oder eine Notunterkunft aufsuchen.", "Anweisungen verfolgen, auch zur Trinkwasserversorgung."],
+      "after": ["Lebensmittelsicherheit prüfen: Ein geschlossener Kühlschrank schützt meist etwa vier Stunden; niemals durch Probieren testen.", "Beschädigte Geräte und Leitungen prüfen lassen.", "Akkus laden und Vorräte ergänzen."],
+      "avoid": ["Einen Generator drinnen oder nahe an Öffnungen betreiben.", "Einen Grill oder Campingkocher in der Wohnung verwenden.", "Heruntergefallene Stromleitungen berühren."],
+      "kit": ["LED-Taschenlampe.", "Radio und Batterien.", "Wasser und kalt essbare Konserven.", "Unabhängiger CO-Warnmelder."]
+    },
+    "chemical": {
+      "title": "Chemieunfall",
+      "before": ["Örtliche Risiken und Warnkanäle kennen.", "Einen abdichtbaren Raum vorsehen; die CDC empfehlen ein hohes Stockwerk, wenige Öffnungen und möglichst Wasser.", "Einen Familienplan und Material zum Abdichten vorbereiten."],
+      "during": ["Auf Behörden hören: Schutz im Gebäude oder Evakuierung hängen vom Stoff und Ort ab.", "Bei Exposition durch einen Austritt im Gebäude hinausgehen und Abstand gewinnen; draußen vom Austritt entfernen, möglichst gegen den Wind.", "Bei Anordnung zum Schutz im Gebäude hineingehen, Öffnungen schließen, Außenluftzufuhr abschalten und den vorgesehenen Raum abdichten.", "Bei möglicher Exposition rasch Anweisungen zur Dekontamination und medizinische Hilfe einholen."],
+      "after": ["Die amtliche Aufhebung der Schutzanordnung abwarten.", "Anweisungen zum Verlassen und Lüften befolgen.", "Eine Exposition beurteilen lassen und kontaminierte Gegenstände oder Flächen meiden."],
+      "avoid": ["Zum Austritt gehen oder eine Chemikalienwolke durchqueren.", "Automatisch die Schutzregeln für Strahlenereignisse anwenden.", "Auf ein Auto oder eine Staubmaske als luftdichten Schutz vertrauen."],
+      "kit": ["Radio.", "Wasser in Flaschen.", "Vorgeschnittene Kunststofffolie.", "Klebeband und Schere."]
+    },
+    "radiation": {
+      "title": "Radiologischer Zwischenfall",
+      "before": ["Ein stabiles Gebäude, einen Keller oder einen zentralen Raum kennen.", "Wasser und Lebensmittel in geschlossenen Behältern vorbereiten.", "Amtliche örtliche Anweisungen und ein unabhängiges Radio bereithalten."],
+      "during": ["Schnell in ein Gebäude gehen; ein Auto bietet wenig Schutz.", "In den Keller oder die Gebäudemitte gehen, fern von Außenwänden und Dach.", "Öffnungen schließen und Außenluftzufuhr stoppen; informiert bleiben. Der CDC-Richtwert von 24 Stunden bedeutet keine automatische Erlaubnis zum Verlassen.", "Bei möglichem radioaktivem Staub die äußere Kleidung vorsichtig ablegen, in einem Beutel absondern, sich sanft waschen und saubere Kleidung anziehen."],
+      "after": ["Nach amtlichen Anweisungen hinausgehen oder evakuieren.", "Kontrollen und Empfehlungen zur Nachsorge beachten.", "Anweisungen zu örtlichem Wasser und Lebensmitteln abwarten."],
+      "avoid": ["Hinausgehen, um bereits geschützte Angehörige zu holen.", "Eigenständig Jod einnehmen.", "Annehmen, Abkochen, Masken oder Klebeband beseitigten Strahlung."],
+      "kit": ["Batterieradio.", "Wasser in Flaschen.", "Verpackte Lebensmittel.", "Saubere Kleidung und verschließbare Beutel."]
+    }
+  },
+  "ar": {
+    "tsunami": {
+      "title": "تسونامي",
+      "before": ["تعرّف على المناطق الساحلية المعرّضة للخطر وأماكن الأمان خارج مناطق الإخلاء.", "تدرّب على طريق مشي إلى أرض مرتفعة أو إلى مكان بعيد داخل اليابسة.", "جهّز حقيبة طوارئ صغيرة يسهل الوصول إليها واتفق على نقطة تجمع."],
+      "during": ["أثناء الزلزال، احمِ نفسك أولًا من الأجسام المتساقطة.", "بمجرد أن تصبح الحركة آمنة، اتجه سريعًا إلى أرض مرتفعة أو إلى داخل اليابسة خارج منطقة الإخلاء.", "قرب الساحل، تحرّك عند هزة قوية أو طويلة، أو ارتفاع أو انحسار غير معتاد للبحر، أو هدير بحري قوي: لا تنتظر إنذارًا رسميًا.", "بعد الوصول إلى الأمان، استمع إلى التعليمات المحلية وابقَ في مكانك."],
+      "after": ["لا تعد حتى تعلن السلطات رسميًا زوال الخطر.", "توقّع موجات متعددة؛ فالموجة الأولى ليست بالضرورة الأكبر.", "ابتعد عن المباني والجسور المتضررة وأسلاك الكهرباء الساقطة."],
+      "avoid": ["الذهاب لمشاهدة البحر.", "العودة لجلب الأغراض.", "الاعتقاد بأن انحسار الماء يعني انتهاء الخطر."],
+      "kit": ["خريطة إخلاء ورقية.", "حذاء متين.", "ماء في الحقيبة.", "مذياع محمول."]
+    },
+    "heat": {
+      "title": "موجة حر",
+      "before": ["حدّد مكانًا باردًا يمكنك الوصول إليه إذا اشتدت حرارة المنزل.", "جهّز ماء للشرب ووسائل للحماية من الشمس.", "رتّب تواصلًا منتظمًا مع الأقارب والجيران الأكثر عرضة للخطر."],
+      "during": ["أغلق وسائل حجب الشمس؛ وافتح للتهوية عندما يصبح الهواء الخارجي أبرد من الداخل.", "اشرب بانتظام مع الالتزام بأي تقييد طبي شخصي لكمية السوائل.", "برّد جسمك بالماء واستخدم أبرد غرفة.", "أجّل المجهود والخروج إلى الساعات الأبرد؛ وانتقل إلى مكان بارد عند الحاجة.", "التشوش أو فقدان الوعي أو التوعك الشديد يستلزم مساعدة عاجلة."],
+      "after": ["واصل الاطمئنان على الأشخاص الأكثر عرضة للخطر.", "استأنف المجهود البدني تدريجيًا.", "جدّد مخزون الماء وحسّن حماية المنزل من الشمس."],
+      "avoid": ["ترك طفل أو حيوان داخل سيارة.", "ممارسة رياضة شديدة في أشد الساعات حرارة.", "الاعتماد على المروحة وحدها عندما يبقى المنزل شديد الحرارة."],
+      "kit": ["ماء صالح للشرب.", "مقياس لحرارة الغرفة.", "قبعة وملابس خفيفة.", "قطعة قماش نظيفة لترطيب الجلد."]
+    },
+    "cold": {
+      "title": "برد شديد وثلوج",
+      "before": ["ضع ملابس جافة وبطانيات ومؤنًا في مكان يسهل الوصول إليه.", "افحص التدفئة وفق تعليماتها وجهّز كاشفًا لأول أكسيد الكربون.", "أجّل الرحلات المعرّضة للخطر ورتّب التواصل مع الأشخاص المعزولين."],
+      "during": ["ابقَ داخل المبنى وقلّل الخروج.", "في الخارج، ارتدِ طبقات متعددة وقبعة وملابس واقية من الماء.", "بدّل الملابس المبللة وتجنّب الإرهاق.", "إذا أصبح المنزل شديد البرودة، انتقل إلى مأوى آمن وفق التعليمات المحلية."],
+      "after": ["أزل الثلج على فترات قصيرة تناسب قدرتك البدنية.", "اطمئن على الأقارب وانتبه إلى مخاطر الجليد.", "اطلب فحص التدفئة المتضررة قبل استخدامها مجددًا."],
+      "avoid": ["تدفئة المنزل بفرن أو شواية أو مولّد يعمل داخل المبنى.", "القيادة دون ضرورة عندما تكون الرؤية ضعيفة.", "شرب الكحول للتدفئة."],
+      "kit": ["بطانيات أو أكياس نوم.", "ملابس جافة متعددة الطبقات.", "مصباح LED.", "كاشف أول أكسيد الكربون يعمل بالبطارية."]
+    },
+    "flood": {
+      "title": "فيضانات وسيول مفاجئة",
+      "before": ["حدّد طريق خروج إلى أرض أعلى.", "جهّز حقيبة ووثائق ومكان إقامة خارج منطقة الخطر.", "تعرّف على الإنذارات المحلية؛ واحمِ الأغراض فقط قبل بدء ارتفاع المياه."],
+      "during": ["انتقل سريعًا إلى مكان مرتفع وآمن.", "نفّذ أمر الإخلاء فورًا.", "إذا حوصرت، اتجه إلى أعلى نقطة آمنة وأبلغ عن موقعك.", "ابتعد عن الغرف التي تصل فيها المياه إلى التركيبات الكهربائية."],
+      "after": ["انتظر الإذن قبل العودة إلى مبنى تضرّر بالفيضانات.", "اطلب فحص الكهرباء والأضرار الإنشائية.", "استخدم مياهًا أُعلن أنها آمنة واتبع التعليمات الصحية."],
+      "avoid": ["عبور مياه الفيضان سيرًا أو بالسيارة حتى لو بدت ضحلة.", "تجاوز حاجز يغلق طريقًا.", "النزول إلى القبو لإنقاذ المعدات."],
+      "kit": ["حقيبة إخلاء.", "حافظة وثائق مقاومة للماء.", "ماء معبأ.", "مذياع ومصباح."]
+    },
+    "earthquake": {
+      "title": "زلزال",
+      "before": ["ثبّت الأثاث العالي والأجسام الثقيلة.", "حدّد أماكن احتماء تحت أثاث متين وبعيدًا عن الزجاج.", "جهّز حقيبة طوارئ وتدرّب مع الأسرة على التصرفات الوقائية."],
+      "during": ["داخل المبنى: انخفض واحتمِ تحت طاولة متينة وتمسّك بها.", "ابتعد عن الزجاج والأجسام القابلة للسقوط؛ ولا تركض إلى الخارج أثناء الاهتزاز.", "في الخارج: اتجه إلى مساحة مفتوحة بعيدًا عن المباني وأسلاك الكهرباء.", "في السيارة: توقّف بحذر بعيدًا عن الجسور والأسلاك وابقَ داخلها حتى تتوقف الهزات."],
+      "after": ["توقّع هزات ارتدادية واحتمِ من جديد عند حدوثها.", "ارتدِ حذاء وابتعد عن المباني المتضررة وأسلاك الكهرباء.", "أبلغ عن تسرّب الغاز أو الإصابات؛ واتبع إرشادات تسونامي إذا كنت قرب الساحل."],
+      "avoid": ["الاندفاع إلى السلالم أثناء الاهتزاز.", "إشعال لهب عند احتمال وجود تسرّب غاز.", "دخول مبنى أعلنت الجهات المختصة أنه غير آمن."],
+      "kit": ["حذاء متين.", "مصباح.", "ماء.", "حقيبة إسعافات أولية."]
+    },
+    "storm": {
+      "title": "عاصفة ورياح شديدة",
+      "before": ["أدخل الأغراض الخارجية أو ثبّتها قبل وصول الرياح.", "حدّد غرفة داخلية في مبنى متين.", "اشحن الأجهزة وجهّز الماء والطعام والإضاءة."],
+      "during": ["احتمِ داخل مبنى متين بعيدًا عن النوافذ.", "استمع إلى الإنذارات ونفّذ أي تعليمات بالإخلاء.", "أجّل التنقل؛ وإذا كنت تقود بالفعل، خفّف السرعة وأمسك المقود بإحكام.", "ابتعد عن الأشجار والمنشآت غير المستقرة وأسلاك الكهرباء."],
+      "after": ["انتظر تحسّن الظروف إلى مستوى آمن قبل الخروج.", "أبلغ عن أسلاك الكهرباء الساقطة دون الاقتراب منها.", "اطلب تقييم الأضرار الكبيرة قبل بدء الأعمال."],
+      "avoid": ["الصعود إلى السطح أثناء العاصفة.", "الاحتماء تحت شجرة.", "لمس سلك كهربائي حتى لو بدا غير موصول بالتيار."],
+      "kit": ["مذياع يعمل بالبطاريات.", "مصباح LED.", "بطارية شحن متنقلة.", "مخزون ماء وطعام."]
+    },
+    "homefire": {
+      "title": "حريق في المنزل",
+      "before": ["ركّب كواشف الدخان وحافظ على صلاحيتها.", "اترك المخارج خالية وحدّد طريقين للخروج حيثما أمكن.", "تدرّب على الإخلاء واتفق على نقطة تجمع خارج المبنى."],
+      "during": ["اخرج فورًا عبر طريق خالٍ من الدخان.", "أغلق الأبواب خلفك إذا أمكن دون تأخير.", "استخدم السلالم فقط إذا كان المرور فيها آمنًا؛ وابقَ في نقطة التجمع واتصل بالطوارئ.", "إذا كان المخرج مملوءًا بالدخان أو مسدودًا، ابقَ خلف باب مغلق واتصل لطلب المساعدة وأظهر موقعك من النافذة."],
+      "after": ["أبلغ رجال الإطفاء عن الأشخاص المفقودين.", "انتظر إذنهم قبل العودة إلى الداخل.", "رتّب إقامة آمنة وفحصًا للتركيبات."],
+      "avoid": ["عبور درج مملوء بالدخان.", "العودة لجلب الأغراض أو الحيوانات.", "استخدام المصعد دون توجيه من رجال الإطفاء."],
+      "kit": ["كواشف دخان.", "خطة إخلاء.", "هاتف يسهل الوصول إليه.", "مفاتيح في مكان قريب."]
+    },
+    "wildfire": {
+      "title": "حريق غابات ودخان",
+      "before": ["حدّد عدة طرق للخروج وأماكن للإقامة.", "خطّط لإخلاء الأشخاص والحيوانات.", "جهّز غرفة بهواء أنقى للحماية من الدخان ما دام الإخلاء غير مطلوب."],
+      "during": ["تابع الإنذارات وغادر فور صدور أمر الإخلاء.", "أبلغ سريعًا عن بداية أي حريق مع تحديد الموقع.", "إذا كان الدخان وحده يؤثر في منطقة آمنة من الحريق، قلّل دخوله واستخدم ترشيح هواء مناسبًا.", "عند صعوبة التنفس أو وجود خطر مباشر، اطلب المساعدة وانتقل إلى مأوى آمن."],
+      "after": ["انتظر الإذن بالعودة.", "قلّل التعرّض للدخان والرماد المتبقيين.", "اطلب تقييم المباني ومتطلبات التنظيف قبل السكن مجددًا."],
+      "avoid": ["البقاء للدفاع عن الممتلكات أمام حريق يهدّد المكان.", "عرقلة طرق وصول فرق الإنقاذ.", "الاعتقاد بأن قناع الجسيمات يحمي من الغازات أو يغني عن الإخلاء."],
+      "kit": ["حقيبة إخلاء.", "مذياع.", "قناع ترشيح جسيمات محكم الملاءمة.", "جهاز تنقية هواء مناسب إذا توفرت الكهرباء."]
+    },
+    "blackout": {
+      "title": "انقطاع كهرباء طويل",
+      "before": ["جهّز الماء وطعامًا لا يحتاج إلى طهي وإضاءة مستقلة.", "اشحن البطاريات وخطّط لاحتياجات الأجهزة الطبية مع المختصين المعنيين.", "حدّد إقامة بديلة واحتفظ بجهات الاتصال على الورق."],
+      "during": ["استخدم مصابيح LED ووفّر شحن البطاريات.", "أبقِ أبواب الثلاجة والمجمّد مغلقة.", "حافظ على درجة حرارة آمنة أو انتقل إلى مركز إيواء.", "استمع إلى التعليمات، بما فيها إرشادات مياه الشرب."],
+      "after": ["تحقّق من سلامة الطعام: تحافظ الثلاجة المغلقة عليه عادة نحو أربع ساعات؛ ولا تتذوقه لاختبار سلامته.", "اطلب فحص أي جهاز أو أسلاك متضررة.", "أعد شحن البطاريات وجدّد المؤن."],
+      "avoid": ["تشغيل مولّد داخل المبنى أو قرب الفتحات.", "استخدام شواية أو موقد تخييم داخل المنزل.", "لمس أسلاك الكهرباء الساقطة."],
+      "kit": ["مصباح LED.", "مذياع وبطاريات.", "ماء ومعلّبات يمكن أكلها باردة.", "كاشف مستقل لأول أكسيد الكربون."]
+    },
+    "chemical": {
+      "title": "حادث كيميائي",
+      "before": ["تعرّف على المخاطر المحلية وقنوات الإنذار.", "حدّد غرفة يمكن إحكام إغلاقها؛ وتوصي مراكز CDC بطابق مرتفع وفتحات قليلة ومصدر ماء إن أمكن.", "جهّز خطة للأسرة ومواد لإحكام الإغلاق."],
+      "during": ["استمع إلى السلطات؛ فالاحتماء داخل المبنى أو الإخلاء يعتمدان على المادة ومكان الحادث.", "إذا عرّضك تسرّب داخل المبنى للمادة، اخرج وابتعد؛ وفي الخارج، ابتعد عن مصدر التسرّب واتجه عكس اتجاه هبوب الرياح إن أمكن.", "إذا طُلب الاحتماء، ادخل وأغلق الفتحات وأوقف إدخال الهواء الخارجي وأحكم إغلاق الغرفة المختارة.", "عند الاشتباه بالتعرّض، اطلب بسرعة تعليمات إزالة التلوث والمساعدة الطبية."],
+      "after": ["انتظر الإعلان الرسمي عن إنهاء الاحتماء.", "اتبع تعليمات الخروج والتهوية.", "اطلب تقييم التعرّض وابتعد عن الأغراض والأسطح الملوثة."],
+      "avoid": ["الذهاب لمشاهدة التسرّب أو عبور سحابة كيميائية.", "تطبيق قواعد الاحتماء من الإشعاع تلقائيًا.", "الاعتماد على سيارة أو قناع غبار كحماية محكمة ضد الهواء الملوث."],
+      "kit": ["مذياع.", "ماء معبأ.", "أغطية بلاستيكية مقصوصة مسبقًا.", "شريط لاصق ومقص."]
+    },
+    "radiation": {
+      "title": "حادث إشعاعي",
+      "before": ["حدّد مبنى متينًا أو قبوًا أو غرفة وسطية.", "جهّز الماء والطعام في أوعية مغلقة.", "احتفظ بالتعليمات المحلية الرسمية وبمذياع مستقل عن كهرباء المنزل."],
+      "during": ["ادخل سريعًا إلى مبنى؛ فالسيارة توفر حماية ضعيفة.", "انتقل إلى القبو أو وسط المبنى بعيدًا عن الجدران الخارجية والسقف.", "أغلق الفتحات وأوقف إدخال الهواء الخارجي وتابع المعلومات. إرشاد CDC بشأن 24 ساعة لا يعني السماح بالخروج تلقائيًا بعدها.", "إذا احتُمل وجود غبار مشع، انزع الملابس الخارجية بحذر واعزلها في كيس واغتسل بلطف ثم ارتدِ ملابس نظيفة."],
+      "after": ["اخرج أو أخلِ المكان وفق التعليمات الرسمية.", "التزم بالفحوص وتوصيات المتابعة.", "انتظر التعليمات المتعلقة بالمياه والأطعمة المحلية."],
+      "avoid": ["الخروج لجلب أقارب احتموا بالفعل.", "تناول اليود من تلقاء نفسك.", "الاعتقاد بأن الغلي أو الأقنعة أو الشريط اللاصق يزيل الإشعاع."],
+      "kit": ["مذياع يعمل بالبطاريات.", "ماء معبأ.", "طعام مغلّف.", "ملابس نظيفة وأكياس قابلة للإغلاق."]
+    }
+  }
+}

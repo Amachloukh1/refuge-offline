@@ -1,0 +1,498 @@
+[
+  {
+    "id": "tsunami",
+    "icon": "Waves",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "NOAA : préparation",
+        "url": "https://www.weather.gov/safety/tsunami-before"
+      },
+      {
+        "label": "NOAA : pendant le tsunami",
+        "url": "https://www.weather.gov/safety/tsunami-during"
+      }
+    ],
+    "fr": {
+      "title": "Tsunami",
+      "before": [
+        "Repérer les zones côtières exposées et les refuges hors zone.",
+        "Répéter un trajet à pied vers les hauteurs ou loin de la côte.",
+        "Préparer un petit sac accessible et un point de regroupement."
+      ],
+      "during": [
+        "Pendant une secousse, se protéger d'abord des chutes d'objets.",
+        "Dès que possible, gagner rapidement les hauteurs ou l'intérieur des terres, hors zone d'évacuation.",
+        "Au littoral, agir devant une secousse forte/prolongée, un retrait ou une montée inhabituelle de l'eau, ou un grondement marin : ne pas attendre une alerte officielle.",
+        "Une fois à l'abri, écouter les consignes locales et y rester."
+      ],
+      "after": [
+        "Attendre le feu vert officiel pour revenir.",
+        "Prévoir plusieurs vagues : la première n'est pas forcément la plus forte.",
+        "Éviter bâtiments endommagés, ponts et câbles tombés."
+      ],
+      "avoid": [
+        "Aller observer la mer.",
+        "Revenir chercher des affaires.",
+        "Croire que le retrait de l'eau signifie la fin du danger."
+      ],
+      "kit": [
+        "Carte papier d'évacuation.",
+        "Chaussures solides.",
+        "Eau dans le sac.",
+        "Radio portable."
+      ]
+    }
+  },
+  {
+    "id": "heat",
+    "icon": "Sun",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "OMS : rester au frais",
+        "url": "https://www.who.int/news-room/questions-and-answers/item/heatwaves-how-to-stay-cool"
+      },
+      {
+        "label": "OMS : chaleur et santé",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health"
+      }
+    ],
+    "fr": {
+      "title": "Canicule",
+      "before": [
+        "Identifier un lieu frais accessible si le logement surchauffe.",
+        "Prévoir de l'eau et des protections contre le soleil.",
+        "Organiser des contacts réguliers avec les proches vulnérables."
+      ],
+      "during": [
+        "Fermer les protections solaires ; aérer lorsque l'air extérieur devient plus frais.",
+        "Boire régulièrement, en respectant une éventuelle restriction médicale personnelle.",
+        "Se rafraîchir avec de l'eau et séjourner dans la pièce la plus fraîche.",
+        "Reporter l'effort et les sorties aux heures fraîches ; rejoindre un lieu frais si nécessaire.",
+        "Une confusion, une perte de connaissance ou un malaise important impose une aide urgente."
+      ],
+      "after": [
+        "Continuer à surveiller les personnes fragiles.",
+        "Reprendre les efforts progressivement.",
+        "Réapprovisionner l'eau et améliorer les protections du logement."
+      ],
+      "avoid": [
+        "Laisser un enfant ou un animal dans une voiture.",
+        "Faire du sport intense aux heures chaudes.",
+        "Compter uniquement sur un ventilateur quand le logement reste très chaud."
+      ],
+      "kit": [
+        "Eau potable.",
+        "Thermomètre d'ambiance.",
+        "Chapeau et vêtements légers.",
+        "Linge propre pour se mouiller."
+      ]
+    }
+  },
+  {
+    "id": "cold",
+    "icon": "Snowflake",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "CDC : pendant et après une tempête hivernale",
+        "url": "https://www.cdc.gov/winter-weather/safety/stay-safe-during-after-a-winter-storm-safety.html"
+      },
+      {
+        "label": "CDC : protection pendant une panne",
+        "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html"
+      }
+    ],
+    "fr": {
+      "title": "Grand froid et neige",
+      "before": [
+        "Prévoir des vêtements secs, couvertures et réserves accessibles.",
+        "Vérifier le chauffage conformément à sa notice et préparer un détecteur de CO.",
+        "Reporter les trajets exposés ; organiser des nouvelles des proches isolés."
+      ],
+      "during": [
+        "Rester à l'intérieur et limiter les sorties.",
+        "Porter plusieurs couches, bonnet et protections imperméables dehors.",
+        "Remplacer les vêtements mouillés et éviter l'épuisement.",
+        "Si le logement devient trop froid, rejoindre un hébergement sûr selon les consignes locales."
+      ],
+      "after": [
+        "Déneiger par efforts courts et adaptés à ses capacités.",
+        "Vérifier les proches et les dangers de glace.",
+        "Faire contrôler un chauffage endommagé avant réutilisation."
+      ],
+      "avoid": [
+        "Se chauffer avec un four, barbecue ou groupe électrogène intérieur.",
+        "Prendre la route sans nécessité dans une mauvaise visibilité.",
+        "Utiliser l'alcool pour se réchauffer."
+      ],
+      "kit": [
+        "Couvertures ou sacs de couchage.",
+        "Vêtements multicouches secs.",
+        "Lampe LED.",
+        "Détecteur de CO sur batterie."
+      ]
+    }
+  },
+  {
+    "id": "flood",
+    "icon": "Waves",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "NOAA : pendant une inondation",
+        "url": "https://www.weather.gov/safety/flood-during"
+      },
+      {
+        "label": "NOAA : après",
+        "url": "https://www.weather.gov/safety/flood-after"
+      }
+    ],
+    "fr": {
+      "title": "Inondation et crue soudaine",
+      "before": [
+        "Repérer une sortie vers un terrain plus élevé.",
+        "Préparer sac, documents et solution d'accueil hors zone.",
+        "Connaître les alertes locales ; protéger les biens seulement avant la montée des eaux."
+      ],
+      "during": [
+        "Gagner rapidement une zone haute sûre.",
+        "Respecter immédiatement une évacuation.",
+        "Si piégé, gagner le point sûr le plus élevé et signaler sa position.",
+        "Rester hors des pièces où l'eau atteint les installations électriques."
+      ],
+      "after": [
+        "Attendre l'autorisation de revenir dans un bâtiment touché.",
+        "Faire vérifier les installations électriques et dégâts structurels.",
+        "Utiliser une eau déclarée sûre et suivre les consignes sanitaires."
+      ],
+      "avoid": [
+        "Traverser l'eau à pied ou en voiture, même apparemment peu profonde.",
+        "Contourner une route barrée.",
+        "Descendre en cave pour sauver du matériel."
+      ],
+      "kit": [
+        "Sac d'évacuation.",
+        "Pochette étanche de documents.",
+        "Eau embouteillée.",
+        "Radio et lampe."
+      ]
+    }
+  },
+  {
+    "id": "earthquake",
+    "icon": "Activity",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "CDC : préparation et protection",
+        "url": "https://www.cdc.gov/earthquakes/safety/index.html"
+      },
+      {
+        "label": "USGS : pendant un séisme",
+        "url": "https://www.usgs.gov/faqs/what-should-i-do-during-earthquake"
+      }
+    ],
+    "fr": {
+      "title": "Séisme",
+      "before": [
+        "Fixer meubles hauts et objets lourds.",
+        "Repérer les abris sous des meubles solides, loin des vitrages.",
+        "Préparer un kit et répéter les gestes en famille."
+      ],
+      "during": [
+        "À l'intérieur : s'abaisser, s'abriter sous une table solide et s'y tenir.",
+        "S'éloigner des vitres et objets pouvant tomber ; ne pas courir dehors pendant la secousse.",
+        "À l'extérieur : rejoindre un espace dégagé, loin des façades et câbles.",
+        "En voiture : s'arrêter prudemment, loin des ponts et lignes, et rester dedans jusqu'à la fin des secousses."
+      ],
+      "after": [
+        "Anticiper les répliques et se protéger à nouveau.",
+        "Mettre des chaussures ; éviter les bâtiments endommagés et câbles.",
+        "Signaler fuite de gaz ou blessures ; au littoral, appliquer la fiche tsunami."
+      ],
+      "avoid": [
+        "Se précipiter dans les escaliers pendant les secousses.",
+        "Allumer une flamme si une fuite de gaz est possible.",
+        "Rentrer dans un bâtiment déclaré dangereux."
+      ],
+      "kit": [
+        "Chaussures solides.",
+        "Lampe.",
+        "Eau.",
+        "Trousse de secours."
+      ]
+    }
+  },
+  {
+    "id": "storm",
+    "icon": "Wind",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "NOAA : avant",
+        "url": "https://www.weather.gov/safety/wind-before"
+      },
+      {
+        "label": "NOAA : pendant",
+        "url": "https://www.weather.gov/safety/wind-during"
+      }
+    ],
+    "fr": {
+      "title": "Tempête et vents violents",
+      "before": [
+        "Rentrer ou arrimer les objets extérieurs avant l'arrivée du vent.",
+        "Identifier une pièce intérieure dans un bâtiment solide.",
+        "Charger les appareils et préparer eau, nourriture et éclairage."
+      ],
+      "during": [
+        "Se mettre dans un bâtiment solide, loin des fenêtres.",
+        "Écouter les alertes et suivre une éventuelle évacuation.",
+        "Reporter les déplacements ; si déjà en voiture, ralentir et tenir le volant fermement.",
+        "Se tenir loin des arbres, structures instables et lignes électriques."
+      ],
+      "after": [
+        "Attendre des conditions sûres avant de sortir.",
+        "Signaler les câbles tombés sans les approcher.",
+        "Faire vérifier les dégâts importants avant intervention."
+      ],
+      "avoid": [
+        "Monter sur le toit pendant la tempête.",
+        "S'abriter sous un arbre.",
+        "Toucher un câble, même s'il semble inactif."
+      ],
+      "kit": [
+        "Radio à piles.",
+        "Lampe LED.",
+        "Batterie externe.",
+        "Réserves d'eau et nourriture."
+      ]
+    }
+  },
+  {
+    "id": "homefire",
+    "icon": "Flame",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "USFA : plan d'évacuation",
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html"
+      },
+      {
+        "label": "USFA : portes fermées et sortie impossible",
+        "url": "https://www.usfa.fema.gov/prevention/fief/"
+      }
+    ],
+    "fr": {
+      "title": "Incendie du domicile",
+      "before": [
+        "Installer et entretenir les détecteurs de fumée.",
+        "Garder les sorties dégagées ; prévoir deux issues lorsque possible.",
+        "Répéter l'évacuation et définir un rendez-vous dehors."
+      ],
+      "during": [
+        "Sortir immédiatement par un chemin exempt de fumée.",
+        "Fermer les portes derrière soi si possible sans retard.",
+        "Utiliser l'escalier seulement s'il est praticable ; rester au point de rendez-vous et appeler les secours.",
+        "Si la sortie est enfumée ou impossible, rester derrière une porte fermée, appeler et signaler sa position à une fenêtre."
+      ],
+      "after": [
+        "Signaler les personnes manquantes aux pompiers.",
+        "Attendre leur autorisation pour rentrer.",
+        "Organiser un hébergement sûr et le contrôle des installations."
+      ],
+      "avoid": [
+        "Traverser une cage d'escalier enfumée.",
+        "Revenir récupérer objets ou animaux.",
+        "Prendre l'ascenseur sans instruction des pompiers."
+      ],
+      "kit": [
+        "Détecteurs de fumée.",
+        "Plan d'évacuation.",
+        "Téléphone accessible.",
+        "Clés faciles à atteindre."
+      ]
+    }
+  },
+  {
+    "id": "wildfire",
+    "icon": "Trees",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "CDC : préparation",
+        "url": "https://www.cdc.gov/wildfires/safety/index.html"
+      },
+      {
+        "label": "CDC : après le feu",
+        "url": "https://www.cdc.gov/wildfires/safety/how-to-safely-stay-safe-after-a-wildfire.html"
+      }
+    ],
+    "fr": {
+      "title": "Feu de forêt et fumées",
+      "before": [
+        "Repérer plusieurs itinéraires et lieux d'accueil.",
+        "Préparer le départ des personnes et animaux.",
+        "Prévoir un espace à air plus propre pour les fumées, tant qu'aucune évacuation n'est requise."
+      ],
+      "during": [
+        "Suivre les alertes et partir dès l'ordre d'évacuation.",
+        "Signaler rapidement un départ de feu avec sa localisation.",
+        "Si les fumées seules affectent une zone sûre, limiter leur entrée et utiliser une filtration adaptée.",
+        "En cas de difficulté respiratoire ou de danger direct, demander de l'aide et rejoindre un abri sûr."
+      ],
+      "after": [
+        "Attendre l'autorisation de retour.",
+        "Limiter l'exposition aux fumées et cendres encore présentes.",
+        "Faire évaluer bâtiments et nettoyage avant de réoccuper."
+      ],
+      "avoid": [
+        "Rester défendre ses biens contre un feu menaçant.",
+        "Bloquer les accès de secours.",
+        "Croire qu'un masque antiparticules protège des gaz ou remplace l'évacuation."
+      ],
+      "kit": [
+        "Sac d'évacuation.",
+        "Radio.",
+        "Masque antiparticules correctement ajusté.",
+        "Filtre à air adapté si alimentation disponible."
+      ]
+    }
+  },
+  {
+    "id": "blackout",
+    "icon": "Zap",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "BBK : panne électrique",
+        "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html"
+      },
+      {
+        "label": "CDC : sécurité pendant la panne",
+        "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html"
+      }
+    ],
+    "fr": {
+      "title": "Panne de courant prolongée",
+      "before": [
+        "Préparer eau, aliments sans cuisson et éclairage autonome.",
+        "Charger batteries et prévoir les besoins des appareils médicaux avec leurs professionnels.",
+        "Connaître un hébergement de secours et conserver les contacts sur papier."
+      ],
+      "during": [
+        "Utiliser des LED et économiser les batteries.",
+        "Garder réfrigérateur et congélateur fermés.",
+        "Maintenir une température sûre ou rejoindre un centre d'accueil.",
+        "Écouter les consignes, y compris celles concernant l'eau potable."
+      ],
+      "after": [
+        "Vérifier la sécurité des aliments : un réfrigérateur fermé protège généralement environ quatre heures ; ne pas goûter pour tester.",
+        "Faire contrôler tout appareil ou câblage endommagé.",
+        "Recharger et reconstituer les réserves."
+      ],
+      "avoid": [
+        "Faire fonctionner un groupe électrogène à l'intérieur ou près des ouvertures.",
+        "Employer un barbecue ou réchaud de camping dans le logement.",
+        "Toucher un câble tombé."
+      ],
+      "kit": [
+        "Lampe LED.",
+        "Radio et piles.",
+        "Eau et conserves consommables froides.",
+        "Détecteur de CO autonome."
+      ]
+    }
+  },
+  {
+    "id": "chemical",
+    "icon": "FlaskConical",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "CDC : réagir à un accident chimique",
+        "url": "https://www.cdc.gov/chemical-emergencies/response/"
+      },
+      {
+        "label": "CDC : confinement chimique",
+        "url": "https://cdc.gov/chemical-emergencies/response/shelter-in-place.html"
+      }
+    ],
+    "fr": {
+      "title": "Accident chimique",
+      "before": [
+        "Connaître les risques locaux et les canaux d'alerte.",
+        "Prévoir une pièce calfeutrable ; le CDC conseille un étage élevé, peu d'ouvertures et si possible de l'eau.",
+        "Préparer un plan familial et les éléments de calfeutrage."
+      ],
+      "during": [
+        "Écouter les autorités : confinement ou évacuation dépendent du produit et du lieu.",
+        "Si une fuite intérieure vous expose, sortir et s'éloigner ; dehors, s'éloigner du rejet, si possible au vent.",
+        "Si confinement demandé, rentrer, fermer les ouvertures, arrêter les apports d'air extérieur et calfeutrer la pièce prévue.",
+        "Si exposition suspectée, demander rapidement les consignes de décontamination et une aide médicale."
+      ],
+      "after": [
+        "Attendre la levée officielle du confinement.",
+        "Suivre les instructions de sortie et ventilation.",
+        "Faire évaluer une exposition et éviter les objets ou surfaces contaminés."
+      ],
+      "avoid": [
+        "Aller voir le rejet ou traverser un nuage.",
+        "Appliquer automatiquement les règles d'abri radiologique.",
+        "Compter sur une voiture ou un masque antipoussière comme protection étanche."
+      ],
+      "kit": [
+        "Radio.",
+        "Eau embouteillée.",
+        "Film plastique prédécoupé.",
+        "Ruban adhésif et ciseaux."
+      ]
+    }
+  },
+  {
+    "id": "radiation",
+    "icon": "Radiation",
+    "reviewedAt": "2026-10-31",
+    "sources": [
+      {
+        "label": "CDC : entrer et s'abriter",
+        "url": "https://www.cdc.gov/radiation-emergencies/response/get-inside.html"
+      },
+      {
+        "label": "CDC : questions pratiques, eau, contamination et médicaments",
+        "url": "https://www.cdc.gov/radiation-emergencies/faq/index.html"
+      }
+    ],
+    "fr": {
+      "title": "Incident radiologique",
+      "before": [
+        "Repérer un bâtiment solide, un sous-sol ou une pièce centrale.",
+        "Préparer eau et aliments en contenants fermés.",
+        "Conserver les consignes officielles locales et un moyen d'écoute autonome."
+      ],
+      "during": [
+        "Entrer rapidement dans un bâtiment ; une voiture protège mal.",
+        "Gagner le sous-sol ou le centre, loin des murs extérieurs et du toit.",
+        "Fermer ouvertures et apports d'air extérieur ; rester à l'écoute. Le repère CDC de 24 heures n'autorise pas à ressortir automatiquement.",
+        "Si poussières radioactives possibles, retirer prudemment les vêtements extérieurs, les isoler en sac et se laver doucement ; mettre des vêtements propres."
+      ],
+      "after": [
+        "Sortir ou évacuer selon les consignes officielles.",
+        "Respecter les contrôles et recommandations de suivi.",
+        "Attendre les instructions sur l'eau et les aliments locaux."
+      ],
+      "avoid": [
+        "Sortir chercher des proches déjà abrités.",
+        "Prendre de l'iode de sa propre initiative.",
+        "Croire qu'ébullition, masque ou ruban adhésif suppriment le rayonnement."
+      ],
+      "kit": [
+        "Radio à piles.",
+        "Eau embouteillée.",
+        "Nourriture emballée.",
+        "Vêtements propres et sacs fermables."
+      ]
+    }
+  }
+]

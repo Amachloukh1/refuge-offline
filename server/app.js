@@ -1,0 +1,230 @@
+import http from "node:http";
+import path from "node:path";
+import { readFile, stat, realpath } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import {
+  aiConfig,
+  remoteStudioConfig,
+  status,
+  completeChat,
+  validateMessages,
+} from "./ai.js";
+const project = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "..",
+);
+const mime = {
+  ".html": "text/html; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".svg": "image/svg+xml",
+  ".png": "image/png",
+  ".json": "application/json; charset=utf-8",
+  ".pdf": "application/pdf",
+  ".webp": "image/webp",
+  ".mp4": "video/mp4",
+  ".woff2": "font/woff2",
+};
+async function catalog(root) {
+  try {
+    const list = JSON.parse(
+      await readFile(path.join(root, "content/catalog.json"), "utf8"),
+    );
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}
+function json(res, code, data) {
+  res.writeHead(code, {
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "no-store",
+  });
+  res.end(JSON.stringify(data));
+}
+async function body(req) {
+  let size = 0;
+  const chunks = [];
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > 24000) throw new Error("body_too_large");
+    chunks.push(chunk);
+  }
+  return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+}
+export function createApp({
+  root = project,
+  config = aiConfig(),
+  remote = remoteStudioConfig(),
+} = {}) {
+  let active = false;
+  return http.createServer(async (req, res) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("X-Frame-Options", "SAMEORIGIN");
+    res.setHeader("Referrer-Policy", "no-referrer");
+    res.setHeader(
+      "Content-Security-Policy",
+      "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
+    );
+    const address = serverAddress(req.headers.host);
+    if (!address) {
+      json(res, 403, { code: "local_only" });
+      return;
+    }
+    if (
+      req.headers.origin &&
+      req.headers.origin !== `http://${req.headers.host}`
+    ) {
+      json(res, 403, { code: "invalid_origin" });
+      return;
+    }
+    let pathname;
+    try {
+      pathname = decodeURIComponent(
+        new URL(req.url, `http://${req.headers.host}`).pathname,
+      );
+    } catch {
+      json(res, 400, { code: "invalid_path" });
+      return;
+    }
+    try {
+      if (pathname === "/api/status" && req.method === "GET") {
+        json(res, 200, {
+          ...(await status(config)),
+          remoteConfigured: Boolean(remote),
+        });
+        return;
+      }
+      if (pathname === "/api/documents" && req.method === "GET") {
+        const docs = [];
+        for (const doc of await catalog(root)) {
+          if (!/^[a-zA-Z0-9_-]+\.pdf$/.test(doc.filename || "")) continue;
+          try {
+            const info = await stat(
+              path.join(root, "content/documents", doc.filename),
+            );
+            if (info.isFile()) docs.push({ ...doc, bytes: info.size });
+          } catch {}
+        }
+        json(res, 200, docs);
+        return;
+      }
+      if (pathname === "/api/chat" && req.method === "POST") {
+        if (!req.headers["content-type"]?.startsWith("application/json")) {
+          json(res, 415, { code: "json_required" });
+          return;
+        }
+        let data;
+        try {
+          data = await body(req);
+        } catch {
+          json(res, 400, { code: "invalid_request" });
+          return;
+        }
+        if (!data || !validateMessages(data.messages)) {
+          json(res, 400, { code: "invalid_messages" });
+          return;
+        }
+        if (data.mode && !["local", "remote"].includes(data.mode)) {
+          json(res, 400, { code: "invalid_mode" });
+          return;
+        }
+        const selected = data.mode === "remote" ? remote : config;
+        if (!selected) {
+          json(res, 503, { code: "remote_not_configured" });
+          return;
+        }
+        const controller = new AbortController();
+        res.on("close", () => controller.abort());
+        if (active) {
+          json(res, 429, { code: "engine_busy" });
+          return;
+        }
+        active = true;
+        try {
+          const answer = await completeChat(
+            selected,
+            data.messages,
+            data.language,
+            fetch,
+            controller.signal,
+          );
+          if (!res.destroyed)
+            json(res, 200, {
+              content: answer,
+              model: selected.model,
+              provider: selected.provider,
+              remote: Boolean(selected.remote),
+            });
+        } catch {
+          if (!res.destroyed) json(res, 503, { code: "engine_unavailable" });
+        } finally {
+          active = false;
+        }
+        return;
+      }
+      if (pathname.startsWith("/api/")) {
+        json(res, 404, { code: "not_found" });
+        return;
+      }
+      if (!["GET", "HEAD"].includes(req.method)) {
+        json(res, 405, { code: "method_not_allowed" });
+        return;
+      }
+      let directory = path.join(root, "dist"),
+        relative = pathname === "/" ? "index.html" : pathname.slice(1);
+      if (pathname.startsWith("/documents/")) {
+        directory = path.join(root, "content/documents");
+        relative = pathname.slice("/documents/".length);
+        if (
+          !/^[a-zA-Z0-9_-]+\.pdf$/.test(relative) ||
+          !(await catalog(root)).some((d) => d.filename === relative)
+        ) {
+          json(res, 404, { code: "not_found" });
+          return;
+        }
+      }
+      const filename = path.resolve(directory, relative);
+      if (
+        !filename.startsWith(directory + path.sep) ||
+        relative.includes("\\")
+      ) {
+        json(res, 403, { code: "forbidden" });
+        return;
+      }
+      let resolved;
+      try {
+        resolved = await realpath(filename);
+        const realDirectory = await realpath(directory);
+        if (!resolved.startsWith(realDirectory + path.sep))
+          throw new Error("path");
+      } catch {
+        json(res, 404, { code: "not_found" });
+        return;
+      }
+      const file = await readFile(resolved);
+      res.writeHead(200, {
+        "Content-Type":
+          mime[path.extname(filename)] || "application/octet-stream",
+        "Content-Length": file.length,
+        "Cache-Control": "no-cache",
+      });
+      res.end(req.method === "HEAD" ? undefined : file);
+    } catch {
+      if (!res.headersSent) json(res, 500, { code: "server_error" });
+      else res.end();
+    }
+  });
+}
+function serverAddress(host) {
+  try {
+    const url = new URL(`http://${host}`);
+    return (
+      ["127.0.0.1", "localhost", "[::1]"].includes(url.hostname) &&
+      url.username === "" &&
+      url.password === ""
+    );
+  } catch {
+    return false;
+  }
+}

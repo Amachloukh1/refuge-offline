@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env*
+!.env.example
+*.log
+.playwright/
+content/documents/
+data/
+models/
+output/
+runtime/
+content/videos/
+content/maps/
+content/zim/
+content/wiki-reader/
+private/
+*.partial

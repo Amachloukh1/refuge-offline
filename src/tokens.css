@@ -1,0 +1,10 @@
+:root {
+  --bg: #f5f6f3;
+  --ink: #14221b;
+  --muted: #647064;
+  --forest: #193f32;
+  --accent: #315f47;
+  --line: #e1e5df;
+  --surface: #fff;
+  color-scheme: light;
+}
