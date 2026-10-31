@@ -12,7 +12,7 @@ if (
   choices.some((c) => !["--videos", "--wiki", "--radio"].includes(c))
 )
   throw new Error(
-    "Choisir --videos (~279 MB), --wiki (~11.44 GB), ou --radio. Téléchargement explicite uniquement.",
+    "Choisir --videos (taille selon content/videos.catalog.json), --wiki (~11.44 GB), ou --radio. Téléchargement explicite uniquement.",
   );
 async function hash(file) {
   const h = createHash("sha256");

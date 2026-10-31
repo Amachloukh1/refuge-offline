@@ -1,6 +1,6 @@
 # REFUGE
 
-Application locale de préparation aux crises. Interface FR / DE / EN / AR (droite à gauche), 18 fiches pratiques dont quatre illustrées sur l'autonomie longue durée, bibliothèque PDF indexée, réserves modifiables, plan d'achats, checklist et assistant Local Studio intégré. Carte Saxe, lecture GPS USB sur demande, sept vidéos locales, Wikipédia compacte FR/DE/AR intégrée avec ouverture automatique et météo sauvegardée. Ubuntu 22.04 reste à tester sur le mini-PC.
+Application locale de préparation aux crises. Interface FR / DE / EN / AR (droite à gauche), 18 fiches pratiques dont quatre illustrées sur l'autonomie longue durée, bibliothèque PDF indexée, réserves modifiables, plan d'achats, checklist et assistant Local Studio intégré. Carte Saxe, lecture GPS USB sur demande, dix vidéos locales, Wikipédia compacte FR/DE/AR intégrée avec ouverture automatique et météo sauvegardée. Ubuntu 22.04 reste à tester sur le mini-PC.
 
 **Installation actuelle, contenu, limites et transfert : [guide hors ligne](docs/installation-offline.md).** Le dépôt GitHub conserve le code et les catalogues ; les gros fichiers locaux doivent être transférés séparément. Un clone seul ne contient pas les modèles ni les archives Wikipédia.
 
@@ -66,7 +66,7 @@ docker compose -f deploy/compose.services.yml exec ollama ollama pull qwen3:4b-i
 
 Kiwix demande des fichiers `.zim` dans `content/zim`, téléchargés depuis le catalogue Kiwix. Le profil `library` sert ensuite ces contenus sur localhost:8008. Grocy est disponible avec le profil `grocy` sur localhost:9283 ; son inventaire reste distinct de l'inventaire intégré REFUGE. Ce fichier Compose est préparé mais n'a pas été exécuté sur cet ordinateur. Les images `latest` sont des points de départ : conserver les images exactes préparées et tester avant une installation durable. Open WebUI peut être ajouté séparément avec le même moteur local ; REFUGE ne prétend pas être Open WebUI.
 
-La carte de Saxe, sept vidéos et le lecteur Wikipédia intégré sont préparés et testés localement. Le GPS USB est identifié et sa lecture NMEA fonctionne ; un fix satellite reste à valider dehors. SDR++ est téléchargé ; la réception radio exige un autre récepteur et une antenne. La météo sauvegardée porte sa date ; les alternatives radio et l'estimation des cartes Europe–Afrique sont [documentées ici](docs/radio-gps-meteo-cartes.md).
+La carte de Saxe, dix vidéos et le lecteur Wikipédia intégré sont préparés et testés localement. Le GPS USB est identifié et sa lecture NMEA fonctionne ; un fix satellite reste à valider dehors. SDR++ est téléchargé ; la réception radio exige un autre récepteur et une antenne. La météo sauvegardée porte sa date ; les alternatives radio et l'estimation des cartes Europe–Afrique sont [documentées ici](docs/radio-gps-meteo-cartes.md).
 
 ## Démarrage automatique Ubuntu
 
@@ -83,3 +83,7 @@ npx playwright test
 Le test navigateur exige Chrome local et le serveur lancé. Il bloque les requêtes navigateur hors localhost, vérifie les PDF, la recherche, les favoris, le stock, la persistance, l'arabe et le téléphone. Les tests de contrat IA utilisent un moteur simulé ; ils ne prouvent pas la vitesse ou la qualité d'un modèle installé.
 
 Les quantités initiales sont fictives. Le tableau de bord compte les produits alimentaires ; il n'invente pas une autonomie en jours sans les données nutritionnelles nécessaires. Le calcul d'eau suit les quantités saisies. Les données du navigateur ne sont pas chiffrées et ne sont pas partagées entre appareils : utiliser des données fictives pour le plan familial à ce stade.
+
+## Équipement et achats
+
+Préparation → Équipement à acheter (ou #prepare?view=equipment) propose treize références/catégories, dont cinq prix Amazon.de réellement relevés le 31 octobre 2026, des coches persistantes et une estimation énergétique pour le kit solaire. Les articles sans prix vérifié restent explicitement signalés. [Sources et limites des prix](docs/equipement-sources.md). [Trois nouvelles vidéos et contrôles audio](docs/videos-complementaires-sources.md).

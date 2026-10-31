@@ -154,5 +154,80 @@
     "subtitleBytes": 4451,
     "subtitleSha256": "98c485d1f92ea81b3717b6592d96dbcaf645f31b5efc5cf05b71740c2deae070",
     "audioAudible": true
+  },
+  {
+    "id": "sals-serious-bleeding-garage-en",
+    "filename": "sals-serious-bleeding-garage-en.mp4",
+    "title": "Hémorragie : agir dans un garage — Heartstart",
+    "language": "en",
+    "publisher": "Save a Life for Scotland",
+    "category": "firstaid",
+    "url": "https://savealife.scot/wp-content/uploads/2023/07/The-Garage.mp4",
+    "sourcePage": "https://www.savealife.scot/heartstart-trainers/",
+    "description": "The Garage : scénario sur un saignement important, identifié par le guide officiel Heartstart. Contexte écossais et numéros des secours locaux. Ne remplace pas une formation pratique.",
+    "rights": "Téléchargement Download mp4 explicitement proposé dans les ressources Heartstart pour les formateurs. Copie locale inchangée avec attribution ; aucune licence ouverte générale présumée. Vérifier les droits avant redistribution publique ou adaptation.",
+    "durationSeconds": 173.44,
+    "audioAudible": true,
+    "audio": {
+      "codec": "aac",
+      "channels": 2,
+      "sampleRateHz": 48000,
+      "meanVolumeDb": -24.4,
+      "maxVolumeDb": -5.9,
+      "verification": "ffprobe: video H.264 + audio AAC; ffmpeg volumedetect over full file: non-silent signal. No automatic speech transcription."
+    },
+    "bytes": 25711756,
+    "sha256": "59a51e622fc23b72b8317f62c5505c342b3f60f3b63881a421728e1847ca1cc7",
+    "downloadedAt": "2026-10-31T18:12:55.0652846Z"
+  },
+  {
+    "id": "hannover-handwashing-de",
+    "filename": "hannover-handwashing-de.mp4",
+    "title": "Hygiène : bien se laver les mains — région de Hanovre",
+    "language": "de",
+    "publisher": "Region Hannover",
+    "category": "firstaid",
+    "url": "https://www.hannover.de/var/storage/original/video/5f2a582049937936cb86bfb9b1c5248a.mp4",
+    "sourcePage": "https://www.hannover.de/Leichte-Sprache/Media/01-DATA-Neu/Videos/Region-Hannover-Videos/Gesundheit/Infektionen-vermeiden-richtiges-H%C3%A4ndewaschen",
+    "description": "Courte vidéo allemande officielle sur le lavage des mains pour prévenir les infections. Signal audio non silencieux vérifié ; niveau moyen faible, ajuster le volume du lecteur si nécessaire.",
+    "rights": "Lien Video download explicitement proposé par la région de Hanovre, crédit © Region Hannover. Copie personnelle locale inchangée avec attribution. Aucun droit général de redistribution ou modification présumé.",
+    "durationSeconds": 58.058,
+    "audioAudible": true,
+    "audio": {
+      "codec": "aac",
+      "channels": 1,
+      "sampleRateHz": 44100,
+      "meanVolumeDb": -41,
+      "maxVolumeDb": -5.8,
+      "verification": "ffprobe: video H.264 + audio AAC; ffmpeg volumedetect over full file: non-silent signal. No automatic speech transcription."
+    },
+    "bytes": 4264397,
+    "sha256": "d7e28f322ff2a6537ca23c277472b054a2ece231f4358947a2ec315175ceba4d",
+    "downloadedAt": "2026-10-31T18:13:22.4923162Z"
+  },
+  {
+    "id": "nps-smokies-backpacking-en",
+    "filename": "nps-smokies-backpacking-en.mp4",
+    "title": "Bivouac : aliments, abris et sécurité face aux ours — Smokies",
+    "language": "en",
+    "publisher": "National Park Service — Great Smoky Mountains",
+    "category": "outdoors",
+    "url": "https://www.nps.gov/nps-audiovideo/audiovideo/ade6e9a3-8ee8-47e4-bb13-b4ad5a508f9e1080p.mp4",
+    "sourcePage": "https://www.nps.gov/media/video/view.htm?id=BA43C4F9-858F-4E88-933E-07F7CB9A9BE5",
+    "description": "Backcountry Bear Safety Video : camping, stockage des aliments, abris existants et conflits avec les ours. Contexte du parc américain Great Smoky Mountains ; règles et installations non universelles. Ne montre pas la construction complète d’un abri de survie.",
+    "rights": "Téléchargement original proposé par le lecteur officiel NPS, crédit NPS Video/William Campbell, Julianne Geleynse et Becca Foster. La page actuelle précise de ne pas présumer tout média NPS dans le domaine public. Copie locale inchangée avec attribution ; contacter le parc avant redistribution publique.",
+    "durationSeconds": 269.5693,
+    "audioAudible": true,
+    "audio": {
+      "codec": "aac",
+      "channels": 2,
+      "sampleRateHz": 48000,
+      "meanVolumeDb": -24.1,
+      "maxVolumeDb": -2.9,
+      "verification": "ffprobe: video H.264 + audio AAC; ffmpeg volumedetect over full file: non-silent signal. No automatic speech transcription."
+    },
+    "bytes": 181579123,
+    "sha256": "327c802edc69073dea0c1ed300c59ace05dbcf3991ff773e154cb7ec00239fc8",
+    "downloadedAt": "2026-10-31T18:12:57.5673545Z"
   }
 ]
