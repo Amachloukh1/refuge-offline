@@ -37,6 +37,7 @@ test("temporary share requires credentials, only serves its selected file and ex
       "Basic " + Buffer.from("refuge:" + password).toString("base64");
   try {
     assert.equal((await fetch(base)).status, 401);
+    assert.equal((await fetch(base + "/illustration.jpg")).status, 401);
     const wrong = await fetch(base, {
       headers: {
         Authorization:
@@ -47,6 +48,13 @@ test("temporary share requires credentials, only serves its selected file and ex
     const landing = await fetch(base, { headers: { authorization } });
     assert.equal(landing.status, 200);
     assert.match(await landing.text(), /Copie de distribution/);
+    const illustration = await fetch(base + "/illustration.jpg", {
+      headers: { authorization },
+    });
+    assert.equal(illustration.status, 200);
+    assert.equal(illustration.headers.get("content-type"), "image/jpeg");
+    const imageBytes = new Uint8Array(await illustration.arrayBuffer());
+    assert.deepEqual([...imageBytes.slice(0, 2)], [255, 216]);
     const range = await fetch(base + "/download", {
       headers: { authorization, Range: "bytes=2-5" },
     });

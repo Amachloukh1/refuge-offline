@@ -2,14 +2,12 @@ import http from "node:http";
 import path from "node:path";
 import { scryptSync, timingSafeEqual } from "node:crypto";
 import { serveLocalFile } from "./files.js";
-const escape = (s) =>
-  String(s).replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-        c
-      ],
-  );
+import { renderSharePage } from "./share-page.js";
+import { readFileSync } from "node:fs";
+import { stat } from "node:fs/promises";
+const illustration = readFileSync(
+  new URL("./assets/refuge-camp.jpg", import.meta.url),
+);
 
 export function createShareServer(config, { now = () => Date.now() } = {}) {
   const created = Date.parse(config.createdAt),
@@ -42,7 +40,7 @@ export function createShareServer(config, { now = () => Date.now() } = {}) {
     res.setHeader("Referrer-Policy", "no-referrer");
     res.setHeader(
       "Content-Security-Policy",
-      "default-src 'none'; style-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
+      "default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
     );
     const send = (status, message) => {
       res.writeHead(status, { "Content-Type": "text/plain; charset=utf-8" });
@@ -61,6 +59,7 @@ export function createShareServer(config, { now = () => Date.now() } = {}) {
         prefix + "/",
         prefix + "/download",
         prefix + "/sha256",
+        prefix + "/illustration.jpg",
       ].includes(pathname)
     ) {
       send(404, "Introuvable");
@@ -112,6 +111,14 @@ export function createShareServer(config, { now = () => Date.now() } = {}) {
       send(401, "Identifiant refuge et mot de passe requis.");
       return;
     }
+    if (pathname === prefix + "/illustration.jpg") {
+      res.writeHead(200, {
+        "Content-Type": "image/jpeg",
+        "Content-Length": illustration.length,
+      });
+      res.end(req.method === "HEAD" ? undefined : illustration);
+      return;
+    }
     if (pathname === prefix + "/sha256") {
       send(200, `${config.sha256}  ${path.basename(config.file)}\n`);
       return;
@@ -146,7 +153,21 @@ export function createShareServer(config, { now = () => Date.now() } = {}) {
       timeStyle: "short",
       timeZone: "Europe/Berlin",
     }).format(expires);
-    const html = `<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>REFUGE — téléchargement privé</title><style>body{font:18px system-ui;max-width:760px;margin:60px auto;padding:24px;background:#f4f6f0;color:#173f31}main{background:white;padding:32px;border-radius:16px}a{display:inline-block;padding:16px 24px;background:#174b36;color:white;border-radius:8px;margin:12px 0}code{overflow-wrap:anywhere}p{line-height:1.6}</style><main><h1>REFUGE hors ligne</h1><p>Copie de distribution sans données personnelles ni clés de l’expéditeur.</p><p>Archive ZIP volumineuse. Extraire dans un dossier neuf, lire README.md puis utiliser le lanceur Windows ou Ubuntu. Sous Windows, Node.js 24 doit être installé.</p><a href="${prefix}/download">Télécharger REFUGE</a><p>Expiration : ${escape(date)} (Allemagne). Le PC relais et le NAS doivent rester allumés pendant le téléchargement.</p><p>SHA-256 : <code>${config.sha256}</code></p><a href="${prefix}/sha256">Empreinte de vérification</a></main></html>`;
+    let archiveSize = "";
+    try {
+      archiveSize =
+        new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 1 }).format(
+          (await stat(config.file)).size / 1e9,
+        ) + " Go";
+    } catch {
+      /* The landing page remains available when the NAS is temporarily unavailable. */
+    }
+    const html = renderSharePage({
+      prefix,
+      date,
+      sha256: config.sha256,
+      archiveSize,
+    });
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
     res.end(req.method === "HEAD" ? undefined : html);
   });

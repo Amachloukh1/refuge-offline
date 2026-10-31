@@ -68,7 +68,14 @@ const request = (suffix = "", options = {}) => {
 assert.equal((await request()).status, 401);
 const page = await request("", { headers });
 assert.equal(page.status, 200);
-assert.match(await page.text(), /REFUGE hors ligne/);
+const html = await page.text();
+assert.match(html, /REFUGE hors ligne/);
+if (html.includes("/illustration.jpg")) {
+  const art = await request("/illustration.jpg", { method: "HEAD", headers });
+  assert.equal(art.status, 200);
+  assert.equal(art.headers.get("content-type"), "image/jpeg");
+  assert.ok(Number(art.headers.get("content-length")) > 0);
+}
 const head = await request("/download", { method: "HEAD", headers });
 assert.equal(head.status, 200);
 assert.ok(Number(head.headers.get("content-length")) > 1000000000);
