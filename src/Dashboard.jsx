@@ -1,4 +1,5 @@
-import { Icon, Button, Progress, CompassArt } from "./components";
+import { Icon, Button, Progress } from "./components";
+import refugeCamp from "../server/assets/refuge-camp.jpg";
 export function Dashboard({
   t,
   navigate,
@@ -16,6 +17,7 @@ export function Dashboard({
       <section className="overview-grid">
         <div className="welcome-panel">
           <div className="welcome-copy">
+            <span className="welcome-eyebrow">{t.tagline}</span>
             <h2>
               {t.heroTitle.split("\n").map((line, i) => (
                 <span key={i}>{line}</span>
@@ -35,7 +37,16 @@ export function Dashboard({
               </Button>
             </div>
           </div>
-          <CompassArt />
+          <figure className="refuge-camp">
+            <img
+              src={refugeCamp}
+              width="1536"
+              height="1024"
+              alt={t.campAlt}
+              fetchPriority="high"
+            />
+            <figcaption>{t.campCaption}</figcaption>
+          </figure>
         </div>
         <section className="panel aid-panel">
           <div className="section-title">

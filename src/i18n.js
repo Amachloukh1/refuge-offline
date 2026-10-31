@@ -914,6 +914,29 @@ Object.assign(ar, {
 for (const [lang, dictionary] of Object.entries({ fr, en, de, ar }))
   Object.assign(dictionary, offlineText[lang]);
 export const translations = { fr, en, de, ar };
+const campText = {
+  fr: {
+    campAlt:
+      "Un renard avec son sac à dos, un ordinateur, des livres, une carte et une radio devant un chalet en forêt.",
+    campCaption: "Même le renard a préparé son sac.",
+  },
+  en: {
+    campAlt:
+      "A fox with a backpack, laptop, books, map and radio beside a forest cabin.",
+    campCaption: "Even the fox has packed a bag.",
+  },
+  de: {
+    campAlt:
+      "Ein Fuchs mit Rucksack, Laptop, Büchern, Karte und Radio vor einer Waldhütte.",
+    campCaption: "Sogar der Fuchs hat seinen Rucksack gepackt.",
+  },
+  ar: {
+    campAlt: "ثعلب بحقيبة ظهر وحاسوب وكتب وخريطة وراديو أمام كوخ في الغابة.",
+    campCaption: "حتى الثعلب جهّز حقيبته.",
+  },
+};
+for (const [lang, text] of Object.entries(campText))
+  Object.assign(translations[lang], text);
 import { resilienceText } from "./resilience-text.js";
 for (const [lang, dictionary] of Object.entries(translations))
   Object.assign(dictionary, resilienceText[lang]);

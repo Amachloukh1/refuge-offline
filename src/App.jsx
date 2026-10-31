@@ -346,10 +346,11 @@ export default function App() {
             <span className="topbar-divider" />
             <button
               className="country-button"
+              aria-label={t.country}
               onClick={() => navigate("settings")}
             >
               <span className="german-flag" />
-              {t.country}
+              <span className="country-name">{t.country}</span>
               <Icon name="ChevronRight" size={14} />
             </button>
           </div>
