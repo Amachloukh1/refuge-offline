@@ -2,6 +2,7 @@ import path from "node:path";
 import { stat, realpath } from "node:fs/promises";
 import { createReadStream } from "node:fs";
 const types = {
+  ".txt": "text/plain; charset=utf-8",
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".mjs": "text/javascript; charset=utf-8",

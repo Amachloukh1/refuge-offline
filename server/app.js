@@ -9,6 +9,7 @@ import { readWeather, refreshWeather } from "./weather.js";
 import { createStudio } from "./studio.js";
 import { createGps } from "./gps.js";
 import { createReadiness } from "./readiness.js";
+import { createBooks } from "./books.js";
 import {
   aiConfig,
   remoteStudioConfig,
@@ -71,6 +72,7 @@ export function createApp({
   let studio;
   const gps = createGps();
   const readiness = createReadiness(root);
+  const books = createBooks(root);
   const server = http.createServer(async (req, res) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("X-Frame-Options", "SAMEORIGIN");
@@ -117,6 +119,53 @@ export function createApp({
       return;
     }
     try {
+      if (pathname === "/api/books" && req.method === "GET") {
+        const params = Object.fromEntries(
+          new URL(req.url, "http://localhost").searchParams,
+        );
+        json(res, 200, await books.list(params));
+        return;
+      }
+      if (pathname === "/api/books/jobs" && req.method === "GET") {
+        json(res, 200, books.snapshot());
+        return;
+      }
+      if (pathname === "/api/books/download" && req.method === "POST") {
+        try {
+          const input = await body(req);
+          json(res, 202, await books.start(input.ids));
+        } catch (e) {
+          json(res, e.message === "download_busy" ? 409 : 400, {
+            code:
+              e.message === "download_busy" ? "download_busy" : "invalid_batch",
+          });
+        }
+        return;
+      }
+      if (pathname === "/api/books/cancel" && req.method === "POST") {
+        json(res, 200, books.cancel());
+        return;
+      }
+      if (
+        pathname.startsWith("/books/") &&
+        ["GET", "HEAD"].includes(req.method)
+      ) {
+        const match = pathname.match(
+          /^\/books\/((?:pg-\d+|hw-\d{8}))\.(txt|pdf)$/,
+        );
+        if (!match) {
+          json(res, 404, { code: "not_found" });
+          return;
+        }
+        try {
+          const f = await books.file(match[1]);
+          if (f.book.format !== match[2]) throw Error("invalid_book");
+          await serveLocalFile(req, res, f.directory, f.filename);
+        } catch {
+          if (!res.headersSent) json(res, 404, { code: "book_unavailable" });
+        }
+        return;
+      }
       if (pathname === "/api/readiness" && req.method === "GET") {
         json(res, 200, readiness.snapshot());
         return;
@@ -373,6 +422,7 @@ export function createApp({
   });
   server.on("close", () => studio?.close());
   server.on("close", () => gps.close());
+  server.on("close", () => books.cancel());
   return server;
 }
 function serverAddress(host) {

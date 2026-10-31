@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { LocalVideos, LocalWiki } from "./LocalMedia";
 import { WeatherRadio } from "./WeatherRadio";
 const OfflineMaps = lazy(() => import("./OfflineMaps"));
+const Books = lazy(() => import("./Books"));
 import { translations, languages } from "./i18n";
 import { seedStock, checklistIds, guideData } from "./data";
 import { waterPlan } from "./planning";
@@ -34,6 +35,7 @@ const pages = [
   ["readiness", "ClipboardCheck"],
   ["assistant", "MessageCircle"],
   ["library", "BookOpen"],
+  ["books", "BookOpen"],
   ["hazards", "ShieldCheck"],
   ["health", "Cross"],
   ["inventory", "Package"],
@@ -52,6 +54,7 @@ const subtitleKeys = {
   system: "systemSub",
   assistant: "assistantSub",
   library: "librarySub",
+  books: "booksSub",
   hazards: "hazardsSub",
   health: "healthSub",
   inventory: "inventorySub",
@@ -546,6 +549,11 @@ export default function App() {
           )}
           {page === "weather" && <WeatherRadio t={t} />}
           {page === "videos" && <LocalVideos t={t} lang={state.lang} />}
+          {page === "books" && (
+            <Suspense fallback={<p>…</p>}>
+              <Books lang={state.lang} />
+            </Suspense>
+          )}
           {page === "wiki" && <LocalWiki t={t} lang={state.lang} />}
           {page === "prepare" && (
             <Preparation

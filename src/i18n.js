@@ -1,6 +1,7 @@
 import { ar } from "./arabic.js";
 import { fieldText } from "./field-text.js";
 import { offlineText } from "./offline-translations.js";
+import { bookText } from "./books-text.js";
 const fr = {
   tagline: "Votre essentiel, hors ligne.",
   home: "Accueil",
@@ -914,6 +915,11 @@ Object.assign(ar, {
 for (const [lang, dictionary] of Object.entries({ fr, en, de, ar }))
   Object.assign(dictionary, offlineText[lang]);
 export const translations = { fr, en, de, ar };
+for (const [lang, dictionary] of Object.entries(translations))
+  Object.assign(dictionary, {
+    books: bookText[lang].title,
+    booksSub: bookText[lang].subtitle,
+  });
 const campText = {
   fr: {
     campAlt:

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "hw-41750602",
+    "title": "جزيرة الكنز",
+    "authors": "روبرت لويس ستيفنسون · ترجمة مؤسسة هنداوي",
+    "language": "ar",
+    "genres": ["adventure", "children", "fiction"],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/41750602.pdf",
+    "sha256": "c26e83da92356aa0eb6009c4b57f00bc83cea3ec9467ce6155ea0e209812446f"
+  },
+  {
+    "id": "hw-48619149",
+    "title": "مغامرات الدكتور ثورندايك",
+    "authors": "آر أوستن فريمان · ترجمة مؤسسة هنداوي",
+    "language": "ar",
+    "genres": ["crime", "fiction"],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/48619149.pdf",
+    "sha256": "5169ffd9e9030c43eeda4e35e09416f3ee9181358f0a01899e767b99f393bc63"
+  },
+  {
+    "id": "hw-72959517",
+    "title": "مغامرات شيرلوك هولمز",
+    "authors": "آرثر كونان دويل · ترجمة مؤسسة هنداوي",
+    "language": "ar",
+    "genres": ["crime", "fiction"],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/72959517.pdf",
+    "sha256": "bf037284a329ecf0d9be5c6d86e106af5e015468bfdd7210351f0bd3f5094743"
+  },
+  {
+    "id": "hw-41613081",
+    "title": "العلم والحياة",
+    "authors": "علي مصطفى مشرفة · مؤسسة هنداوي",
+    "language": "ar",
+    "genres": ["science"],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/41613081.pdf",
+    "sha256": "6b7e7e9163700b7c9701f5809367de72e7b4a0703b9478b7b9289f193020bec0"
+  },
+  {
+    "id": "hw-70951718",
+    "title": "تاريخ العلم العثماني",
+    "authors": "أحمد تيمور باشا · مؤسسة هنداوي",
+    "language": "ar",
+    "genres": ["history", "science"],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/70951718.pdf",
+    "sha256": "571b0e2c50077e61af4d02476c7f1c019a34585f4fb0f291dd68cdca7a99d515"
+  },
+  {
+    "id": "hw-41539374",
+    "title": "أهل العلم بين مصر وفلسطين",
+    "authors": "أحمد سامح الخالدي · مؤسسة هنداوي",
+    "language": "ar",
+    "genres": ["history", "biography"],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/41539374.pdf",
+    "sha256": "2909e6821d9090f22e5bc9fb4a2d4a22e55fb3ab80085279812e2f11817129ce"
+  }
+]

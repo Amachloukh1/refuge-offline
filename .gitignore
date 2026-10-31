@@ -13,5 +13,7 @@ content/videos/
 content/maps/
 content/zim/
 content/wiki-reader/
+content/books/
+content/books.catalog.json
 private/
 *.partial
