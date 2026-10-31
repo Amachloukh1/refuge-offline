@@ -419,6 +419,9 @@ export default function App() {
             <Preparation
               key={`${page}-${tab}-${state.lang}`}
               t={t}
+              lang={state.lang}
+              bought={state.bought}
+              toggleBought={(id) => toggle("bought", id)}
               checked={state.checked}
               toggleCheck={(id) => toggle("checked", id)}
               family={state.family}

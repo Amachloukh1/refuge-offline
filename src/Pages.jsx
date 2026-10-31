@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Icon, Button, Progress, Notice, External } from "./components";
 import { checklistIds } from "./data";
 import { languages } from "./i18n";
+import Equipment, { equipmentLabel } from "./Equipment";
 
 export function Health({ t, onAid, documents }) {
   return (
@@ -221,17 +222,28 @@ export function Videos({ t }) {
 }
 export function Preparation({
   t,
+  lang,
+  bought,
+  toggleBought,
   checked,
   toggleCheck,
   family,
   setFamily,
   initialTab,
 }) {
-  const [tab, setTab] = useState(initialTab === "family" ? "family" : "check");
+  const [tab, setTab] = useState(
+    ["family", "equipment"].includes(initialTab) ? initialTab : "check",
+  );
   const [saved, setSaved] = useState(false);
   return (
     <>
       <div className="tabs section-tabs">
+        <button
+          onClick={() => setTab("equipment")}
+          className={tab === "equipment" ? "active" : ""}
+        >
+          {equipmentLabel(lang)}
+        </button>
         <button
           onClick={() => setTab("check")}
           className={tab === "check" ? "active" : ""}
@@ -245,7 +257,9 @@ export function Preparation({
           {t.familyPlan}
         </button>
       </div>
-      {tab === "check" ? (
+      {tab === "equipment" ? (
+        <Equipment lang={lang} bought={bought} toggleBought={toggleBought} />
+      ) : tab === "check" ? (
         <div className="two-columns preparation-columns">
           <section className="panel checklist">
             {checklistIds.map((id, i) => (
@@ -274,6 +288,10 @@ export function Preparation({
             <p>{t.stepsDone}</p>
             <Progress value={(checked.length / 8) * 100} />
             <p>{t.prepareSub}</p>
+            <Button variant="outline wide" onClick={() => setTab("equipment")}>
+              {equipmentLabel(lang)}
+              <Icon name="ShoppingCart" size={18} />
+            </Button>
             <Button variant="outline wide" onClick={() => setTab("family")}>
               {t.family}
               <Icon name="ArrowRight" size={18} />

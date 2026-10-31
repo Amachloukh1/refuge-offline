@@ -3219,6 +3219,63 @@ td strong {
 .weather-offline {
   margin-bottom: 24px;
 }
+.equipment-section {
+  display: grid;
+  gap: 22px;
+}
+.equipment-grid {
+  align-items: stretch;
+}
+.equipment-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.equipment-card h3,
+.equipment-card p {
+  margin: 0;
+}
+.equipment-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--muted, #596854);
+}
+.equipment-detail {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.equipment-price,
+.equipment-total {
+  font-size: 1.25rem;
+}
+.equipment-card small {
+  line-height: 1.6;
+}
+.equipment-owned {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #dce3d7;
+}
+.equipment-filters {
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+.energy-estimate input {
+  display: block;
+  max-width: 150px;
+  margin-block: 12px;
+  padding: 10px;
+}
+.energy-estimate output {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
 .map-plan-grid {
   display: flex;
   gap: 28px;

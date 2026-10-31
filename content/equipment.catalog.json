@@ -1,0 +1,392 @@
+[
+  {
+    "id": "solar",
+    "icon": "BatteryCharging",
+    "priority": "energy",
+    "priceEur": 408,
+    "seller": "EcoFlow Germany GmbH",
+    "observedAt": "2026-10-31",
+    "url": "https://www.amazon.de/dp/B0BQVYT4WJ",
+    "text": {
+      "fr": [
+        "EcoFlow RIVER 2 + panneau 110 W",
+        "256 Wh LiFePO4, sortie 230 V de 300 W continus. Kit solaire pour le mini-PC, l’éclairage et les téléphones.",
+        "Panneau 110 W inclus. Vérifier le câble solaire fourni. Entrée 11–30 V, 8 A, 110 W max ; garder la station au sec. Ne pas recharger sous 0 °C. Tester le démarrage et l’arrêt hors Internet."
+      ],
+      "de": [
+        "EcoFlow RIVER 2 + 110-W-Solarpanel",
+        "256 Wh LiFePO4, 230-V-Ausgang mit 300 W Dauerleistung. Für Mini-PC, Licht und Telefone.",
+        "110-W-Panel enthalten. Solarkabel prüfen. Eingang 11–30 V, 8 A, maximal 110 W; Station trocken halten. Nicht unter 0 °C laden. Start und Abschalten ohne Internet testen."
+      ],
+      "en": [
+        "EcoFlow RIVER 2 + 110 W panel",
+        "256 Wh LiFePO4, 230 V AC with 300 W continuous output. Solar kit for the mini-PC, lights and phones.",
+        "110 W panel included. Check supplied solar cable. Input 11–30 V, 8 A, 110 W maximum; keep station dry. Do not charge below 0°C. Test startup and shutdown offline."
+      ],
+      "ar": [
+        "EcoFlow RIVER 2 + لوح 110 واط",
+        "بطارية LiFePO4 سعة 256 واط ساعة، خرج 230 فولت بقدرة مستمرة 300 واط للحاسوب والإضاءة والهواتف.",
+        "اللوح مشمول. تحقق من الكابل. المدخل 11–30 فولت و8 أمبير و110 واط كحد أقصى. أبق المحطة جافة ولا تشحن تحت الصفر. جرّب التشغيل والإطفاء دون إنترنت."
+      ]
+    },
+    "source": "https://eu.ecoflow.com/products/river-2-110w-portable-solar-panel"
+  },
+  {
+    "id": "radio",
+    "icon": "RadioTower",
+    "priority": "essential",
+    "priceEur": 29.99,
+    "seller": "Amazon",
+    "observedAt": "2026-10-31",
+    "url": "https://www.amazon.de/dp/B06XWZ41RT",
+    "text": {
+      "fr": [
+        "Panasonic RF-2400DEG-K",
+        "Radio FM/AM à piles ou sur secteur pour écouter les consignes publiques sans Internet.",
+        "Prévoir 4 piles AA et un jeu de rechange. Pas de DAB+, de radio militaire ni de météo satellite. Noter les fréquences locales et tester la réception chez vous."
+      ],
+      "de": [
+        "Panasonic RF-2400DEG-K",
+        "UKW/MW-Radio mit Batterie- oder Netzbetrieb für öffentliche Meldungen ohne Internet.",
+        "4 AA-Batterien und Ersatzsatz einplanen. Kein DAB+, Militärfunk oder Satellitenwetter. Lokale Frequenzen notieren und Empfang zu Hause prüfen."
+      ],
+      "en": [
+        "Panasonic RF-2400DEG-K",
+        "Battery/mains FM/AM radio for public instructions without Internet.",
+        "Plan 4 AA batteries and a spare set. No DAB+, military radio or satellite weather. Write down local stations and test reception at home."
+      ],
+      "ar": [
+        "Panasonic RF-2400DEG-K",
+        "راديو FM/AM بالبطاريات أو الكهرباء لسماع التعليمات العامة دون إنترنت.",
+        "جهز 4 بطاريات AA وطقم احتياطي. لا يدعم DAB+ أو اتصالات الجيش أو طقس الأقمار الصناعية. سجّل ترددات محطاتك المحلية واختبر الاستقبال."
+      ]
+    },
+    "source": "https://www.panasonic.com/fr/consumer/audio-video/radios/rf-2400d.specs.html"
+  },
+  {
+    "id": "charger",
+    "icon": "BatteryCharging",
+    "priority": "energy",
+    "priceEur": 28.99,
+    "seller": "Amazon",
+    "observedAt": "2026-10-31",
+    "url": "https://www.amazon.de/dp/B0B5X4PKW1",
+    "text": {
+      "fr": [
+        "eneloop Smart + 4 AA 2000 mAh",
+        "Chargeur secteur 100–240 V pour 1 à 4 accus Ni-MH AA/AAA. Quatre AA inclus.",
+        "Recharge annoncée de 7 h pour quatre AA. Les AAA de la frontale sont à acheter séparément. Ne jamais recharger des piles alcalines ni mélanger piles usées et neuves."
+      ],
+      "de": [
+        "eneloop Smart + 4 AA 2000 mAh",
+        "100–240-V-Ladegerät für 1–4 Ni-MH-AA/AAA-Akkus. Vier AA enthalten.",
+        "Angegebene Ladezeit für vier AA: 7 h. AAA für die Stirnlampe separat kaufen. Keine Alkalibatterien laden; keine alten und neuen Zellen mischen."
+      ],
+      "en": [
+        "eneloop Smart + 4 AA 2000 mAh",
+        "100–240 V mains charger for 1–4 Ni-MH AA/AAA cells. Four AA included.",
+        "Advertised 7 h charging for four AA. Buy headlamp AAA separately. Never recharge alkaline cells or mix old and new batteries."
+      ],
+      "ar": [
+        "eneloop Smart + 4 AA 2000 mAh",
+        "شاحن كهربائي 100–240 فولت لعدد 1–4 بطاريات Ni-MH من نوع AA/AAA، مع أربع AA.",
+        "مدة الشحن المعلنة لأربع AA هي 7 ساعات. بطاريات AAA للمصباح منفصلة. لا تشحن القلوية ولا تخلط القديمة والجديدة."
+      ]
+    }
+  },
+  {
+    "id": "headlamp",
+    "icon": "Flashlight",
+    "priority": "essential",
+    "priceEur": 26.27,
+    "seller": "Tec & More",
+    "observedAt": "2026-10-31",
+    "url": "https://www.amazon.de/dp/B0FBT74D4R",
+    "text": {
+      "fr": [
+        "Petzl TIKKINA 300 lm · rouge",
+        "Frontale pour garder les mains libres pendant les soins, la cuisine et les déplacements.",
+        "3 AAA ou batterie Petzl CORE optionnelle. Protection IPX4 contre les éclaboussures. Prévoir une lampe par personne et des piles compatibles."
+      ],
+      "de": [
+        "Petzl TIKKINA 300 lm · rot",
+        "Stirnlampe für freie Hände bei Erster Hilfe, Kochen und Bewegung.",
+        "3 AAA oder optionaler Petzl-CORE-Akku. IPX4-Spritzwasserschutz. Eine Lampe pro Person und passende Batterien einplanen."
+      ],
+      "en": [
+        "Petzl TIKKINA 300 lm · red",
+        "Hands-free light for first aid, cooking and moving around.",
+        "3 AAA or optional Petzl CORE battery. IPX4 splash protection. Plan one lamp per person and matching spare batteries."
+      ],
+      "ar": [
+        "Petzl TIKKINA 300 lm · أحمر",
+        "مصباح رأس لترك اليدين حرتين أثناء الإسعاف والطبخ والتنقل.",
+        "3 بطاريات AAA أو بطارية CORE اختيارية. مقاوم للرذاذ IPX4. مصباح لكل فرد وبطاريات مناسبة."
+      ]
+    }
+  },
+  {
+    "id": "powerbank",
+    "icon": "Battery",
+    "priority": "energy",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=USB-C+Powerbank+20000mAh",
+    "text": {
+      "fr": [
+        "Batterie USB-C · environ 20 000 mAh",
+        "Pour téléphone, éclairage USB et petits appareils compatibles. Choisir un modèle et un numéro de série hors rappel fabricant.",
+        "Le modèle Anker Zolo A1689 repéré pendant la recherche fait l’objet d’un rappel de certains lots : il est exclu des recommandations. Une batterie USB ne fournit pas forcément le voltage requis par le mini-PC."
+      ],
+      "de": [
+        "USB-C-Powerbank · etwa 20.000 mAh",
+        "Für Telefon, USB-Licht und passende Kleingeräte. Modell und Seriennummer außerhalb von Hersteller-Rückrufen wählen.",
+        "Anker Zolo A1689 wurde wegen eines Rückrufs bestimmter Chargen aus der Auswahl entfernt. USB-Powerbanks liefern nicht automatisch die vom Mini-PC benötigte Spannung."
+      ],
+      "en": [
+        "USB-C power bank · around 20,000 mAh",
+        "For phones, USB lights and compatible small devices. Choose a model and serial number unaffected by manufacturer recalls.",
+        "The Anker Zolo A1689 found during research was excluded because certain batches were recalled. A USB power bank may not supply the voltage required by the mini-PC."
+      ],
+      "ar": [
+        "بطارية USB-C · نحو 20000 mAh",
+        "للهاتف وإضاءة USB والأجهزة الصغيرة المتوافقة. اختر طرازاً ورقماً تسلسلياً غير مشمول باستدعاء الشركة.",
+        "تم استبعاد Anker Zolo A1689 لأن بعض الدفعات خاضعة للاستدعاء. بطارية USB لا توفر بالضرورة الجهد المطلوب للحاسوب."
+      ]
+    },
+    "source": "https://www.anker.com/eu-de/rc2506/"
+  },
+  {
+    "id": "water",
+    "icon": "Droplets",
+    "priority": "essential",
+    "priceEur": 15.46,
+    "seller": "Amazon",
+    "observedAt": "2026-10-31",
+    "url": "https://www.amazon.de/dp/B00O4FRRH6",
+    "text": {
+      "fr": [
+        "hünersdorff STANDARD · 22 L avec bec",
+        "Un bidon HDPE alimentaire pour stocker de l’eau potable. Récipient vendu vide.",
+        "22 L pèsent environ 22 kg d’eau : choisir plus petit si nécessaire. Nettoyer et utiliser uniquement pour l’eau potable ; dater les remplissages. Un bidon ne filtre et ne désinfecte pas l’eau."
+      ],
+      "de": [
+        "hünersdorff STANDARD · 22 L mit Rohr",
+        "Lebensmittelechter HDPE-Kanister zur Trinkwasserlagerung. Wird leer verkauft.",
+        "22 L wiegen rund 22 kg Wasser; bei Bedarf kleiner wählen. Reinigen und nur für Trinkwasser nutzen; Fülldatum notieren. Filtert oder desinfiziert nicht."
+      ],
+      "en": [
+        "hünersdorff STANDARD · 22 L with spout",
+        "Food-grade HDPE container for drinking-water storage. Sold empty.",
+        "22 L weighs about 22 kg of water; choose smaller if needed. Clean and reserve for drinking water; date refills. Does not filter or disinfect water."
+      ],
+      "ar": [
+        "hünersdorff STANDARD · 22 لتر مع فوهة",
+        "حاوية HDPE مناسبة للأغذية لتخزين ماء الشرب، تباع فارغة.",
+        "22 لتراً تزن نحو 22 كغ من الماء؛ اختر أصغر عند الحاجة. نظّفها وخصصها لماء الشرب وسجّل التعبئة. لا ترشّح الماء ولا تعقّمه."
+      ]
+    }
+  },
+  {
+    "id": "firstaid",
+    "icon": "HeartPulse",
+    "priority": "essential",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Erste%20Hilfe%20Set%20DIN%2013164%20Handschuhe%20Kompressen",
+    "text": {
+      "fr": [
+        "Trousse de premiers secours",
+        "Gants nitrile, compresses stériles, pansements, bandes, couverture de survie et ciseaux.",
+        "Vérifier les dates et apprendre les gestes. Ajouter vos traitements prescrits et ordonnances ; pas de médicaments choisis automatiquement par l’IA."
+      ],
+      "de": [
+        "Erste-Hilfe-Set",
+        "Nitrilhandschuhe, sterile Kompressen, Pflaster, Verbände, Rettungsdecke und Schere.",
+        "Ablaufdaten prüfen und Erste Hilfe lernen. Eigene verordnete Medikamente und Rezepte ergänzen; keine automatische Medikamentenwahl durch KI."
+      ],
+      "en": [
+        "First-aid kit",
+        "Nitrile gloves, sterile dressings, plasters, bandages, emergency blanket and scissors.",
+        "Check expiry dates and practise first aid. Add prescribed medicines and prescriptions; no automatic AI selection of medication."
+      ],
+      "ar": [
+        "حقيبة إسعاف أولي",
+        "قفازات نيتريل وشاش معقم ولصقات وضمادات وبطانية نجاة ومقص.",
+        "تحقق من الصلاحية وتعلم الإسعاف. أضف أدويتك الموصوفة والوصفات؛ لا يختار الذكاء الاصطناعي الدواء تلقائياً."
+      ]
+    }
+  },
+  {
+    "id": "food",
+    "icon": "Utensils",
+    "priority": "essential",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Dosenoeffner%20manuell",
+    "text": {
+      "fr": [
+        "Aliments habituels + ouvre-boîte manuel",
+        "Conserves prêtes à manger, légumineuses cuites, fruits secs et aliments adaptés aux allergies et aux enfants.",
+        "Acheter au supermarché selon votre budget, dater et faire tourner. Prévoir de l’eau pour les aliments secs. Garder un menu utilisable sans cuisson."
+      ],
+      "de": [
+        "Lebensmittel + Handdosenöffner",
+        "Verzehrfertige Konserven, gekochte Hülsenfrüchte, Trockenobst; Allergien und Kinder berücksichtigen.",
+        "Im Supermarkt nach Budget kaufen, datieren und rotieren. Wasser für Trockenware einplanen. Mahlzeiten ohne Kochen vorsehen."
+      ],
+      "en": [
+        "Familiar food + manual can opener",
+        "Ready-to-eat tins, cooked pulses, dried fruit and food suited to allergies and children.",
+        "Buy within budget at a supermarket, date and rotate. Dry food needs extra water. Keep meals that need no cooking."
+      ],
+      "ar": [
+        "طعام معتاد + فتاحة علب يدوية",
+        "معلبات جاهزة وبقول مطبوخة وفواكه مجففة مع مراعاة الحساسية والأطفال.",
+        "اشتر حسب الميزانية ودوّر المخزون. الطعام الجاف يحتاج ماء إضافياً. جهّز وجبات لا تحتاج طبخاً."
+      ]
+    }
+  },
+  {
+    "id": "hygiene",
+    "icon": "Droplets",
+    "priority": "essential",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Hygiene%20Notfall%20Seife%20Muellbeutel%20Toilettenpapier",
+    "text": {
+      "fr": [
+        "Hygiène et toilettes",
+        "Savon, sacs résistants, papier toilette, protections périodiques et produits pour bébé si nécessaire.",
+        "Séparer déchets et eau potable ; prévoir le lavage des mains. Ne pas mélanger les produits de nettoyage."
+      ],
+      "de": [
+        "Hygiene und Toilette",
+        "Seife, stabile Müllbeutel, Toilettenpapier, Periodenprodukte und bei Bedarf Babybedarf.",
+        "Abfall und Trinkwasser trennen; Händewaschen ermöglichen. Reinigungsmittel nicht mischen."
+      ],
+      "en": [
+        "Hygiene and toilet supplies",
+        "Soap, strong waste bags, toilet paper, period products and baby supplies if needed.",
+        "Separate waste from drinking water; plan hand washing. Do not mix cleaning chemicals."
+      ],
+      "ar": [
+        "النظافة والمرحاض",
+        "صابون وأكياس نفايات قوية وورق مرحاض ومستلزمات الدورة والرضع حسب الحاجة.",
+        "افصل النفايات عن ماء الشرب ووفّر غسل اليدين. لا تخلط مواد التنظيف."
+      ]
+    }
+  },
+  {
+    "id": "warmth",
+    "icon": "Thermometer",
+    "priority": "essential",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Schlafsack%20Isomatte%20warme%20Decke",
+    "text": {
+      "fr": [
+        "Chaleur, vêtements et couchage",
+        "Couches chaudes, chaussettes sèches, couvertures, sac de couchage et matelas isolant adaptés à la température.",
+        "Isoler du sol et garder les vêtements secs. Ne jamais chauffer l’intérieur avec barbecue ou réchaud de camping."
+      ],
+      "de": [
+        "Wärme und Schlafplatz",
+        "Warme Schichten, trockene Socken, Decken, Schlafsack und temperaturgerechte Isomatte.",
+        "Vom Boden isolieren und Kleidung trocken halten. Grill oder Campingkocher niemals als Innenraumheizung nutzen."
+      ],
+      "en": [
+        "Warmth and bedding",
+        "Warm layers, dry socks, blankets, sleeping bag and insulated mat suited to the temperature.",
+        "Insulate from the ground and keep clothing dry. Never use a barbecue or camping stove to heat indoors."
+      ],
+      "ar": [
+        "الدفء والنوم",
+        "طبقات دافئة وجوارب جافة وبطانيات وكيس نوم وحصيرة عازلة مناسبة للبرد.",
+        "اعزل الجسم عن الأرض وحافظ على الجفاف. لا تستخدم الشواية أو موقد التخييم لتدفئة الداخل."
+      ]
+    }
+  },
+  {
+    "id": "alarms",
+    "icon": "ShieldCheck",
+    "priority": "extra",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=CO%20Melder%20EN%2050291%20Rauchmelder%20EN%2014604",
+    "text": {
+      "fr": [
+        "Détecteurs fumée et monoxyde de carbone",
+        "Détecteur de fumée et, selon les appareils à combustion, détecteur CO adapté.",
+        "Choisir des appareils conformes aux normes applicables et suivre la notice de pose. Un détecteur ne rend pas un réchaud sûr à l’intérieur."
+      ],
+      "de": [
+        "Rauch- und Kohlenmonoxidmelder",
+        "Rauchmelder und bei passenden Verbrennungsgeräten geeigneter CO-Melder.",
+        "Passende Normen und Montageanleitung beachten. Ein Melder macht einen Campingkocher in Innenräumen nicht sicher."
+      ],
+      "en": [
+        "Smoke and carbon monoxide alarms",
+        "Smoke alarm and, where combustion appliances warrant it, a suitable CO alarm.",
+        "Choose compliant devices and follow installation instructions. An alarm does not make indoor camping-stove use safe."
+      ],
+      "ar": [
+        "إنذار دخان وأول أكسيد الكربون",
+        "كاشف دخان وكاشف CO مناسب عند وجود أجهزة احتراق.",
+        "اختر أجهزة مطابقة للمعايير واتبع التركيب. الكاشف لا يجعل موقد التخييم آمناً في الداخل."
+      ]
+    }
+  },
+  {
+    "id": "documents",
+    "icon": "FileText",
+    "priority": "essential",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Dokumententasche%20wasserdicht",
+    "text": {
+      "fr": [
+        "Espèces, papiers et contacts",
+        "Petites coupures adaptées à votre foyer, copies des pièces d’identité, assurance, ordonnances et contacts sur papier.",
+        "Préparer une pochette étanche et un point de rendez-vous familial. Garder les originaux et données sensibles en lieu sûr ; ne pas les publier sur GitHub."
+      ],
+      "de": [
+        "Bargeld, Dokumente und Kontakte",
+        "Kleine Scheine passend zum Haushalt, Ausweiskopien, Versicherung, Rezepte und Kontakte auf Papier.",
+        "Wasserdichte Mappe und Familientreffpunkt vorbereiten. Originale und sensible Daten sicher aufbewahren, nicht auf GitHub veröffentlichen."
+      ],
+      "en": [
+        "Cash, documents and contacts",
+        "Small banknotes suited to your household, ID copies, insurance, prescriptions and paper contacts.",
+        "Prepare a waterproof pouch and family meeting point. Keep originals and sensitive information secure; do not publish them on GitHub."
+      ],
+      "ar": [
+        "نقود ووثائق وأرقام اتصال",
+        "نقود بفئات صغيرة حسب الأسرة ونسخ هوية وتأمين ووصفات وأرقام على الورق.",
+        "حقيبة مقاومة للماء ونقطة لقاء للأسرة. احفظ الأصول والبيانات الحساسة بأمان ولا تنشرها على GitHub."
+      ]
+    }
+  },
+  {
+    "id": "navigation",
+    "icon": "Map",
+    "priority": "extra",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Kompass%20Wanderkarte%20Sachsen",
+    "text": {
+      "fr": [
+        "Carte papier, boussole et sifflet",
+        "Carte de Saxe et des itinéraires utiles, boussole et sifflet sans batterie.",
+        "Apprendre à lire la carte. Prévoir chaussures solides et sac d’évacuation. Le GPS USB actuel ne reçoit ni radio ni alertes météo."
+      ],
+      "de": [
+        "Papierkarte, Kompass und Pfeife",
+        "Sachsenkarte und wichtige Wege, Kompass und Pfeife ohne Batterie.",
+        "Kartenlesen üben. Feste Schuhe und Notgepäck vorbereiten. Der vorhandene USB-GPS empfängt weder Radio noch Wetterwarnungen."
+      ],
+      "en": [
+        "Paper map, compass and whistle",
+        "Map of Saxony and useful routes, compass and battery-free whistle.",
+        "Practise map reading. Prepare sturdy shoes and evacuation bag. Your USB GPS receives neither broadcast radio nor weather alerts."
+      ],
+      "ar": [
+        "خريطة ورقية وبوصلة وصفارة",
+        "خريطة ساكسونيا والطرق المهمة وبوصلة وصفارة دون بطارية.",
+        "تدرّب على قراءة الخريطة وجهز أحذية قوية وحقيبة إخلاء. GPS الحالي لا يستقبل الراديو أو تحذيرات الطقس."
+      ]
+    }
+  }
+]
