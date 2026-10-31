@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 $configPath = Join-Path $PSScriptRoot 'private\share-access.json'
 $config = Get-Content -LiteralPath $configPath -Raw | ConvertFrom-Json
-if ([datetimeoffset]::Parse($config.expiresAt) -le [datetimeoffset]::UtcNow) {
+if ([datetimeoffset]$config.expiresAt -le [datetimeoffset]::UtcNow) {
     throw 'Ce partage a expire. Ce lanceur ne renouvelle pas sa duree.'
 }
 if (-not (Test-Path -LiteralPath $config.file -PathType Leaf)) { throw 'Archive inaccessible.' }
@@ -22,5 +22,5 @@ $relay = Start-Process -FilePath $nodePath -ArgumentList 'scripts/serve-share.mj
 $relay.Id | Set-Content -LiteralPath $pidPath
 Start-Sleep -Seconds 2
 if ($relay.HasExited) { throw 'Le relais a echoue. Lire runtime/share-download-error.log.' }
-Write-Output ('Relais REFUGE demarre. Expiration : ' + $config.expiresAt)
+Write-Output ('Relais REFUGE demarre. Expiration UTC : ' + ([datetimeoffset]$config.expiresAt).ToUniversalTime().ToString('o'))
 Write-Output 'Tailscale doit rester connecte. Ce lanceur ne modifie aucun acces public.'

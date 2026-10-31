@@ -38,3 +38,14 @@ Pour retirer uniquement ce partage avant l'expiration :
 ```
 
 Ne pas joindre le mot de passe dans l'URL. Transmettre de préférence le lien et le mot de passe par des canaux séparés. Les destinataires conservent naturellement toute copie déjà téléchargée après l'expiration.
+
+## Contrôles du 31 octobre 2026
+
+- ZIP de distribution : 38 257 fichiers, 28 485 676 537 octets ; test CRC complet par 7-Zip réussi, aucun membre interdit par le filtre de distribution.
+- SHA-256 local et après relecture intégrale du NAS : `36ac54c01a2f753cc0d9336d4fbdf86cef8a8cc93c88fce3ae31b485f4f08078`.
+- Trois tests ciblés réussis : filtrage des secrets/données privées et serveur temporaire (authentification, méthodes, chemins, Range, expiration).
+- Accès réel par le relais public Funnel vérifié en utilisant une adresse obtenue par DNS public, avec le nom TLS original et validation normale du certificat : HTTP 401 sans identifiants, page et HEAD authentifiés HTTP 200, reprise HTTP 206, contenu et empreinte attendus.
+- Relais lié uniquement à `127.0.0.1:8109`. Funnel autorisé uniquement sur 8443 ; le service 443 existant reste privé. Relance Windows et absence de doublon vérifiées.
+- `npm audit --omit=dev --audit-level=high` : aucune vulnérabilité signalée.
+
+Le lien, le mot de passe et la configuration privée ne sont pas enregistrés dans Git. La sauvegarde personnelle initiale reste inchangée.
