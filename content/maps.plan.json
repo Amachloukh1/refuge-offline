@@ -1,0 +1,33 @@
+{
+  "estimatedAt": "2026-10-31",
+  "source": "https://build.protomaps.com/20261030.pmtiles",
+  "method": "go-pmtiles 1.31.2 extract --dry-run",
+  "maxzoom": 14,
+  "installed": false,
+  "recommendedFreeBytes": 40000000000,
+  "packs": [
+    {
+      "id": "europe",
+      "bounds": [
+        -32,
+        34,
+        70,
+        83
+      ],
+      "estimatedBytes": 28000000000,
+      "estimatedTransferBytes": 29000000000
+    },
+    {
+      "id": "north-africa",
+      "bounds": [
+        -18,
+        8,
+        38,
+        38
+      ],
+      "estimatedBytes": 2600000000,
+      "estimatedTransferBytes": 2700000000
+    }
+  ],
+  "notes": "Rounded CLI estimates for rectangular regions including neighbouring areas; not country-boundary extracts. No tiles downloaded by dry-run. No routing, satellite imagery or terrain DEM included. Expanded rectangle includes European archipelagos and all Mauritania/Sudan latitudes, plus neighbouring areas."
+}

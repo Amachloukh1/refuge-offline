@@ -1,4 +1,5 @@
 import { ar } from "./arabic.js";
+import { fieldText } from "./field-text.js";
 import { offlineText } from "./offline-translations.js";
 const fr = {
   tagline: "Votre essentiel, hors ligne.",
@@ -913,6 +914,8 @@ Object.assign(ar, {
 for (const [lang, dictionary] of Object.entries({ fr, en, de, ar }))
   Object.assign(dictionary, offlineText[lang]);
 export const translations = { fr, en, de, ar };
+for (const [lang, dictionary] of Object.entries(translations))
+  Object.assign(dictionary, fieldText[lang]);
 export const languages = {
   fr: "Français",
   de: "Deutsch",

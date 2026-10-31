@@ -414,7 +414,7 @@ export default function App() {
           )}
           {page === "weather" && <WeatherRadio t={t} />}
           {page === "videos" && <LocalVideos t={t} />}
-          {page === "wiki" && <LocalWiki t={t} />}
+          {page === "wiki" && <LocalWiki t={t} lang={state.lang} />}
           {page === "prepare" && (
             <Preparation
               key={`${page}-${tab}-${state.lang}`}

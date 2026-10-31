@@ -1,0 +1,218 @@
+[
+  {
+    "id": "first-72-hours",
+    "title": {"fr":"Premières 72 heures : choisir un lieu sûr et ordonner les priorités","de":"Die ersten 72 Stunden: sicheren Ort wählen und Prioritäten setzen","en":"First 72 hours: choose a safe place and set priorities","ar":"الساعات الـ72 الأولى: اختيار مكان آمن وترتيب الأولويات"},
+    "intro": {"fr":"Un scénario d'isolement sert à préparer des décisions, sans prouver que toute aide a disparu ni garantir la survie.","de":"Ein Isolationsszenario hilft bei Entscheidungen; es beweist weder das Ende jeder Hilfe noch garantiert es Überleben.","en":"An isolation scenario helps plan decisions; it neither proves all help is gone nor guarantees survival.","ar":"سيناريو العزلة يساعد على التخطيط، ولا يثبت اختفاء المساعدة ولا يضمن البقاء."},
+    "image":"/illustrations/independence-priorities.svg",
+    "body": {
+      "fr":[
+        "Commencer par une pause d'observation à distance des dangers. Noter ce qui est réellement connu, ce qui manque et l'heure. Le silence du téléphone ne prouve pas que vous êtes seul ; conserver radio, contacts et possibilités de signalement.",
+        "Évaluer le lieu avant de s'y installer : fumée, odeur suspecte, eau montante, éléments qui tombent, accès bloqué ou bâtiment endommagé imposent de rechercher une option plus sûre. Ne pas entrer dans une structure douteuse pour récupérer du matériel.",
+        "Sur une feuille, comparer deux lieux possibles : protection météo, température supportable, accès à l'eau sûre, toilettes, sortie et distance à parcourir. Un refuge techniquement équipé mais inaccessible ou dangereux ne constitue pas un bon choix.",
+        "Préparer une poche immédiatement transportable : eau sûre, éclairage, chaussures, vêtements adaptés, carte papier, contacts et traitements personnels déjà prescrits. Ne pas retarder une sortie urgente pour compléter cette liste ; ajuster le poids à votre mobilité.",
+        "Pour les premières heures, identifier eau et repas déjà sûrs, endroit sec pour dormir et moyen d'information. Séparer les contenants d'eau potable des autres. Reporter les grands travaux, longues explorations et essais de matériel inconnu.",
+        "Pendant le premier jour, dresser un inventaire papier : quantité réellement utilisable, emplacement, date, besoin de cuisson et dépendance électrique. Photographier les étiquettes si utile, puis recopier les informations essentielles sans dépendre du téléphone.",
+        "Sur les jours deux et trois, tester une journée sobre avec les réserves existantes : repas, hygiène, éclairage, consultation des documents puis arrêt du PC. Noter les consommations mesurées ; corriger les manques avant de complexifier le système.",
+        "Écrire vos critères de repli : eau sûre épuisée sans solution confirmée, logement dangereux, froid ou chaleur non maîtrisés, besoin médical dépassant vos moyens. Préparer itinéraire principal, alternative et sac ; suivre les instructions disponibles correspondant au danger.",
+        "À chaque matin et soir, mettre à jour situation, ressources et prochaine décision. Les horaires proposés ici sont une organisation REFUGE, pas une règle universelle de survie. Une crise chimique, radiologique, un incendie ou une crue exigent leurs consignes spécifiques."
+      ],
+      "de":[
+        "Zuerst aus sicherem Abstand beobachten. Tatsächlich Bekanntes, offene Fragen und Uhrzeit notieren. Ein stummes Telefon beweist nicht, dass Sie allein sind; Radio, Kontakte und Möglichkeiten zur Meldung bereithalten.",
+        "Den Ort vor dem Einrichten prüfen: Rauch, auffälliger Geruch, steigendes Wasser, herabfallende Teile, versperrter Ausgang oder Gebäudeschäden sprechen für eine sicherere Alternative. Für Ausrüstung kein zweifelhaftes Gebäude betreten.",
+        "Zwei mögliche Orte auf Papier vergleichen: Wetterschutz, erträgliche Temperatur, sicheres Wasser, Toilette, Ausgang und Weglänge. Ein technisch gut ausgestatteter, aber gefährlicher oder unerreichbarer Ort ist kein guter Schutzplatz.",
+        "Eine sofort tragbare Tasche mit sicherem Wasser, Licht, festen Schuhen, passender Kleidung, Papierkarte, Kontakten und bereits verordneten persönlichen Medikamenten vorbereiten. Einen dringenden Aufbruch nicht zum Fertigpacken verzögern; Gewicht an die Mobilität anpassen.",
+        "Für die ersten Stunden sichere Getränke und Mahlzeiten, einen trockenen Schlafplatz und Informationen organisieren. Trinkwasserbehälter von anderen Behältern trennen. Größere Arbeiten, lange Erkundungen und Tests unbekannter Geräte verschieben.",
+        "Am ersten Tag einen Papierbestand anlegen: tatsächlich nutzbare Menge, Lagerort, Datum, Kochbedarf und Stromabhängigkeit. Etiketten bei Bedarf fotografieren, wichtige Angaben aber zusätzlich ohne Telefon verfügbar machen.",
+        "Am zweiten und dritten Tag einen sparsamen Alltag mit vorhandenem Vorrat erproben: Essen, Hygiene, Licht, Dokumente lesen und den PC wieder ausschalten. Verbrauch messen und Lücken schließen, bevor das System aufwendiger wird.",
+        "Kriterien für einen Ortswechsel festhalten: sicheres Wasser ohne bestätigte Alternative verbraucht, gefährliche Unterkunft, nicht beherrschbare Kälte oder Hitze, medizinischer Bedarf außerhalb der eigenen Möglichkeiten. Hauptweg, Alternative und Tasche vorbereiten; verfügbare gefahrenspezifische Anweisungen befolgen.",
+        "Morgens und abends Lage, Vorräte und nächste Entscheidung aktualisieren. Diese Zeitplanung ist ein REFUGE-Organisationsvorschlag, keine allgemeine Überlebensregel. Chemie- und Strahlenereignisse, Brände und Hochwasser erfordern jeweils eigene Verhaltensregeln."
+      ],
+      "en":[
+        "Begin by observing from a safe distance. Write down confirmed facts, unanswered questions and the time. A silent phone does not prove you are alone; preserve radio access, contacts and ways to signal your situation.",
+        "Assess a place before settling in: smoke, unusual smells, rising water, falling material, blocked exits or structural damage call for a safer option. Do not enter a questionable structure to retrieve equipment.",
+        "Compare two possible locations on paper: weather protection, tolerable temperature, safe water, toilets, exits and travel distance. A well-equipped but dangerous or inaccessible building is a poor shelter choice.",
+        "Prepare an immediately portable bag with safe water, lighting, sturdy shoes, suitable clothing, paper map, contacts and existing prescribed medicines. Never delay an urgent exit to finish packing; match its weight to your mobility.",
+        "For the first hours, identify safe drinks and meals, a dry sleeping place and an information source. Separate drinking-water containers from other containers. Postpone major works, lengthy exploration and experiments with unfamiliar equipment.",
+        "During day one, make a paper inventory: usable quantity, location, dates, cooking requirements and electricity dependence. Photograph labels if useful, but copy essential information so it remains available without a phone.",
+        "During days two and three, rehearse a low-consumption day using current supplies: meals, hygiene, lighting, document consultation and shutting down the computer. Record measured consumption and address gaps before adding complexity.",
+        "Write relocation triggers: safe water exhausted without a confirmed alternative, unsafe accommodation, unmanageable heat or cold, or medical needs beyond your resources. Prepare a main route, alternative and bag; follow available instructions for the specific hazard.",
+        "Each morning and evening, update the situation, resources and next decision. This schedule is a REFUGE planning suggestion, not a universal survival rule. Chemical incidents, radiation, fire and floods each require their specific protective guidance."
+      ],
+      "ar":[
+        "ابدأ بالمراقبة من مسافة آمنة. سجّل الحقائق المؤكدة والأسئلة المفتوحة والوقت. صمت الهاتف لا يثبت أنك وحدك؛ احتفظ بالراديو وجهات الاتصال ووسائل الإشارة إلى موقعك.",
+        "افحص المكان قبل الاستقرار: الدخان والرائحة غير المعتادة والماء الصاعد والأجزاء المتساقطة والمخارج المسدودة وتضرر المبنى تستدعي بديلًا أكثر أمانًا. لا تدخل مبنًى مشكوكًا في سلامته لاستعادة معدات.",
+        "قارن مكانين على الورق: الحماية من الطقس وحرارة محتملة وماء آمن ومرحاض ومخرج ومسافة الوصول. المكان المجهز تقنيًا لا يصلح مأوى إذا كان خطرًا أو يصعب الوصول إليه.",
+        "جهّز حقيبة قابلة للحمل فورًا فيها ماء آمن وإضاءة وحذاء متين وملابس مناسبة وخريطة ورقية وجهات اتصال وأدوية موصوفة سابقًا. لا تؤخر الخروج العاجل لإتمامها؛ اجعل وزنها مناسبًا لقدرتك.",
+        "في الساعات الأولى حدّد مشروبات ووجبات آمنة ومكان نوم جافًا ومصدر معلومات. افصل أوعية ماء الشرب عن غيرها. أجّل الأعمال الكبيرة والاستكشاف الطويل وتجربة الأجهزة المجهولة.",
+        "في اليوم الأول أنشئ جردًا ورقيًا: الكمية القابلة للاستخدام والموقع والتواريخ وحاجة الطهي والاعتماد على الكهرباء. صوّر الملصقات عند الحاجة، وانسخ المعلومات الأساسية كي لا تعتمد على الهاتف.",
+        "في اليومين الثاني والثالث جرّب يومًا مقتصدًا بالمؤن الموجودة: وجبات ونظافة وإضاءة وقراءة الوثائق ثم إطفاء الحاسوب. سجّل الاستهلاك المقاس وعالج النقص قبل زيادة تعقيد النظام.",
+        "اكتب أسباب الانتقال: نفاد الماء الآمن دون بديل مؤكد، أو مأوى خطر، أو برد وحرارة لا تستطيع ضبطهما، أو حاجة طبية تتجاوز مواردك. جهّز طريقًا وبديلًا وحقيبة واتبع تعليمات الخطر المتاحة.",
+        "حدّث الوضع والموارد والقرار التالي صباحًا ومساءً. هذا الجدول اقتراح تنظيمي من REFUGE وليس قاعدة عامة للبقاء. الحوادث الكيميائية والإشعاعية والحرائق والفيضانات لكل منها تعليمات حماية خاصة."
+      ]
+    },
+    "sources":[{"label":"BBK — Vorsorge und Handeln bei Stromausfall","url":"https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html"},{"label":"National Park Service — Ten Essentials","url":"https://www.nps.gov/articles/10essentials.htm"},{"label":"Niedersachsen — Essen und Trinken als Reserve anlegen","url":"https://www.niedersachsen.de/notfallmonitor/vorsorge/notfallvorrat/essen-und-trinken-als-reserve-anlegen-223477.html"}],
+    "reviewedAt":"2026-10-31"
+  },
+  {
+    "id":"energy-budget-offgrid",
+    "title":{"fr":"Mini-PC, batterie et solaire : établir un budget en Wh","de":"Mini-PC, Akku und Solar: ein Energiebudget in Wh","en":"Mini-PC, battery and solar: build a budget in Wh","ar":"الحاسوب المصغر والبطارية والطاقة الشمسية: ميزانية بوحدة Wh"},
+    "intro":{"fr":"Mesurer la consommation réelle et prévoir les journées sans recharge avant de parler d'autonomie.","de":"Tatsächlichen Verbrauch messen und Tage ohne Nachladen einplanen, bevor von Autarkie gesprochen wird.","en":"Measure real consumption and plan for days without charging before claiming independence.","ar":"قِس الاستهلاك الفعلي وخطّط لأيام دون شحن قبل الحديث عن الاكتفاء."},
+    "image":"/illustrations/independence-energy.svg",
+    "body":{
+      "fr":[
+        "Ouvrir un carnet énergie : appareil, puissance mesurée en watts (W), durée d'utilisation en heures (h), énergie en wattheures (Wh). Le calcul est Wh = W × h ; 1000 Wh = 1 kWh. Les W indiquent une puissance, pas une durée d'autonomie.",
+        "Mesurer à la prise toute la chaîne : mini-PC, écran, disque externe et routeur réellement nécessaires. Relever séparément arrêt, lecture de PDF et génération IA. La puissance maximale de l'alimentation n'est pas la consommation moyenne du PC.",
+        "Exemple purement hypothétique : un ensemble consommant en moyenne 25 W pendant 4 h utilise 100 Wh. Un éclairage de 5 W pendant 3 h ajoute 15 Wh. Total de cet exemple : 115 Wh, avant les pertes non incluses dans les mesures.",
+        "Comparer l'énergie effectivement délivrable de la batterie au besoin calculé. Exemple de calcul seulement : 300 Wh utilisables pour une charge totale stable de 25 W donnent 12 h théoriques. Ne pas remplacer la capacité utilisable par la capacité nominale sans vérifier les pertes et réserves.",
+        "Lire aussi la puissance de sortie continue et les limites de chaque port. Une batterie offrant assez de Wh peut ne pas alimenter un appareil trop puissant. Pour USB-C, tension, puissance négociée et câble doivent convenir ; vérifier les notices sans improviser d'adaptateur.",
+        "Construire un mode économe REFUGE : luminosité réduite, documents regroupés pour une seule session, IA seulement pour les questions utiles, arrêt propre entre sessions. Garder sur papier les informations vitales afin de pouvoir laisser le PC éteint.",
+        "Le panneau solaire produit une énergie variable selon l'ensoleillement et les conditions. Exemple arithmétique, pas prévision pour la Saxe : 100 W réellement moyens pendant 2 h correspondent à 200 Wh avant pertes. La puissance nominale du panneau n'est pas cette moyenne garantie.",
+        "Prévoir un scénario de plusieurs jours sans apport solaire : réduire d'abord les usages facultatifs et fixer un seuil de réserve. Ne connecter que des ensembles panneau, régulateur et batterie compatibles prévus par le fabricant ; pas de retour électrique improvisé vers le logement.",
+        "Tester une journée complète avant la crise : noter charge initiale, usages, énergie délivrée et recharge réelle. Respecter température, ventilation et stockage indiqués ; mettre hors service une batterie endommagée selon les consignes du fabricant. Réviser le budget après chaque changement de matériel."
+      ],
+      "de":[
+        "Ein Energiebuch anlegen: Gerät, gemessene Leistung in Watt (W), Nutzungszeit in Stunden (h), Energie in Wattstunden (Wh). Es gilt Wh = W × h; 1000 Wh = 1 kWh. Watt ist Leistung und keine Laufzeit.",
+        "An der Steckdose die ganze benötigte Kette messen: Mini-PC, Bildschirm, externe Platte und Router. Ausgeschalteten Zustand, PDF-Lesen und KI-Berechnung getrennt erfassen. Die maximale Netzteilleistung ist nicht der durchschnittliche PC-Verbrauch.",
+        "Reines Rechenbeispiel: Eine Gerätekombination mit durchschnittlich 25 W benötigt in 4 h 100 Wh. Eine 5-W-Leuchte für 3 h benötigt weitere 15 Wh. Zusammen 115 Wh, zuzüglich noch nicht mitgemessener Verluste.",
+        "Tatsächlich abgebbare Akkuenergie mit dem Bedarf vergleichen. Nur als Rechenbeispiel: 300 nutzbare Wh ergeben bei konstanten insgesamt 25 W theoretisch 12 h. Nennkapazität nicht ohne Prüfung von Verlusten und Reserven als nutzbare Kapazität übernehmen.",
+        "Auch Dauer-Ausgangsleistung und Grenzen jedes Anschlusses lesen. Genügend Wh bedeuten nicht, dass ein leistungsstarkes Gerät versorgt werden kann. Bei USB-C müssen Spannung, ausgehandelte Leistung und Kabel passen; Anleitungen beachten statt Adapter zu improvisieren.",
+        "Einen sparsamen REFUGE-Betrieb planen: Helligkeit reduzieren, Dokumente in einer Sitzung lesen, KI auf nützliche Fragen beschränken und zwischen Sitzungen sauber herunterfahren. Wichtige Angaben auf Papier ermöglichen längere ausgeschaltete Zeiten.",
+        "Solarertrag schwankt mit Sonne und Bedingungen. Rechenbeispiel, keine Sachsen-Prognose: Tatsächlich durchschnittlich 100 W über 2 h ergeben 200 Wh vor Verlusten. Die Nennleistung des Moduls ist keine garantierte mittlere Leistung.",
+        "Mehrere Tage ohne Solarertrag durchspielen: zuerst optionale Anwendungen reduzieren und eine Energiereserve festlegen. Nur laut Hersteller kompatible Module, Regler und Akkus verbinden; keine improvisierte Einspeisung in die Hausinstallation.",
+        "Vorher einen ganzen Tag testen: Startladung, Nutzungen, abgegebene Energie und tatsächliche Nachladung notieren. Temperatur-, Lüftungs- und Lagerhinweise beachten; beschädigte Akkus nach Herstellerangaben außer Betrieb nehmen. Nach Gerätewechsel das Budget neu prüfen."
+      ],
+      "en":[
+        "Start an energy log: device, measured power in watts (W), hours of use (h), energy in watt-hours (Wh). Use Wh = W × h; 1000 Wh = 1 kWh. Watts describe power, not runtime.",
+        "Measure the complete required chain at the outlet: mini-PC, display, external drive and router. Record shutdown, PDF reading and AI generation separately. The power supply's maximum rating is not the computer's average consumption.",
+        "Purely hypothetical example: equipment averaging 25 W for 4 h uses 100 Wh. A 5 W light for 3 h adds 15 Wh. This example totals 115 Wh before losses not already included in the measurements.",
+        "Compare energy the battery can actually deliver with calculated demand. Calculation only: 300 usable Wh supplying a constant total load of 25 W gives a theoretical 12 h. Do not equate rated capacity with usable output without checking losses and reserve.",
+        "Check continuous output power and each port's limits too. Enough Wh does not mean a battery can run a high-power appliance. USB-C voltage, negotiated power and cable must suit the device; follow manuals rather than improvising adapters.",
+        "Plan a low-energy REFUGE mode: dim the screen, group document reading into one session, reserve AI for useful questions and shut down cleanly between sessions. Keep vital information on paper so the computer can remain off.",
+        "Solar energy varies with sunlight and conditions. Arithmetic example, not a Saxony forecast: an actual average output of 100 W for 2 h gives 200 Wh before losses. A panel's rated power is not a guaranteed average output.",
+        "Plan several days with no solar input: reduce optional uses first and set a reserve threshold. Connect only manufacturer-approved compatible panels, controllers and batteries; never improvise backfeeding into a building's wiring.",
+        "Test a full day beforehand: log initial charge, activities, delivered energy and actual recharge. Follow temperature, ventilation and storage instructions; stop using a damaged battery according to manufacturer guidance. Recalculate after hardware changes."
+      ],
+      "ar":[
+        "ابدأ سجلًا للطاقة: الجهاز والقدرة المقاسة بالواط W وساعات الاستخدام h والطاقة بالواط ساعة Wh. الحساب هو Wh = W × h؛ وكل 1000 Wh تساوي 1 kWh. الواط قدرة وليس مدة تشغيل.",
+        "قِس من المقبس المجموعة المطلوبة كاملة: الحاسوب والشاشة والقرص الخارجي والموجّه. سجّل الإيقاف وقراءة PDF وتوليد الذكاء الاصطناعي منفصلة. القدرة القصوى لمزوّد الطاقة ليست متوسط استهلاك الحاسوب.",
+        "مثال افتراضي حسابي: مجموعة تستهلك متوسط 25 W لمدة 4 h تحتاج 100 Wh. وإضاءة 5 W لمدة 3 h تضيف 15 Wh. مجموع المثال 115 Wh قبل الفواقد غير المشمولة في القياس.",
+        "قارن الطاقة التي تستطيع البطارية تسليمها فعلًا بالحاجة المحسوبة. للحساب فقط: 300 Wh قابلة للاستخدام مع حمل إجمالي ثابت 25 W تعطي 12 h نظريًا. لا تساوِ السعة الاسمية بالطاقة المتاحة دون فحص الفواقد والاحتياطي.",
+        "راجع قدرة الخرج المستمرة وحدود كل منفذ. توفر Wh كافية لا يعني تشغيل جهاز عالي القدرة. في USB-C يجب توافق الجهد والقدرة المتفاوض عليها والكابل؛ اتبع الأدلة ولا ترتجل المحولات.",
+        "خطّط لوضع REFUGE مقتصد: خفّض سطوع الشاشة واجمع قراءة الوثائق في جلسة واحدة واقصر الذكاء الاصطناعي على الأسئلة المفيدة وأوقف الحاسوب بصورة سليمة بين الجلسات. احتفظ بالمعلومات الحيوية على الورق.",
+        "إنتاج الشمس يتغير مع الإشعاع والظروف. مثال حسابي لا توقع لمنطقة ساكسونيا: متوسط خرج فعلي 100 W لمدة 2 h يعطي 200 Wh قبل الفواقد. القدرة الاسمية للوح ليست متوسطًا مضمونًا.",
+        "خطّط لأيام عدة دون شحن شمسي: قلّل الاستخدامات الاختيارية أولًا وحدّد احتياطيًا. لا توصل إلا ألواحًا ومنظمًا وبطارية متوافقة وفق الشركة؛ ولا ترتجل تغذية عكسية لأسلاك المنزل.",
+        "اختبر يومًا كاملًا مسبقًا: سجّل الشحن الأولي والأنشطة والطاقة المسلّمة والشحن الفعلي. التزم بالحرارة والتهوية والتخزين المحددة، وأوقف استخدام البطارية المتضررة وفق الشركة. أعد الحساب عند تغيير المعدات."
+      ]
+    },
+    "sources":[{"label":"Virginia Tech Extension — Estimating Appliance and Home Electronic Energy Use","url":"https://ext.vt.edu/content/pubs_ext_vt_edu/en/2901/2901-9014/2901-9014.html"},{"label":"US Department of Energy — Solar Energy and Storage Basics","url":"https://www.energy.gov/cmei/systems/solar-integration-solar-energy-and-storage-basics"},{"label":"Australian Government — Batteries","url":"https://www.energy.gov.au/solar/get-know-solar-technology/batteries"},{"label":"BBK — Vorsorge und Handeln bei Stromausfall","url":"https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html"}],
+    "reviewedAt":"2026-10-31"
+  },
+  {
+    "id":"food-garden-preservation",
+    "title":{"fr":"Nourriture durable : stock tournant, potager et conservation prudente","de":"Langfristige Ernährung: Vorrat, Gemüsebeet und sichere Lagerung","en":"Long-term food: rotating supplies, growing and careful preservation","ar":"الغذاء طويل الأمد: مخزون متجدد وزراعة وحفظ بحذر"},
+    "intro":{"fr":"Un potager complète une organisation alimentaire ; il ne remplace pas immédiatement les réserves ni ne garantit une ration complète.","de":"Ein Gemüsebeet ergänzt die Versorgung; es ersetzt Vorräte nicht sofort und garantiert keine vollständige Ernährung.","en":"A garden supports a food plan; it does not immediately replace supplies or guarantee a complete diet.","ar":"الحديقة تدعم خطة الغذاء ولا تستبدل المؤن فورًا ولا تضمن غذاءً كاملًا."},
+    "image":"/illustrations/independence-garden.svg",
+    "body":{
+      "fr":[
+        "Faire trois listes : aliments utilisables maintenant, aliments exigeant eau ou cuisson, aliments exigeant un froid réellement maintenu. Construire un menu répétable avec des produits familiers et adaptés aux allergies ; noter ce qui manque plutôt que déclarer une autonomie totale.",
+        "Pour le stock tournant, écrire achat, ouverture, quantité restante et conditions de conservation. Mettre les produits à utiliser d'abord devant les autres et réserver des portions gérables sans réfrigérateur. Un produit industriel stable fermé peut nécessiter du froid après ouverture.",
+        "Les conserves ne durent pas éternellement. Contrôler les emballages ; écarter boîtes gonflées, fuyantes, très rouillées ou profondément cabossées. Suivre l'étiquette et maintenir un rangement sec et frais ; ne pas goûter un aliment douteux pour décider de sa sécurité.",
+        "Pour le potager, dessiner une petite parcelle accessible, un point d'eau approprié et des passages. Observer soleil, ombre et drainage ; privilégier des semences alimentaires identifiées. Vérifier l'historique et la qualité du sol avant une culture alimentaire sur terrain suspect.",
+        "Créer votre calendrier local avec les indications des sachets : semis, plantation, espacement, durée attendue et récolte. Les exemples américains de calendrier ne se transposent pas directement à la Saxe ; garder le stock pendant l'attente et prévoir un échec de culture.",
+        "Dans le carnet de culture, noter variété, date, météo observée, arrosage et quantité récoltée. Choisir quelques cultures connues avant d'étendre la surface. Prévoir l'accès quotidien, l'eau, les outils et la protection adaptée aux animaux ; ne pas compter une récolte avant de l'avoir.",
+        "Ne pas utiliser une application ou l'IA pour autoriser la consommation de plantes ou champignons sauvages. Le projet décrit la culture de semences identifiées, pas une méthode de reconnaissance ; une erreur d'identification ne se corrige pas par une cuisson improvisée.",
+        "Pour conserver une récolte, choisir une méthode documentée adaptée à l'aliment et aux moyens disponibles. Les bocaux hermétiques seuls ne prouvent rien : les conserves maison exigent une recette actuelle éprouvée et l'équipement correspondant. Ne pas inventer durée, acidification ou traitement au four.",
+        "En fin de semaine, comparer repas réellement consommés, pertes et récoltes aux besoins. Ajouter les dépendances : eau, cuisson, énergie, semences et remplacement du matériel. Si les ressources ne couvrent pas la période suivante, chercher un approvisionnement ou repli sûr plutôt que compter sur une récolte hypothétique."
+      ],
+      "de":[
+        "Drei Listen erstellen: sofort nutzbare Lebensmittel, Lebensmittel mit Wasser- oder Kochbedarf und Lebensmittel mit zuverlässig benötigter Kühlung. Einen wiederholbaren Speiseplan mit vertrauten, allergiegerechten Produkten entwerfen; fehlende Dinge notieren statt vollständige Autarkie zu behaupten.",
+        "Für den rollierenden Vorrat Einkauf, Öffnung, Restmenge und Lagerbedingungen notieren. Zuerst zu verbrauchende Produkte vorne lagern und ohne Kühlschrank handhabbare Portionen vorsehen. Ein verschlossen ungekühlt haltbares Produkt kann nach dem Öffnen Kühlung brauchen.",
+        "Konserven halten nicht ewig. Verpackungen prüfen; aufgeblähte, undichte, stark verrostete oder tief eingedellte Dosen aussortieren. Etikett beachten und kühl sowie trocken lagern; zweifelhafte Lebensmittel nicht durch Probieren auf Sicherheit prüfen.",
+        "Für den Garten ein kleines erreichbares Beet, eine geeignete Wasserquelle und Wege zeichnen. Sonne, Schatten und Wasserabfluss beobachten; eindeutig bezeichnetes Lebensmittelsaatgut nutzen. Auf verdächtigem Gelände Nutzungsgeschichte und Bodenqualität vor dem Nahrungsanbau klären.",
+        "Mit den Saatgutangaben einen örtlichen Kalender anlegen: Aussaat, Pflanzung, Abstand, erwartete Dauer und Ernte. Amerikanische Pflanzkalender gelten nicht direkt für Sachsen; Vorräte bis zur Ernte behalten und einen Ernteausfall einplanen.",
+        "Im Gartenbuch Sorte, Datum, beobachtetes Wetter, Bewässerung und Ertrag festhalten. Mit wenigen bekannten Kulturen beginnen und erst später erweitern. Täglichen Zugang, Wasser, Werkzeuge und passenden Tierschutz vorsehen; eine noch nicht vorhandene Ernte nicht als Vorrat zählen.",
+        "App oder KI dürfen unbekannte Wildpflanzen und Pilze nicht zum Essen freigeben. Hier geht es um Anbau eindeutig bestimmter Saaten, nicht um Artenbestimmung. Improvisiertes Kochen gleicht einen Bestimmungsfehler nicht aus.",
+        "Zur Ernteverarbeitung ein dokumentiertes, zum Lebensmittel und zur Ausrüstung passendes Verfahren wählen. Ein dichtes Glas beweist keine Sicherheit: Hauskonserven benötigen ein aktuelles geprüftes Rezept und das richtige Gerät. Keine Behandlungszeit, Säuerung oder Ofenmethode erfinden.",
+        "Wöchentlich tatsächlich gegessene Mahlzeiten, Verluste und Ernte mit dem Bedarf vergleichen. Abhängigkeiten ergänzen: Wasser, Kochen, Energie, Saatgut und Ersatzteile. Reichen die Mittel nicht bis zum nächsten Zeitraum, sichere Versorgung oder einen Ortswechsel suchen statt auf hypothetische Ernte zu setzen."
+      ],
+      "en":[
+        "Make three lists: food usable now, food requiring water or cooking, and food needing reliably maintained refrigeration. Build a repeatable menu with familiar foods suited to allergies; record shortages rather than declaring complete self-sufficiency.",
+        "For rotating supplies, record purchase, opening, remaining quantity and storage conditions. Put food to use first at the front and choose portions manageable without a refrigerator. A commercially shelf-stable sealed product may require refrigeration after opening.",
+        "Canned food does not last forever. Inspect packaging and reject bulging, leaking, badly rusted or deeply dented cans. Follow labels and store cool and dry; never taste questionable food to determine whether it is safe.",
+        "For a garden, sketch a small accessible bed, suitable water access and paths. Observe sun, shade and drainage; use identified food-crop seeds. Investigate land history and soil quality before growing food on potentially contaminated ground.",
+        "Build a local calendar using seed-packet instructions: sowing, planting, spacing, expected duration and harvest. American planting calendars do not transfer directly to Saxony; keep supplies while waiting and plan for crop failure.",
+        "In a garden log, record variety, date, observed weather, watering and harvested amount. Start with a few known crops before expanding. Plan daily access, water, tools and suitable protection from animals; do not count an unharvested crop as food in storage.",
+        "Do not use an app or AI to approve eating unknown wild plants or mushrooms. This guide concerns growing identified seeds, not species identification. Improvised cooking does not correct an identification error.",
+        "To preserve a harvest, choose documented methods suited to the food and equipment. Airtight jars alone prove nothing: home canning requires a current tested recipe and matching equipment. Never invent processing times, acidification or an oven-canning method.",
+        "Each week, compare meals actually eaten, losses and harvest with demand. Include dependencies: water, cooking, energy, seeds and replacement equipment. If resources will not cover the next period, seek safe resupply or relocation instead of relying on a hypothetical harvest."
+      ],
+      "ar":[
+        "أنشئ ثلاث قوائم: طعام صالح الآن، وطعام يحتاج ماءً أو طهيًا، وطعام يحتاج تبريدًا موثوقًا. ضع وجبات قابلة للتكرار بأطعمة مألوفة تناسب الحساسية؛ سجّل النواقص بدل إعلان الاكتفاء الكامل.",
+        "للمخزون المتجدد سجّل الشراء والفتح والكمية الباقية وشروط الحفظ. ضع ما يجب استخدامه أولًا في المقدمة واختر حصصًا يمكن التعامل معها دون ثلاجة. المنتج المستقر مغلقًا قد يحتاج تبريدًا بعد الفتح.",
+        "المعلبات لا تدوم إلى الأبد. افحص العبوات واستبعد المنتفخة والمتسربة وشديدة الصدأ وذات الانبعاج العميق. اتبع الملصق وخزّن في مكان بارد وجاف؛ لا تتذوق طعامًا مشكوكًا فيه لاختبار سلامته.",
+        "للزراعة ارسم مساحة صغيرة يسهل الوصول إليها ومصدر ماء مناسبًا وممرات. راقب الشمس والظل وتصريف الماء واستخدم بذور محاصيل غذائية معروفة. افحص تاريخ الأرض وجودة تربتها قبل الزراعة في موقع يحتمل تلوثه.",
+        "أنشئ تقويمًا محليًا من تعليمات البذور: البذر والغرس والتباعد والمدة المتوقعة والحصاد. التقويم الأمريكي لا يُنقل مباشرة إلى ساكسونيا؛ أبقِ المؤن خلال الانتظار وخطّط لفشل المحصول.",
+        "سجّل الصنف والتاريخ والطقس المرصود والري وكمية الحصاد. ابدأ بمحاصيل قليلة معروفة قبل التوسع. خطّط للوصول اليومي والماء والأدوات وحماية مناسبة من الحيوانات؛ لا تعدّ محصولًا لم تحصده مخزونًا غذائيًا.",
+        "لا تعتمد على تطبيق أو ذكاء اصطناعي للسماح بأكل نباتات أو فطر بري مجهول. تتناول هذه الفقرة زراعة بذور معروفة وليست دليل تعرّف على الأنواع. الطهي المرتجل لا يصحّح خطأ التعرّف.",
+        "لحفظ الحصاد اختر طريقة موثقة تناسب الطعام والمعدات. إغلاق البرطمان بإحكام لا يثبت السلامة؛ التعليب المنزلي يتطلب وصفة حديثة مختبرة ومعدات مناسبة. لا تخترع زمنًا أو تحميضًا أو طريقة تعليب في الفرن.",
+        "قارن أسبوعيًا الوجبات المستهلكة والفواقد والحصاد بالحاجة. أضف الاعتماد على الماء والطهي والطاقة والبذور وقطع الغيار. إذا لم تكفِ الموارد للفترة التالية فابحث عن تموين أو انتقال آمن بدل التعويل على حصاد افتراضي."
+      ]
+    },
+    "sources":[{"label":"USDA FSIS — Will commercially canned foods last forever?","url":"https://ask.fsis.usda.gov/article/Will-commercially-canned-foods-last-forever"},{"label":"NCHFP — Ensuring Safe Canned Foods","url":"https://nchfp.uga.edu/how/can/general-information/ensuring-safe-canned-foods/"},{"label":"NCHFP — General Canning FAQs","url":"https://nchfp.uga.edu/faqs/general-canning/category/faq-canning"},{"label":"University of Maryland Extension — How to Start a Vegetable Garden","url":"https://extension.umd.edu/resource/how-start-vegetable-garden"}],
+    "reviewedAt":"2026-10-31"
+  },
+  {
+    "id":"maintenance-routine-retreat",
+    "title":{"fr":"Tenir dans la durée : entretien, hygiène, routine et repli","de":"Langfristig organisieren: Wartung, Hygiene, Alltag und Rückzug","en":"Long-term organisation: maintenance, hygiene, routine and retreat","ar":"التنظيم طويل الأمد: الصيانة والنظافة والروتين والانتقال"},
+    "intro":{"fr":"Entretenir les capacités existantes et reconnaître quand un lieu ou une tâche dépasse vos moyens.","de":"Vorhandene Möglichkeiten erhalten und erkennen, wann Ort oder Aufgabe die eigenen Mittel überfordern.","en":"Maintain existing capabilities and recognise when a location or task exceeds your resources.","ar":"حافظ على الإمكانات الموجودة واعرف متى يتجاوز المكان أو العمل مواردك."},
+    "image":"/illustrations/independence-tools.svg",
+    "body":{
+      "fr":[
+        "Créer un registre simple pour chaque équipement essentiel : fonction, manuel local, contrôle, consommable, pièce compatible et solution de remplacement. Le projet propose cette organisation ; elle ne transforme pas un débutant en électricien, mécanicien ou soignant.",
+        "Chaque matin, faire un tour visuel sans intervention risquée : écoulement anormal, emballage humide, câble abîmé, sortie encombrée, outil manquant. Noter puis traiter un problème à la fois ; laisser hors service un appareil douteux plutôt que le tester au hasard.",
+        "Réserver les réparations personnelles aux opérations maîtrisées et prévues par la notice, appareil arrêté et déconnecté lorsque requis. Une réparation de couture ou remplacement de pile accessible ne justifie pas d'ouvrir un secteur électrique, une batterie ou un circuit de gaz.",
+        "Préparer une trousse correspondant aux tâches réellement apprises : tournevis adaptés, ruban, matériel de couture, attaches et pièces compatibles. Ranger les outils secs et identifiés ; garder notices et références de pièces sur papier. Ne pas fabriquer un dispositif de sécurité de remplacement.",
+        "Organiser une zone propre pour eau et nourriture, une zone pour objets sales et un point de lavage des mains. Utiliser savon et eau sûre, notamment avant les repas et après toilettes ou nettoyage. Ne pas confondre produits pour surfaces et produits pour la peau.",
+        "Séparer déchets, eaux usées et réserves alimentaires. Prévoir contenants fermés, entretien des toilettes et filière disponible sans contaminer l'eau. Une organisation isolée ne rend pas sûrs l'enfouissement improvisé de déchets ou l'épandage de matières humaines au potager.",
+        "Construire un rythme soutenable sur papier : eau et repas, entretien court, repos, contrôle des informations puis tâches utiles. Découper les travaux lourds et éviter les activités dangereuses lorsque fatigué. Garder du temps pour le sommeil et des activités calmes.",
+        "Chaque semaine, réaliser un petit contrôle réversible : ouvrir les documents hors ligne, lire la copie de secours, vérifier éclairage et pièces, comptabiliser les consommables. Ne pas tester la préparation en supprimant la seule réserve d'eau ou en vidant toutes les batteries.",
+        "Conserver un plan de repli avec matériel transportable et deux options de trajet adaptées. Revoir ce plan si eau, abri ou santé ne peuvent plus être maintenus. L'objectif est une décision réaliste et révisable, pas la promesse de vivre seul indéfiniment sans aide."
+      ],
+      "de":[
+        "Für jedes wichtige Gerät ein einfaches Register anlegen: Zweck, lokale Anleitung, Kontrolle, Verbrauchsmaterial, passendes Ersatzteil und Alternative. Diese Projektorganisation macht Anfänger nicht zu Elektro-, Reparatur- oder Gesundheitsfachleuten.",
+        "Morgens ohne riskante Eingriffe sichtbar prüfen: ungewöhnlicher Wasseraustritt, feuchte Verpackung, beschädigtes Kabel, versperrter Ausgang oder fehlendes Werkzeug. Notieren und Probleme einzeln bearbeiten; ein zweifelhaftes Gerät außer Betrieb lassen statt blind zu testen.",
+        "Selbst nur beherrschte, laut Anleitung vorgesehene Arbeiten ausführen; Gerät wenn erforderlich ausschalten und trennen. Nähen oder eine zugängliche Batterie wechseln ist kein Grund, Netzspannungsteile, Akkupacks oder Gasleitungen zu öffnen.",
+        "Eine zu tatsächlich erlernten Arbeiten passende Werkzeugtasche packen: geeignete Schraubendreher, Klebeband, Nähzeug, Befestigungen und passende Ersatzteile. Werkzeuge trocken und beschriftet lagern; Anleitungen und Teilenummern auf Papier behalten. Keine Sicherheitseinrichtung improvisieren.",
+        "Einen sauberen Bereich für Wasser und Essen, einen Bereich für schmutzige Gegenstände und eine Handwaschstelle einrichten. Seife und sicheres Wasser besonders vor Mahlzeiten sowie nach Toilette und Reinigung nutzen. Flächenreiniger nicht mit Hautprodukten verwechseln.",
+        "Abfall, Abwasser und Lebensmittel getrennt halten. Geschlossene Behälter, Toilettenwartung und verfügbare Entsorgung vorsehen, ohne Wasser zu verunreinigen. Isolation macht improvisiertes Vergraben von Müll oder menschliche Ausscheidungen im Gemüsebeet nicht sicher.",
+        "Einen tragbaren Tagesrhythmus auf Papier planen: Wasser und Essen, kurze Wartung, Ruhe, Informationen prüfen und sinnvolle Aufgaben. Schwere Arbeiten aufteilen und bei Müdigkeit gefährliche Tätigkeiten vermeiden. Schlaf und ruhige Beschäftigungen einplanen.",
+        "Wöchentlich eine kleine umkehrbare Prüfung durchführen: Offline-Dokumente öffnen, Sicherung lesen, Licht und Ersatzteile prüfen und Verbrauchsmaterial zählen. Vorbereitung nicht testen, indem der einzige Wasservorrat verbraucht oder jeder Akku entladen wird.",
+        "Einen Rückzugsplan mit tragbarer Ausrüstung und zwei geeigneten Wegen behalten. Neu entscheiden, wenn Wasser, Unterkunft oder Gesundheit nicht mehr gesichert werden können. Ziel ist eine realistische korrigierbare Entscheidung, kein Versprechen unbegrenzten Alleinlebens ohne Hilfe."
+      ],
+      "en":[
+        "Keep a simple register for each essential item: purpose, offline manual, inspection, consumable, compatible spare and fallback. This project planning method does not make a beginner an electrician, mechanic or clinician.",
+        "Each morning, visually check without risky intervention: unusual leaks, damp packages, damaged cables, obstructed exits or missing tools. Record issues and address one at a time; keep questionable equipment out of service rather than testing it at random.",
+        "Limit personal repairs to tasks you know and the manual permits, with equipment stopped and disconnected where required. Sewing a tear or replacing an accessible battery does not justify opening mains equipment, battery packs or gas systems.",
+        "Pack tools for tasks actually learned: suitable screwdrivers, tape, sewing materials, fasteners and compatible spares. Keep tools dry and labelled; retain instructions and part numbers on paper. Do not improvise replacement safety devices.",
+        "Create a clean area for water and food, a dirty-item area and a handwashing point. Use soap and safe water, particularly before meals and after toilet use or cleaning. Do not confuse surface cleaning products with skin products.",
+        "Separate rubbish, wastewater and food stores. Plan closed containers, toilet maintenance and available disposal without contaminating water. Being isolated does not make improvised waste burial or spreading human waste on food crops safe.",
+        "Write a sustainable daily rhythm: water and meals, short maintenance, rest, information checks and useful tasks. Divide heavy work and avoid hazardous activities when tired. Protect time for sleep and quiet activities.",
+        "Each week perform a small reversible check: open offline documents, read the backup, check lights and spares and count consumables. Do not test preparedness by exhausting your only water supply or emptying every battery.",
+        "Keep a retreat plan with portable equipment and two suitable route options. Reconsider it when safe water, shelter or health can no longer be maintained. The aim is a realistic revisable decision, not a promise to live alone indefinitely without help."
+      ],
+      "ar":[
+        "أنشئ سجلًا بسيطًا لكل جهاز أساسي: الوظيفة والدليل المحلي والفحص والمستهلك وقطعة الغيار المتوافقة والبديل. هذا تنظيم للمشروع ولا يجعل المبتدئ كهربائيًا أو ميكانيكيًا أو مختصًا صحيًا.",
+        "افحص بصريًا صباحًا دون تدخل خطر: تسرب غير معتاد وعبوة رطبة وكابل تالف ومخرج مزدحم وأداة مفقودة. سجّل المشكلات وعالج واحدة كل مرة؛ أبقِ الجهاز المشكوك فيه متوقفًا بدل تجربته عشوائيًا.",
+        "احصر الإصلاح الذاتي في أعمال تعرفها ويسمح بها الدليل، مع إيقاف الجهاز وفصله عند اللزوم. خياطة تمزق أو تبديل بطارية يسهل الوصول إليها لا يبرران فتح جهاز موصول بالتيار أو حزمة بطارية أو نظام غاز.",
+        "جهّز أدوات للأعمال التي تعلمتها فعلًا: مفكات مناسبة وشريط وأدوات خياطة ومثبتات وقطع متوافقة. خزّنها جافة ومعلّمة واحتفظ بالتعليمات وأرقام القطع على الورق. لا ترتجل بديلًا لجهاز أمان.",
+        "خصص منطقة نظيفة للماء والطعام وأخرى للأشياء المتسخة ونقطة غسل يدين. استخدم الصابون والماء الآمن خاصة قبل الوجبات وبعد المرحاض والتنظيف. لا تخلط بين منظفات الأسطح ومستحضرات الجلد.",
+        "افصل النفايات والمياه المستعملة عن الغذاء. خطّط لحاويات مغلقة وصيانة المرحاض والتخلص المتاح دون تلويث الماء. العزلة لا تجعل دفن النفايات المرتجل أو نشر الفضلات البشرية على المحاصيل آمنًا.",
+        "اكتب روتينًا يمكن الاستمرار عليه: ماء ووجبات وصيانة قصيرة وراحة وفحص المعلومات وأعمال مفيدة. قسّم العمل الثقيل وتجنب الأنشطة الخطرة عند التعب. خصص وقتًا للنوم والأنشطة الهادئة.",
+        "نفّذ أسبوعيًا فحصًا صغيرًا قابلًا للتراجع: افتح الوثائق دون إنترنت واقرأ النسخة الاحتياطية وافحص الإضاءة والقطع وعدّ المستهلكات. لا تختبر الاستعداد باستنفاد مصدر الماء الوحيد أو تفريغ كل البطاريات.",
+        "احتفظ بخطة انتقال مع معدات محمولة وخيارين مناسبين للطريق. أعد تقييمها عندما لا تستطيع الحفاظ على الماء الآمن أو المأوى أو الصحة. الهدف قرار واقعي قابل للتعديل وليس وعدًا بالعيش منفردًا بلا مساعدة إلى الأبد."
+      ]
+    },
+    "sources":[{"label":"National Park Service — Ten Essentials, repair kit","url":"https://www.nps.gov/articles/10essentials.htm"},{"label":"CDC — Guidelines for Personal Hygiene During an Emergency","url":"https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html"},{"label":"CDC — Hand Hygiene Frequently Asked Questions","url":"https://www.cdc.gov/clean-hands/faq/"},{"label":"CDC — Handwashing After a Disaster","url":"https://www.cdc.gov/natural-disasters/psa-toolkit/handwashing-after-a-disaster.html"}],
+    "reviewedAt":"2026-10-31"
+  }
+]

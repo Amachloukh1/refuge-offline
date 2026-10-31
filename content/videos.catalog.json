@@ -1,5 +1,105 @@
 [
   {
+    "id": "adac-reanimation-spoken-de",
+    "sha256": "8cc83947967795bac657253b6937274b90614ef6a23d34a803716cbd38f58820",
+    "rights": "Lien Video herunterladen (MP4) et matériel de campagne explicitement proposés par ADAC Stiftung pour relayer la campagne. Copie locale inchangée avec attribution. Aucune licence ouverte générale présumée ; vérifier les droits avant adaptation ou redistribution en dehors du cadre annoncé.",
+    "filename": "adac-reanimation-spoken-de.mp4",
+    "title": "Réanimation : oser agir — ADAC Stiftung",
+    "category": "firstaid",
+    "publisher": "ADAC Stiftung",
+    "url": "https://stiftung.adac.de/wp-content/uploads/2026/09/ADAC_Reanimation_Hauptfilm_web.mp4",
+    "durationSeconds": 242.9,
+    "audio": {
+      "verification": "ffprobe audio stream + ffmpeg volumedetect over full file; non-silent signal",
+      "channels": 2,
+      "codec": "aac",
+      "sampleRateHz": 48000,
+      "meanVolumeDb": -16.3,
+      "maxVolumeDb": 0
+    },
+    "audioAudible": true,
+    "sourcePage": "https://stiftung.adac.de/lebensrettung/reanimation/meine-haende-koennen-leben-retten/kampagne-und-botschafter/",
+    "downloadedAt": "2026-10-31T16:57:16.8884288Z",
+    "language": "de",
+    "description": "Film de sensibilisation à la réanimation, avec présentation et démonstration ; ne remplace pas un cours pratique de premiers secours.",
+    "bytes": 58073817
+  },
+  {
+    "id": "nps-campfire-spoken-en",
+    "sha256": "8c0c5fc055ec819c51c15a0d02cd63c48c946112ebb2bb5d27b53adf9afce006",
+    "rights": "Téléchargement original explicitement proposé par le lecteur officiel NPS. La page précise que les médias crédités NPS sans symbole de copyright sont du domaine public ; aucun droit tiers universellement exclu par cette règle. Conserver attribution NPS/Joshua Tree, fichier inchangé ; vérifier les crédits avant redistribution.",
+    "filename": "nps-campfire-spoken-en.mp4",
+    "title": "Feu de camp : règles de sécurité avec un ranger",
+    "category": "outdoors",
+    "publisher": "National Park Service — Joshua Tree",
+    "url": "https://www.nps.gov/nps-audiovideo/audiovideo/4319e9a3-f3f1-4940-9524-560f21081f4b1080p.mp4",
+    "durationSeconds": 76.42635,
+    "audio": {
+      "verification": "ffprobe audio stream + ffmpeg volumedetect over full file; non-silent signal",
+      "channels": 2,
+      "codec": "aac",
+      "sampleRateHz": 48000,
+      "meanVolumeDb": -28.5,
+      "maxVolumeDb": -3.1
+    },
+    "audioAudible": true,
+    "sourcePage": "https://www.nps.gov/media/video/view.htm?id=9f750db8-5ae1-4a43-8dbf-fbc7b36b1fd0",
+    "downloadedAt": "2026-10-31T16:57:18.6567698Z",
+    "language": "en",
+    "description": "Conseils parlés de sécurité autour du feu de camp. Contexte de parc américain : respecter les interdictions et règles locales, ne pas appliquer comme autorisation de feu en forêt allemande.",
+    "bytes": 58688983
+  },
+  {
+    "id": "sals-country-park-first-aid-en",
+    "sha256": "225d39c04aa0b2b0166d76b693891d5f10753ea750f26ec642420ef7cc5461e5",
+    "rights": "Lien Download mp4 explicitement proposé sur la page officielle Resources for Trainers du programme Heartstart. Copie locale pédagogique inchangée avec attribution. Copyright Save a Life for Scotland ; aucune licence ouverte générale de republication ou adaptation établie.",
+    "filename": "sals-country-park-first-aid-en.mp4",
+    "title": "Premiers secours : scénario au parc — Skills for Life",
+    "category": "firstaid",
+    "publisher": "Save a Life for Scotland",
+    "url": "https://savealife.scot/wp-content/uploads/2023/07/The-Country-Park.mp4",
+    "durationSeconds": 257.216,
+    "audio": {
+      "verification": "ffprobe audio stream + ffmpeg volumedetect over full file; non-silent signal",
+      "channels": 2,
+      "codec": "aac",
+      "sampleRateHz": 48000,
+      "meanVolumeDb": -24.1,
+      "maxVolumeDb": -5.9
+    },
+    "audioAudible": true,
+    "sourcePage": "https://www.savealife.scot/heartstart-trainers/",
+    "downloadedAt": "2026-10-31T16:57:19.7329830Z",
+    "language": "en",
+    "description": "Scénario pédagogique de premiers secours du programme Heartstart, proposé aux formateurs et communautés. Contexte écossais : adapter les numéros et parcours de secours au pays ; en Europe utiliser le 112.",
+    "bytes": 34222381
+  },
+  {
+    "language": "en",
+    "downloadedAt": "2026-10-31T17:09:50.6023902Z",
+    "title": "Pleine nature : équipement, orientation et campement — NPS Alaska",
+    "id": "nps-backcountry-safety-spoken-en",
+    "filename": "nps-backcountry-safety-spoken-en.mp4",
+    "durationSeconds": 649.9493,
+    "sha256": "8e4f91dfdbf3e787d0fb71dbdcf006e082e82ad67bbb15fb5fd9d54128dd6a45",
+    "bytes": 401407233,
+    "description": "Conseils parlés de ranger sur équipement, vêtements, carte et boussole, préparation, installation du campement et sécurité. Contexte Alaska : consignes liées aux ours, distances de campement et démonstrations de franchissement ne constituent pas un guide universel ni une invitation à traverser des eaux de crue. Adapter aux règles locales ; ne pas confondre ce film avec un tutoriel complet de potabilisation ou de construction de cabane.",
+    "audioAudible": true,
+    "audio": {
+      "meanVolumeDb": -24.9,
+      "maxVolumeDb": -3,
+      "channels": 2,
+      "sampleRateHz": 48000,
+      "codec": "aac",
+      "verification": "ffprobe audio stream + ffmpeg volumedetect over full file; non-silent signal"
+    },
+    "url": "https://www.nps.gov/nps-audiovideo/audiovideo/1b8fb6db-8ce2-4384-a899-5d786890784d1080p.mp4",
+    "rights": "Téléchargement original explicitement proposé par le lecteur NPS. La page crédite NPS sans symbole de copyright et précise le domaine public pour ces médias ; conserver attribution et crédits. Fichier original inchangé.",
+    "sourcePage": "https://www.nps.gov/media/video/view.htm?id=1BB33C00-022F-3F79-DEBC4FBE51956CEA",
+    "publisher": "National Park Service — Wrangell–St Elias",
+    "category": "outdoors"
+  },
+  {
     "url": "https://multimedia.gsb.bund.de/BBK/Video/Gebaerdensprache/Ratgeber-neu/14_BB25BBK_Ratgeber_gsv_2026.mp4",
     "subtitleUrl": "https://www.bbk.bund.de/SharedDocs/Videos/DE/Gebaerdensprache/DGS-Ratgeber-2025/14-dgs-notgepaeck-griffbereit_untertitel.vtt?view=renderVideoCaption",
     "downloadedAt": "2026-10-31T13:43:32.3418648Z",
@@ -14,7 +114,9 @@
     "filename": "bbk-emergency-bag-dgs.mp4",
     "publisher": "BBK",
     "subtitleBytes": 1461,
-    "subtitleSha256": "902930fa4436a040ac6b59b9dacabb267326fc38dc02bdd1ade6601d2f1f8e1f"
+    "subtitleSha256": "902930fa4436a040ac6b59b9dacabb267326fc38dc02bdd1ade6601d2f1f8e1f",
+    "audioAudible": false,
+    "audioNote": "AAC track is digital silence; verified over full file with ffmpeg volumedetect, -91 dB"
   },
   {
     "url": "https://multimedia.gsb.bund.de/BBK/Video/Gebaerdensprache/Ratgeber-neu/13_BB25BBK_Ratgeber_gsv_2026.mp4",
@@ -31,7 +133,9 @@
     "filename": "bbk-documents-dgs.mp4",
     "publisher": "BBK",
     "subtitleBytes": 2104,
-    "subtitleSha256": "e4df3261f6f0b121228ee1b114780411710a51a2e2dc169c9bf5e7eb710f3d0c"
+    "subtitleSha256": "e4df3261f6f0b121228ee1b114780411710a51a2e2dc169c9bf5e7eb710f3d0c",
+    "audioAudible": false,
+    "audioNote": "AAC track is digital silence; verified over full file with ffmpeg volumedetect, -91 dB"
   },
   {
     "url": "https://multimedia.gsb.bund.de/BBK/Video/Selbstschutz/FILM_03_Bevorratung_DGS.mp4",
@@ -48,6 +152,7 @@
     "filename": "bbk-food-supplies-dgs.mp4",
     "publisher": "BBK",
     "subtitleBytes": 4451,
-    "subtitleSha256": "98c485d1f92ea81b3717b6592d96dbcaf645f31b5efc5cf05b71740c2deae070"
+    "subtitleSha256": "98c485d1f92ea81b3717b6592d96dbcaf645f31b5efc5cf05b71740c2deae070",
+    "audioAudible": true
   }
 ]

@@ -12,6 +12,13 @@ export function GuideReader({ guide, lang, t, onClose }) {
         <span>31.10.2026</span>
       </div>
       <p className="reader-intro">{guide.intro[lang]}</p>
+      {guide.image && (
+        <img
+          className="guide-reader-image"
+          src={guide.image}
+          alt={guide.title[lang]}
+        />
+      )}
       <ol className="guide-steps">
         {guide.body[lang].map((text) => (
           <li key={text}>{text}</li>
@@ -44,14 +51,16 @@ export function Library({
   const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState("all");
   const [favOnly, setFavOnly] = useState(false);
-  const matches = guideData.filter(
-    (g) =>
-      (category === "all" || g.category === category) &&
-      (!favOnly || favorites.includes(g.id)) &&
-      normalize(
-        [g.title[lang], g.intro[lang], g.body[lang].join(" ")].join(" "),
-      ).includes(normalize(query)),
-  );
+  const matches = guideData
+    .filter(
+      (g) =>
+        (category === "all" || g.category === category) &&
+        (!favOnly || favorites.includes(g.id)) &&
+        normalize(
+          [g.title[lang], g.intro[lang], g.body[lang].join(" ")].join(" "),
+        ).includes(normalize(query)),
+    )
+    .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
   const hazardMatches =
     query.trim() && !favOnly
       ? hazards.filter((h) =>
@@ -116,7 +125,15 @@ export function Library({
       </div>
       <div className="guide-grid">
         {matches.map((g) => (
-          <article className="guide-card" key={g.id}>
+          <article className="guide-card" key={g.id} data-guide-id={g.id}>
+            {g.image && (
+              <img
+                className="guide-card-image"
+                src={g.image}
+                alt=""
+                loading="lazy"
+              />
+            )}
             <div className="guide-top">
               <span className={`topic-icon ${g.category}`}>
                 <Icon name={g.icon} size={26} />

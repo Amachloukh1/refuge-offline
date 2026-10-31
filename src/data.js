@@ -1,5 +1,6 @@
 import { arabicGuides } from "./arabic.js";
 import practicalGuides from "../content/practical-guides.json" with { type: "json" };
+import independenceGuides from "../content/independence-guides.json" with { type: "json" };
 export const seedStock = [
   {
     id: "water",
@@ -290,6 +291,15 @@ for (const guide of guideData.slice(0, 6)) {
   guide.intro.ar = a.intro;
   guide.body.ar = a.body;
 }
+for (const p of independenceGuides)
+  guideData.push({
+    ...p,
+    category: p.id.includes("food") ? "food" : "equipment",
+    icon: p.id.includes("energy") ? "Battery" : "ClipboardCheck",
+    time: 8,
+    publisher: "REFUGE · sources officielles",
+    url: p.sources[0].url,
+  });
 export const checklistIds = Array.from(
   { length: 8 },
   (_, i) => `check${i + 1}`,

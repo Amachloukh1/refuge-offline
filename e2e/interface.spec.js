@@ -64,8 +64,11 @@ test("parcours sans Internet : recherche, stock, persistance, documents et arabe
   await page
     .getByRole("textbox", { name: "Rechercher dans les fiches", exact: true })
     .fill("coupure de courant");
-  await expect(page.locator(".guide-card")).toHaveCount(1);
+  await expect(
+    page.locator('.guide-card[data-guide-id="power"]'),
+  ).toBeVisible();
   await page
+    .locator('.guide-card[data-guide-id="power"]')
     .getByRole("button", { name: "Ajouter aux favoris", exact: true })
     .click();
   await page.getByRole("button", { name: /Favoris/ }).click();

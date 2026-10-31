@@ -6,6 +6,7 @@ import { Protocol } from "pmtiles";
 import { layers, namedFlavor } from "@protomaps/basemaps";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Icon, Notice, Button } from "./components";
+import mapPlan from "../content/maps.plan.json";
 let registered = false;
 export default function OfflineMaps({ t }) {
   const container = useRef(null),
@@ -13,6 +14,49 @@ export default function OfflineMaps({ t }) {
   const [info, setInfo] = useState(null);
   const [error, setError] = useState("");
   const [coords, setCoords] = useState(null);
+  const [gps, setGps] = useState(null);
+  const [mapReady, setMapReady] = useState(null);
+  const marker = useRef(null);
+  useEffect(() => {
+    if (gps?.status !== "searching") return;
+    const timer = setInterval(
+      () =>
+        fetch("/api/gps")
+          .then((r) => r.json())
+          .then(setGps)
+          .catch(() => setGps({ status: "unavailable" })),
+      900,
+    );
+    return () => clearInterval(timer);
+  }, [gps?.status]);
+  useEffect(() => {
+    if (gps?.status !== "fix" || !mapReady) return;
+    marker.current?.remove();
+    marker.current = new maplibregl.Marker({ color: "#285f43" })
+      .setLngLat([gps.longitude, gps.latitude])
+      .addTo(mapReady);
+    if (
+      gps.longitude >= 11.8 &&
+      gps.longitude <= 15.1 &&
+      gps.latitude >= 50.1 &&
+      gps.latitude <= 51.8
+    )
+      mapReady.flyTo({ center: [gps.longitude, gps.latitude], zoom: 13 });
+    return () => marker.current?.remove();
+  }, [gps, mapReady]);
+  async function readGps() {
+    marker.current?.remove();
+    marker.current = null;
+    try {
+      setGps(
+        await fetch("/api/gps/refresh", { method: "POST" }).then((r) =>
+          r.json(),
+        ),
+      );
+    } catch {
+      setGps({ status: "unavailable" });
+    }
+  }
   useEffect(() => {
     const controller = new AbortController();
     let map;
@@ -58,6 +102,7 @@ export default function OfflineMaps({ t }) {
           attributionControl: true,
         });
         mapRef.current = map;
+        setMapReady(map);
         map.addControl(new maplibregl.NavigationControl(), "top-right");
         map.on("click", (e) =>
           setCoords({
@@ -76,11 +121,42 @@ export default function OfflineMaps({ t }) {
       controller.abort();
       map?.remove();
       mapRef.current = null;
+      setMapReady(null);
     };
   }, [t]);
   return (
     <>
       <Notice icon="Map">{t.mapOfflineNote}</Notice>
+      <section className="panel padded gps-panel">
+        <h2>GPS USB · G-MOUSE</h2>
+        <p>{t.gpsNote}</p>
+        <Button
+          icon="MapPin"
+          onClick={readGps}
+          disabled={gps?.status === "searching"}
+        >
+          {gps?.status === "searching" ? t.gpsSearching : t.gpsRead}
+        </Button>
+        {gps && gps.status !== "searching" && gps.status !== "fix" && (
+          <p role="status">
+            {gps.status === "no_fix" ? t.gpsNoFix : t.gpsUnavailable}
+          </p>
+        )}
+        {gps?.status === "fix" && (
+          <div role="status">
+            <p dir="ltr">
+              {gps.latitude.toFixed(5)}, {gps.longitude.toFixed(5)}
+            </p>
+            <p>
+              {t.gpsAt} {new Date(gps.receivedAt).toLocaleString()}
+            </p>
+            {(gps.longitude < 11.8 ||
+              gps.longitude > 15.1 ||
+              gps.latitude < 50.1 ||
+              gps.latitude > 51.8) && <p>{t.gpsOutside}</p>}
+          </div>
+        )}
+      </section>
       <section className="panel offline-map-panel">
         <div className="map-toolbar">
           <div>
@@ -136,6 +212,20 @@ export default function OfflineMaps({ t }) {
           </Button>
         ))}
       </div>
+      <section className="panel padded">
+        <h2>{t.mapPlanTitle}</h2>
+        <p>{t.mapPlanNote}</p>
+        <div className="map-plan-grid">
+          {mapPlan.packs.map((p) => (
+            <article key={p.id}>
+              <strong>{p.id === "europe" ? t.europe : t.northAfrica}</strong>
+              <p>
+                ~{p.estimatedBytes / 1e9} GB · zoom {mapPlan.maxzoom}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

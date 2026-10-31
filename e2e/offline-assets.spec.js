@@ -27,7 +27,7 @@ test("carte Saxe, vidéos locales, météo sauvegardée et plan achats hors rés
     fullPage: true,
   });
   await page.goto("/#videos");
-  await expect(page.locator("video")).toHaveCount(3);
+  await expect(page.locator("video").first()).toBeVisible();
   const v = page.locator("video").first();
   await v.evaluate((el) => (el.muted = true));
   await v.evaluate((el) => el.play());

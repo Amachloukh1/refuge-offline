@@ -1,6 +1,6 @@
 # REFUGE
 
-Application locale de préparation aux crises. Interface FR / DE / EN / AR (droite à gauche), 14 fiches pratiques, bibliothèque PDF indexée, réserves modifiables, plan d'achats illustré, checklist, plan familial et assistant IA local. Carte Saxe, vidéos BBK, Wikipédia compacte FR/DE/AR et météo sauvegardée préparées sur le PC Windows. Ubuntu 22.04 reste à tester sur le mini-PC.
+Application locale de préparation aux crises. Interface FR / DE / EN / AR (droite à gauche), 18 fiches pratiques dont quatre illustrées sur l'autonomie longue durée, bibliothèque PDF indexée, réserves modifiables, plan d'achats, checklist et assistant Local Studio intégré. Carte Saxe, lecture GPS USB sur demande, sept vidéos locales, Wikipédia compacte FR/DE/AR intégrée avec ouverture automatique et météo sauvegardée. Ubuntu 22.04 reste à tester sur le mini-PC.
 
 **Installation actuelle, contenu, limites et transfert : [guide hors ligne](docs/installation-offline.md).** Le dépôt GitHub conserve le code et les catalogues ; les gros fichiers locaux doivent être transférés séparément. Un clone seul ne contient pas les modèles ni les archives Wikipédia.
 
@@ -47,7 +47,7 @@ Pour **Ollama local**, le modèle par défaut est `qwen3:4b-instruct-2507-q4_K_M
 
 Le bouton **Serveur 2ki.space** est facultatif et distinct. Ajouter `REFUGE_REMOTE_STUDIO_KEY` dans `.env` et éventuellement `REFUGE_REMOTE_STUDIO_MODEL`. Le choix distant transmet les messages au serveur existant ; il demande un réseau. Aucun basculement automatique du mode local vers le serveur public. Le lien public n'est pas une copie locale du moteur. L'API distante réelle n'a pas encore été testée avec une clé projet.
 
-Le moteur reçoit jusqu'à cinq passages pertinents parmi les 14 fiches, les 11 catastrophes et les 193 passages extraits des PDF, avec liens vers les fiches ou pages PDF. C'est une recherche locale avec contexte, sans réentraînement du modèle. Wikipédia se consulte séparément. Le stock d'eau, le nombre d'adultes et la durée sont transmis avec le calcul vérifié. Les références et réponses doivent être contrôlées ; aucune prescription médicale ou identification de nourriture sauvage par l'IA.
+Le moteur reçoit jusqu'à cinq passages pertinents parmi les 18 fiches, les 11 catastrophes et les 193 passages extraits des PDF, avec liens vers les fiches ou pages PDF. C'est une recherche locale avec contexte, sans réentraînement du modèle. Wikipédia se consulte dans sa page intégrée et n'est pas indexée par l'assistant. Le stock d'eau, le nombre d'adultes et la durée sont transmis avec le calcul vérifié. Les références et réponses doivent être contrôlées ; aucune prescription médicale ou identification de nourriture sauvage par l'IA.
 
 ## Documents
 
@@ -66,7 +66,7 @@ docker compose -f deploy/compose.services.yml exec ollama ollama pull qwen3:4b-i
 
 Kiwix demande des fichiers `.zim` dans `content/zim`, téléchargés depuis le catalogue Kiwix. Le profil `library` sert ensuite ces contenus sur localhost:8008. Grocy est disponible avec le profil `grocy` sur localhost:9283 ; son inventaire reste distinct de l'inventaire intégré REFUGE. Ce fichier Compose est préparé mais n'a pas été exécuté sur cet ordinateur. Les images `latest` sont des points de départ : conserver les images exactes préparées et tester avant une installation durable. Open WebUI peut être ajouté séparément avec le même moteur local ; REFUGE ne prétend pas être Open WebUI.
 
-La carte de Saxe, trois vidéos et le lecteur Wikipédia sont préparés et testés localement. SDR++ est téléchargé ; la réception exige un récepteur et une antenne. La météo sauvegardée porte sa date ; aucune nouvelle prévision ni alerte n'arrive sans réception récente ou pendant que le PC est éteint.
+La carte de Saxe, sept vidéos et le lecteur Wikipédia intégré sont préparés et testés localement. Le GPS USB est identifié et sa lecture NMEA fonctionne ; un fix satellite reste à valider dehors. SDR++ est téléchargé ; la réception radio exige un autre récepteur et une antenne. La météo sauvegardée porte sa date ; les alternatives radio et l'estimation des cartes Europe–Afrique sont [documentées ici](docs/radio-gps-meteo-cartes.md).
 
 ## Démarrage automatique Ubuntu
 

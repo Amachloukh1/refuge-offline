@@ -7,6 +7,7 @@ import { resources } from "./resources.js";
 import { serveLocalFile } from "./files.js";
 import { readWeather, refreshWeather } from "./weather.js";
 import { createStudio } from "./studio.js";
+import { createGps } from "./gps.js";
 import {
   aiConfig,
   remoteStudioConfig,
@@ -65,13 +66,14 @@ export function createApp({
 } = {}) {
   let active = false;
   let studio;
+  const gps = createGps();
   const server = http.createServer(async (req, res) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("X-Frame-Options", "SAMEORIGIN");
     res.setHeader("Referrer-Policy", "no-referrer");
     res.setHeader(
       "Content-Security-Policy",
-      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
+      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; frame-src http://127.0.0.1:8108; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
     );
     const address = serverAddress(req.headers.host);
     if (!address) {
@@ -116,6 +118,14 @@ export function createApp({
           ...(await status(config)),
           remoteConfigured: Boolean(remote),
         });
+        return;
+      }
+      if (pathname === "/api/gps" && req.method === "GET") {
+        json(res, 200, gps.snapshot());
+        return;
+      }
+      if (pathname === "/api/gps/refresh" && req.method === "POST") {
+        json(res, 202, gps.refresh());
         return;
       }
       if (pathname.startsWith("/local-studio/")) {
@@ -318,6 +328,7 @@ export function createApp({
     }
   });
   server.on("close", () => studio?.close());
+  server.on("close", () => gps.close());
   return server;
 }
 function serverAddress(host) {

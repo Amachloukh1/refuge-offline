@@ -32,6 +32,15 @@ export function WeatherRadio({ t }) {
   return (
     <>
       <Notice icon="CloudSun">{t.weatherCacheNote}</Notice>
+      <section className="panel padded weather-offline">
+        <h2>{t.weatherOfflineTitle}</h2>
+        <p>{t.weatherOfflineText}</p>
+        <p>{t.weatherDwd}</p>
+        <p>{t.weatherLimits}</p>
+        <External href="https://www.dwd.de/sendeplan">
+          DWD · {t.source}
+        </External>
+      </section>
       <section className="panel padded">
         <div className="section-toolbar">
           <label>
