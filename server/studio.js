@@ -310,6 +310,12 @@ export function createStudio({ root, generate }) {
   }
   return {
     handle,
+    pause() {
+      db.prepare(
+        "UPDATE jobs SET status='cancelled',partial='' WHERE status IN ('queued','running')",
+      ).run();
+      controller?.abort();
+    },
     close() {
       closed = true;
       clearTimeout(timer);

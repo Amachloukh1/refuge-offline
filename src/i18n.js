@@ -914,6 +914,9 @@ Object.assign(ar, {
 for (const [lang, dictionary] of Object.entries({ fr, en, de, ar }))
   Object.assign(dictionary, offlineText[lang]);
 export const translations = { fr, en, de, ar };
+import { resilienceText } from "./resilience-text.js";
+for (const [lang, dictionary] of Object.entries(translations))
+  Object.assign(dictionary, resilienceText[lang]);
 for (const [lang, dictionary] of Object.entries(translations))
   Object.assign(dictionary, fieldText[lang]);
 export const languages = {

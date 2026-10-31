@@ -19,8 +19,19 @@ import { Inventory } from "./Inventory";
 import { Health, Preparation, Settings, DocumentList } from "./Pages";
 import { Assistant } from "./StudioAssistant";
 import { Hazards } from "./Hazards.jsx";
+import {
+  EmergencyNow,
+  ReadinessDashboard,
+  EnergyPlanner,
+} from "./Preparedness.jsx";
+import { defaultEnergy, defaultReadiness } from "./preparedness.js";
+import { validateState } from "./state-schema.js";
+import { SystemCheck, DataRestore } from "./SystemTools";
+import { FirstAidBrief } from "./FirstAidBrief.jsx";
 const pages = [
   ["home", "Home"],
+  ["emergency", "Siren"],
+  ["readiness", "ClipboardCheck"],
   ["assistant", "MessageCircle"],
   ["library", "BookOpen"],
   ["hazards", "ShieldCheck"],
@@ -31,8 +42,14 @@ const pages = [
   ["videos", "Video"],
   ["wiki", "BookOpen"],
   ["prepare", "ClipboardCheck"],
+  ["energy", "BatteryCharging"],
+  ["system", "ShieldCheck"],
 ];
 const subtitleKeys = {
+  emergency: "emergencySub",
+  readiness: "readinessSub",
+  energy: "energySub",
+  system: "systemSub",
   assistant: "assistantSub",
   library: "librarySub",
   hazards: "hazardsSub",
@@ -55,46 +72,21 @@ const defaults = {
   favorites: [],
   bought: [],
   family: { meeting: "", contact: "", instructions: "" },
+  readiness: defaultReadiness,
+  energy: defaultEnergy,
+  places: [],
+  meals: [],
 };
+let rejectedState = null;
 function readState() {
+  let raw;
   try {
-    const value = JSON.parse(localStorage.getItem("refuge.v1"));
-    if (value?.version !== 1) return defaults;
-    return {
-      ...defaults,
-      ...value,
-      lang: translations[value.lang] ? value.lang : "fr",
-      people:
-        Number.isInteger(value.people) && value.people > 0 && value.people <= 50
-          ? value.people
-          : 4,
-      days:
-        Number.isInteger(value.days) && value.days > 0 && value.days <= 365
-          ? value.days
-          : 10,
-      stock: Array.isArray(value.stock)
-        ? value.stock.filter(
-            (i) =>
-              typeof i.id === "string" &&
-              typeof i.name === "string" &&
-              Number.isFinite(i.quantity) &&
-              i.quantity >= 0 &&
-              ["water", "food", "equipment", "health"].includes(i.category) &&
-              ["L", "kg", "unit"].includes(i.unit) &&
-              (!i.key || typeof translations.fr[i.key] === "string"),
-          )
-        : seedStock,
-      checked: Array.isArray(value.checked)
-        ? [...new Set(value.checked.filter((k) => checklistIds.includes(k)))]
-        : defaults.checked,
-      favorites: Array.isArray(value.favorites) ? value.favorites : [],
-      bought: Array.isArray(value.bought) ? value.bought : [],
-      family:
-        value.family && typeof value.family === "object"
-          ? value.family
-          : defaults.family,
-    };
+    raw = localStorage.getItem("refuge.v1");
+    if (!raw) return defaults;
+    const value = JSON.parse(raw);
+    return validateState({ ...defaults, ...value });
   } catch {
+    rejectedState = raw || null;
     return defaults;
   }
 }
@@ -115,6 +107,8 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [tab, setTab] = useState(routeView);
   const [storageError, setStorageError] = useState(false);
+  const [storageBlocked, setStorageBlocked] = useState(Boolean(rejectedState));
+  const [powerError, setPowerError] = useState(false);
   const [documents, setDocuments] = useState([]);
   const [status, setStatus] = useState(null);
   const [statusRevision, setStatusRevision] = useState(0);
@@ -122,6 +116,23 @@ export default function App() {
   const menuButton = useRef(null);
   const previousPage = useRef(page);
   const t = translations[state.lang];
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("/api/energy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ paused: state.energy.ecoMode }),
+      signal: controller.signal,
+    })
+      .then((r) => {
+        if (!r.ok) throw Error();
+        setPowerError(false);
+      })
+      .catch((e) => {
+        if (e.name !== "AbortError") setPowerError(true);
+      });
+    return () => controller.abort();
+  }, [state.energy.ecoMode]);
   useEffect(() => {
     if (page === "library" && tab) {
       const selected = guideData.find((g) => g.id === tab);
@@ -132,6 +143,18 @@ export default function App() {
     setState((prev) => ({
       ...prev,
       [key]: typeof value === "function" ? value(prev[key]) : value,
+      ...(["people", "days"].includes(key)
+        ? { readiness: { ...defaultReadiness } }
+        : key === "stock"
+          ? {
+              readiness: {
+                ...prev.readiness,
+                waterConfirmed: false,
+                food: false,
+                personalMeds: false,
+              },
+            }
+          : {}),
     }));
   const toggle = (key, id) =>
     update(key, (prev) =>
@@ -148,13 +171,14 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "instant" });
   };
   useEffect(() => {
+    if (storageBlocked) return;
     try {
       localStorage.setItem("refuge.v1", JSON.stringify(state));
       setStorageError(false);
     } catch {
       setStorageError(true);
     }
-  }, [state]);
+  }, [state, storageBlocked]);
   useEffect(() => {
     document.documentElement.lang = state.lang;
     document.documentElement.dir = state.lang === "ar" ? "rtl" : "ltr";
@@ -217,7 +241,7 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "refuge-demo.json";
+    a.download = "refuge-donnees.json";
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
@@ -227,7 +251,7 @@ export default function App() {
     navigate("library");
   }
   return (
-    <div className="app-shell">
+    <div className={`app-shell${state.energy.ecoMode ? " eco-mode" : ""}`}>
       <a
         href="#main-content"
         className="skip-link"
@@ -297,6 +321,13 @@ export default function App() {
             <strong>{page === "home" ? t.overview : t[page]}</strong>
           </div>
           <div className="topbar-options">
+            <button
+              className="emergency-shortcut"
+              onClick={() => navigate("emergency")}
+            >
+              <Icon name="Siren" size={18} />
+              {t.emergency}
+            </button>
             <label className="language-select">
               <Icon name="Globe" size={20} />
               <span className="sr-only">{t.language}</span>
@@ -330,11 +361,84 @@ export default function App() {
             action={
               <span className="demo-label">
                 <Icon name="Eye" size={18} />
-                {t.demo}
+                {["home", "inventory"].includes(page) ? t.demo : t.localData}
               </span>
             }
           />
           {storageError && <Notice tone="warning">{t.storageWarning}</Notice>}
+          {storageBlocked && (
+            <Notice tone="warning">
+              <p>{t.storageIncompatible}</p>
+              <button
+                className="button outline"
+                onClick={() => {
+                  const url = URL.createObjectURL(
+                    new Blob([rejectedState], { type: "application/json" }),
+                  );
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.download = "refuge-original-a-recuperer.json";
+                  a.click();
+                  setTimeout(() => URL.revokeObjectURL(url), 1000);
+                }}
+              >
+                {t.exportOriginal}
+              </button>
+            </Notice>
+          )}
+          {powerError && state.energy.ecoMode && (
+            <Notice tone="warning">{t.pauseFailed}</Notice>
+          )}
+          {state.energy.ecoMode && (
+            <Notice>
+              {t.ecoActive}{" "}
+              <button
+                className="text-button"
+                onClick={() =>
+                  update("energy", (e) => ({ ...e, ecoMode: false }))
+                }
+              >
+                {t.disableEco}
+              </button>
+            </Notice>
+          )}
+          {page === "emergency" && (
+            <>
+              <button
+                className="button outline no-print"
+                onClick={() => window.print()}
+              >
+                {t.printPage}
+              </button>
+              <EmergencyNow
+                lang={state.lang}
+                onGuide={(id) => setGuide(guideData.find((g) => g.id === id))}
+                onHazard={(id) => navigate("hazards", id)}
+                onHealth={setAid}
+              />
+            </>
+          )}
+          {page === "readiness" && (
+            <ReadinessDashboard
+              lang={state.lang}
+              water={water}
+              people={state.people}
+              days={state.days}
+              readiness={state.readiness}
+              setReadiness={(v) => update("readiness", v)}
+              onNavigate={(p) => navigate(p === "checklist" ? "prepare" : p)}
+            />
+          )}
+          {page === "energy" && (
+            <EnergyPlanner
+              lang={state.lang}
+              energy={state.energy}
+              setEnergy={(v) => update("energy", v)}
+            />
+          )}
+          {page === "system" && (
+            <SystemCheck lang={state.lang} status={status} />
+          )}
           {page === "home" && (
             <>
               <form className="global-search" onSubmit={searchAll}>
@@ -361,6 +465,26 @@ export default function App() {
                 bought={state.bought}
                 toggleBought={(id) => toggle("bought", id)}
               />
+              <div className="panel padded preparedness-actions">
+                <button
+                  className="button"
+                  onClick={() => navigate("readiness")}
+                >
+                  {t.readiness}
+                </button>
+                <button
+                  className="button outline"
+                  onClick={() => navigate("system")}
+                >
+                  {t.system}
+                </button>
+                <button
+                  className="button outline"
+                  onClick={() => navigate("energy")}
+                >
+                  {t.energy}
+                </button>
+              </div>
             </>
           )}
           {page === "library" && (
@@ -396,6 +520,8 @@ export default function App() {
               lang={state.lang}
               stock={state.stock}
               setStock={(value) => update("stock", value)}
+              meals={state.meals}
+              setMeals={(value) => update("meals", value)}
               people={state.people}
               setPeople={(value) => update("people", value)}
               days={state.days}
@@ -409,11 +535,16 @@ export default function App() {
           )}{" "}
           {page === "maps" && (
             <Suspense fallback={<p>{t.loading}</p>}>
-              <OfflineMaps t={t} />
+              <OfflineMaps
+                t={t}
+                lang={state.lang}
+                places={state.places}
+                setPlaces={(v) => update("places", v)}
+              />
             </Suspense>
           )}
           {page === "weather" && <WeatherRadio t={t} />}
-          {page === "videos" && <LocalVideos t={t} />}
+          {page === "videos" && <LocalVideos t={t} lang={state.lang} />}
           {page === "wiki" && <LocalWiki t={t} lang={state.lang} />}
           {page === "prepare" && (
             <Preparation
@@ -429,35 +560,59 @@ export default function App() {
               initialTab={tab}
             />
           )}{" "}
-          {page === "assistant" && (
-            <Assistant
-              key={state.lang}
-              t={t}
-              lang={state.lang}
-              water={water}
-              onRead={setGuide}
-              navigate={navigate}
-              status={status}
-              onStatusRefresh={() => setStatusRevision((value) => value + 1)}
-              planning={{
-                people: state.people,
-                days: state.days,
-                water: water.stock,
-              }}
-            />
-          )}{" "}
+          {page === "assistant" &&
+            (state.energy.ecoMode ? (
+              <Notice>
+                {t.ecoActive}
+                <button
+                  className="button outline"
+                  onClick={() =>
+                    update("energy", (e) => ({ ...e, ecoMode: false }))
+                  }
+                >
+                  {t.disableEco}
+                </button>
+              </Notice>
+            ) : (
+              <Assistant
+                key={state.lang}
+                t={t}
+                lang={state.lang}
+                water={water}
+                onRead={setGuide}
+                navigate={navigate}
+                status={status}
+                onStatusRefresh={() => setStatusRevision((value) => value + 1)}
+                planning={{
+                  people: state.people,
+                  days: state.days,
+                  water: water.stock,
+                }}
+              />
+            ))}{" "}
           {page === "settings" && (
-            <Settings
-              t={t}
-              lang={state.lang}
-              setLang={(value) => update("lang", value)}
-              exportData={exportData}
-              status={status}
-            />
+            <>
+              <Settings
+                t={t}
+                lang={state.lang}
+                setLang={(value) => update("lang", value)}
+                exportData={exportData}
+                status={status}
+              />
+              <DataRestore
+                lang={state.lang}
+                exportData={exportData}
+                onRestore={(value) => {
+                  setState(validateState(value));
+                  setStorageBlocked(false);
+                  rejectedState = null;
+                }}
+              />
+            </>
           )}
         </main>
         <footer>
-          <span>{t.footer}</span>
+          <span>{t.localFooter}</span>
           <span>
             <Icon name="Leaf" size={15} /> REFUGE · {t.tagline}
           </span>
@@ -477,6 +632,7 @@ export default function App() {
             {t.medicalNotice}
           </Notice>
           <p className="reader-intro">{t.healthSheet}</p>
+          <FirstAidBrief kind={aid} lang={state.lang} t={t} />
           <p>{t.healthSheetNote}</p>
           <div className="reference-list">
             {documents

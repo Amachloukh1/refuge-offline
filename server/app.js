@@ -8,6 +8,7 @@ import { serveLocalFile } from "./files.js";
 import { readWeather, refreshWeather } from "./weather.js";
 import { createStudio } from "./studio.js";
 import { createGps } from "./gps.js";
+import { createReadiness } from "./readiness.js";
 import {
   aiConfig,
   remoteStudioConfig,
@@ -65,8 +66,11 @@ export function createApp({
   remote = remoteStudioConfig(),
 } = {}) {
   let active = false;
+  let aiPaused = false;
+  let legacyController;
   let studio;
   const gps = createGps();
+  const readiness = createReadiness(root);
   const server = http.createServer(async (req, res) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("X-Frame-Options", "SAMEORIGIN");
@@ -113,6 +117,39 @@ export function createApp({
       return;
     }
     try {
+      if (pathname === "/api/readiness" && req.method === "GET") {
+        json(res, 200, readiness.snapshot());
+        return;
+      }
+      if (pathname === "/api/energy" && req.method === "POST") {
+        let input;
+        try {
+          input = await body(req);
+        } catch {
+          json(res, 400, { code: "invalid_energy" });
+          return;
+        }
+        if (!input || typeof input.paused !== "boolean") {
+          json(res, 400, { code: "invalid_energy" });
+          return;
+        }
+        aiPaused = input.paused;
+        if (aiPaused) {
+          studio?.pause();
+          legacyController?.abort();
+        }
+        json(res, 200, { paused: aiPaused });
+        return;
+      }
+      if (pathname === "/api/readiness/check" && req.method === "POST") {
+        const input = await body(req);
+        if (!input || typeof input.deep !== "boolean") {
+          json(res, 400, { code: "invalid_check" });
+          return;
+        }
+        json(res, 202, readiness.start({ deep: input.deep }));
+        return;
+      }
       if (pathname === "/api/status" && req.method === "GET") {
         json(res, 200, {
           ...(await status(config)),
@@ -132,6 +169,7 @@ export function createApp({
         studio ??= createStudio({
           root,
           generate: async (data, signal, onPartial) => {
+            if (aiPaused) throw new Error("engine_paused");
             if (active) throw new Error("engine_busy");
             const selected = data.mode === "remote" ? remote : config;
             if (!selected) throw new Error("engine_unavailable");
@@ -249,6 +287,11 @@ export function createApp({
           json(res, 429, { code: "engine_busy" });
           return;
         }
+        if (aiPaused) {
+          json(res, 503, { code: "engine_paused" });
+          return;
+        }
+        legacyController = controller;
         active = true;
         try {
           const answer = await completeChat(
@@ -272,6 +315,7 @@ export function createApp({
           if (!res.destroyed) json(res, 503, { code: "engine_unavailable" });
         } finally {
           active = false;
+          legacyController = null;
         }
         return;
       }

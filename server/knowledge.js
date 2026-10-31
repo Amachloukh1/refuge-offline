@@ -75,7 +75,36 @@ async function pdfChunks(root) {
         chunks: Array.isArray(index.chunks) ? index.chunks : [],
       };
     }
-    return pdfCache.chunks;
+    let catalog = [];
+    try {
+      const data = JSON.parse(
+        await readFile(path.join(root, "content/catalog.json"), "utf8"),
+      );
+      if (Array.isArray(data)) catalog = data;
+    } catch {
+      /* Missing catalog means unknown download date, never a fabricated one. */
+    }
+    const byFilename = new Map(
+      catalog.map((document) => [document.filename, document]),
+    );
+    return pdfCache.chunks.map((chunk) => {
+      const filename = chunk.href?.match(/^\/documents\/([^#]+)(?:#|$)/)?.[1];
+      const document = byFilename.get(filename);
+      return {
+        ...chunk,
+        publisher: document?.publisher || chunk.publisher,
+        reviewedAt: undefined,
+        downloadedAt: document?.downloadedAt,
+        sources: document
+          ? [
+              {
+                label: document.publisher,
+                url: document.sourcePage || document.url,
+              },
+            ]
+          : [],
+      };
+    });
   } catch {
     return [];
   }
@@ -88,6 +117,8 @@ export async function retrieveKnowledge(root, query, lang) {
     href: `#library?view=${g.id}`,
     language: lang,
     publisher: g.publisher,
+    reviewedAt: g.reviewedAt,
+    sources: g.sources || (g.url ? [{ label: g.publisher, url: g.url }] : []),
   }));
   for (const h of hazards) {
     const d = h[lang];
@@ -99,7 +130,9 @@ export async function retrieveKnowledge(root, query, lang) {
         .join("\n"),
       href: `#hazards?view=${h.id}`,
       language: lang,
-      publisher: "REFUGE · sources officielles",
+      publisher: h.sources.map((source) => source.label).join(" · "),
+      reviewedAt: h.reviewedAt,
+      sources: h.sources,
     });
   }
   passages.push(...(await pdfChunks(root)));
@@ -116,15 +149,29 @@ export async function retrieveKnowledge(root, query, lang) {
     text: selected
       .map(
         (p) =>
-          `[${p.id}] ${p.title}${p.page ? ` — page ${p.page}` : ""} (${p.publisher})\n${p.text}`,
+          `[${p.id}] ${p.title}${p.page ? ` — page ${p.page}` : ""} (${p.publisher})\n${p.reviewedAt ? `Content review date: ${p.reviewedAt} (editorial metadata, not clinical validation).` : p.downloadedAt ? `PDF downloaded: ${p.downloadedAt} (download date, not publication or medical review date).` : "Review date not provided."}\nSources: ${(p.sources || []).map((source) => `${source.label}: ${source.url}`).join("; ")}\n${p.text}`,
       )
       .join("\n\n"),
-    references: selected.map(({ id, title, href, page, publisher }) => ({
-      id,
-      title,
-      href,
-      page,
-      publisher,
-    })),
+    references: selected.map(
+      ({
+        id,
+        title,
+        href,
+        page,
+        publisher,
+        reviewedAt,
+        downloadedAt,
+        sources,
+      }) => ({
+        id,
+        title,
+        href,
+        page,
+        publisher,
+        reviewedAt,
+        downloadedAt,
+        sources,
+      }),
+    ),
   };
 }

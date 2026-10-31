@@ -92,6 +92,7 @@ test("parcours sans Internet : recherche, stock, persistance, documents et arabe
     .getByRole("link", { name: "Assistant IA", exact: true })
     .click();
   await page
+    .getByRole("region", { name: "Assistant", exact: true })
     .getByRole("button", {
       name: "Comment préparer une coupure de courant ?",
       exact: true,

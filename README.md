@@ -1,5 +1,7 @@
 # REFUGE
 
+**Nouveautés :** urgence immédiate, préparation du foyer, contrôle des ressources, rotation des réserves et repas, énergie/mode éco, lieux personnels, provenance IA et restauration. [Fonctionnement et limites](docs/fiabilite-preparation.md) · [Sauvegarde complète et restauration](docs/backup-restore.md).
+
 Application locale de préparation aux crises. Interface FR / DE / EN / AR (droite à gauche), 18 fiches pratiques dont quatre illustrées sur l'autonomie longue durée, bibliothèque PDF indexée, réserves modifiables, plan d'achats, checklist et assistant Local Studio intégré. Carte Saxe, lecture GPS USB sur demande, dix vidéos locales, Wikipédia compacte FR/DE/AR intégrée avec ouverture automatique et météo sauvegardée. Ubuntu 22.04 reste à tester sur le mini-PC.
 
 **Installation actuelle, contenu, limites et transfert : [guide hors ligne](docs/installation-offline.md).** Le dépôt GitHub conserve le code et les catalogues ; les gros fichiers locaux doivent être transférés séparément. Un clone seul ne contient pas les modèles ni les archives Wikipédia.

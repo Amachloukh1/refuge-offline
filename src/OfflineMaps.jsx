@@ -7,8 +7,9 @@ import { layers, namedFlavor } from "@protomaps/basemaps";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Icon, Notice, Button } from "./components";
 import mapPlan from "../content/maps.plan.json";
+import { PersonalPlaces } from "./PersonalPlaces";
 let registered = false;
-export default function OfflineMaps({ t }) {
+export default function OfflineMaps({ t, lang, places = [], setPlaces }) {
   const container = useRef(null),
     mapRef = useRef(null);
   const [info, setInfo] = useState(null);
@@ -17,6 +18,16 @@ export default function OfflineMaps({ t }) {
   const [gps, setGps] = useState(null);
   const [mapReady, setMapReady] = useState(null);
   const marker = useRef(null);
+  useEffect(() => {
+    if (!mapReady) return;
+    const markers = places.map((p) =>
+      new maplibregl.Marker({ color: "#9a6c35" })
+        .setLngLat([p.longitude, p.latitude])
+        .setPopup(new maplibregl.Popup().setText(`${p.name} · ${p.notes}`))
+        .addTo(mapReady),
+    );
+    return () => markers.forEach((m) => m.remove());
+  }, [mapReady, places]);
   useEffect(() => {
     if (gps?.status !== "searching") return;
     const timer = setInterval(
@@ -212,6 +223,15 @@ export default function OfflineMaps({ t }) {
           </Button>
         ))}
       </div>
+      <PersonalPlaces
+        lang={lang}
+        places={places}
+        setPlaces={setPlaces}
+        coords={coords}
+        onLocate={(p) =>
+          mapRef.current?.flyTo({ center: [p.longitude, p.latitude], zoom: 12 })
+        }
+      />
       <section className="panel padded">
         <h2>{t.mapPlanTitle}</h2>
         <p>{t.mapPlanNote}</p>

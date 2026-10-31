@@ -2,6 +2,28 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { aiConfig, validateMessages, completeChat } from "../server/ai.js";
 
+test("an explicitly empty retrieval never falls back to unrelated default guides", async () => {
+  let system;
+  await completeChat(
+    aiConfig({}),
+    [{ role: "user", content: "zzzznomatchingreference993371" }],
+    "en",
+    async (_url, options) => {
+      system = JSON.parse(options.body).messages[0].content;
+      return new Response(
+        JSON.stringify({
+          message: { content: "No local references matched." },
+        }),
+      );
+    },
+    undefined,
+    { text: "", references: [] },
+  );
+  assert.match(system, /NO LOCAL REFERENCES MATCHED/);
+  assert.match(system, /context is insufficient/);
+  assert.doesNotMatch(system, /\[power\]|\[water\]|\[pantry\]/);
+});
+
 test("le flux Ollama de Local Studio provient réellement des fragments du moteur", async () => {
   const partial = [];
   const fetcher = async (url, options) => {

@@ -356,9 +356,24 @@ export default function Assistant({
                             <a key={r.id} href={r.href}>
                               {r.title}
                               {r.page ? ` · p. ${r.page}` : ""}
+                              {r.publisher ? ` · ${r.publisher}` : ""}
+                              {r.reviewedAt
+                                ? ` · ${t.referenceReviewed}: ${r.reviewedAt.slice(0, 10)}`
+                                : r.downloadedAt
+                                  ? ` · ${t.referenceDownloaded}: ${r.downloadedAt.slice(0, 10)}`
+                                  : ` · ${t.referenceDateUnknown}`}
                             </a>
                           ))}
                         </div>
+                        {m.references?.length ? (
+                          <small className="response-origin">
+                            {t.referenceDateNote}
+                          </small>
+                        ) : (
+                          <small className="response-origin">
+                            {t.noLocalReferences}
+                          </small>
+                        )}
                         <CopyButton t={t} content={m.content} />
                       </>
                     )}

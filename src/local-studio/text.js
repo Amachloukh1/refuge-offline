@@ -1,5 +1,12 @@
 export const studioText = {
   fr: {
+    noLocalReferences:
+      "Aucune référence locale correspondante. La réponse n’est pas étayée par les fiches locales.",
+    referenceReviewed: "Revue du contenu",
+    referenceDownloaded: "PDF téléchargé",
+    referenceDateUnknown: "Date de revue non renseignée",
+    referenceDateNote:
+      "La date de revue concerne le contenu local ; le téléchargement d’un PDF ne constitue pas une validation médicale ni sa date de publication.",
     studioLocalNotice:
       "Ton assistant Local Studio, intégré et exécuté sur ce PC.",
     studioEmbedded: "INTÉGRÉ",
@@ -37,6 +44,13 @@ export const studioText = {
       "Les conversations sont conservées dans la base locale de ce PC. La corbeille permet leur restauration ; ce stockage n’est pas chiffré.",
   },
   de: {
+    noLocalReferences:
+      "Keine passenden lokalen Quellen. Die Antwort ist nicht durch lokale Merkblätter belegt.",
+    referenceReviewed: "Inhalt geprüft",
+    referenceDownloaded: "PDF heruntergeladen",
+    referenceDateUnknown: "Prüfdatum nicht angegeben",
+    referenceDateNote:
+      "Das Prüfdatum betrifft den lokalen Inhalt; ein PDF-Download ist weder medizinische Validierung noch Veröffentlichungsdatum.",
     studioLocalNotice:
       "Dein Local-Studio-Assistent, direkt auf diesem PC integriert.",
     studioEmbedded: "INTEGRIERT",
@@ -73,6 +87,13 @@ export const studioText = {
       "Gespräche werden in der lokalen Datenbank gespeichert. Der Papierkorb ermöglicht Wiederherstellung; der Speicher ist nicht verschlüsselt.",
   },
   en: {
+    noLocalReferences:
+      "No local references matched. This answer is not supported by local reference passages.",
+    referenceReviewed: "Content reviewed",
+    referenceDownloaded: "PDF downloaded",
+    referenceDateUnknown: "Review date not provided",
+    referenceDateNote:
+      "Review dates concern local content; a PDF download date is neither medical validation nor its publication date.",
     studioLocalNotice:
       "Your Local Studio assistant, embedded and running on this PC.",
     studioEmbedded: "EMBEDDED",
@@ -109,6 +130,13 @@ export const studioText = {
       "Conversations are saved in this PC’s local database. Trash allows restoration; storage is not encrypted.",
   },
   ar: {
+    noLocalReferences:
+      "لم تطابق أي مراجع محلية. الإجابة غير مدعومة بمقاطع المراجع المحلية.",
+    referenceReviewed: "مراجعة المحتوى",
+    referenceDownloaded: "تنزيل ملف PDF",
+    referenceDateUnknown: "تاريخ المراجعة غير متوفر",
+    referenceDateNote:
+      "تخص تواريخ المراجعة المحتوى المحلي؛ تاريخ تنزيل PDF ليس تحققاً طبياً ولا تاريخ نشره.",
     studioLocalNotice: "مساعد Local Studio مدمج ويعمل على هذا الحاسوب.",
     studioEmbedded: "مدمج",
     studioWelcome: "ماذا تحتاج للاستعداد؟",
