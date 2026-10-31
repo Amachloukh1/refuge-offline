@@ -4,6 +4,12 @@ export default defineConfig({
   outputDir: ".playwright",
   workers: 1,
   retries: 0,
+  webServer: {
+    command: "node --env-file-if-exists=.env server/index.js",
+    url: "http://127.0.0.1:8099",
+    reuseExistingServer: true,
+    timeout: 60000,
+  },
   timeout: 30000,
   use: {
     baseURL: "http://127.0.0.1:8099",

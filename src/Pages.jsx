@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Icon, Button, Progress, Notice, External } from "./components";
 import { checklistIds } from "./data";
 import { languages } from "./i18n";
@@ -345,6 +345,13 @@ export function Preparation({
 }
 export function Settings({ t, lang, setLang, exportData, status }) {
   const [downloaded, setDownloaded] = useState(false);
+  const [assets, setAssets] = useState(null);
+  useEffect(() => {
+    fetch("/api/resources")
+      .then((r) => r.json())
+      .then(setAssets)
+      .catch(() => {});
+  }, []);
   return (
     <div className="settings-grid">
       <section className="panel padded">
@@ -398,7 +405,19 @@ export function Settings({ t, lang, setLang, exportData, status }) {
               "Local Studio / Ollama",
               status?.available ? status.model : t.disconnected,
             ],
-            ["Kiwix", t.installLater],
+            [
+              "Kiwix",
+              assets?.wikiReader
+                ? `${assets.wiki.length} · ${t.available}`
+                : t.installLater,
+            ],
+            [t.maps, assets?.maps?.length ? t.available : t.installLater],
+            [
+              t.videos,
+              assets?.videos?.length
+                ? `${assets.videos.length} · ${t.available}`
+                : t.installLater,
+            ],
             ["Open WebUI", t.optional],
             ["Grocy", t.optional],
             [t.installedGuides, t.available],

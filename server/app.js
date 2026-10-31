@@ -2,6 +2,10 @@ import http from "node:http";
 import path from "node:path";
 import { readFile, stat, realpath } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
+import { retrieveKnowledge, validatePlanning } from "./knowledge.js";
+import { resources } from "./resources.js";
+import { serveLocalFile } from "./files.js";
+import { readWeather, refreshWeather } from "./weather.js";
 import {
   aiConfig,
   remoteStudioConfig,
@@ -16,6 +20,7 @@ const project = path.resolve(
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
+  ".mjs": "text/javascript; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".svg": "image/svg+xml",
   ".png": "image/png",
@@ -64,7 +69,7 @@ export function createApp({
     res.setHeader("Referrer-Policy", "no-referrer");
     res.setHeader(
       "Content-Security-Policy",
-      "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
+      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
     );
     const address = serverAddress(req.headers.host);
     if (!address) {
@@ -83,6 +88,22 @@ export function createApp({
       pathname = decodeURIComponent(
         new URL(req.url, `http://${req.headers.host}`).pathname,
       );
+      if (pathname === "/api/weather" && req.method === "GET") {
+        json(res, 200, await readWeather(root));
+        return;
+      }
+      if (pathname === "/api/weather/refresh" && req.method === "POST") {
+        const input = await body(req);
+        try {
+          json(res, 200, await refreshWeather(root, input.city));
+        } catch {
+          json(res, 503, { code: "weather_unavailable" });
+        }
+        return;
+      }
+      pathname = decodeURIComponent(
+        new URL(req.url, `http://${req.headers.host}`).pathname,
+      );
     } catch {
       json(res, 400, { code: "invalid_path" });
       return;
@@ -93,6 +114,32 @@ export function createApp({
           ...(await status(config)),
           remoteConfigured: Boolean(remote),
         });
+        return;
+      }
+      if (pathname === "/api/resources" && req.method === "GET") {
+        json(res, 200, await resources(root));
+        return;
+      }
+      if (
+        /^\/assets\/(maps|videos|zim)\//.test(pathname) &&
+        ["GET", "HEAD"].includes(req.method)
+      ) {
+        const parts = pathname.slice("/assets/".length).split("/");
+        const kind = parts.shift();
+        if (!["maps", "videos", "zim"].includes(kind)) {
+          json(res, 404, { code: "not_found" });
+          return;
+        }
+        try {
+          await serveLocalFile(
+            req,
+            res,
+            path.join(root, "content", kind),
+            parts.join("/"),
+          );
+        } catch {
+          if (!res.headersSent) json(res, 404, { code: "not_found" });
+        }
         return;
       }
       if (pathname === "/api/documents" && req.method === "GET") {
@@ -134,6 +181,19 @@ export function createApp({
           json(res, 503, { code: "remote_not_configured" });
           return;
         }
+        const planning =
+          data.planning === undefined ? null : validatePlanning(data.planning);
+        if (data.planning !== undefined && !planning) {
+          json(res, 400, { code: "invalid_planning" });
+          return;
+        }
+        const knowledge = await retrieveKnowledge(
+          root,
+          data.messages.at(-1).content,
+          ["fr", "de", "en", "ar"].includes(data.language)
+            ? data.language
+            : "fr",
+        );
         const controller = new AbortController();
         res.on("close", () => controller.abort());
         if (active) {
@@ -148,6 +208,8 @@ export function createApp({
             data.language,
             fetch,
             controller.signal,
+            knowledge,
+            planning,
           );
           if (!res.destroyed)
             json(res, 200, {
@@ -155,6 +217,7 @@ export function createApp({
               model: selected.model,
               provider: selected.provider,
               remote: Boolean(selected.remote),
+              references: knowledge.references,
             });
         } catch {
           if (!res.destroyed) json(res, 503, { code: "engine_unavailable" });

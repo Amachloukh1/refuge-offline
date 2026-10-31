@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Icon, Button, Progress, Notice, Modal, External } from "./components";
 import { validStock } from "./planning";
+import { PurchasePlan } from "./PurchasePlan";
 const categories = ["water", "food", "equipment", "health"];
 export const categoryLabel = (category, t) =>
   t[category === "health" ? "healthCategory" : category];
 export const stockName = (item, t) => (item.key ? t[item.key] : item.name);
 export function Inventory({
   t,
+  lang,
   stock,
   setStock,
   people,
@@ -20,7 +22,7 @@ export function Inventory({
   initialTab,
 }) {
   const [tab, setTab] = useState(
-    initialTab === "shopping" ? "shopping" : "stock",
+    ["shopping", "plan"].includes(initialTab) ? initialTab : "stock",
   );
   const [category, setCategory] = useState("all");
   const [editing, setEditing] = useState(null);
@@ -112,6 +114,12 @@ export function Inventory({
           >
             {t.purchases}
           </button>
+          <button
+            className={tab === "plan" ? "active" : ""}
+            onClick={() => setTab("plan")}
+          >
+            {t.purchasePlan}
+          </button>
         </div>
         <Button
           icon="Plus"
@@ -123,7 +131,15 @@ export function Inventory({
           {t.add}
         </Button>
       </div>
-      {tab === "stock" ? (
+      {tab === "plan" ? (
+        <PurchasePlan
+          t={t}
+          lang={lang}
+          water={water}
+          bought={bought}
+          toggleBought={toggleBought}
+        />
+      ) : tab === "stock" ? (
         <>
           <div className="filter-row">
             {["all", ...categories].map((c) => (

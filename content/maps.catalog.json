@@ -1,0 +1,3 @@
+[
+ {"id":"sachsen","filename":"sachsen.pmtiles","title":"Sachsen · Saxe","bytes":294012520,"sha256":"a9d3050e1a0282b3d3298d226d55ed7c4f36ce39f2823f8dfac97e757415bbce","bounds":[11.8,50.1,15.1,51.8],"maxzoom":14,"downloadedAt":"2026-10-31","source":"https://build.protomaps.com/20261030.pmtiles","attribution":"© OpenStreetMap contributors · Protomaps","license":"ODbL 1.0","notes":"Extrait rectangulaire de la Saxe avec bordures voisines ; carte de consultation, sans calcul d’itinéraire ni preuve de potabilité des points d’eau."}
+]

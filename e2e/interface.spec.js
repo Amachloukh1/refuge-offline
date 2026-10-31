@@ -6,11 +6,24 @@ const screenshotDir = path.join(os.tmpdir(), "refuge-qa");
 test("parcours sans Internet : recherche, stock, persistance, documents et arabe", async ({
   page,
 }) => {
+  await page.route("**/api/chat", (route) =>
+    route.fulfill({
+      status: 503,
+      contentType: "application/json",
+      body: '{"code":"unavailable"}',
+    }),
+  );
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   const external = [];
   await page.route("**/*", (route) => {
     const u = new URL(route.request().url());
+    if (u.pathname === "/api/chat")
+      return route.fulfill({
+        status: 503,
+        contentType: "application/json",
+        body: '{"code":"unavailable"}',
+      });
     if (["127.0.0.1", "localhost"].includes(u.hostname)) route.continue();
     else {
       external.push(u.href);
@@ -50,7 +63,7 @@ test("parcours sans Internet : recherche, stock, persistance, documents et arabe
     .click();
   await page
     .getByRole("textbox", { name: "Rechercher dans les fiches", exact: true })
-    .fill("courant");
+    .fill("coupure de courant");
   await expect(page.locator(".guide-card")).toHaveCount(1);
   await page
     .getByRole("button", { name: "Ajouter aux favoris", exact: true })

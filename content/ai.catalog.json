@@ -1,0 +1,25 @@
+{
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "bytes": 2497293803,
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "4.0B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 2560,
+    "runner": "ggml"
+  },
+  "source": "https://ollama.com/library/qwen3:4b-instruct-2507-q4_K_M",
+  "license": "Apache-2.0",
+  "licenseSource": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/blob/main/LICENSE",
+  "runtime": "Ollama 0.40.13",
+  "processor": "CPU",
+  "trainedForThisProject": false,
+  "localDocumentPassages": 193
+}

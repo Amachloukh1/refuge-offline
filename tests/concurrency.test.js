@@ -13,7 +13,7 @@ test("deux corps HTTP simultanés ne lancent pas deux inférences", async () => 
         res.setHeader("Content-Type", "application/json");
         res.end(
           JSON.stringify({
-            choices: [{ message: { content: "Local answer" } }],
+            message: { content: "Local answer" },
           }),
         );
       }, 100);

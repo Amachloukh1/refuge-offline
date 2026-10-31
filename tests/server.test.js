@@ -13,6 +13,18 @@ async function withServer(run) {
     await new Promise((resolve) => server.close(resolve));
   }
 }
+
+test("météo sauvegardée et catalogue local restent accessibles sans service distant", () =>
+  withServer(async (base) => {
+    const r = await fetch(base + "/api/weather");
+    assert.equal(r.status, 200);
+    assert.equal(typeof (await r.json()).snapshots, "object");
+    const resources = await fetch(base + "/api/resources");
+    assert.equal(resources.status, 200);
+    const data = await resources.json();
+    for (const key of ["maps", "wiki", "videos"])
+      assert.ok(Array.isArray(data[key]));
+  }));
 test("serveur local : statut indisponible honnête, sans secret ni erreur interne", () =>
   withServer(async (base) => {
     const r = await fetch(`${base}/api/status`);

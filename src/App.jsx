@@ -1,6 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { LocalVideos, LocalWiki } from "./LocalMedia";
+import { WeatherRadio } from "./WeatherRadio";
+const OfflineMaps = lazy(() => import("./OfflineMaps"));
 import { translations, languages } from "./i18n";
-import { seedStock, checklistIds } from "./data";
+import { seedStock, checklistIds, guideData } from "./data";
 import { waterPlan } from "./planning";
 import {
   Icon,
@@ -13,15 +16,7 @@ import {
 import { Dashboard } from "./Dashboard";
 import { Library, GuideReader } from "./Library";
 import { Inventory } from "./Inventory";
-import {
-  Health,
-  Maps,
-  Weather,
-  Videos,
-  Preparation,
-  Settings,
-  DocumentList,
-} from "./Pages";
+import { Health, Preparation, Settings, DocumentList } from "./Pages";
 import { Assistant } from "./Assistant";
 import { Hazards } from "./Hazards.jsx";
 const pages = [
@@ -34,6 +29,7 @@ const pages = [
   ["maps", "Map"],
   ["weather", "RadioTower"],
   ["videos", "Video"],
+  ["wiki", "BookOpen"],
   ["prepare", "ClipboardCheck"],
 ];
 const subtitleKeys = {
@@ -45,6 +41,7 @@ const subtitleKeys = {
   maps: "mapsSub",
   weather: "weatherSub",
   videos: "videosSub",
+  wiki: "wikiSub",
   prepare: "prepareSub",
   settings: "settingsSub",
 };
@@ -125,6 +122,12 @@ export default function App() {
   const menuButton = useRef(null);
   const previousPage = useRef(page);
   const t = translations[state.lang];
+  useEffect(() => {
+    if (page === "library" && tab) {
+      const selected = guideData.find((g) => g.id === tab);
+      if (selected) setGuide(selected);
+    }
+  }, [page, tab]);
   const update = (key, value) =>
     setState((prev) => ({
       ...prev,
@@ -390,6 +393,7 @@ export default function App() {
             <Inventory
               key={`${page}-${tab}`}
               t={t}
+              lang={state.lang}
               stock={state.stock}
               setStock={(value) => update("stock", value)}
               people={state.people}
@@ -403,9 +407,14 @@ export default function App() {
               initialTab={tab}
             />
           )}{" "}
-          {page === "maps" && <Maps t={t} />}{" "}
-          {page === "weather" && <Weather t={t} />}{" "}
-          {page === "videos" && <Videos t={t} />}{" "}
+          {page === "maps" && (
+            <Suspense fallback={<p>{t.loading}</p>}>
+              <OfflineMaps t={t} />
+            </Suspense>
+          )}
+          {page === "weather" && <WeatherRadio t={t} />}
+          {page === "videos" && <LocalVideos t={t} />}
+          {page === "wiki" && <LocalWiki t={t} />}
           {page === "prepare" && (
             <Preparation
               key={`${page}-${tab}-${state.lang}`}
@@ -427,6 +436,11 @@ export default function App() {
               navigate={navigate}
               status={status}
               onStatusRefresh={() => setStatusRevision((value) => value + 1)}
+              planning={{
+                people: state.people,
+                days: state.days,
+                water: water.stock,
+              }}
             />
           )}{" "}
           {page === "settings" && (

@@ -18,10 +18,16 @@ export function GuideReader({ guide, lang, t, onClose }) {
         ))}
       </ol>
       <Notice icon="BookOpen">{t.printed}</Notice>
+      {guide.sources && <Notice>{t.hazardTranslation}</Notice>}
       <div className="reader-source">
         <External href={guide.url}>
           {t.source} · {guide.publisher}
         </External>
+        {guide.sources?.slice(1).map((source) => (
+          <div key={source.url}>
+            <External href={source.url}>{source.label}</External>
+          </div>
+        ))}
       </div>
     </Modal>
   );

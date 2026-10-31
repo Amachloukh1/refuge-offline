@@ -9,6 +9,7 @@ export function Assistant({
   navigate,
   status,
   onStatusRefresh,
+  planning,
 }) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -54,6 +55,7 @@ export function Assistant({
           messages: requestMessages,
           language: lang,
           mode,
+          planning,
         }),
         signal: controller.signal,
       });
@@ -66,6 +68,7 @@ export function Assistant({
           content: data.content,
           live: true,
           remote: data.remote,
+          references: data.references || [],
         },
       ]);
     } catch (error) {
@@ -169,6 +172,25 @@ export function Assistant({
                   <small className="response-origin">
                     {m.remote ? t.remoteMode : t.localMode}
                   </small>
+                )}
+                {m.references?.length > 0 && (
+                  <div className="chat-guides retrieved-references">
+                    {m.references.map((source) => (
+                      <a
+                        key={source.id}
+                        href={source.href}
+                        target={source.page ? "_blank" : undefined}
+                        rel="noreferrer"
+                      >
+                        <Icon name="BookOpen" size={16} />
+                        <span>
+                          {source.title}
+                          {source.page ? ` · p. ${source.page}` : ""}
+                        </span>
+                        <Icon name="ChevronRight" size={15} />
+                      </a>
+                    ))}
+                  </div>
                 )}
                 {m.offline && (
                   <>

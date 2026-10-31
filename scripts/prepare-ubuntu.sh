@@ -12,5 +12,5 @@ npm run build
 node scripts/fetch-content.mjs
 if [[ ! -e .env ]]; then cp .env.example .env; chmod 600 .env; fi
 echo 'Interface et PDF prêts. Préparer ensuite le moteur et le modèle locaux avant de couper Internet.'
-echo 'Avec Ollama déjà installé : ollama pull qwen3:4b'
+echo 'Avec Ollama déjà installé : OLLAMA_HOST=127.0.0.1:11479 ollama pull qwen3:4b-instruct-2507-q4_K_M'
 echo 'Démarrer : npm start ; ouvrir http://127.0.0.1:8099'

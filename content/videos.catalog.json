@@ -1,0 +1,53 @@
+[
+  {
+    "url": "https://multimedia.gsb.bund.de/BBK/Video/Gebaerdensprache/Ratgeber-neu/14_BB25BBK_Ratgeber_gsv_2026.mp4",
+    "subtitleUrl": "https://www.bbk.bund.de/SharedDocs/Videos/DE/Gebaerdensprache/DGS-Ratgeber-2025/14-dgs-notgepaeck-griffbereit_untertitel.vtt?view=renderVideoCaption",
+    "downloadedAt": "2026-10-31T13:43:32.3418648Z",
+    "subtitleFilename": "bbk-emergency-bag-dgs.de.vtt",
+    "sha256": "098ec4ae0abffff39df7f6616b91946c32ab1e24712a12acc2dce6e7befcc87d",
+    "bytes": 76965610,
+    "rights": "Téléchargement MP4 explicitement proposé sur la page officielle BBK (attribut download). Copie locale inchangée ; copyright BBK et titulaires indiqués. Redistribution et adaptation à vérifier séparément, aucune licence ouverte générale établie.",
+    "title": "Sac d'urgence — langue des signes allemande",
+    "language": "de-DGS",
+    "id": "bbk-emergency-bag-dgs",
+    "sourcePage": "https://www.bbk.bund.de/DE/Service/Gebaerdensprache/DGS-Videos-Ratgeber/So-koennen-vorbereiten/Notgepaeck/notgepaeck_node.html",
+    "filename": "bbk-emergency-bag-dgs.mp4",
+    "publisher": "BBK",
+    "subtitleBytes": 1461,
+    "subtitleSha256": "902930fa4436a040ac6b59b9dacabb267326fc38dc02bdd1ade6601d2f1f8e1f"
+  },
+  {
+    "url": "https://multimedia.gsb.bund.de/BBK/Video/Gebaerdensprache/Ratgeber-neu/13_BB25BBK_Ratgeber_gsv_2026.mp4",
+    "subtitleUrl": "https://www.bbk.bund.de/SharedDocs/Videos/DE/Gebaerdensprache/DGS-Ratgeber-2025/13-dgs-dokumente-sicher-aufbewahren_untertitel.vtt?view=renderVideoCaption",
+    "downloadedAt": "2026-10-31T13:43:34.7290576Z",
+    "subtitleFilename": "bbk-documents-dgs.de.vtt",
+    "sha256": "582d68fb97b369cf4f1a0d66a03d672c6e922c2fb0f4ca330e0766bb042348c1",
+    "bytes": 92436398,
+    "rights": "Téléchargement MP4 explicitement proposé sur la page officielle BBK (attribut download). Copie locale inchangée ; copyright BBK et titulaires indiqués. Redistribution et adaptation à vérifier séparément, aucune licence ouverte générale établie.",
+    "title": "Conserver les documents importants — langue des signes allemande",
+    "language": "de-DGS",
+    "id": "bbk-documents-dgs",
+    "sourcePage": "https://www.bbk.bund.de/DE/Service/Gebaerdensprache/DGS-Videos-Ratgeber/So-koennen-vorbereiten/Wichtige-Dokumente-sichern/wichtige-dokumente-sichern_node.html",
+    "filename": "bbk-documents-dgs.mp4",
+    "publisher": "BBK",
+    "subtitleBytes": 2104,
+    "subtitleSha256": "e4df3261f6f0b121228ee1b114780411710a51a2e2dc169c9bf5e7eb710f3d0c"
+  },
+  {
+    "url": "https://multimedia.gsb.bund.de/BBK/Video/Selbstschutz/FILM_03_Bevorratung_DGS.mp4",
+    "subtitleUrl": "https://www.bbk.bund.de/SharedDocs/Videos/DE/Warnung-Vorsorge/Fuer-alle-Faelle-vorbereitet/03-selbstschutz-bevorratung_untertitel.vtt?view=renderVideoCaption",
+    "downloadedAt": "2026-10-31T13:43:37.3433861Z",
+    "subtitleFilename": "bbk-food-supplies-dgs.de.vtt",
+    "sha256": "4d082f57d8e888b315011f3e938921c2d26071128109bd08a94b4e75629c0cf4",
+    "bytes": 109492620,
+    "rights": "Téléchargement MP4 explicitement proposé sur la page officielle BBK (attribut download). Copie locale inchangée ; copyright BBK et titulaires indiqués. Redistribution et adaptation à vérifier séparément, aucune licence ouverte générale établie.",
+    "title": "Constituer des réserves — allemand et langue des signes allemande",
+    "language": "de-DGS",
+    "id": "bbk-food-supplies-dgs",
+    "sourcePage": "https://www.bbk.bund.de/DE/Service/Gebaerdensprache/DGS-Videos-Ratgeber/So-koennen-vorbereiten/Essen-und-Trinken/essen-und-trinken_node.html",
+    "filename": "bbk-food-supplies-dgs.mp4",
+    "publisher": "BBK",
+    "subtitleBytes": 4451,
+    "subtitleSha256": "98c485d1f92ea81b3717b6592d96dbcaf645f31b5efc5cf05b71740c2deae070"
+  }
+]

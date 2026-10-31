@@ -1,4 +1,5 @@
 import { ar } from "./arabic.js";
+import { offlineText } from "./offline-translations.js";
 const fr = {
   tagline: "Votre essentiel, hors ligne.",
   home: "Accueil",
@@ -909,6 +910,8 @@ Object.assign(ar, {
   documentEdition:
     "تحقق من الإصدار والتعليمات الحالية. نشرات الصليب الأحمر المحملة قديمة؛ تاريخ التنزيل لا يعني اعتمادًا طبيًا.",
 });
+for (const [lang, dictionary] of Object.entries({ fr, en, de, ar }))
+  Object.assign(dictionary, offlineText[lang]);
 export const translations = { fr, en, de, ar };
 export const languages = {
   fr: "Français",

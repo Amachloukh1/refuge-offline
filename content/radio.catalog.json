@@ -1,0 +1,18 @@
+{
+  "tag_name": "nightly",
+  "published_at": "2022-11-22T07:27:11Z",
+  "assets": [
+    {
+      "name": "sdrpp_ubuntu_jammy_amd64.deb",
+      "browser_download_url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_ubuntu_jammy_amd64.deb",
+      "digest": "sha256:9b646fe5d96e1bd7236c0b336b9057e09f478645bfc2c67862e91763545b325b",
+      "size": 2384460
+    },
+    {
+      "name": "sdrpp_windows_x64.zip",
+      "browser_download_url": "https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_windows_x64.zip",
+      "digest": "sha256:4a85199267e46c610e47bff5eb274d52c38f95e3a29cc74d9d149e11cb55cd40",
+      "size": 8539647
+    }
+  ]
+}

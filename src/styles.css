@@ -3042,3 +3042,144 @@ td strong {
     font-size: 16px;
   }
 }
+/* Local media and downloaded regional map */
+.offline-map {
+  height: 540px;
+  min-height: 320px;
+  width: 100%;
+  border-block: 1px solid var(--border, #dce2d8);
+}
+.map-toolbar,
+.map-coordinate,
+.map-cities {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.map-toolbar {
+  justify-content: space-between;
+}
+.map-toolbar h2 {
+  margin: 0;
+}
+.map-toolbar p {
+  margin: 6px 0 0;
+  color: #657265;
+}
+.offline-map-panel {
+  overflow: hidden;
+}
+.map-cities {
+  padding-inline: 0;
+}
+.map-coordinate {
+  font-variant-numeric: tabular-nums;
+}
+.local-video video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #18261b;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+.local-video h2 {
+  font-size: 22px;
+}
+.wiki-intro {
+  display: flex;
+  gap: 24px;
+  margin-block: 22px;
+}
+.wiki-archives,
+.weather-days {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-block: 24px;
+}
+.wiki-archives code {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.wiki-language {
+  font-size: 30px;
+  font-weight: 700;
+  color: #456c49;
+}
+.weather-current {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-block: 28px;
+}
+.weather-current strong {
+  font-size: 48px;
+}
+.radio-panel {
+  margin-top: 26px;
+}
+.radio-panel li {
+  margin-block: 15px;
+  line-height: 1.7;
+}
+.kit-figure {
+  margin: 0 0 26px;
+}
+.kit-figure img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.kit-figure figcaption {
+  font-size: 12px;
+  color: #657265;
+  margin-top: 8px;
+}
+.purchase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.purchase-card h3 {
+  line-height: 1.4;
+  min-height: 60px;
+}
+.purchase-card small {
+  display: block;
+  margin-top: 12px;
+  color: #657265;
+}
+.purchase-check {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.purchase-card input {
+  width: 20px;
+  height: 20px;
+  accent-color: #456c49;
+}
+@media (max-width: 750px) {
+  .wiki-archives,
+  .weather-days,
+  .purchase-grid {
+    grid-template-columns: 1fr;
+  }
+  .offline-map {
+    height: 420px;
+  }
+  .wiki-intro {
+    flex-direction: column;
+  }
+  .section-toolbar .tabs {
+    flex-wrap: wrap;
+  }
+  .purchase-card h3 {
+    min-height: 0;
+  }
+}

@@ -5,7 +5,7 @@ import { aiConfig, validateMessages, completeChat } from "../server/ai.js";
 test("le moteur est strictement local et sans clé renvoyée au navigateur", () => {
   const config = aiConfig({});
   assert.equal(config.base, "http://127.0.0.1:11434/v1");
-  assert.equal(config.model, "qwen3:4b");
+  assert.equal(config.model, "qwen3:4b-instruct-2507-q4_K_M");
   for (const url of [
     "https://2ki.space/local-studio/v1",
     "http://evil.example/v1",

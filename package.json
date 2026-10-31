@@ -11,7 +11,11 @@
     "start": "node --env-file-if-exists=.env server/index.js"
   },
   "dependencies": {
+    "@protomaps/basemaps": "^5.7.2",
     "lucide-react": "^0.468.0",
+    "maplibre-gl": "^6.16.0",
+    "pdfjs-dist": "^6.4.299",
+    "pmtiles": "^4.5.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

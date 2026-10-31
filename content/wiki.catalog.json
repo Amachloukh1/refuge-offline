@@ -1,0 +1,29 @@
+[
+  {
+    "filename": "wikipedia_ar_all_mini_2026-08.zim",
+    "language": "ar",
+    "bytes": 3169765753,
+    "sha256": "6e430bce91ec2865195bf9312223d5d403791ca13a497c60d6c2859228094982",
+    "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_ar_all_mini_2026-08.zim",
+    "compact": true,
+    "downloadedAt": "2026-10-31"
+  },
+  {
+    "filename": "wikipedia_de_all_mini_2026-10.zim",
+    "language": "de",
+    "bytes": 4686161304,
+    "sha256": "0e281a87af92a798297fc671f8b37004cb7874ac051e13876b7335be96649e59",
+    "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_de_all_mini_2026-10.zim",
+    "compact": true,
+    "downloadedAt": "2026-10-31"
+  },
+  {
+    "filename": "wikipedia_fr_all_mini_2026-05.zim",
+    "language": "fr",
+    "bytes": 3584080182,
+    "sha256": "b82d57cbbd19d568a5701eec1b4c96079c20e62a7cec70cdf150c0a20aff5fd1",
+    "url": "https://download.kiwix.org/zim/wikipedia/wikipedia_fr_all_mini_2026-05.zim",
+    "compact": true,
+    "downloadedAt": "2026-10-31"
+  }
+]

@@ -1,4 +1,5 @@
 import { arabicGuides } from "./arabic.js";
+import practicalGuides from "../content/practical-guides.json" with { type: "json" };
 export const seedStock = [
   {
     id: "water",
@@ -261,7 +262,29 @@ export const guideData = [
     publisher: "BBK",
   },
 ];
-for (const guide of guideData) {
+for (const p of practicalGuides) {
+  guideData.push({
+    ...p,
+    category:
+      p.id === "food-without-stock" || p.id === "cooking-without-power"
+        ? "food"
+        : p.id === "water-in-nature"
+          ? "water"
+          : "equipment",
+    icon:
+      p.id === "cash"
+        ? "Package"
+        : p.id === "documents"
+          ? "BookOpen"
+          : p.id === "water-in-nature"
+            ? "Droplets"
+            : "ClipboardCheck",
+    time: 5,
+    publisher: "REFUGE · sources officielles",
+    url: p.sources[0].url,
+  });
+}
+for (const guide of guideData.slice(0, 6)) {
   const a = arabicGuides[guide.id];
   guide.title.ar = a.title;
   guide.intro.ar = a.intro;
