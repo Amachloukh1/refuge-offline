@@ -10,7 +10,19 @@ La page `#books` sépare les notices du catalogue et les fichiers installés. Re
 
 Le téléchargement réutilisable est limité aux règles ci-dessus. Une édition refusée reste consultable sur son site source ; ne pas transformer un échec de vérification en autorisation. Les catégories sont déduites automatiquement des sujets et rayons Gutenberg et peuvent être approximatives.
 
-Les six éditions arabes sont également épinglées par SHA-256 dans le catalogue source. Si l'éditeur remplace un PDF, son nouveau contenu est refusé jusqu'à une nouvelle vérification de l'édition et de ses droits.
+Les éditions arabes sont également épinglées par SHA-256 dans le catalogue source. Si l'éditeur remplace un PDF, son nouveau contenu est refusé jusqu'à une nouvelle vérification de l'édition et de ses droits.
+
+## Sélection arabe complémentaire
+
+Cinq éditions supplémentaires ont été vérifiées dans les PDF originaux (déclaration CC BY 4.0 couvrant leur traduction et leur mise en forme ; texte original déclaré dans le domaine public) et épinglées par SHA-256 :
+
+- Jules Verne, *حول العالم في ٨٠ يومًا* : https://downloads.hindawi.org/books/72647050.pdf .
+- H. G. Wells, *حرب العوالم* : https://downloads.hindawi.org/books/82686040.pdf .
+- H. G. Wells, *آلة الزمن* : https://downloads.hindawi.org/books/91486168.pdf .
+- Arthur Conan Doyle, traduction Sara Yaqout, *علامة الأربعة* : https://downloads.hindawi.org/books/73928048.pdf .
+- Robert Barr, traduction Asmaa Azab, *مغامرة شيرلو كومبس* : https://downloads.hindawi.org/books/52951836.pdf .
+
+Les crédits complets et les avis de licence sont conservés dans chaque fichier original. La sélection précédente est maintenue.
 
 ## Fichiers et installation
 
@@ -45,3 +57,9 @@ Catalogue : 68 529 notices (2 415 allemandes, 4 207 françaises, 61 900 anglaise
 Lot initial réellement terminé sans échec : 36 livres, 69 145 065 octets ; 10 en allemand, 10 en français, 10 en anglais et 6 en arabe. Les autres notices n'impliquent ni téléchargement ni autorisation de redistribution.
 
 Tests : CSV avec retours à la ligne/guillemets ; changement de catalogue à chaud ; refus d'identifiants et lots invalides ; origine étrangère ; plage HTTP ; mauvais format ; installation atomique ; arrêt de file et reprise de lecture locale. Suite projet : 51 tests réussis, 1 test de lien symbolique sauté faute d'autorisation Windows.
+
+### Lot complémentaire du 31 octobre 2026
+
+95 fichiers supplémentaires ont été installés : 30 allemands, 30 français, 30 anglais et 5 arabes. Les éditions refusées par le contrôle des droits ont été laissées de côté et remplacées par d'autres titres ; aucun contrôle n'a été désactivé.
+
+Total confirmé par l'API locale et relecture SHA-256 de tous les fichiers : **131 livres**, **139 872 068 octets** (40 DE, 40 FR, 40 EN, 11 AR). Le catalogue comprend désormais **68 534 notices**, dont 12 arabes. Ce total de notices reste distinct des fichiers installés.

@@ -4,7 +4,11 @@
     "title": "جزيرة الكنز",
     "authors": "روبرت لويس ستيفنسون · ترجمة مؤسسة هنداوي",
     "language": "ar",
-    "genres": ["adventure", "children", "fiction"],
+    "genres": [
+      "adventure",
+      "children",
+      "fiction"
+    ],
     "source": "hindawi",
     "format": "pdf",
     "license": "CC BY 4.0",
@@ -17,7 +21,10 @@
     "title": "مغامرات الدكتور ثورندايك",
     "authors": "آر أوستن فريمان · ترجمة مؤسسة هنداوي",
     "language": "ar",
-    "genres": ["crime", "fiction"],
+    "genres": [
+      "crime",
+      "fiction"
+    ],
     "source": "hindawi",
     "format": "pdf",
     "license": "CC BY 4.0",
@@ -30,7 +37,10 @@
     "title": "مغامرات شيرلوك هولمز",
     "authors": "آرثر كونان دويل · ترجمة مؤسسة هنداوي",
     "language": "ar",
-    "genres": ["crime", "fiction"],
+    "genres": [
+      "crime",
+      "fiction"
+    ],
     "source": "hindawi",
     "format": "pdf",
     "license": "CC BY 4.0",
@@ -43,7 +53,9 @@
     "title": "العلم والحياة",
     "authors": "علي مصطفى مشرفة · مؤسسة هنداوي",
     "language": "ar",
-    "genres": ["science"],
+    "genres": [
+      "science"
+    ],
     "source": "hindawi",
     "format": "pdf",
     "license": "CC BY 4.0",
@@ -56,7 +68,10 @@
     "title": "تاريخ العلم العثماني",
     "authors": "أحمد تيمور باشا · مؤسسة هنداوي",
     "language": "ar",
-    "genres": ["history", "science"],
+    "genres": [
+      "history",
+      "science"
+    ],
     "source": "hindawi",
     "format": "pdf",
     "license": "CC BY 4.0",
@@ -69,12 +84,95 @@
     "title": "أهل العلم بين مصر وفلسطين",
     "authors": "أحمد سامح الخالدي · مؤسسة هنداوي",
     "language": "ar",
-    "genres": ["history", "biography"],
+    "genres": [
+      "history",
+      "biography"
+    ],
     "source": "hindawi",
     "format": "pdf",
     "license": "CC BY 4.0",
     "reviewed": true,
     "sourceUrl": "https://downloads.hindawi.org/books/41539374.pdf",
     "sha256": "2909e6821d9090f22e5bc9fb4a2d4a22e55fb3ab80085279812e2f11817129ce"
+  },
+  {
+    "id": "hw-72647050",
+    "title": "حول العالم في ٨٠ يومًا",
+    "authors": "جول فيرن · ترجمة مؤسسة هنداوي",
+    "language": "ar",
+    "genres": [
+      "adventure",
+      "fiction"
+    ],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/72647050.pdf",
+    "sha256": "f149d1ddc1572f0fc2fc1103f6706f28f3bc13c432937b6635dd17a9e3c4ccd3"
+  },
+  {
+    "id": "hw-82686040",
+    "title": "حرب العوالم",
+    "authors": "هربرت جورج ويلز · ترجمة مؤسسة هنداوي",
+    "language": "ar",
+    "genres": [
+      "scifi",
+      "fiction"
+    ],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/82686040.pdf",
+    "sha256": "2fc4492cdf5c4a805cd8a68e92466ac050cfce8298cc931052664247c72adf64"
+  },
+  {
+    "id": "hw-91486168",
+    "title": "آلة الزمن",
+    "authors": "هربرت جورج ويلز · ترجمة مؤسسة هنداوي",
+    "language": "ar",
+    "genres": [
+      "scifi",
+      "fiction"
+    ],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/91486168.pdf",
+    "sha256": "cccee1513d2550fab91438a496f3997f33771655317fc88f65cbcc67692ae8d5"
+  },
+  {
+    "id": "hw-73928048",
+    "title": "علامة الأربعة",
+    "authors": "آرثر كونان دويل · ترجمة سارة ياقوت · مؤسسة هنداوي",
+    "language": "ar",
+    "genres": [
+      "crime",
+      "fiction"
+    ],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/73928048.pdf",
+    "sha256": "7986683a79ec1db0bda329a47c6f8d00fd7f289cb034768bcfbd9ce5327a6141"
+  },
+  {
+    "id": "hw-52951836",
+    "title": "مغامرة شيرلو كومبس",
+    "authors": "روبرت بار · ترجمة أسماء عزب · مؤسسة هنداوي",
+    "language": "ar",
+    "genres": [
+      "crime",
+      "fiction"
+    ],
+    "source": "hindawi",
+    "format": "pdf",
+    "license": "CC BY 4.0",
+    "reviewed": true,
+    "sourceUrl": "https://downloads.hindawi.org/books/52951836.pdf",
+    "sha256": "419b917714a0ad25a591ca1fe5d5593363111bc758e1e9374769f17ffa29e734"
   }
 ]
