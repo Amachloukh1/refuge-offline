@@ -10,6 +10,7 @@ import { createStudio } from "./studio.js";
 import { createGps } from "./gps.js";
 import { createReadiness } from "./readiness.js";
 import { createBooks } from "./books.js";
+import { createMedia } from "./media-library.js";
 import {
   aiConfig,
   remoteStudioConfig,
@@ -28,6 +29,7 @@ const mime = {
   ".css": "text/css; charset=utf-8",
   ".svg": "image/svg+xml",
   ".png": "image/png",
+  ".jpg": "image/jpeg",
   ".json": "application/json; charset=utf-8",
   ".pdf": "application/pdf",
   ".webp": "image/webp",
@@ -73,13 +75,14 @@ export function createApp({
   const gps = createGps();
   const readiness = createReadiness(root);
   const books = createBooks(root);
+  const media = createMedia(root);
   const server = http.createServer(async (req, res) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("X-Frame-Options", "SAMEORIGIN");
     res.setHeader("Referrer-Policy", "no-referrer");
     res.setHeader(
       "Content-Security-Policy",
-      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; frame-src http://127.0.0.1:8108; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
+      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; frame-src http://127.0.0.1:8108; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' https://download.blender.org https://incompetech.com/music/royalty-free/mp3-royaltyfree/; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
     );
     const address = serverAddress(req.headers.host);
     if (!address) {
@@ -119,6 +122,59 @@ export function createApp({
       return;
     }
     try {
+      if (pathname === "/api/media" && req.method === "GET") {
+        json(res, 200, await media.list());
+        return;
+      }
+      if (pathname === "/api/media/jobs" && req.method === "GET") {
+        json(res, 200, media.snapshot());
+        return;
+      }
+      if (pathname === "/api/media/download" && req.method === "POST") {
+        try {
+          json(res, 202, await media.start((await body(req)).ids));
+        } catch (e) {
+          json(res, e.message === "download_busy" ? 409 : 400, {
+            code: e.message === "download_busy" ? e.message : "invalid_batch",
+          });
+        }
+        return;
+      }
+      if (pathname === "/api/media/cancel" && req.method === "POST") {
+        json(res, 200, media.cancel());
+        return;
+      }
+      if (pathname === "/api/media/import" && req.method === "POST") {
+        try {
+          const params = Object.fromEntries(
+            new URL(req.url, "http://localhost").searchParams,
+          );
+          json(res, 201, await media.import(req, params));
+        } catch (e) {
+          if (!res.headersSent && !res.destroyed)
+            json(res, 400, {
+              code:
+                e.message === "import_busy" ? "import_busy" : "import_failed",
+            });
+        }
+        return;
+      }
+      if (
+        pathname.startsWith("/media/files/") &&
+        ["GET", "HEAD"].includes(req.method)
+      ) {
+        const match = pathname.match(
+          /^\/media\/files\/([a-z0-9-]{1,80})\.(mp4|webm|mp3|ogg|m4a|wav|flac)$/,
+        );
+        try {
+          if (!match) throw Error("invalid_media");
+          const f = await media.file(match[1], match[2]);
+          await serveLocalFile(req, res, f.directory, f.filename);
+        } catch {
+          if (!res.headersSent) json(res, 404, { code: "media_unavailable" });
+        }
+        return;
+      }
       if (pathname === "/api/books" && req.method === "GET") {
         const params = Object.fromEntries(
           new URL(req.url, "http://localhost").searchParams,
@@ -423,6 +479,7 @@ export function createApp({
   server.on("close", () => studio?.close());
   server.on("close", () => gps.close());
   server.on("close", () => books.cancel());
+  server.on("close", () => media.cancel());
   return server;
 }
 function serverAddress(host) {

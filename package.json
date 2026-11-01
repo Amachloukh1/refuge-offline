@@ -14,10 +14,12 @@
     "@protomaps/basemaps": "^5.7.2",
     "lucide-react": "^0.468.0",
     "maplibre-gl": "^6.16.0",
+    "media-chrome": "^4.19.4",
     "pdfjs-dist": "^6.4.299",
     "pmtiles": "^4.5.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "yauzl": "^3.4.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",

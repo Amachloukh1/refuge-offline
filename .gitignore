@@ -14,6 +14,7 @@ content/maps/
 content/zim/
 content/wiki-reader/
 content/books/
+content/media/
 content/books.catalog.json
 private/
 *.partial

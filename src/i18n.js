@@ -954,3 +954,11 @@ export const languages = {
   en: "English",
   ar: "العربية",
 };
+import { mediaText } from "./media-text.js";
+for (const [lang, text] of Object.entries(mediaText))
+  Object.assign(translations[lang], {
+    films: text.films,
+    music: text.music,
+    filmsSub: text.filmsSub,
+    musicSub: text.musicSub,
+  });

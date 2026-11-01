@@ -3,6 +3,10 @@ import { LocalVideos, LocalWiki } from "./LocalMedia";
 import { WeatherRadio } from "./WeatherRadio";
 const OfflineMaps = lazy(() => import("./OfflineMaps"));
 const Books = lazy(() => import("./Books"));
+const Entertainment = lazy(() => import("./Entertainment"));
+const MusicDock = lazy(() =>
+  import("./Entertainment").then((m) => ({ default: m.MusicDock })),
+);
 import { translations, languages } from "./i18n";
 import { seedStock, checklistIds, guideData } from "./data";
 import { waterPlan } from "./planning";
@@ -42,6 +46,8 @@ const pages = [
   ["maps", "Map"],
   ["weather", "RadioTower"],
   ["videos", "Video"],
+  ["films", "Video"],
+  ["music", "Radio"],
   ["wiki", "BookOpen"],
   ["prepare", "ClipboardCheck"],
   ["energy", "BatteryCharging"],
@@ -61,6 +67,8 @@ const subtitleKeys = {
   maps: "mapsSub",
   weather: "weatherSub",
   videos: "videosSub",
+  films: "filmsSub",
+  music: "musicSub",
   wiki: "wikiSub",
   prepare: "prepareSub",
   settings: "settingsSub",
@@ -101,6 +109,7 @@ function routeView() {
   return new URLSearchParams(location.hash.split("?")[1] || "").get("view");
 }
 export default function App() {
+  const [musicSession, setMusicSession] = useState(null);
   const [state, setState] = useState(readState);
   const [page, setPage] = useState(route);
   const [menu, setMenu] = useState(false);
@@ -549,6 +558,17 @@ export default function App() {
           )}
           {page === "weather" && <WeatherRadio t={t} />}
           {page === "videos" && <LocalVideos t={t} lang={state.lang} />}
+          {["films", "music"].includes(page) && (
+            <Suspense fallback={<p>…</p>}>
+              <Entertainment
+                key={page}
+                kind={page}
+                lang={state.lang}
+                onMusic={setMusicSession}
+                onFilm={() => setMusicSession(null)}
+              />
+            </Suspense>
+          )}
           {page === "books" && (
             <Suspense fallback={<p>…</p>}>
               <Books lang={state.lang} />
@@ -627,6 +647,15 @@ export default function App() {
           </span>
         </footer>
       </div>
+      {musicSession && (
+        <Suspense fallback={null}>
+          <MusicDock
+            session={musicSession}
+            setSession={setMusicSession}
+            lang={state.lang}
+          />
+        </Suspense>
+      )}
       {guide && (
         <GuideReader
           guide={guide}
