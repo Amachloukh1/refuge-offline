@@ -147,7 +147,14 @@ export function MusicDock({ session, setSession, lang }) {
     </aside>
   );
 }
-export default function Entertainment({ kind, lang, onMusic, onFilm }) {
+export default function Entertainment({
+  kind,
+  lang,
+  onMusic,
+  onFilm,
+  compact = false,
+  onCount,
+}) {
   const c = mediaText[lang],
     isMusic = kind === "music";
   const [items, setItems] = useState(null),
@@ -170,7 +177,9 @@ export default function Entertainment({ kind, lang, onMusic, onFilm }) {
     const r = await fetch("/api/media");
     if (!r.ok) throw Error();
     const v = await r.json();
-    setItems(v.filter((x) => x.kind === kind));
+    const entries = v.filter((x) => x.kind === kind);
+    setItems(entries);
+    onCount?.(kind, entries.filter((x) => x.installed).length);
   };
   useEffect(() => {
     let live = true;
@@ -277,27 +286,31 @@ export default function Entertainment({ kind, lang, onMusic, onFilm }) {
   const missing = visible.filter((x) => !x.installed && !x.personal);
   return (
     <section className="media-page">
-      <div className={"media-hero " + (isMusic ? "music-hero" : "film-hero")}>
-        <div>
-          <span className="media-eyebrow">REFUGE · {isMusic ? "♫" : "▶"}</span>
-          <h2>{isMusic ? c.music : c.films}</h2>
-          <p>{c.intro}</p>
-          <span className="media-local">
-            <CloudOff size={16} />
-            {items?.filter((x) => x.installed).length ?? "…"}{" "}
-            {c.offline.toLocaleLowerCase()}
-          </span>
+      {!compact && (
+        <div className={"media-hero " + (isMusic ? "music-hero" : "film-hero")}>
+          <div>
+            <span className="media-eyebrow">
+              REFUGE · {isMusic ? "♫" : "▶"}
+            </span>
+            <h2>{isMusic ? c.music : c.films}</h2>
+            <p>{c.intro}</p>
+            <span className="media-local">
+              <CloudOff size={16} />
+              {items?.filter((x) => x.installed).length ?? "…"}{" "}
+              {c.offline.toLocaleLowerCase()}
+            </span>
+          </div>
+          <div className="media-hero-art" aria-hidden="true">
+            {isMusic ? (
+              <div className="vinyl">
+                <span />
+              </div>
+            ) : (
+              <Film size={115} strokeWidth={1} />
+            )}
+          </div>
         </div>
-        <div className="media-hero-art" aria-hidden="true">
-          {isMusic ? (
-            <div className="vinyl">
-              <span />
-            </div>
-          ) : (
-            <Film size={115} strokeWidth={1} />
-          )}
-        </div>
-      </div>
+      )}
       <div className="media-toolbar">
         <div className="media-tabs" role="group" aria-label={c.catalog}>
           {["installed", "catalog", "favorites"].map((v) => (

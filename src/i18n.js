@@ -955,6 +955,12 @@ export const languages = {
   ar: "العربية",
 };
 import { mediaText } from "./media-text.js";
+import { hubText } from "./media-hub-text.js";
+for (const [lang, text] of Object.entries(hubText))
+  Object.assign(translations[lang], {
+    media: text.media,
+    mediaSub: text.mediaSub,
+  });
 for (const [lang, text] of Object.entries(mediaText))
   Object.assign(translations[lang], {
     films: text.films,

@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
-import { LocalVideos, LocalWiki } from "./LocalMedia";
+import { mediaSections, mediaSection } from "./media-navigation";
 import { WeatherRadio } from "./WeatherRadio";
 const OfflineMaps = lazy(() => import("./OfflineMaps"));
 const Books = lazy(() => import("./Books"));
-const Entertainment = lazy(() => import("./Entertainment"));
+const MediaHub = lazy(() => import("./MediaHub"));
+const Wikipedia = lazy(() => import("./Wikipedia"));
 const MusicDock = lazy(() =>
   import("./Entertainment").then((m) => ({ default: m.MusicDock })),
 );
@@ -45,9 +46,7 @@ const pages = [
   ["inventory", "Package"],
   ["maps", "Map"],
   ["weather", "RadioTower"],
-  ["videos", "Video"],
-  ["films", "Video"],
-  ["music", "Radio"],
+  ["media", "Video"],
   ["wiki", "BookOpen"],
   ["prepare", "ClipboardCheck"],
   ["energy", "BatteryCharging"],
@@ -67,6 +66,7 @@ const subtitleKeys = {
   maps: "mapsSub",
   weather: "weatherSub",
   videos: "videosSub",
+  media: "mediaSub",
   films: "filmsSub",
   music: "musicSub",
   wiki: "wikiSub",
@@ -103,9 +103,13 @@ function readState() {
 }
 function route() {
   const name = location.hash.slice(1).split("?")[0];
+  if (mediaSections.includes(name)) return "media";
   return [...pages.map((p) => p[0]), "settings"].includes(name) ? name : "home";
 }
 function routeView() {
+  const name = location.hash.slice(1).split("?")[0];
+  if (name === "media" || mediaSections.includes(name))
+    return mediaSection(location.hash);
   return new URLSearchParams(location.hash.split("?")[1] || "").get("view");
 }
 export default function App() {
@@ -173,6 +177,10 @@ export default function App() {
       prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id],
     );
   const navigate = (next, sub = null) => {
+    if (mediaSections.includes(next)) {
+      sub = next;
+      next = "media";
+    }
     setTab(sub);
     setMenu(false);
     const target = `${next}${sub ? `?view=${encodeURIComponent(sub)}` : ""}`;
@@ -557,12 +565,12 @@ export default function App() {
             </Suspense>
           )}
           {page === "weather" && <WeatherRadio t={t} />}
-          {page === "videos" && <LocalVideos t={t} lang={state.lang} />}
-          {["films", "music"].includes(page) && (
+          {page === "media" && (
             <Suspense fallback={<p>…</p>}>
-              <Entertainment
-                key={page}
-                kind={page}
+              <MediaHub
+                section={tab || "videos"}
+                onSection={(section) => navigate("media", section)}
+                t={t}
                 lang={state.lang}
                 onMusic={setMusicSession}
                 onFilm={() => setMusicSession(null)}
@@ -574,7 +582,11 @@ export default function App() {
               <Books lang={state.lang} />
             </Suspense>
           )}
-          {page === "wiki" && <LocalWiki t={t} lang={state.lang} />}
+          {page === "wiki" && (
+            <Suspense fallback={<p>…</p>}>
+              <Wikipedia lang={state.lang} />
+            </Suspense>
+          )}
           {page === "prepare" && (
             <Preparation
               key={`${page}-${tab}-${state.lang}`}

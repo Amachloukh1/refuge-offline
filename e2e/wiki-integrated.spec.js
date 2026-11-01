@@ -17,9 +17,11 @@ test("Wikipédia française intégrée ouvre son ZIM local automatiquement par p
     return r.continue();
   });
   await page.goto("/#wiki");
-  await expect(page.getByLabel("Langue des articles Wikipédia")).toHaveValue(
-    "fr",
-  );
+  await expect(
+    page
+      .getByRole("group", { name: "Choisissez votre édition" })
+      .getByRole("button", { name: /Français/ }),
+  ).toHaveAttribute("aria-pressed", "true");
   const frame = page.frameLocator("iframe.wiki-reader-frame");
   await expect(frame.locator("html")).toHaveAttribute(
     "data-refuge-archive-ready",
@@ -46,7 +48,11 @@ test("Wikipédia française intégrée ouvre son ZIM local automatiquement par p
   expect(fullArchive).toBe(false);
   expect(errors).toEqual([]);
   await page.getByLabel("Langue de l’interface").selectOption("ar");
-  await expect(page.getByLabel("لغة مقالات ويكيبيديا")).toHaveValue("ar");
+  const arabicEdition = page
+    .getByRole("group", { name: "اختر نسختك" })
+    .getByRole("button", { name: /العربية/ });
+  await arabicEdition.click();
+  await expect(arabicEdition).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("iframe.wiki-reader-frame")).toHaveAttribute(
     "src",
     /refugeArchive=ar/,

@@ -74,7 +74,7 @@ const mediaText = {
     "جارٍ تحميل الفهرس…",
   ],
 };
-export function LocalVideos({ t, lang = "fr" }) {
+export function LocalVideos({ t, lang = "fr", onPlay }) {
   const c = mediaText[lang] || mediaText.fr;
   const [data, setData] = useState(null);
   const [soundOnly, setSoundOnly] = useState(true);
@@ -279,6 +279,7 @@ export function LocalVideos({ t, lang = "fr" }) {
             {filtered.map((v) => (
               <article key={v.id} className="panel local-video">
                 <video
+                  onPlay={onPlay}
                   controls
                   preload="metadata"
                   playsInline
@@ -334,82 +335,6 @@ export function LocalVideos({ t, lang = "fr" }) {
           )}
         </>
       )}
-    </>
-  );
-}
-export function LocalWiki({ t, lang = "fr" }) {
-  const [data, setData] = useState(null);
-  const [archive, setArchive] = useState(
-    ["fr", "de", "ar"].includes(lang) ? lang : "fr",
-  );
-  useEffect(() => {
-    if (["fr", "de", "ar"].includes(lang)) setArchive(lang);
-  }, [lang]);
-  useEffect(() => {
-    fetch("/api/resources")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(() => setData({ wiki: [] }));
-  }, []);
-  return (
-    <>
-      <Notice icon="BookOpen">{t.wikiNotice}</Notice>
-      <section className="panel padded wiki-intro">
-        <span className="topic-icon">
-          <Icon name="BookOpen" size={31} />
-        </span>
-        <div>
-          <h2>Kiwix · Wikipedia</h2>
-          <p>{t.wikiAutoInstructions}</p>
-          <label>
-            {t.wikiArchiveLanguage}
-            <select
-              value={archive}
-              onChange={(e) => setArchive(e.target.value)}
-            >
-              {data?.wiki.map((w) => (
-                <option key={w.filename} value={w.language}>
-                  {
-                    {
-                      fr: "Français",
-                      de: "Deutsch",
-                      ar: "العربية",
-                      en: "English",
-                    }[w.language]
-                  }{" "}
-                  · {(w.bytes / 1e9).toFixed(2)} GB
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-      </section>
-      {data?.wikiReader && data.wiki.some((w) => w.language === archive) && (
-        <iframe
-          className="wiki-reader-frame"
-          key={archive + "-" + lang}
-          title={t.wiki}
-          src={`http://127.0.0.1:8108/www/index.html?refugeArchive=${archive}&overrideBrowserLanguage=${lang}`}
-          sandbox="allow-scripts allow-same-origin allow-forms allow-downloads"
-        />
-      )}
-      <div className="wiki-archives">
-        {data?.wiki?.map((w) => (
-          <section className="panel padded" key={w.filename}>
-            <span className="wiki-language">{w.language.toUpperCase()}</span>
-            <h2>Wikipedia · {w.language.toUpperCase()}</h2>
-            <p>
-              {(w.bytes / 1e9).toFixed(2)} GB ·{" "}
-              {w.compact ? t.wikiCompact : t.wikiComplete}
-            </p>
-            <code dir="ltr">content/zim/{w.filename}</code>
-          </section>
-        ))}
-      </div>
-      {data && data.wiki.length === 0 && <Notice>{t.wikiDownloading}</Notice>}
-      <p className="muted bottom-note">
-        © Wikipedia contributors · CC BY-SA · {t.wikiAttribution}
-      </p>
     </>
   );
 }

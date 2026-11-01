@@ -82,7 +82,7 @@ export function createApp({
     res.setHeader("Referrer-Policy", "no-referrer");
     res.setHeader(
       "Content-Security-Policy",
-      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; frame-src http://127.0.0.1:8108; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' https://download.blender.org https://incompetech.com/music/royalty-free/mp3-royaltyfree/; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
+      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; frame-src http://127.0.0.1:8108 https://players.brightcove.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' https://download.blender.org https://incompetech.com/music/royalty-free/mp3-royaltyfree/; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
     );
     const address = serverAddress(req.headers.host);
     if (!address) {
