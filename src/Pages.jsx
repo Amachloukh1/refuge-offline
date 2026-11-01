@@ -3,6 +3,7 @@ import { Icon, Button, Progress, Notice, External } from "./components";
 import { checklistIds } from "./data";
 import { languages } from "./i18n";
 import Equipment, { equipmentLabel } from "./Equipment";
+import SectionIllustration from "./SectionIllustration";
 
 export function Health({ t, onAid, documents }) {
   return (
@@ -28,17 +29,26 @@ export function Health({ t, onAid, documents }) {
           <Icon name="ArrowRight" />
         </a>
       </div>
+      <SectionIllustration image="/illustrations/page-health.webp" />
       <div className="health-grid">
         {[
-          ["bleeding", "Droplets"],
-          ["burn", "Flame"],
-          ["unconscious", "UserRound"],
-        ].map(([key, icon]) => (
+          ["bleeding", "Droplets", "medicine-dressings"],
+          ["burn", "Flame", "firstaid"],
+          ["unconscious", "UserRound", "medicine-gloves"],
+        ].map(([key, icon, image]) => (
           <button
-            className="health-card panel"
+            className="health-card panel has-context-image"
             key={key}
             onClick={() => onAid(key)}
           >
+            <img
+              className="health-context-image"
+              src={`/illustrations/${image}.webp`}
+              alt=""
+              loading="lazy"
+              width="480"
+              height="240"
+            />
             <span className="topic-icon health">
               <Icon name={icon} size={28} />
             </span>

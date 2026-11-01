@@ -1,0 +1,59 @@
+.section-illustration {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #eef1e8;
+  margin-bottom: 22px;
+}
+.section-illustration > img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
+.section-illustration.with-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 36%);
+  align-items: center;
+}
+.section-illustration-content { min-width: 0; padding: 24px; }
+.section-illustration.with-content > img { height: 100%; min-height: 180px; }
+.section-illustration-content > p { margin-block: 10px 16px; }
+.emergency-illustrated-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  align-items: stretch;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.emergency-illustrated-intro > .notice { margin: 0; }
+.emergency-illustrated-intro > .section-illustration { margin: 0; }
+.emergency-illustrated-intro .section-illustration > img { height: 112px; }
+.hazard-card.has-context-image { gap: 14px; padding: 16px; }
+.hazard-context-image { width: 100px; height: 84px; flex-shrink: 0; border-radius: 8px; object-fit: cover; background: #eef1e8; }
+.hazard-card.has-context-image > div { min-width: 0; }
+.hazard-card.has-context-image .hazard-symbol { width: 30px; height: 30px; border-radius: 7px; margin-bottom: 8px; }
+.hazard-card.has-context-image .hazard-symbol svg { width: 20px; height: 20px; }
+.health-card.has-context-image { overflow: hidden; }
+.health-context-image { display: block; width: 100%; height: 135px; object-fit: cover; border-radius: 8px; margin-bottom: 18px; background: #f4eee7; }
+@media (max-width: 600px) {
+  .section-illustration > img { height: 140px; }
+  .section-illustration.with-content { grid-template-columns: minmax(0, 1fr); }
+  .section-illustration.with-content > img { height: 140px; min-height: 0; }
+  .section-illustration-content { padding: 18px; }
+  .emergency-illustrated-intro { grid-template-columns: minmax(0, 1fr) 86px; gap: 8px; }
+  .emergency-illustrated-intro .section-illustration > img { height: 100%; min-height: 100px; }
+  .hazard-card.has-context-image { gap: 12px; padding: 14px; }
+  .hazard-context-image { width: 76px; height: 90px; }
+  .health-context-image { height: 125px; }
+}
+@media print {
+  .section-illustration:not(.with-content),
+  .section-illustration > img,
+  .hazard-context-image,
+  .health-context-image { display: none; }
+  .section-illustration.with-content { display: block; }
+  .emergency-illustrated-intro { display: block; }
+}

@@ -4,6 +4,7 @@ import { hazards } from "./hazards.js";
 import { preparednessText } from "./preparedness-text.js";
 import { contentLanguage } from "./locale-policy.js";
 import { translations } from "./i18n.js";
+import SectionIllustration from "./SectionIllustration";
 import {
   sanitizeReadiness,
   sanitizeEnergy,
@@ -22,9 +23,12 @@ export function EmergencyNow({ lang, onGuide, onHazard, onHealth }) {
           {translations[lang]?.documentFallback}
         </p>
       )}
-      <Notice tone="warning" icon="ShieldCheck">
-        <strong>{t.emergency}</strong> <a href="tel:112">112</a>
-      </Notice>
+      <div className="emergency-illustrated-intro">
+        <Notice tone="warning" icon="ShieldCheck">
+          <strong>{t.emergency}</strong> <a href="tel:112">112</a>
+        </Notice>
+        <SectionIllustration image="/illustrations/page-emergency.webp" />
+      </div>
       <div className="preparedness-grid">
         {["blackout", "homefire", "flood", "storm", "heat", "earthquake"].map(
           (id) => {
@@ -102,14 +106,14 @@ export function ReadinessDashboard({
   ];
   return (
     <section className="preparedness-page readiness-dashboard">
-      <div className="panel padded">
+      <SectionIllustration image="/illustrations/page-readiness.webp">
         <h2>{t.readiness}</h2>
         <p>{t.readinessNote}</p>
         <strong>
           {summary.confirmed} / {summary.total} {t.count}
         </strong>
         <Progress value={summary.percent} />
-      </div>
+      </SectionIllustration>
       <div className="preparedness-grid">
         <section className="panel padded readiness-area">
           <Icon name="Droplets" />

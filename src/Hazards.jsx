@@ -3,6 +3,7 @@ import { Icon, Button, Notice, External } from "./components";
 import { normalize } from "./planning";
 import { hazards } from "./hazards.js";
 import { contentLanguage } from "./locale-policy.js";
+import SectionIllustration, { hazardIllustration } from "./SectionIllustration";
 export function Hazards({ t, lang, initialId }) {
   const sourceLanguage = contentLanguage(lang);
   const [selected, setSelected] = useState(initialId || null);
@@ -116,6 +117,7 @@ export function Hazards({ t, lang, initialId }) {
   return (
     <>
       {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
+      <SectionIllustration image="/illustrations/page-hazards.webp" />
       <Notice icon="BookOpen">{t.hazardIntro}</Notice>
       <div className="library-toolbar">
         <div className="input-search">
@@ -134,14 +136,13 @@ export function Hazards({ t, lang, initialId }) {
       <div className="hazards-grid">
         {results.map((h) => (
           <button
-            className={`hazard-card panel ${h.id}`}
+            className={`hazard-card panel has-context-image ${h.id}`}
             key={h.id}
             onClick={() => open(h.id)}
           >
-            <span className="hazard-symbol">
-              <Icon name={h.icon} size={29} />
-            </span>
+            <img className="hazard-context-image" src={hazardIllustration(h.id)} alt="" loading="lazy" width="100" height="84" />
             <div>
+              <span className="hazard-symbol"><Icon name={h.icon} size={29} /></span>
               <h2 lang={sourceLanguage}>{h[sourceLanguage].title}</h2>
               <p>{t.hazardCardText}</p>
             </div>

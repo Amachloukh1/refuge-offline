@@ -10,7 +10,14 @@ import {
 } from "./stock-rotation";
 import { stockText } from "./stock-text";
 import { MealPlanner } from "./MealPlanner";
+import "./inventory-layout.css";
 const categories = ["water", "food", "equipment", "health"];
+const categoryImages = {
+  water: "/illustrations/page-readiness.webp",
+  food: "/illustrations/food.webp",
+  equipment: "/illustrations/tools.webp",
+  health: "/illustrations/medicine-dressings.webp",
+};
 export const categoryLabel = (category, t) =>
   t[category === "health" ? "healthCategory" : category];
 export const stockName = (item, t) =>
@@ -92,7 +99,10 @@ export function Inventory({
     setError("");
   }
   return (
-    <>
+    <div className="inventory-page">
+      <div className="inventory-banner">
+        <img src="/illustrations/page-inventory.webp" alt="" width="1536" height="1024" />
+      </div>
       <div className="household-controls panel">
         <label>
           {t.people}
@@ -122,14 +132,15 @@ export function Inventory({
         </label>
         <div className="water-calculation">
           <Icon name="Droplets" size={32} />
+          <span className="water-calculation-label">{t.water}</span>
           <div>
             <strong>
-              {Number(water.days.toFixed(1))} {t.days}
+              <bdi>{Number(water.days.toFixed(1))}</bdi> {t.days}
             </strong>
             <span>{t.covered}</span>
           </div>
           <div>
-            <strong>{water.missing} L</strong>
+            <strong><bdi>{water.missing} L</bdi></strong>
             <span>{t.missing}</span>
           </div>
         </div>
@@ -144,6 +155,7 @@ export function Inventory({
         <div className="tabs">
           <button
             className={tab === "stock" ? "active" : ""}
+            aria-pressed={tab === "stock"}
             onClick={() => setTab("stock")}
           >
             {t.stock}
@@ -151,18 +163,21 @@ export function Inventory({
           </button>
           <button
             className={tab === "shopping" ? "active" : ""}
+            aria-pressed={tab === "shopping"}
             onClick={() => setTab("shopping")}
           >
             {t.purchases}
           </button>
           <button
             className={tab === "plan" ? "active" : ""}
+            aria-pressed={tab === "plan"}
             onClick={() => setTab("plan")}
           >
             {t.purchasePlan}
           </button>
           <button
             className={tab === "meals" ? "active" : ""}
+            aria-pressed={tab === "meals"}
             onClick={() => setTab("meals")}
           >
             {s.meals}
@@ -222,7 +237,8 @@ export function Inventory({
                   <li key={item.id}>
                     <strong>{stockName(item, t)}</strong> ·{" "}
                     {s[item.dateType || "check"]} ·{" "}
-                    <bdi>{item.date || s.none}</bdi> · {s[dateStatus(item)]}
+                    <bdi>{item.date || s.none}</bdi>
+                    {item.date && <> · {s[dateStatus(item)]}</>}
                     {item.location && (
                       <span className="stock-meta"> · {item.location}</span>
                     )}
@@ -244,22 +260,24 @@ export function Inventory({
             {["all", ...categories].map((c) => (
               <button
                 className={`filter ${c === category ? "active" : ""}`}
+                aria-pressed={c === category}
                 key={c}
                 onClick={() => setCategory(c)}
               >
-                {c === "all" ? t.all : categoryLabel(c, t)}
+                {c !== "all" && <img src={categoryImages[c]} alt="" width="44" height="44" loading="lazy" />}
+                <span>{c === "all" ? t.all : categoryLabel(c, t)}</span>
               </button>
             ))}
           </div>
-          <div className="panel table-wrap">
+          <div className="panel table-wrap" role="region" aria-label={t.stock} tabIndex={0}>
             <table>
               <thead>
                 <tr>
-                  <th>{t.product}</th>
-                  <th>{t.category}</th>
-                  <th>{t.quantity}</th>
-                  <th>{s.dateType}</th>
-                  <th>
+                  <th scope="col">{t.product}</th>
+                  <th scope="col">{t.category}</th>
+                  <th scope="col">{t.quantity}</th>
+                  <th scope="col">{s.dateType}</th>
+                  <th scope="col">
                     <span className="sr-only">{t.edit}</span>
                   </th>
                 </tr>
@@ -270,21 +288,10 @@ export function Inventory({
                   .map((item) => (
                     <tr key={item.id}>
                       <td>
-                        <span className={`mini-topic ${item.category}`}>
-                          <Icon
-                            name={
-                              item.category === "water"
-                                ? "Droplets"
-                                : item.category === "food"
-                                  ? "Utensils"
-                                  : item.category === "health"
-                                    ? "Cross"
-                                    : "Package"
-                            }
-                            size={19}
-                          />
-                        </span>
-                        <strong>{stockName(item, t)}</strong>
+                        <div className="inventory-product">
+                          <img src={categoryImages[item.category]} alt="" width="44" height="44" loading="lazy" />
+                          <strong>{stockName(item, t)}</strong>
+                        </div>
                       </td>
                       <td>{categoryLabel(item.category, t)}</td>
                       <td>
@@ -316,10 +323,13 @@ export function Inventory({
                           {s[item.dateType || "check"]} ·{" "}
                           <bdi>{item.date || t.noDate}</bdi>
                         </span>
-                        <small className="stock-meta">
-                          {s[dateStatus(item)]}
-                          {item.location ? ` · ${item.location}` : ""}
-                        </small>
+                        {(item.date || item.location) && (
+                          <small className="stock-meta">
+                            {item.date && s[dateStatus(item)]}
+                            {item.date && item.location ? " · " : ""}
+                            {item.location}
+                          </small>
+                        )}
                         {item.dateType === "use-by" &&
                           dateStatus(item) === "overdue" && (
                             <small className="error-text">
@@ -565,6 +575,6 @@ export function Inventory({
             )}
         </Modal>
       )}
-    </>
+    </div>
   );
 }

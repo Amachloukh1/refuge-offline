@@ -4,6 +4,7 @@ import { normalize } from "./planning";
 import { guideData } from "./data";
 import { hazards } from "./hazards.js";
 import { contentLanguage } from "./locale-policy.js";
+import SectionIllustration, { guideIllustration } from "./SectionIllustration";
 export function GuideReader({ guide, lang, t, onClose }) {
   const sourceLanguage = contentLanguage(lang);
   return (
@@ -21,14 +22,12 @@ export function GuideReader({ guide, lang, t, onClose }) {
       <p className="reader-intro" lang={sourceLanguage}>
         {guide.intro[sourceLanguage]}
       </p>
-      {guide.image && (
-        <img
-          className="guide-reader-image"
-          src={guide.image}
-          alt={guide.title[sourceLanguage]}
-          lang={sourceLanguage}
-        />
-      )}
+      <img
+        className="guide-reader-image"
+        src={guideIllustration(guide)}
+        alt=""
+        decoding="async"
+      />
       <ol className="guide-steps" lang={sourceLanguage}>
         {guide.body[sourceLanguage].map((text) => (
           <li key={text}>{text}</li>
@@ -92,6 +91,7 @@ export function Library({
   return (
     <>
       {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
+      <SectionIllustration image="/illustrations/page-library.webp" />
       <div className="library-toolbar">
         <div className="input-search">
           <Icon name="Search" />
@@ -142,14 +142,12 @@ export function Library({
       <div className="guide-grid">
         {matches.map((g) => (
           <article className="guide-card" key={g.id} data-guide-id={g.id}>
-            {g.image && (
-              <img
-                className="guide-card-image"
-                src={g.image}
-                alt=""
-                loading="lazy"
-              />
-            )}
+            <img
+              className="guide-card-image"
+              src={guideIllustration(g)}
+              alt=""
+              loading="lazy"
+            />
             <div className="guide-top">
               <span className={`topic-icon ${g.category}`}>
                 <Icon name={g.icon} size={26} />

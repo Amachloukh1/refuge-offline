@@ -1,9 +1,62 @@
 import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { Icon, Button, Notice, External } from "./components";
 import { bookText, bookLanguages, bookGenres } from "./books-text";
-import camp from "../server/assets/refuge-camp.jpg";
 import "./books.css";
 const PdfBook = lazy(() => import("./BookPdf"));
+const coverLabels = {
+  fr: "Couverture illustrée",
+  en: "Illustrated cover",
+  de: "Illustriertes Cover",
+  ar: "غلاف توضيحي",
+  ru: "Иллюстрированная обложка",
+  zh: "插画封面",
+  es: "Cubierta ilustrada",
+  pt: "Capa ilustrada",
+};
+// Artwork suggests the catalog genre; it does not represent a publisher's edition.
+const genreArtwork = {
+  fiction: "fiction", crime: "fiction", poetry: "fiction", theatre: "fiction",
+  adventure: "adventure", fantasy: "adventure",
+  scifi: "science", science: "science", practical: "science",
+  history: "history", biography: "history",
+  philosophy: "philosophy", religion: "philosophy",
+  children: "children",
+};
+function BookCover({ book, genres, lang }) {
+  const genre = book.genres?.[0] || "other";
+  const artwork = genreArtwork[genre];
+  return (
+    <figure className="book-cover-figure">
+      <div className={`book-cover book-art-${artwork || "other"}`}>
+        <div className="book-cover-art">
+          <img
+            src={artwork ? `/illustrations/book-${artwork}.webp` : "/illustrations/page-books.webp"}
+            alt=""
+            width="768"
+            height="512"
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              if (!e.currentTarget.dataset.fallback) {
+                e.currentTarget.dataset.fallback = "true";
+                e.currentTarget.src = "/illustrations/page-books.webp";
+              } else {
+                e.currentTarget.style.visibility = "hidden";
+              }
+            }}
+          />
+        </div>
+        <div className="book-cover-type">
+          <span>{genres[genre] || genres.other}</span>
+          <h3 dir="auto" lang={book.language}>{book.title}</h3>
+          <p dir="auto" lang={book.language}>{book.authors}</p>
+          <small>{bookLanguages[book.language]} · {book.format.toUpperCase()}</small>
+        </div>
+      </div>
+      <figcaption>{coverLabels[lang] || coverLabels.fr}</figcaption>
+    </figure>
+  );
+}
 function progress(id) {
   try {
     const v = JSON.parse(localStorage.getItem("refuge.book." + id));
@@ -289,7 +342,7 @@ export default function Books({ lang = "fr" }) {
             </span>
           </div>
         </div>
-        <img src={camp} alt="" width="1536" height="1024" />
+        <img src="/illustrations/page-books.webp" alt="" width="1536" height="1024" />
       </section>
       <div className="books-tabs">
         <button
@@ -428,16 +481,7 @@ export default function Books({ lang = "fr" }) {
       <div className="books-grid" aria-busy={loading}>
         {data?.items.map((b) => (
           <article className="book-card panel" key={b.id}>
-            <div
-              className={`book-cover book-tone-${Number(b.id.replace(/\D/g, "")) % 5}`}
-            >
-              <span>{g[b.genres[0]] || g.other}</span>
-              <h3 dir="auto">{b.title}</h3>
-              <p dir="auto">{b.authors}</p>
-              <small>
-                {bookLanguages[b.language]} · {b.format.toUpperCase()}
-              </small>
-            </div>
+            <BookCover book={b} genres={g} lang={lang} />
             <div className="book-card-body">
               <div className="book-card-meta">
                 <span className={b.installed ? "book-offline" : ""}>

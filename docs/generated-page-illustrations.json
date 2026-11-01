@@ -1,0 +1,72 @@
+{
+  "createdAt": "2026-11-01",
+  "method": "Built-in OpenAI image generation, then display-size WebP encoding; originals retained.",
+  "disclosure": "Editorial illustrations and genre cover artwork; not real disaster photographs or original publisher covers.",
+  "assets": [
+    {
+      "id": "page-emergency",
+      "file": "public/illustrations/page-emergency.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Landscape 2:1 editorial banner. A ready-to-grab emergency backpack beside a door, torch, battery radio, whistle and folded paper instructions, a clear safe exit in a warm home. Calm practical readiness, no injured people, no flames, no evacuation instructions drawn, no numbers. Keep image compact and secondary to the page's actual emergency guidance."
+    },
+    {
+      "id": "page-readiness",
+      "file": "public/illustrations/page-readiness.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Landscape 2:1 editorial banner. A carefully prepared household table with a blank checklist whose boxes are EMPTY, a pencil, water bottles, lantern, small first aid pouch and folded blanket. A welcoming cabin corner. No ticks, no percentages or labels, no suggestion that the viewer's actual supplies are verified."
+    },
+    {
+      "id": "page-library",
+      "file": "public/illustrations/page-library.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Landscape 2:1 editorial banner. A small home reference library: open illustrated field guide without readable text, neatly arranged books, paper maps, magnifying glass, radio and reading light on a wooden desk, nature through a cabin window. Emphasize useful knowledge and calm offline learning."
+    },
+    {
+      "id": "page-books",
+      "file": "public/illustrations/page-books.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Landscape 2:1 editorial banner. Beautiful upright and stacked books with blank spines, an open book with decorative blank pages, a small reading lamp, spectacles and a green armchair in a cozy cabin library. Warm light, inviting reading atmosphere. No readable lettering or fabricated titles."
+    },
+    {
+      "id": "page-hazards",
+      "file": "public/illustrations/page-hazards.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Landscape 2:1 editorial banner. Looking through a safe home window at distant hills, a river and gathering storm clouds; a neatly packed radio, torch, closed first aid bag and folded map on the windowsill. Illustrative preparedness for natural hazards, no destruction, no casualties, no graphic injury, not an instructional diagram."
+    },
+    {
+      "id": "page-health",
+      "file": "public/illustrations/page-health.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Landscape 2:1 editorial banner. A calm home first-aid workspace: sage green pouch, sterile dressings, blue gloves, medical scissors, generic sealed antiseptic bottle and thermometer. Clean and practical, no patient, no wound, no medicine dosage, no medical technique, no red cross logo."
+    },
+    {
+      "id": "page-inventory",
+      "file": "public/illustrations/page-inventory.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Landscape 2:1 editorial banner. A well-organized pantry shelf with water containers, tins of beans, rice and lentil jars, first aid pouch, spare batteries, blank date labels and a small inventory notebook. Realistic humble household quantities, no large stockpiles, no readable lettering or numbers."
+    },
+    {
+      "id": "book-fiction",
+      "file": "public/illustrations/book-fiction.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Portrait 2:3 artwork for an original illustrated generic book cover. A quiet green woodland path beneath a large oak tree, a small warm-lit cottage far away, inviting literary atmosphere. No physical book, no cover text, no author, no existing cover imitation. Leave the top and bottom visually calm for real title/author to be added in HTML."
+    },
+    {
+      "id": "book-adventure",
+      "file": "public/illustrations/book-adventure.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Portrait 2:3 artwork for an original illustrated generic adventure book cover. A folded map, brass compass and a distant mountain trail winding toward a lake and cabin, gentle adventurous mood. No physical book, no cover text, no author, no existing cover imitation. Leave calm space for actual title added in HTML."
+    },
+    {
+      "id": "book-science",
+      "file": "public/illustrations/book-science.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Portrait 2:3 artwork for an original illustrated generic science and learning book cover. A vintage brass microscope, a glass prism, fern specimen and small constellation shapes against warm ivory paper. Accurate recognizable objects, not a scientific instruction diagram. No physical book, no text, no existing cover imitation."
+    },
+    {
+      "id": "book-history",
+      "file": "public/illustrations/book-history.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Portrait 2:3 artwork for an original illustrated generic history book cover. An old stone arch, a small compass and rolled parchment with no writing, sepia architecture and landscape motifs, calm historical study. No physical book, no text, no political symbols, no existing cover imitation."
+    },
+    {
+      "id": "book-philosophy",
+      "file": "public/illustrations/book-philosophy.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Portrait 2:3 artwork for an original illustrated generic philosophy book cover. A quiet olive tree beside a simple stone bench and distant hills at sunset, a small closed notebook in foreground. Reflective warm mood, elegant uncluttered composition. No physical book, no text, no existing cover imitation."
+    },
+    {
+      "id": "book-children",
+      "file": "public/illustrations/book-children.webp",
+      "prompt": "Use case: illustration-story. Create ONE finished image asset for REFUGE, a multilingual offline preparedness app. Match a warm hand-painted watercolor and fine pencil editorial collection: muted forest green, sage, ivory, terracotta and golden ochre, textured cream paper, believable object proportions, soft natural daylight, detailed but uncluttered. Opaque warm light background. No text, lettering, logos, watermarks, slogans, prices or readable digits. Subject and composition: Portrait 2:3 artwork for an original illustrated generic children's book cover. An original friendly woodland fox and rabbit reading a blank open book beneath a tree, tiny wildflowers, gentle storybook atmosphere. Original animal characters, not based on a franchise. No physical cover, no text or author, no existing cover imitation."
+    }
+  ]
+}

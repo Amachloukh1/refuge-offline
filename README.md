@@ -57,6 +57,8 @@ The preset power station is now an EcoFlow DELTA 3 Classic **1,024 Wh** model; i
 
 The source includes 23 new generated editorial illustrations for equipment, pharmacy headings and symptom cards. They are clearly marked as illustrations, not exact product or medicine photographs. [Generation prompts and asset paths](docs/generated-illustrations.json) are recorded.
 
+Seven additional page illustrations cover Emergency, Readiness, Library, Books, Hazards, Health and Inventory. Six genre artworks provide locally bundled illustrated book covers with real titles and authors rendered as text. These are editorial artworks, not original publisher covers. [Page and cover prompts and asset paths](docs/generated-page-illustrations.json) are recorded. Inventory has responsive controls, category thumbnails and a keyboard-accessible scrolling table that stays within the mobile viewport.
+
 Product photos from the listed retailers/manufacturer can be prepared for local use with **node scripts/fetch-equipment-images.mjs** before **npm run build**. Rendering saved images requires no shop connection. The photo cache is excluded from Git; a fresh clone uses the available illustrations or icons until it is prepared. Product owners retain their image rights. Prices are dated observations; calculated VAT is labeled separately.
 
 ![REFUGE illustrated non-prescription medicine examples in English](docs/media/refuge-pharmacy-en.png)
