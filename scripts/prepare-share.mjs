@@ -36,6 +36,7 @@ const rootFiles = new Set([
   "package.json",
   "package-lock.json",
   "README.md",
+  "CONTRIBUTING.md",
   "vite.config.js",
 ]);
 const blockedSegments = new Set([
