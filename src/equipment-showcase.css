@@ -138,3 +138,116 @@
   min-width: 0;
   max-width: 100%;
 }
+.equipment-hero {
+  padding: 0 !important;
+  overflow: hidden;
+}
+.equipment-hero-image {
+  width: 100%;
+  height: clamp(180px, 25vw, 310px);
+  object-fit: cover;
+  object-position: center 54%;
+  display: block;
+  background: #e7e8d9;
+}
+.equipment-hero-content {
+  padding: 26px 30px;
+}
+.equipment-hero-content h2 {
+  margin-block-start: 0;
+}
+.equipment-hero-content > p {
+  max-width: 900px;
+}
+.equipment-pharmacy-jump {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 22px;
+  padding: 16px;
+  margin-block: 20px 0;
+  text-align: start;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid #bac9b4;
+  background: #f2f5ec;
+}
+.equipment-pharmacy-jump img {
+  width: 112px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+.equipment-pharmacy-jump > span {
+  display: grid;
+  gap: 7px;
+}
+.equipment-pharmacy-jump strong {
+  font-size: 20px;
+  color: #304b32;
+}
+.equipment-pharmacy-jump span span {
+  font-size: 13px;
+  line-height: 1.65;
+}
+.equipment-pharmacy-jump .equipment-pharmacy-action {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 13px;
+  color: #3f663c;
+}
+.equipment-pharmacy-jump:hover {
+  background: #e9efdf;
+}
+.equipment-pharmacy-jump:focus-visible {
+  outline: 3px solid #6d895f;
+  outline-offset: 3px;
+}
+.equipment-photo.generated img {
+  padding: 0;
+  object-fit: cover;
+}
+.equipment-stock {
+  margin-block: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #8c4b30;
+}
+.equipment-category-note {
+  line-height: 1.7;
+  margin-block-end: 8px;
+}
+.equipment-alternatives {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 15px;
+}
+.equipment-card > small {
+  line-height: 1.7;
+}
+.equipment-energy-formula {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+@media (max-width: 760px) {
+  .equipment-hero-content {
+    padding: 21px;
+  }
+  .equipment-pharmacy-jump {
+    gap: 13px;
+    flex-wrap: wrap;
+  }
+  .equipment-pharmacy-jump img {
+    width: 85px;
+    height: 85px;
+  }
+  .equipment-pharmacy-jump > span:not(.equipment-pharmacy-action) {
+    flex: 1;
+    min-width: 160px;
+  }
+  .equipment-pharmacy-jump .equipment-pharmacy-action {
+    margin-inline-start: 98px;
+  }
+}

@@ -1,10 +1,12 @@
 [
   {
-    "id": "solar",
-    "url": "https://m.media-amazon.com/images/I/617yJhQzWIL._AC_SX569_.jpg",
-    "page": "https://www.amazon.de/dp/B0BQVYT4WJ",
+    "id": "solar1024",
+    "url": "https://de.ecoflow.com/cdn/shop/files/DELTA3Classic.png?v=1773391002&width=1240",
+    "page": "https://de.ecoflow.com/products/delta-3-classic-portable-power-station",
     "observedAt": "2026-11-01",
-    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+    "provider": "EcoFlow",
+    "credit": "Product photograph from the official EcoFlow Germany product page; rights remain with EcoFlow. Local reference copy, not a redistribution licence.",
+    "filename": "solar1024.png"
   },
   {
     "id": "radio",

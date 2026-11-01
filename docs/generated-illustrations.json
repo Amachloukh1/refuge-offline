@@ -1,0 +1,122 @@
+{
+  "createdAt": "2026-11-01",
+  "method": "Built-in OpenAI image generation; WebP files are display-size encodings of the originals.",
+  "disclosure": "Generated editorial illustrations, not product photographs or medical instructions.",
+  "assets": [
+    {
+      "id": "equipment-header",
+      "file": "public/illustrations/equipment-header.webp",
+      "prompt": "Use case: illustration-story. Create one finished landscape editorial illustration for the REFUGE offline preparedness app equipment page. Warm hand-painted watercolor and subtle pencil, elegant realistic shapes, muted forest green, cream, terracotta and golden ochre. A welcoming wooden table at a forest cabin with neatly organized water canister, generic portable battery station, folded solar panel, radio, first aid pouch, food tins and seed packets; calm preparedness, no disaster, no people, no fox required. Wide balanced composition with open light cream margins, soft daylight, richly drawn real objects, no words, no letters, no logo, no medical claims, no prices. This is a web heading image, not a screenshot. Opaque pale warm background."
+    },
+    {
+      "id": "starlink",
+      "file": "public/illustrations/starlink.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A compact generic white rectangular satellite internet dish with kickstand, power cable and little router; no brand marks."
+    },
+    {
+      "id": "balcony-solar",
+      "file": "public/illustrations/balcony-solar.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: Two small solar panels, safe balcony mounting brackets, unplugged solar cable and a generic portable power station grouped as a still life; no wall electrical connection."
+    },
+    {
+      "id": "powerbank",
+      "file": "public/illustrations/powerbank.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A rounded generic dark green USB-C power bank with a neatly coiled charging cable and small phone; no brand, no capacity numbers."
+    },
+    {
+      "id": "firstaid",
+      "file": "public/illustrations/firstaid.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A sage green first-aid fabric pouch, sterile gauze packs, bandages, medical scissors and gloves; no red cross logo."
+    },
+    {
+      "id": "food",
+      "file": "public/illustrations/food.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A useful arrangement of tins of cooked beans, jars, a packet of crackers, dried fruit and a manual can opener; no brand or labels."
+    },
+    {
+      "id": "hygiene",
+      "file": "public/illustrations/hygiene.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A simple soap bar, toilet paper roll, sturdy waste bags, toothbrush, sanitary pads and washcloth neatly arranged; no brands."
+    },
+    {
+      "id": "warmth",
+      "file": "public/illustrations/warmth.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A rolled sleeping bag, folded wool blanket, insulating sleeping mat, thick socks and wool hat; cozy tactile fabrics."
+    },
+    {
+      "id": "alarms",
+      "file": "public/illustrations/alarms.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A round white home smoke detector and a rectangular carbon-monoxide alarm with a blank display, plus two spare batteries; no numbers or logos."
+    },
+    {
+      "id": "documents",
+      "file": "public/illustrations/documents.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A waterproof document pouch with blank identification cards, a notebook of blank pages, pencil and small stack of generic paper money and coins; no readable text or personal details."
+    },
+    {
+      "id": "navigation",
+      "file": "public/illustrations/navigation.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A folded illustrated paper hiking map without words, a magnetic compass and a small rescue whistle; no identifiable real location."
+    },
+    {
+      "id": "tools",
+      "file": "public/illustrations/tools.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A small home repair kit: work gloves, clear protective goggles, duct tape, folded multi-tool and neatly coiled cord; no dangerous activity."
+    },
+    {
+      "id": "pharmacy-header",
+      "file": "public/illustrations/pharmacy-header.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A beautifully arranged home medicine cabinet shelf with unbranded sealed medicine cartons, blister packs, a digital thermometer, oral rehydration sachets, saline bottle and sterile dressings. A calm healthcare preparedness banner."
+    },
+    {
+      "id": "medicine-pain",
+      "file": "public/illustrations/medicine-pain.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A plain sealed medicine carton and unbranded blister of tablets beside a cool compress and digital thermometer; headache and fever relief category, no dosage."
+    },
+    {
+      "id": "medicine-saline",
+      "file": "public/illustrations/medicine-saline.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A small saline nasal spray bottle and an unopened plain nasal spray carton, with a clean tissue; no medical procedure."
+    },
+    {
+      "id": "medicine-electrolytes",
+      "file": "public/illustrations/medicine-electrolytes.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: Several sealed oral rehydration powder sachets, a clean glass of water and a jug; do not show mixing amounts, no dosage."
+    },
+    {
+      "id": "medicine-diarrhea",
+      "file": "public/illustrations/medicine-diarrhea.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A small sealed plain medicine carton and blister pack alongside a clean water glass; generic diarrhea medicine category, no dosage."
+    },
+    {
+      "id": "medicine-allergy",
+      "file": "public/illustrations/medicine-allergy.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A sealed plain antihistamine carton and blister of tablets, with a tiny flowering branch and clean tissue suggesting seasonal allergy; no words."
+    },
+    {
+      "id": "medicine-heartburn",
+      "file": "public/illustrations/medicine-heartburn.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: An unbranded alginate bottle, a plain carton and unopened antacid blister pack; stomach-comfort category, no dosage."
+    },
+    {
+      "id": "medicine-antiseptic",
+      "file": "public/illustrations/medicine-antiseptic.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A small generic wound antiseptic spray bottle, a sealed sterile gauze pack and a sticking plaster; no open wound."
+    },
+    {
+      "id": "medicine-dressings",
+      "file": "public/illustrations/medicine-dressings.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: Assorted sticking plasters, unopened sterile gauze pads and a neatly rolled bandage, a pair of medical scissors; no wound."
+    },
+    {
+      "id": "medicine-thermometer",
+      "file": "public/illustrations/medicine-thermometer.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A clean digital thermometer with blank display in its storage case and two spare coin-cell batteries; realistic recognizable shape, no numbers."
+    },
+    {
+      "id": "medicine-gloves",
+      "file": "public/illustrations/medicine-gloves.webp",
+      "prompt": "Use case: illustration-story. Create ONE landscape 3:2 warm hand-painted watercolor and fine pencil still-life illustration for REFUGE offline preparedness web app. Muted forest green, sage, ivory, terracotta and ochre; realistic recognizable proportions and textured paper, cream opaque background with generous negative space around objects. Centered compact object grouping, elegant educational editorial illustration, soft natural daylight, no people, no titles, no text, no lettering, no digits, no prices, no logos, no watermarks. This is an illustration, not a photograph and not a depiction of a certified branded product. Subject: A pair of folded blue nitrile disposable medical gloves and a plain dispenser box; no hands, no words."
+    }
+  ]
+}

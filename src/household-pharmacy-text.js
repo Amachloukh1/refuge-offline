@@ -4,12 +4,36 @@ export const householdPharmacySources = [
     url: "https://gesund.bund.de/hausapotheke",
   },
   {
-    title: "BBK · Hausapotheke",
-    url: "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Hausapotheke/hausapotheke_node.html",
+    title: "IQWiG · Erkältung",
+    url: "https://www.gesundheitsinformation.de/schnupfen-husten-und-halsschmerzen-lindern.html",
   },
   {
-    title: "G-BA · OTC-Packungsgrößen",
-    url: "https://www.g-ba.de/service/fachnews/85/",
+    title: "IQWiG · Durchfall",
+    url: "https://www.gesundheitsinformation.de/durchfall.html",
+  },
+  {
+    title: "DGVS · Loperamid",
+    url: "https://www.dgvs.de/new-leitlinien/chapter_69b3f02adf44f/",
+  },
+  {
+    title: "IQWiG · Heuschnupfen",
+    url: "https://www.gesundheitsinformation.de/welche-medikamente-koennen-heuschnupfen-lindern.html",
+  },
+  {
+    title: "ratiopharm · Cetirizin",
+    url: "https://www.ratiopharm.de/produkte/details/cetirizin-ratiopharm-bei-allergien-pzn-2158136/",
+  },
+  {
+    title: "Bayer · Antazidum / Gebrauchsinformation",
+    url: "https://www.rennie.de/document/5321",
+  },
+  {
+    title: "schülke · Wundantiseptikum",
+    url: "https://www.schuelke.com/de-de/produkte/910028/octenisept-wund-desinfektion/",
+  },
+  {
+    title: "Bundesärztekammer · Nasensprays",
+    url: "https://www.bundesaerztekammer.de/themen/aerzte/public-health/suchtmedizin/medikamentenabhaengigkeit/abschwellende-nasentropfen-sprays",
   },
   {
     title: "AMVV · Anlage 1",
@@ -18,15 +42,30 @@ export const householdPharmacySources = [
 ];
 
 export const householdPharmacyLabels = {
-  fr: { title: "La pharmacie du foyer", fallback: "" },
-  de: { title: "Die Hausapotheke", fallback: "" },
-  en: { title: "Your household first-aid cabinet", fallback: "" },
-  ar: { title: "صيدلية المنزل", fallback: "" },
+  fr: {
+    title: "Médicaments sans ordonnance · Allemagne",
+    fallback: "",
+  },
+  de: {
+    title: "Rezeptfreie Medikamente · Deutschland",
+    fallback: "",
+  },
+  en: {
+    title: "Over-the-counter medicines · Germany",
+    fallback: "",
+  },
+  ar: {
+    title: "أدوية دون وصفة طبية · ألمانيا",
+    fallback: "",
+  },
   ru: {
     title: "Домашняя аптечка",
     fallback: "Этот справочник пока доступен на английском языке.",
   },
-  zh: { title: "家庭药箱", fallback: "本指南目前以英语显示。" },
+  zh: {
+    title: "家庭药箱",
+    fallback: "本指南目前以英语显示。",
+  },
   es: {
     title: "El botiquín del hogar",
     fallback: "Esta guía se muestra en inglés por ahora.",
@@ -41,34 +80,52 @@ export const householdPharmacyText = {
   fr: {
     eyebrow: "Préparer · Allemagne",
     intro:
-      "Une liste générale à apporter en pharmacie : vérifiez d’abord ce que vous avez, puis choisissez selon votre foyer. Les exemples ne constituent ni un diagnostic ni une prescription personnelle.",
+      "Des exemples concrets par symptôme pour composer votre pharmacie du foyer en Allemagne. Choisissez selon vos besoins : cette liste n’est pas une ordonnance et tous les produits ne sont pas à acheter.",
     advice:
-      "Demandez conseil avant tout achat pour un enfant, pendant une grossesse, en cas de maladie chronique ou de prise d’autres médicaments. Faites vérifier les interactions et la notice. Le caractère sans ordonnance dépend aussi du dosage, de la forme et de la taille du conditionnement : le nom de la substance ne suffit pas.",
-    selection: "À choisir avec le pharmacien",
+      "Sans ordonnance ne signifie pas sans risque : le statut en Allemagne dépend du dosage, de la forme et du conditionnement. Avant l’achat, demandez conseil pour les enfants, la grossesse, les maladies chroniques ou les autres traitements ; vérifiez les interactions et la notice.",
+    selection: "Exemples de médicaments",
     supplies: "Matériel · pas un médicament",
     rows: [
       [
         "pain",
-        "Douleur et fièvre",
-        "Paracétamol OU ibuprofène : choisir un produit adapté avec le pharmacien, sans acheter les deux automatiquement.",
-        "medicine",
-      ],
-      [
-        "electrolytes",
-        "Réhydratation orale",
-        "Sachets de solution de réhydratation avec électrolytes ; prévoir de l’eau potable et suivre la préparation indiquée.",
-        "medicine",
-      ],
-      [
-        "antiseptic",
-        "Antiseptique pour petites plaies",
-        "Demander un produit explicitement destiné aux plaies ; vérifier les restrictions d’emploi.",
+        "Maux de tête, douleurs et fièvre",
+        "Paracétamol OU ibuprofène : choisir un seul produit adapté. Vérifier les autres médicaments pour éviter de reprendre le même ingrédient dans un produit contre le rhume.",
         "medicine",
       ],
       [
         "saline",
-        "Solution saline nasale",
-        "Choisir une solution saline prête à l’emploi, adaptée à l’âge ; ne pas confondre avec un spray décongestionnant.",
+        "Nez bouché",
+        "Un spray de xylométazoline peut soulager temporairement ; pas plus de 7 jours et selon la notice. Une solution saline nasale est une autre option ; vérifier le statut du produit sur son emballage.",
+        "medicine",
+      ],
+      [
+        "electrolytes",
+        "Diarrhée · remplacer l’eau et les sels",
+        "Sachets de réhydratation orale avec glucose et électrolytes, à préparer exactement selon la notice avec de l’eau potable. Demander rapidement un avis médical en cas de déshydratation, de sang dans les selles ou de forte fièvre.",
+        "medicine",
+      ],
+      [
+        "diarrhea",
+        "Diarrhée · option ponctuelle chez l’adulte",
+        "Lopéramide : seulement pour un adulte avec diarrhée aiguë sans fièvre ni sang dans les selles, pendant moins de 48 heures. Pas pour les enfants dans ce guide ; la réhydratation reste prioritaire.",
+        "medicine",
+      ],
+      [
+        "allergy",
+        "Rhume des foins et allergie connue",
+        "Cétirizine : exemple d’antihistaminique pour les symptômes du nez et des yeux liés au rhume des foins. Peut provoquer de la somnolence ; vérifier la notice avant de conduire.",
+        "medicine",
+      ],
+      [
+        "heartburn",
+        "Brûlures d’estomac occasionnelles",
+        "Carbonate de calcium + carbonate de magnésium : exemple d’antiacide pour un soulagement ponctuel. Faire vérifier l’intervalle avec les autres médicaments ; consulter si les troubles persistent ou reviennent souvent.",
+        "medicine",
+      ],
+      [
+        "antiseptic",
+        "Petites plaies · antiseptique",
+        "Octénidine + phénoxyéthanol : exemple de solution antiseptique destinée aux plaies, selon la notice. Ne pas injecter ni introduire sous pression dans une plaie ; les plaies profondes nécessitent un avis médical.",
         "medicine",
       ],
       [
@@ -101,34 +158,52 @@ export const householdPharmacyText = {
   de: {
     eyebrow: "Vorsorge · Deutschland",
     intro:
-      "Allgemeine Einkaufsliste für das Apothekengespräch: zuerst Vorhandenes prüfen, dann passend zum Haushalt auswählen. Die Beispiele sind weder Diagnose noch persönliche Verordnung.",
+      "Konkrete Beispiele nach Beschwerden für Ihre Hausapotheke in Deutschland. Nach Bedarf auswählen: Diese Liste ist keine persönliche Verordnung und kein Auftrag, alles zu kaufen.",
     advice:
-      "Bei Kindern, Schwangerschaft, chronischen Erkrankungen oder weiteren Medikamenten vor dem Kauf beraten lassen. Wechselwirkungen und Packungsbeilage prüfen lassen. Rezeptfreiheit hängt auch von Wirkstärke, Darreichungsform und Packungsgröße ab: Der Wirkstoffname allein reicht nicht.",
-    selection: "Mit der Apotheke auswählen",
+      "Rezeptfrei bedeutet nicht risikofrei: In Deutschland hängen Abgaberegeln von Wirkstärke, Darreichungsform und Packungsgröße ab. Vor dem Kauf bei Kindern, Schwangerschaft, chronischen Erkrankungen oder weiteren Medikamenten beraten lassen; Wechselwirkungen und Packungsbeilage prüfen.",
+    selection: "Arzneimittelbeispiele",
     supplies: "Hilfsmittel · kein Arzneimittel",
     rows: [
       [
         "pain",
-        "Schmerzen und Fieber",
-        "Paracetamol ODER Ibuprofen: mit der Apotheke ein geeignetes Präparat wählen, nicht automatisch beide kaufen.",
-        "medicine",
-      ],
-      [
-        "electrolytes",
-        "Orale Rehydratation",
-        "Elektrolytbeutel zur Herstellung einer Rehydratationslösung; Trinkwasser einplanen und Zubereitungshinweise beachten.",
-        "medicine",
-      ],
-      [
-        "antiseptic",
-        "Wunddesinfektionsmittel",
-        "Ein ausdrücklich für Wunden geeignetes Produkt wählen; Anwendungsbeschränkungen prüfen.",
+        "Kopfschmerzen, Schmerzen und Fieber",
+        "Paracetamol ODER Ibuprofen: ein geeignetes Einzelpräparat wählen. Andere Arzneimittel prüfen, damit derselbe Wirkstoff nicht zusätzlich in einem Erkältungsmittel eingenommen wird.",
         "medicine",
       ],
       [
         "saline",
-        "Salzlösung für die Nase",
-        "Gebrauchsfertige, altersgerechte Salzlösung wählen; nicht mit abschwellendem Nasenspray verwechseln.",
+        "Verstopfte Nase",
+        "Ein Nasenspray mit Xylometazolin kann kurzfristig lindern; höchstens 7 Tage und nach Packungsbeilage anwenden. Nasale Salzlösung ist eine weitere Möglichkeit; den Produktstatus auf der Verpackung prüfen.",
+        "medicine",
+      ],
+      [
+        "electrolytes",
+        "Durchfall · Flüssigkeit und Salze ersetzen",
+        "Orale Rehydratationsbeutel mit Glukose und Elektrolyten genau nach Packungsbeilage mit Trinkwasser zubereiten. Bei Austrocknung, Blut im Stuhl oder hohem Fieber rasch ärztlichen Rat suchen.",
+        "medicine",
+      ],
+      [
+        "diarrhea",
+        "Durchfall · kurzfristige Option für Erwachsene",
+        "Loperamid: nur für Erwachsene bei akutem Durchfall ohne Fieber und ohne Blut im Stuhl, für weniger als 48 Stunden. In diesem Ratgeber nicht für Kinder vorgesehen; Flüssigkeitsersatz bleibt vorrangig.",
+        "medicine",
+      ],
+      [
+        "allergy",
+        "Heuschnupfen und bekannte Allergie",
+        "Cetirizin ist ein Beispiel für ein Antihistaminikum gegen Nasen- und Augenbeschwerden bei Heuschnupfen. Kann müde machen; vor dem Autofahren die Packungsbeilage beachten.",
+        "medicine",
+      ],
+      [
+        "heartburn",
+        "Gelegentliches Sodbrennen",
+        "Calciumcarbonat + Magnesiumcarbonat: ein Beispiel für ein Antazidum zur gelegentlichen Linderung. Abstände zu anderen Medikamenten abklären; anhaltende oder häufig wiederkehrende Beschwerden ärztlich abklären lassen.",
+        "medicine",
+      ],
+      [
+        "antiseptic",
+        "Kleine Wunden · Antiseptikum",
+        "Octenidin + Phenoxyethanol: ein Beispiel für eine antiseptische Wundlösung, nach Packungsbeilage anwenden. Nicht injizieren oder unter Druck in eine Wunde einbringen; tiefe Wunden ärztlich abklären lassen.",
         "medicine",
       ],
       [
@@ -160,34 +235,52 @@ export const householdPharmacyText = {
   en: {
     eyebrow: "Preparedness · Germany",
     intro:
-      "A general shopping list to discuss at a pharmacy: check existing supplies, then choose for your household. Examples are neither a diagnosis nor an individual prescription.",
+      "Concrete examples by symptom for a household medicine cabinet in Germany. Choose what fits your needs: this list is not an individual prescription or a reason to buy every item.",
     advice:
-      "Seek pharmacy advice before buying for children, during pregnancy, with chronic conditions or other medicines. Ask about interactions and check the leaflet. Prescription status also depends on strength, formulation and pack size: the ingredient name alone is insufficient.",
-    selection: "Choose with a pharmacist",
+      "Prescription-free does not mean risk-free: in Germany, status depends on strength, formulation and pack size. Seek advice before buying for children, pregnancy, chronic conditions or use with other medicines; check interactions and the leaflet.",
+    selection: "Medicine examples",
     supplies: "Equipment · not a medicine",
     rows: [
       [
         "pain",
-        "Pain and fever",
-        "Paracetamol OR ibuprofen: choose a suitable product with a pharmacist rather than automatically buying both.",
-        "medicine",
-      ],
-      [
-        "electrolytes",
-        "Oral rehydration",
-        "Oral rehydration electrolyte sachets; keep drinking water available and follow the preparation instructions.",
-        "medicine",
-      ],
-      [
-        "antiseptic",
-        "Wound antiseptic",
-        "Choose a product explicitly suitable for wounds; check its restrictions.",
+        "Headache, pain and fever",
+        "Paracetamol OR ibuprofen: choose one suitable single-ingredient product. Check other medicines to avoid taking the same ingredient again in a cold remedy.",
         "medicine",
       ],
       [
         "saline",
-        "Nasal saline",
-        "Choose ready-to-use, age-appropriate nasal saline; distinguish it from a decongestant spray.",
+        "Blocked nose",
+        "A xylometazoline nasal spray can provide short-term relief; use for no more than 7 days and follow the leaflet. Nasal saline is another option; check the product status on its packaging.",
+        "medicine",
+      ],
+      [
+        "electrolytes",
+        "Diarrhoea · replace water and salts",
+        "Oral rehydration sachets containing glucose and electrolytes: mix with drinking water exactly as the leaflet directs. Seek prompt medical advice for dehydration, blood in stools or high fever.",
+        "medicine",
+      ],
+      [
+        "diarrhea",
+        "Diarrhoea · brief option for adults",
+        "Loperamide: only for an adult with acute diarrhoea without fever or blood in stools, for less than 48 hours. This guide does not suggest it for children; rehydration remains the priority.",
+        "medicine",
+      ],
+      [
+        "allergy",
+        "Hay fever and known allergy",
+        "Cetirizine is an example of an antihistamine for hay-fever symptoms affecting the nose and eyes. It can cause drowsiness; check the leaflet before driving.",
+        "medicine",
+      ],
+      [
+        "heartburn",
+        "Occasional heartburn",
+        "Calcium carbonate + magnesium carbonate: an example of an antacid for occasional relief. Check spacing from other medicines; seek medical advice if symptoms persist or recur frequently.",
+        "medicine",
+      ],
+      [
+        "antiseptic",
+        "Minor wounds · antiseptic",
+        "Octenidine + phenoxyethanol: an example of an antiseptic wound solution, used as directed in the leaflet. Never inject it or force it into a wound under pressure; deep wounds need medical assessment.",
         "medicine",
       ],
       [
@@ -219,34 +312,52 @@ export const householdPharmacyText = {
   ar: {
     eyebrow: "الاستعداد · ألمانيا",
     intro:
-      "قائمة عامة لمناقشتها في الصيدلية: راجع الموجود أولاً ثم اختر ما يناسب الأسرة. الأمثلة ليست تشخيصاً أو وصفة شخصية.",
+      "أمثلة محددة حسب الأعراض لتجهيز صيدلية المنزل في ألمانيا. اختر ما تحتاجه؛ القائمة ليست وصفة شخصية ولا تعني شراء كل المنتجات.",
     advice:
-      "استشر الصيدلي قبل الشراء للأطفال أو أثناء الحمل أو مع الأمراض المزمنة أو الأدوية الأخرى. تحقق من التداخلات والنشرة. يتوقف البيع دون وصفة أيضاً على التركيز والشكل وحجم العبوة؛ اسم المادة وحده لا يكفي.",
-    selection: "يُختار بمشورة الصيدلي",
+      "البيع دون وصفة لا يعني انعدام المخاطر؛ يعتمد الوضع في ألمانيا على التركيز والشكل وحجم العبوة. استشر الصيدلي قبل الشراء للأطفال أو أثناء الحمل أو مع الأمراض المزمنة والأدوية الأخرى، وتحقّق من التداخلات والنشرة.",
+    selection: "أمثلة للأدوية",
     supplies: "مستلزمات · ليست دواءً",
     rows: [
       [
         "pain",
-        "الألم والحمّى",
-        "باراسيتامول أو إيبوبروفين: اختر منتجاً مناسباً مع الصيدلي ولا تشترِ كليهما تلقائياً.",
-        "medicine",
-      ],
-      [
-        "electrolytes",
-        "الإماهة الفموية",
-        "أكياس أملاح الإماهة الفموية؛ وفّر ماءً صالحاً للشرب واتبع تعليمات التحضير.",
-        "medicine",
-      ],
-      [
-        "antiseptic",
-        "مطهّر للجروح",
-        "اختر منتجاً مخصصاً للجروح وتحقق من قيود استعماله.",
+        "الصداع والألم والحمّى",
+        "باراسيتامول أو إيبوبروفين: اختر مستحضراً مناسباً بمادة فعالة واحدة. راجع الأدوية الأخرى لتجنّب تناول المادة نفسها مرة أخرى ضمن دواء للزكام.",
         "medicine",
       ],
       [
         "saline",
-        "محلول ملحي للأنف",
-        "اختر محلولاً جاهزاً مناسباً للعمر؛ ميّزه عن بخاخ إزالة الاحتقان.",
+        "انسداد الأنف",
+        "يمكن لبخاخ زيلوميتازولين تخفيف الانسداد مؤقتاً؛ يُستخدم حسب النشرة لمدة لا تتجاوز 7 أيام. المحلول الملحي الأنفي خيار آخر؛ تحقّق من تصنيف المنتج على العبوة.",
+        "medicine",
+      ],
+      [
+        "electrolytes",
+        "الإسهال · تعويض الماء والأملاح",
+        "أكياس الإماهة الفموية المحتوية على الغلوكوز والأملاح: تُحضّر بماء صالح للشرب تماماً كما تذكر النشرة. اطلب مشورة طبية سريعة عند الجفاف أو وجود دم في البراز أو ارتفاع شديد في الحرارة.",
+        "medicine",
+      ],
+      [
+        "diarrhea",
+        "الإسهال · خيار مؤقت للبالغين",
+        "لوبيراميد: فقط للبالغ المصاب بإسهال حاد دون حمّى أو دم في البراز ولمدة أقل من 48 ساعة. لا يقترحه هذا الدليل للأطفال؛ تعويض السوائل يبقى الأولوية.",
+        "medicine",
+      ],
+      [
+        "allergy",
+        "حمّى القش والحساسية المعروفة",
+        "سيتريزين مثال لمضاد هيستامين لأعراض الأنف والعينين المرتبطة بحمّى القش. قد يسبب النعاس؛ راجع النشرة قبل القيادة.",
+        "medicine",
+      ],
+      [
+        "heartburn",
+        "حرقة المعدة العرضية",
+        "كربونات الكالسيوم + كربونات المغنيسيوم: مثال لمضاد حموضة للتخفيف العرضي. تحقّق من الفاصل الزمني مع الأدوية الأخرى واستشر الطبيب إذا استمرت الأعراض أو تكررت كثيراً.",
+        "medicine",
+      ],
+      [
+        "antiseptic",
+        "الجروح البسيطة · مطهّر",
+        "أوكتينيدين + فينوكسي إيثانول: مثال لمحلول مطهّر مخصص للجروح حسب النشرة. لا يُحقن ولا يُدفع تحت ضغط داخل الجرح؛ الجروح العميقة تحتاج إلى تقييم طبي.",
         "medicine",
       ],
       [

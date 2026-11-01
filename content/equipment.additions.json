@@ -29,37 +29,59 @@
     },
     "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/vorsorge_node.html",
     "seller": "toolsmarket",
-    "observedAt": "2026-11-01"
+    "observedAt": "2026-11-01",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=20-L-Trinkwasserkanister%20mit%20Hahn"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "starlink",
     "icon": "RadioTower",
     "priority": "extra",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Starlink+Mini+Kit",
+    "priceEur": 199,
+    "url": "https://www.mediamarkt.de/de/product/_starlink-mini-internet-kit-2953441.html",
     "text": {
       "fr": [
         "Starlink Mini : accès Internet satellite",
         "Nécessite l’antenne, un abonnement actif, une vue dégagée du ciel et de l’électricité ; ce service n’est pas hors ligne.",
-        "Vérifier le prix du matériel, les frais récurrents et la couverture avant achat. Mesurer la consommation réelle en watts pour dimensionner la batterie ; la disponibilité en crise n’est pas garantie."
+        "199 € pour le matériel seul ; abonnement actif et éventuels frais d’activation en supplément. Vérifier les tarifs et la couverture chez Starlink. Mesurer la consommation réelle ; disponibilité en crise non garantie."
       ],
       "de": [
         "Starlink Mini: Satelliteninternet",
         "Benötigt Antenne, aktives Abonnement, freie Sicht zum Himmel und Strom; der Dienst funktioniert nicht offline.",
-        "Gerätepreis, laufende Kosten und Abdeckung vor dem Kauf prüfen. Den tatsächlichen Verbrauch in Watt für die Akkuplanung messen; Verfügbarkeit in Krisen ist nicht garantiert."
+        "199 € nur für die Hardware; aktives Abonnement und mögliche Aktivierungsgebühren zusätzlich. Tarife und Abdeckung bei Starlink prüfen. Tatsächlichen Stromverbrauch messen; Verfügbarkeit in Krisen nicht garantiert."
       ],
       "en": [
         "Starlink Mini satellite internet",
         "Requires the antenna, an active subscription, a clear view of the sky and electricity; this is not an offline service.",
-        "Check hardware price, recurring fees and coverage before buying. Measure actual power draw in watts to size your battery; availability during a crisis is not guaranteed."
+        "199 € for hardware only; an active subscription and any activation fees cost extra. Check plans and coverage with Starlink. Measure actual power consumption; availability during a crisis is not guaranteed."
       ],
       "ar": [
         "Starlink Mini للإنترنت عبر الأقمار الصناعية",
         "يتطلب الهوائي واشتراكًا نشطًا ورؤية واضحة للسماء وكهرباء؛ هذه ليست خدمة تعمل دون اتصال.",
-        "تحقق من ثمن الجهاز والرسوم المتكررة والتغطية قبل الشراء. قِس الاستهلاك الفعلي بالواط لتحديد البطارية المناسبة؛ توفر الخدمة أثناء الأزمات غير مضمون."
+        "199 يورو للجهاز فقط؛ الاشتراك النشط وأي رسوم تفعيل بتكلفة إضافية. تحقق من الخطط والتغطية لدى Starlink. قس الاستهلاك الفعلي؛ توفر الخدمة أثناء الأزمات غير مضمون."
       ]
     },
-    "source": "https://starlink.com/public-files/specification_sheet_mini.pdf"
+    "source": "https://starlink.com/public-files/specification_sheet_mini.pdf",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Starlink%20Mini%3A%20Satelliteninternet"
+      },
+      {
+        "label": "Starlink",
+        "url": "https://starlink.com/de/roam"
+      }
+    ],
+    "priceProvider": "MediaMarkt",
+    "seller": "MediaMarkt",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "priceScope": "hardware-only"
   },
   {
     "id": "seeds",
@@ -91,37 +113,56 @@
     },
     "source": "https://www.landwirtschaft.de/garten/selbst-anbauen/gemuese-und-kraeuter-vom-eigenen-balkon",
     "seller": "Goodaro GmbH",
-    "observedAt": "2026-11-01"
+    "observedAt": "2026-11-01",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Saatgut%3A%20Set%20mit%2015%20Sorten"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "balcony-solar",
     "icon": "Sun",
     "priority": "energy",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Solarpanel+Powerstation+Balkon",
+    "priceEur": 249,
+    "url": "https://de.ecoflow.com/products/160w-lightweight-portable-solar-panel",
     "text": {
       "fr": [
-        "Panneaux solaires pour station sur balcon",
-        "Choisir des panneaux à courant continu compatibles avec l’entrée solaire MPPT de la station : tension, courant et connecteurs.",
-        "Un micro-onduleur réseau standard s’arrête lors d’une coupure : ne pas improviser de réinjection dans une prise. Vérifier fixations, vent, règles locales et accord du bailleur si nécessaire."
+        "EcoFlow 160 W · panneau portable, usage temporaire",
+        "Panneau pliable à sortie XT60 pour recharge solaire de la station ; vendu seul.",
+        "Usage temporaire, pas de fixation permanente au balcon. Vérifier compatibilité et vent ; station et fixations séparées. Jamais de réinjection improvisée dans une prise. Rupture au relevé."
       ],
       "de": [
-        "Balkon-Solarmodule für eine Powerstation",
-        "Gleichstrommodule passend zum MPPT-Solareingang der Station wählen: Spannung, Strom und Stecker prüfen.",
-        "Ein üblicher Netz-Mikrowechselrichter schaltet bei Stromausfall ab; keine improvisierte Einspeisung über eine Steckdose. Befestigung, Windlast, örtliche Regeln und gegebenenfalls Zustimmung des Vermieters prüfen."
+        "EcoFlow 160 W · tragbares Panel, vorübergehender Einsatz",
+        "Faltbares XT60-Solarpanel zum Laden der Powerstation; einzeln verkauft.",
+        "Für vorübergehenden Einsatz, keine dauerhafte Balkonmontage. Kompatibilität und Wind prüfen; Station und Befestigung separat. Keine improvisierte Einspeisung in Steckdosen. Bei Prüfung ausverkauft."
       ],
       "en": [
-        "Balcony solar panels for a power station",
-        "Choose DC panels compatible with the station’s MPPT solar input: check voltage, current and connectors.",
-        "A standard grid microinverter shuts down during an outage; never improvise feeding power into a wall socket. Check mounting, wind loads, local rules and landlord consent where required."
+        "EcoFlow 160 W · portable panel, temporary use",
+        "Folding XT60 solar panel for charging a power station; sold separately.",
+        "Temporary use, not permanent balcony mounting. Check compatibility and wind; station and mounts separate. Never improvise feeding power into a wall socket. Sold out when checked."
       ],
       "ar": [
-        "ألواح شمسية للشرفة مع محطة طاقة",
-        "اختر ألواح تيار مستمر متوافقة مع مدخل الشحن الشمسي MPPT للمحطة، من حيث الجهد والتيار والموصلات.",
-        "يتوقف العاكس الشبكي الصغير المعتاد عند انقطاع الكهرباء؛ لا ترتجل تغذية الشبكة عبر مقبس. تحقق من التثبيت وتحمل الرياح والقواعد المحلية وموافقة المؤجر عند الحاجة."
+        "EcoFlow 160 واط · لوح محمول للاستخدام المؤقت",
+        "لوح شمسي قابل للطي بخرج XT60 لشحن محطة الطاقة؛ يباع وحده.",
+        "للاستخدام المؤقت لا للتثبيت الدائم بالشرفة. تحقق من التوافق والرياح؛ المحطة والتثبيت منفصلان. لا ترتجل تغذية مقبس كهربائي. نفد المخزون عند التحقق."
       ]
     },
-    "source": "https://www.verbraucherzentrale.de/wissen/energie/erneuerbare-energien/faq-zu-steckersolargeraeten-das-sind-die-haeufigsten-fragen-86652"
+    "source": "https://de.ecoflow.com/products/160w-lightweight-portable-solar-panel",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=EcoFlow%20160W%20Lightweight%20Portable%20Solar%20Panel"
+      }
+    ],
+    "priceProvider": "EcoFlow",
+    "seller": "EcoFlow",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "priceScope": "one-item",
+    "availability": "out-of-stock"
   },
   {
     "id": "stove",
@@ -153,7 +194,14 @@
     },
     "source": "https://www.campingaz.de/en/products/camp-bistro-3",
     "seller": null,
-    "observedAt": "2026-11-01"
+    "observedAt": "2026-11-01",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Campingaz%20Camp%20Bistro%203%3A%20Kocher-Grill-Set"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "filter",
@@ -185,7 +233,14 @@
     },
     "source": "https://support.katadyngroup.com/157178-How-can-I-tell-whether-my-BeFree-filter-is-still-working-or-defective",
     "seller": null,
-    "observedAt": "2026-11-01"
+    "observedAt": "2026-11-01",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Katadyn%20BeFree%20AC%201%20L"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "masks",
@@ -217,36 +272,55 @@
     },
     "source": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/hygiene-infektionsschutz-biostoffe/bgw-masken-kompass-tipps-zur-richtigen-maskenwahl/faq-haeufig-gestellte-fragen-zu-masken-78922",
     "seller": "Tienda Prime Ofertas",
-    "observedAt": "2026-11-01"
+    "observedAt": "2026-11-01",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=3M%20Aura%209320%2B%20FFP2%3A%2020%20St%C3%BCck"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "tools",
     "icon": "Settings",
     "priority": "extra",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Arbeitshandschuhe+Schutzbrille+Multitool",
+    "priceEur": 27,
+    "url": "https://www.victorinox.com/de-DE/Produkte/Swiss-Army-Knife%E2%84%A2%C2%A0%C2%A0Tools/Essentials/Spartan/p/1.3603.T",
     "text": {
       "fr": [
-        "Petit kit d’outils et de protection",
-        "Gants de travail, lunettes de protection, ruban adhésif, outil multifonction et corde pour de petites tâches courantes.",
-        "Choisir des outils que vous savez utiliser et les garder accessibles. Ne pas intervenir sur une installation électrique sous tension ni sur un circuit de gaz actif ; faire appel à un professionnel."
+        "Victorinox Spartan · rouge transparent",
+        "Couteau de poche multifonction avec ouvre-boîte ; référence 1.3603.T.",
+        "Prix du couteau seul. Ajouter gants, lunettes et ruban séparément. Ranger hors de portée des enfants. Ne pas intervenir sur une installation électrique ou de gaz active."
       ],
       "de": [
-        "Kleines Werkzeug- und Schutzset",
-        "Arbeitshandschuhe, Schutzbrille, Klebeband, Multitool und Seil für kleinere Alltagsaufgaben.",
-        "Vertraute Werkzeuge wählen und griffbereit halten. Nicht an spannungsführenden Elektroanlagen oder in Betrieb befindlichen Gasanlagen arbeiten; Fachpersonal hinzuziehen."
+        "Victorinox Spartan · transparent rot",
+        "Taschenmesser mit Dosenöffner; Artikel 1.3603.T.",
+        "Preis nur für das Messer. Handschuhe, Schutzbrille und Klebeband separat. Kindersicher aufbewahren. Nicht an spannungsführenden Elektroanlagen oder aktiven Gasanlagen arbeiten."
       ],
       "en": [
-        "Small tool and protection kit",
-        "Work gloves, safety glasses, tape, a multitool and cord for small everyday tasks.",
-        "Choose tools you know how to use and keep them accessible. Do not work on live electrical equipment or active gas systems; call a qualified professional."
+        "Victorinox Spartan · translucent red",
+        "Pocket multitool with a can opener; model 1.3603.T.",
+        "Knife only; gloves, safety glasses and tape separate. Keep away from children. Do not work on live electrical equipment or active gas systems."
       ],
       "ar": [
-        "عدة صغيرة للأدوات والحماية",
-        "قفازات عمل ونظارات واقية وشريط لاصق وأداة متعددة الاستخدامات وحبل للمهام اليومية الصغيرة.",
-        "اختر أدوات تعرف استخدامها واجعلها في المتناول. لا تعمل على تجهيزات كهربائية موصولة بالتيار أو أنظمة غاز عاملة؛ استعن بمتخصص مؤهل."
+        "Victorinox Spartan · أحمر شفاف",
+        "سكين جيب متعدد الوظائف مع فتاحة علب؛ الطراز 1.3603.T.",
+        "السعر للسكين فقط؛ القفازات والنظارات والشريط منفصلة. احفظه بعيدًا عن الأطفال. لا تعمل على تجهيزات كهربائية موصولة بالتيار أو أنظمة غاز عاملة."
       ]
     },
-    "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Notgepaeck/notgepaeck_node.html"
+    "source": "https://www.victorinox.com/de-DE/Produkte/Swiss-Army-Knife%E2%84%A2%C2%A0%C2%A0Tools/Essentials/Spartan/p/1.3603.T",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Victorinox%20Spartan%201.3603.T"
+      }
+    ],
+    "priceProvider": "Victorinox",
+    "seller": "Victorinox",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "sku": "1.3603.T",
+    "priceScope": "one-item"
   }
 ]

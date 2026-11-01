@@ -7,9 +7,10 @@ No assistant conversations, personal maps, precise GPS locations or secrets
 are shown.
 
 - refuge-home-en.png: home and first-aid shortcuts.
-- refuge-equipment-en.png: essential equipment with cached product photographs.
+- refuge-equipment-en.png: illustrated equipment preparation.
+- refuge-pharmacy-en.png: symptom/medicine example cards with generated illustrations.
 - refuge-wiki-en.png: installed Wikipedia archive selection.
-- refuge-overview-en.mp4: approximately 13 seconds, silent H.264 slideshow of
+- refuge-overview-en.mp4: short, silent H.264 slideshow of
   these screenshots. This is a visual overview, not an inference benchmark
   or a claim that emergency scenarios were tested.
 

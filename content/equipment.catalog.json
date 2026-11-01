@@ -1,35 +1,46 @@
 [
   {
-    "id": "solar",
+    "id": "solar1024",
     "icon": "BatteryCharging",
     "priority": "energy",
-    "priceEur": 408,
-    "seller": "EcoFlow Germany GmbH",
-    "observedAt": "2026-10-31",
-    "url": "https://www.amazon.de/dp/B0BQVYT4WJ",
+    "priceEur": 599,
+    "seller": "EcoFlow",
+    "priceProvider": "EcoFlow",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "capacityWh": 1024,
+    "ratedWatts": 1800,
+    "availability": "out-of-stock",
+    "url": "https://de.ecoflow.com/products/delta-3-classic-portable-power-station",
     "text": {
       "fr": [
-        "EcoFlow RIVER 2 + panneau 110 W",
-        "256 Wh LiFePO4, sortie 230 V de 300 W continus. Kit solaire pour le mini-PC, l’éclairage et les téléphones.",
-        "Panneau 110 W inclus. Vérifier le câble solaire fourni. Entrée 11–30 V, 8 A, 110 W max ; garder la station au sec. Ne pas recharger sous 0 °C. Tester le démarrage et l’arrêt hors Internet."
+        "EcoFlow DELTA 3 Classic · 1 024 Wh",
+        "Batterie LFP de 1 024 Wh, sortie 230 V de 1 800 W continus.",
+        "Station seule, panneau séparé. Solaire : 500 W maximum. Garder au sec ; charge entre 0 et 45 °C. Rupture de stock au relevé."
       ],
       "de": [
-        "EcoFlow RIVER 2 + 110-W-Solarpanel",
-        "256 Wh LiFePO4, 230-V-Ausgang mit 300 W Dauerleistung. Für Mini-PC, Licht und Telefone.",
-        "110-W-Panel enthalten. Solarkabel prüfen. Eingang 11–30 V, 8 A, maximal 110 W; Station trocken halten. Nicht unter 0 °C laden. Start und Abschalten ohne Internet testen."
+        "EcoFlow DELTA 3 Classic · 1.024 Wh",
+        "1.024-Wh-LFP-Akku, 230-V-Ausgang mit 1.800 W Dauerleistung.",
+        "Nur Station, Solarpanel separat. Solareingang maximal 500 W. Trocken halten; bei 0 bis 45 °C laden. Bei Preisprüfung ausverkauft."
       ],
       "en": [
-        "EcoFlow RIVER 2 + 110 W panel",
-        "256 Wh LiFePO4, 230 V AC with 300 W continuous output. Solar kit for the mini-PC, lights and phones.",
-        "110 W panel included. Check supplied solar cable. Input 11–30 V, 8 A, 110 W maximum; keep station dry. Do not charge below 0°C. Test startup and shutdown offline."
+        "EcoFlow DELTA 3 Classic · 1,024 Wh",
+        "1,024 Wh LFP battery, 230 V AC with 1,800 W continuous output.",
+        "Station only; solar panel separate. Solar input: 500 W maximum. Keep dry; charge at 0–45°C. Sold out when checked."
       ],
       "ar": [
-        "EcoFlow RIVER 2 + لوح 110 واط",
-        "بطارية LiFePO4 سعة 256 واط ساعة، خرج 230 فولت بقدرة مستمرة 300 واط للحاسوب والإضاءة والهواتف.",
-        "اللوح مشمول. تحقق من الكابل. المدخل 11–30 فولت و8 أمبير و110 واط كحد أقصى. أبق المحطة جافة ولا تشحن تحت الصفر. جرّب التشغيل والإطفاء دون إنترنت."
+        "EcoFlow DELTA 3 Classic · 1024 واط ساعة",
+        "بطارية LFP بسعة 1024 واط ساعة، خرج 230 فولت بقدرة مستمرة 1800 واط.",
+        "المحطة وحدها؛ اللوح منفصل. الشحن الشمسي حتى 500 واط. أبقها جافة واشحن بين 0 و45 درجة مئوية. نفد المخزون عند التحقق."
       ]
     },
-    "source": "https://eu.ecoflow.com/products/river-2-110w-portable-solar-panel"
+    "source": "https://de.ecoflow.com/products/delta-3-classic-portable-power-station",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=EcoFlow%20DELTA%203%20Classic%201024Wh"
+      }
+    ]
   },
   {
     "id": "radio",
@@ -61,7 +72,14 @@
         "جهز 4 بطاريات AA وطقم احتياطي. لا يدعم DAB+ أو اتصالات الجيش أو طقس الأقمار الصناعية. سجّل ترددات محطاتك المحلية واختبر الاستقبال."
       ]
     },
-    "source": "https://www.panasonic.com/fr/consumer/audio-video/radios/rf-2400d.specs.html"
+    "source": "https://www.panasonic.com/fr/consumer/audio-video/radios/rf-2400d.specs.html",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Panasonic%20RF-2400DEG-K"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "charger",
@@ -92,7 +110,14 @@
         "شاحن كهربائي 100–240 فولت لعدد 1–4 بطاريات Ni-MH من نوع AA/AAA، مع أربع AA.",
         "مدة الشحن المعلنة لأربع AA هي 7 ساعات. بطاريات AAA للمصباح منفصلة. لا تشحن القلوية ولا تخلط القديمة والجديدة."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=eneloop%20Smart%20%2B%204%20AA%202000%20mAh"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "headlamp",
@@ -123,37 +148,56 @@
         "مصباح رأس لترك اليدين حرتين أثناء الإسعاف والطبخ والتنقل.",
         "3 بطاريات AAA أو بطارية CORE اختيارية. مقاوم للرذاذ IPX4. مصباح لكل فرد وبطاريات مناسبة."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Petzl%20TIKKINA%20300%20lm%20%C2%B7%20rot"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "powerbank",
     "icon": "Battery",
     "priority": "energy",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=USB-C+Powerbank+20000mAh",
+    "priceEur": 54.95,
+    "url": "https://www.xtorm.de/products/power-bank-35w-20-000-mah-fuel-series-5-dusk-white",
     "text": {
       "fr": [
-        "Batterie USB-C · environ 20 000 mAh",
-        "Pour téléphone, éclairage USB et petits appareils compatibles. Choisir un modèle et un numéro de série hors rappel fabricant.",
-        "Le modèle Anker Zolo A1689 repéré pendant la recherche fait l’objet d’un rappel de certains lots : il est exclu des recommandations. Une batterie USB ne fournit pas forcément le voltage requis par le mini-PC."
+        "Xtorm Fuel Series 5 FS5200 · 20 000 mAh",
+        "Batterie externe blanche, USB-C PD jusqu’à 35 W pour les appareils compatibles.",
+        "Prix pour une batterie seule. Vérifier tension et câble : un mini-PC n’est pas nécessairement compatible. Contrôler modèle et numéro de série avant achat."
       ],
       "de": [
-        "USB-C-Powerbank · etwa 20.000 mAh",
-        "Für Telefon, USB-Licht und passende Kleingeräte. Modell und Seriennummer außerhalb von Hersteller-Rückrufen wählen.",
-        "Anker Zolo A1689 wurde wegen eines Rückrufs bestimmter Chargen aus der Auswahl entfernt. USB-Powerbanks liefern nicht automatisch die vom Mini-PC benötigte Spannung."
+        "Xtorm Fuel Series 5 FS5200 · 20.000 mAh",
+        "Weiße Powerbank, USB-C PD bis 35 W für kompatible Geräte.",
+        "Preis für eine Powerbank. Spannung und Kabel prüfen: nicht jeder Mini-PC ist kompatibel. Modell und Seriennummer vor dem Kauf prüfen."
       ],
       "en": [
-        "USB-C power bank · around 20,000 mAh",
-        "For phones, USB lights and compatible small devices. Choose a model and serial number unaffected by manufacturer recalls.",
-        "The Anker Zolo A1689 found during research was excluded because certain batches were recalled. A USB power bank may not supply the voltage required by the mini-PC."
+        "Xtorm Fuel Series 5 FS5200 · 20,000 mAh",
+        "White power bank, USB-C PD up to 35 W for compatible devices.",
+        "Price covers one power bank. Check voltage and cable: a mini-PC may not be compatible. Check model and serial number before buying."
       ],
       "ar": [
-        "بطارية USB-C · نحو 20000 mAh",
-        "للهاتف وإضاءة USB والأجهزة الصغيرة المتوافقة. اختر طرازاً ورقماً تسلسلياً غير مشمول باستدعاء الشركة.",
-        "تم استبعاد Anker Zolo A1689 لأن بعض الدفعات خاضعة للاستدعاء. بطارية USB لا توفر بالضرورة الجهد المطلوب للحاسوب."
+        "Xtorm Fuel Series 5 FS5200 · 20000 mAh",
+        "بطارية خارجية بيضاء تدعم USB-C PD حتى 35 واط للأجهزة المتوافقة.",
+        "السعر لبطارية واحدة. تحقق من الجهد والكابل؛ قد لا يتوافق الحاسوب المصغر. تحقق من الطراز والرقم التسلسلي قبل الشراء."
       ]
     },
-    "source": "https://www.anker.com/eu-de/rc2506/"
+    "source": "https://www.xtorm.de/products/power-bank-35w-20-000-mah-fuel-series-5-dusk-white",
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Xtorm%20Fuel%20Series%205%20FS5200%20%C2%B7%2020%2C000%20mAh"
+      }
+    ],
+    "priceProvider": "Xtorm",
+    "seller": "Xtorm",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "sku": "FS5200",
+    "priceScope": "one-item"
   },
   {
     "id": "water",
@@ -184,43 +228,63 @@
         "حاوية HDPE مناسبة للأغذية لتخزين ماء الشرب، تباع فارغة.",
         "22 لتراً تزن نحو 22 كغ من الماء؛ اختر أصغر عند الحاجة. نظّفها وخصصها لماء الشرب وسجّل التعبئة. لا ترشّح الماء ولا تعقّمه."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=h%C3%BCnersdorff%20STANDARD%20%C2%B7%2022%20L%20mit%20Rohr"
+      }
+    ],
+    "priceProvider": "Amazon.de"
   },
   {
     "id": "firstaid",
     "icon": "HeartPulse",
     "priority": "essential",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Erste%20Hilfe%20Set%20DIN%2013164%20Handschuhe%20Kompressen",
+    "priceEur": 12.99,
+    "url": "https://www.decathlon.de/p/erste-hilfe-set-100-41-teilig/324531/c354m8581562",
     "text": {
       "fr": [
-        "Trousse de premiers secours",
-        "Gants nitrile, compresses stériles, pansements, bandes, couverture de survie et ciseaux.",
-        "Vérifier les dates et apprendre les gestes. Ajouter vos traitements prescrits et ordonnances ; pas de médicaments choisis automatiquement par l’IA."
+        "Decathlon First Aid 100 · 41 pièces",
+        "Une trousse de premiers secours de base ; prix pour un kit.",
+        "Vérifier le contenu et les dates, compléter selon le foyer et apprendre les gestes. Médicaments personnels prescrits à ajouter séparément."
       ],
       "de": [
-        "Erste-Hilfe-Set",
-        "Nitrilhandschuhe, sterile Kompressen, Pflaster, Verbände, Rettungsdecke und Schere.",
-        "Ablaufdaten prüfen und Erste Hilfe lernen. Eigene verordnete Medikamente und Rezepte ergänzen; keine automatische Medikamentenwahl durch KI."
+        "Decathlon Erste-Hilfe-Set 100 · 41 Teile",
+        "Ein einfaches Erste-Hilfe-Set; Preis für eine Tasche.",
+        "Inhalt und Ablaufdaten prüfen, nach Haushaltsbedarf ergänzen und Erste Hilfe lernen. Persönlich verordnete Medikamente separat ergänzen."
       ],
       "en": [
-        "First-aid kit",
-        "Nitrile gloves, sterile dressings, plasters, bandages, emergency blanket and scissors.",
-        "Check expiry dates and practise first aid. Add prescribed medicines and prescriptions; no automatic AI selection of medication."
+        "Decathlon First Aid 100 · 41 pieces",
+        "A basic first-aid kit; price covers one kit.",
+        "Check contents and expiry dates, supplement for your household and practise first aid. Add personal prescribed medicines separately."
       ],
       "ar": [
-        "حقيبة إسعاف أولي",
-        "قفازات نيتريل وشاش معقم ولصقات وضمادات وبطانية نجاة ومقص.",
-        "تحقق من الصلاحية وتعلم الإسعاف. أضف أدويتك الموصوفة والوصفات؛ لا يختار الذكاء الاصطناعي الدواء تلقائياً."
+        "Decathlon First Aid 100 · 41 قطعة",
+        "حقيبة إسعاف أولي أساسية؛ السعر لحقيبة واحدة.",
+        "تحقق من المحتويات والصلاحية وأكملها حسب أسرتك وتعلم الإسعاف. أضف الأدوية الشخصية الموصوفة بشكل منفصل."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Decathlon%20First%20Aid%20100%20%C2%B7%2041%20pieces"
+      }
+    ],
+    "priceProvider": "Decathlon",
+    "seller": "Decathlon",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "source": "https://www.decathlon.de/p/erste-hilfe-set-100-41-teilig/324531/c354m8581562",
+    "sku": "8581562",
+    "priceScope": "one-item"
   },
   {
     "id": "food",
     "icon": "Utensils",
     "priority": "essential",
     "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Dosenoeffner%20manuell",
+    "url": "https://www.ebay.de/sch/i.html?_nkw=Lebensmittel%20%2B%20Handdosen%C3%B6ffner",
     "text": {
       "fr": [
         "Aliments habituels + ouvre-boîte manuel",
@@ -242,14 +306,22 @@
         "معلبات جاهزة وبقول مطبوخة وفواكه مجففة مع مراعاة الحساسية والأطفال.",
         "اشتر حسب الميزانية ودوّر المخزون. الطعام الجاف يحتاج ماء إضافياً. جهّز وجبات لا تحتاج طبخاً."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "Amazon.de",
+        "url": "https://www.amazon.de/s?k=Dosenoeffner%20manuell"
+      }
+    ],
+    "purchaseKind": "search",
+    "priceKind": "category"
   },
   {
     "id": "hygiene",
     "icon": "Droplets",
     "priority": "essential",
     "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Hygiene%20Notfall%20Seife%20Muellbeutel%20Toilettenpapier",
+    "url": "https://www.ebay.de/sch/i.html?_nkw=Hygiene%20und%20Toilette",
     "text": {
       "fr": [
         "Hygiène et toilettes",
@@ -271,122 +343,186 @@
         "صابون وأكياس نفايات قوية وورق مرحاض ومستلزمات الدورة والرضع حسب الحاجة.",
         "افصل النفايات عن ماء الشرب ووفّر غسل اليدين. لا تخلط مواد التنظيف."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "Amazon.de",
+        "url": "https://www.amazon.de/s?k=Hygiene%20Notfall%20Seife%20Muellbeutel%20Toilettenpapier"
+      }
+    ],
+    "purchaseKind": "search",
+    "priceKind": "category"
   },
   {
     "id": "warmth",
     "icon": "Thermometer",
     "priority": "essential",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Schlafsack%20Isomatte%20warme%20Decke",
+    "priceEur": 89.99,
+    "url": "https://www.decathlon.de/p/schlafsack-trekking-mt500-0-degc-polyester-khaki/346447/c405m8799901",
     "text": {
       "fr": [
-        "Chaleur, vêtements et couchage",
-        "Couches chaudes, chaussettes sèches, couvertures, sac de couchage et matelas isolant adaptés à la température.",
-        "Isoler du sol et garder les vêtements secs. Ne jamais chauffer l’intérieur avec barbecue ou réchaud de camping."
+        "SIMOND MT500 0 °C · sac de couchage",
+        "Sac synthétique kaki ; confort annoncé à 0 °C. Choisir la taille adaptée.",
+        "Prix du sac seul, sans matelas. Prévoir isolation du sol et vêtements secs. Les températures annoncées ne garantissent pas le confort de chaque personne."
       ],
       "de": [
-        "Wärme und Schlafplatz",
-        "Warme Schichten, trockene Socken, Decken, Schlafsack und temperaturgerechte Isomatte.",
-        "Vom Boden isolieren und Kleidung trocken halten. Grill oder Campingkocher niemals als Innenraumheizung nutzen."
+        "SIMOND MT500 0 °C · Schlafsack",
+        "Khakifarbener Synthetikschlafsack; angegebene Komforttemperatur 0 °C. Passende Größe wählen.",
+        "Preis nur für den Schlafsack, ohne Isomatte. Bodenisolierung und trockene Kleidung ergänzen. Temperaturangaben garantieren keinen individuellen Komfort."
       ],
       "en": [
-        "Warmth and bedding",
-        "Warm layers, dry socks, blankets, sleeping bag and insulated mat suited to the temperature.",
-        "Insulate from the ground and keep clothing dry. Never use a barbecue or camping stove to heat indoors."
+        "SIMOND MT500 0°C · sleeping bag",
+        "Khaki synthetic sleeping bag; stated comfort rating 0°C. Select the correct size.",
+        "Bag only; sleeping mat separate. Add ground insulation and dry clothing. Temperature ratings do not guarantee individual comfort."
       ],
       "ar": [
-        "الدفء والنوم",
-        "طبقات دافئة وجوارب جافة وبطانيات وكيس نوم وحصيرة عازلة مناسبة للبرد.",
-        "اعزل الجسم عن الأرض وحافظ على الجفاف. لا تستخدم الشواية أو موقد التخييم لتدفئة الداخل."
+        "SIMOND MT500 0 °C · كيس نوم",
+        "كيس نوم صناعي كاكي؛ درجة الراحة المعلنة صفر مئوي. اختر المقاس المناسب.",
+        "السعر للكيس فقط دون حصيرة. أضف عزلًا عن الأرض وملابس جافة. التصنيف الحراري لا يضمن الراحة لكل شخص."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=SIMOND%20MT500%200%C2%B0C%20%C2%B7%20sleeping%20bag"
+      }
+    ],
+    "priceProvider": "Decathlon",
+    "seller": "Decathlon",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "source": "https://www.decathlon.de/p/schlafsack-trekking-mt500-0-degc-polyester-khaki/346447/c405m8799901",
+    "sku": "8799901",
+    "priceScope": "one-item"
   },
   {
     "id": "alarms",
     "icon": "ShieldCheck",
     "priority": "extra",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=CO%20Melder%20EN%2050291%20Rauchmelder%20EN%2014604",
+    "priceEur": 22.99,
+    "url": "https://www.conrad.de/de/p/brennenstuhl-cm-a-3030-kohlenmonoxid-melder-batteriebetrieben-2361270.html",
     "text": {
       "fr": [
-        "Détecteurs fumée et monoxyde de carbone",
-        "Détecteur de fumée et, selon les appareils à combustion, détecteur CO adapté.",
-        "Choisir des appareils conformes aux normes applicables et suivre la notice de pose. Un détecteur ne rend pas un réchaud sûr à l’intérieur."
+        "Brennenstuhl CM A 3030 · détecteur CO",
+        "Détecteur de monoxyde de carbone à piles ; détecteurs de fumée séparés.",
+        "Prix TTC calculé : 19,32 € HT + 19 %. Un appareil, pas l’équipement du logement. Installer et tester selon la notice ; ne rend pas sûr un réchaud intérieur."
       ],
       "de": [
-        "Rauch- und Kohlenmonoxidmelder",
-        "Rauchmelder und bei passenden Verbrennungsgeräten geeigneter CO-Melder.",
-        "Passende Normen und Montageanleitung beachten. Ein Melder macht einen Campingkocher in Innenräumen nicht sicher."
+        "Brennenstuhl CM A 3030 · CO-Melder",
+        "Batteriebetriebener Kohlenmonoxidmelder; Rauchmelder separat.",
+        "Bruttopreis berechnet: 19,32 € netto + 19 %. Ein Gerät, keine komplette Wohnungsausstattung. Nach Anleitung montieren und testen; macht einen Innenraumkocher nicht sicher."
       ],
       "en": [
-        "Smoke and carbon monoxide alarms",
-        "Smoke alarm and, where combustion appliances warrant it, a suitable CO alarm.",
-        "Choose compliant devices and follow installation instructions. An alarm does not make indoor camping-stove use safe."
+        "Brennenstuhl CM A 3030 · CO alarm",
+        "Battery-powered carbon monoxide alarm; smoke alarms separate.",
+        "Calculated VAT-inclusive price: 19.32 € net + 19%. One alarm, not whole-home coverage. Install and test as instructed; does not make indoor camping stoves safe."
       ],
       "ar": [
-        "إنذار دخان وأول أكسيد الكربون",
-        "كاشف دخان وكاشف CO مناسب عند وجود أجهزة احتراق.",
-        "اختر أجهزة مطابقة للمعايير واتبع التركيب. الكاشف لا يجعل موقد التخييم آمناً في الداخل."
+        "Brennenstuhl CM A 3030 · إنذار CO",
+        "كاشف أول أكسيد الكربون بالبطاريات؛ كواشف الدخان منفصلة.",
+        "السعر المحسوب مع الضريبة: 19.32 يورو صافي + 19٪. جهاز واحد لا تجهيز كامل للمنزل. ركّبه واختبره وفق الدليل؛ لا يجعل موقد التخييم الداخلي آمنًا."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=Brennenstuhl%20CM%20A%203030%201291480"
+      }
+    ],
+    "priceNetEur": 19.32,
+    "vatRate": 0.19,
+    "priceBasis": "net-plus-vat",
+    "priceProvider": "Conrad",
+    "seller": "Conrad Electronic",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "source": "https://www.brennenstuhl.com/de-DE/produkte/rauchmelder-gefahrenmelder/co-melder-cm-a-3030/vor-ort-kaufen",
+    "sku": "1291480",
+    "priceScope": "one-item",
+    "priceMethod": "calculated-vat"
   },
   {
     "id": "documents",
     "icon": "FileText",
     "priority": "essential",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Dokumententasche%20wasserdicht",
+    "priceEur": 9.99,
+    "url": "https://www.decathlon.de/p/umhangetasche-dokumententasche-flexible-trageoptionen-travel-500/352834/c34m8871942",
     "text": {
       "fr": [
-        "Espèces, papiers et contacts",
-        "Petites coupures adaptées à votre foyer, copies des pièces d’identité, assurance, ordonnances et contacts sur papier.",
-        "Préparer une pochette étanche et un point de rendez-vous familial. Garder les originaux et données sensibles en lieu sûr ; ne pas les publier sur GitHub."
+        "FORCLAZ Travel 500 · pochette documents",
+        "Une petite pochette de voyage pour papiers et contacts essentiels.",
+        "Prix de la pochette seule ; pas de protection étanche certifiée. Ajouter une enveloppe étanche adaptée. Conserver des copies et sauvegardes chiffrées séparées."
       ],
       "de": [
-        "Bargeld, Dokumente und Kontakte",
-        "Kleine Scheine passend zum Haushalt, Ausweiskopien, Versicherung, Rezepte und Kontakte auf Papier.",
-        "Wasserdichte Mappe und Familientreffpunkt vorbereiten. Originale und sensible Daten sicher aufbewahren, nicht auf GitHub veröffentlichen."
+        "FORCLAZ Travel 500 · Dokumententasche",
+        "Eine kleine Reisetasche für wichtige Papiere und Kontakte.",
+        "Preis nur für die Tasche; kein zertifizierter wasserdichter Schutz. Passende wasserdichte Innenhülle ergänzen. Kopien und verschlüsselte Sicherungen getrennt aufbewahren."
       ],
       "en": [
-        "Cash, documents and contacts",
-        "Small banknotes suited to your household, ID copies, insurance, prescriptions and paper contacts.",
-        "Prepare a waterproof pouch and family meeting point. Keep originals and sensitive information secure; do not publish them on GitHub."
+        "FORCLAZ Travel 500 · document pouch",
+        "A small travel pouch for essential papers and contacts.",
+        "Pouch only; no certified waterproof protection. Add a suitable waterproof liner. Keep copies and encrypted backups separately."
       ],
       "ar": [
-        "نقود ووثائق وأرقام اتصال",
-        "نقود بفئات صغيرة حسب الأسرة ونسخ هوية وتأمين ووصفات وأرقام على الورق.",
-        "حقيبة مقاومة للماء ونقطة لقاء للأسرة. احفظ الأصول والبيانات الحساسة بأمان ولا تنشرها على GitHub."
+        "FORCLAZ Travel 500 · حقيبة وثائق",
+        "حقيبة سفر صغيرة للأوراق المهمة وجهات الاتصال.",
+        "السعر للحقيبة فقط؛ ليست حماية مائية معتمدة. أضف غلافًا داخليًا مناسبًا مقاومًا للماء. احفظ نسخًا واحتياطات مشفرة منفصلة."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=FORCLAZ%20Travel%20500%208871942"
+      }
+    ],
+    "priceProvider": "Decathlon",
+    "seller": "Decathlon",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "sku": "8871942",
+    "priceScope": "one-item",
+    "source": "https://www.decathlon.de/p/umhangetasche-dokumententasche-flexible-trageoptionen-travel-500/352834/c34m8871942"
   },
   {
     "id": "navigation",
     "icon": "Map",
     "priority": "extra",
-    "priceEur": null,
-    "url": "https://www.amazon.de/s?k=Kompass%20Wanderkarte%20Sachsen",
+    "priceEur": 12.99,
+    "url": "https://www.decathlon.de/p/kompass-wandern-orientierungslauf-explorer-500-orange/303520/c50m8518776",
     "text": {
       "fr": [
-        "Carte papier, boussole et sifflet",
-        "Carte de Saxe et des itinéraires utiles, boussole et sifflet sans batterie.",
-        "Apprendre à lire la carte. Prévoir chaussures solides et sac d’évacuation. Le GPS USB actuel ne reçoit ni radio ni alertes météo."
+        "GEONAUTE Explorer 500 · boussole orange",
+        "Boussole sur plaquette pour apprendre à utiliser une carte papier.",
+        "Prix de la boussole seule ; carte locale séparée. S’entraîner à l’avance, loin des masses métalliques. Garder aussi des cartes hors ligne et une batterie chargée."
       ],
       "de": [
-        "Papierkarte, Kompass und Pfeife",
-        "Sachsenkarte und wichtige Wege, Kompass und Pfeife ohne Batterie.",
-        "Kartenlesen üben. Feste Schuhe und Notgepäck vorbereiten. Der vorhandene USB-GPS empfängt weder Radio noch Wetterwarnungen."
+        "GEONAUTE Explorer 500 · Kompass orange",
+        "Plattenkompass zur Orientierung mit einer Papierkarte.",
+        "Preis nur für den Kompass; örtliche Karte separat. Vorher abseits von Metall üben. Zusätzlich Offlinekarten und einen geladenen Akku bereithalten."
       ],
       "en": [
-        "Paper map, compass and whistle",
-        "Map of Saxony and useful routes, compass and battery-free whistle.",
-        "Practise map reading. Prepare sturdy shoes and evacuation bag. Your USB GPS receives neither broadcast radio nor weather alerts."
+        "GEONAUTE Explorer 500 · orange compass",
+        "Baseplate compass for learning to navigate with a paper map.",
+        "Compass only; local map separate. Practise beforehand, away from metal. Also keep offline maps and a charged battery."
       ],
       "ar": [
-        "خريطة ورقية وبوصلة وصفارة",
-        "خريطة ساكسونيا والطرق المهمة وبوصلة وصفارة دون بطارية.",
-        "تدرّب على قراءة الخريطة وجهز أحذية قوية وحقيبة إخلاء. GPS الحالي لا يستقبل الراديو أو تحذيرات الطقس."
+        "GEONAUTE Explorer 500 · بوصلة برتقالية",
+        "بوصلة ذات قاعدة للتدرب على الملاحة بخريطة ورقية.",
+        "السعر للبوصلة فقط؛ الخريطة المحلية منفصلة. تدرب مسبقًا بعيدًا عن المعادن. احتفظ أيضًا بخرائط دون اتصال وبطارية مشحونة."
       ]
-    }
+    },
+    "alternatives": [
+      {
+        "label": "eBay.de",
+        "url": "https://www.ebay.de/sch/i.html?_nkw=GEONAUTE%20Explorer%20500%20%C2%B7%20orange%20compass"
+      }
+    ],
+    "priceProvider": "Decathlon",
+    "seller": "Decathlon",
+    "observedAt": "2026-11-01",
+    "priceCheckedAt": "2026-11-01",
+    "source": "https://www.decathlon.de/p/kompass-wandern-orientierungslauf-explorer-500-orange/303520/c50m8518776",
+    "sku": "8518776",
+    "priceScope": "one-item"
   }
 ]

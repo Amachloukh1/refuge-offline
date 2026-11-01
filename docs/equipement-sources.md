@@ -1,5 +1,14 @@
 # Équipement de préparation — vérification du 31 octobre 2026
 
+**Relevé le plus récent :** [station 1 024 Wh, autres vendeurs et prix du 1er novembre](equipment-prices-2026-11-01.md).
+Le catalogue actuel compte 19 références avec un prix (dont un TTC calculé et signalé)
+et deux paniers à composer sans prix global. Les 23 nouvelles illustrations sont
+incluses dans le code ; les [prompts et chemins](generated-illustrations.json)
+distinguent ces visuels des photos de produits.
+La [pharmacie par symptôme](pharmacy-otc-sources.md) comporte sept rubriques de
+médicaments et trois rubriques de matériel. Les sections suivantes conservent
+les relevés antérieurs ; leurs totaux ne décrivent pas la sélection actuelle.
+
 ## Complément du 1er novembre 2026
 
 Le catalogue contient maintenant 21 références/catégories : 13 existantes et

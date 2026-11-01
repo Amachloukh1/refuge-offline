@@ -45,7 +45,7 @@ Arabic uses a right-to-left layout. Documentary content has a separate language 
 
 ### A look inside
 
-[Watch the short overview](docs/media/refuge-overview-en.mp4) — approximately 13 seconds, silent. This is a sequence of real screenshots, not a performance demonstration or a recording of a live emergency.
+[Watch the short, silent overview](docs/media/refuge-overview-en.mp4). This is a sequence of real screenshots, not a performance demonstration or a recording of a live emergency.
 
 ![REFUGE equipment planning in English](docs/media/refuge-equipment-en.png)
 
@@ -53,7 +53,15 @@ The equipment view connects practical choices with preparation, including power 
 
 The preparation catalog includes a 20 L drinking-water container, outdoor camping stove, water filter, FFP2 masks, garden seeds, balcony solar planning and optional Starlink connectivity. A separate household-pharmacy tab provides a general German shopping discussion list, with official sources and no personal dosing.
 
-Product photos can be prepared for local use with **node scripts/fetch-equipment-images.mjs** before **npm run build**. The app then displays saved images without contacting Amazon. The photo cache is excluded from Git; a fresh clone displays category illustrations until it is prepared. Product owners retain their image rights. Prices are dated observations; unverified prices remain marked for checking.
+The preset power station is now an EcoFlow DELTA 3 Classic **1,024 Wh** model; its energy estimate uses the actual catalog capacity. Precise hardware offers include provider, date, scope and stock status. Food and hygiene remain household baskets without a fabricated complete-kit price. Alternative eBay searches are explicitly distinguished from verified offers.
+
+The source includes 23 new generated editorial illustrations for equipment, pharmacy headings and symptom cards. They are clearly marked as illustrations, not exact product or medicine photographs. [Generation prompts and asset paths](docs/generated-illustrations.json) are recorded.
+
+Product photos from the listed retailers/manufacturer can be prepared for local use with **node scripts/fetch-equipment-images.mjs** before **npm run build**. Rendering saved images requires no shop connection. The photo cache is excluded from Git; a fresh clone uses the available illustrations or icons until it is prepared. Product owners retain their image rights. Prices are dated observations; calculated VAT is labeled separately.
+
+![REFUGE illustrated non-prescription medicine examples in English](docs/media/refuge-pharmacy-en.png)
+
+The pharmacy separates seven symptom/medicine example cards from first-aid supplies. German OTC status depends on product strength, formulation and pack size; use the cited sources and pharmacist advice. No individualized diagnosis or dose is generated.
 
 ![REFUGE local Wikipedia archive selection in English](docs/media/refuge-wiki-en.png)
 

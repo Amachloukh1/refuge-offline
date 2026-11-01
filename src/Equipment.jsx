@@ -6,32 +6,61 @@ import baseCatalog from "../content/equipment.catalog.json";
 import additions from "../content/equipment.additions.json";
 import imageCatalog from "../content/equipment.images.json";
 import HouseholdPharmacy from "./HouseholdPharmacy";
-import { equipmentExtraText, equipmentPriceNote } from "./equipment-extra-text";
+import {
+  equipmentExtraText,
+  equipmentPriceNote,
+  equipmentUiText,
+} from "./equipment-extra-text";
 import "./equipment-showcase.css";
 const catalog = [...additions, ...baseCatalog];
+const station = catalog.find((item) => item.id === "solar1024");
+const generatedIds = new Set([
+  "starlink",
+  "balcony-solar",
+  "powerbank",
+  "firstaid",
+  "food",
+  "hygiene",
+  "warmth",
+  "alarms",
+  "documents",
+  "navigation",
+  "tools",
+]);
+const shopHost = (url) => new URL(url).hostname.replace(/^www\./, "");
 
 function EquipmentPhoto({ item, title, copy }) {
-  const [failed, setFailed] = useState(false);
+  const [photoFailed, setPhotoFailed] = useState(false);
+  const [illustrationFailed, setIllustrationFailed] = useState(false);
   const photo = imageCatalog.find((image) => image.id === item.id);
+  const showPhoto = photo && !photoFailed;
+  const showIllustration =
+    !showPhoto && generatedIds.has(item.id) && !illustrationFailed;
   return (
-    <figure className="equipment-photo">
-      {photo && !failed ? (
+    <figure
+      className={"equipment-photo" + (showIllustration ? " generated" : "")}
+    >
+      {showPhoto || showIllustration ? (
         <img
-          src={"/equipment-photos/" + item.id + ".jpg"}
+          src={
+            showPhoto
+              ? "/equipment-photos/" + (photo.filename || item.id + ".jpg")
+              : "/illustrations/" + item.id + ".webp"
+          }
           alt={title}
           width="480"
           height="260"
           loading="lazy"
-          onError={() => setFailed(true)}
+          onError={() =>
+            showPhoto ? setPhotoFailed(true) : setIllustrationFailed(true)
+          }
         />
       ) : (
         <div className="equipment-illustration" aria-hidden="true">
           <Icon name={item.icon} size={66} />
         </div>
       )}
-      <figcaption>
-        {photo && !failed ? copy.photo : copy.illustration}
-      </figcaption>
+      <figcaption>{showPhoto ? copy.photo : copy.illustration}</figcaption>
     </figure>
   );
 }
@@ -42,8 +71,6 @@ const copy = {
     title: "Préparer son équipement, par priorité",
     intro:
       "Commencez par l’eau, la nourriture habituelle, les traitements prescrits et un moyen de recevoir les consignes. Achetez progressivement selon votre foyer et ce que vous possédez déjà.",
-    prices:
-      "Prix Amazon.de relevés le 31/10/2026, TTC affichée, hors frais éventuels. Ce sont des repères enregistrés hors ligne : prix, vendeurs et disponibilité peuvent changer. Aucun lien affilié. Les recherches sans prix demandent une vérification avant achat.",
     all: "Tout",
     essential: "Priorité 1 · besoins essentiels",
     energy: "Priorité 2 · énergie",
@@ -55,13 +82,9 @@ const copy = {
     subtotal: "Total indicatif restant · références avec prix",
     excluded:
       "Une unité de chaque référence restante ; eau, nourriture, quantités familiales et articles sans prix à ajouter. Cocher un article ne modifie pas vos stocks.",
-    shop: "Voir sur Amazon.de",
-    search: "Chercher sur Amazon.de",
     source: "Notice du fabricant",
     watts: "Consommation totale mesurée (mini-PC + écran), W",
     hours: "Autonomie estimée sans soleil",
-    energyNote:
-      "Calcul indicatif : 256 Wh × 70 % ÷ watts, avec 30 % de réserve/pertes supposées. Mesurez votre installation : froid, vieillissement et consommation à vide réduisent l’autonomie. Le soleil en hiver en Saxe ne garantit aucune recharge quotidienne. Cette petite station ne convient pas au chauffage électrique ni à une bouilloire.",
     offline:
       "Les fiches et prix enregistrés restent consultables sans Internet ; les boutiques demandent une connexion.",
   },
@@ -70,8 +93,6 @@ const copy = {
     title: "Ausrüstung nach Priorität vorbereiten",
     intro:
       "Zuerst Trinkwasser, gewohnte Lebensmittel, verordnete Medikamente und ein Radio einplanen. Nach Haushaltsbedarf und vorhandener Ausrüstung schrittweise kaufen.",
-    prices:
-      "Amazon.de-Preise am 31.10.2026 abgelesen, angezeigte MwSt., ggf. zuzüglich Versand. Offline gespeicherte Richtwerte: Preise, Händler und Verfügbarkeit können sich ändern. Keine Affiliate-Links. Suchlinks ohne Preis vor dem Kauf prüfen.",
     all: "Alle",
     essential: "Priorität 1 · Grundbedarf",
     energy: "Priorität 2 · Energie",
@@ -83,13 +104,9 @@ const copy = {
     subtotal: "Verbleibende Richtsumme · Artikel mit Preis",
     excluded:
       "Je ein Stück pro fehlender Referenz; Wasser, Lebensmittel, Haushaltsmengen und Artikel ohne Preis zusätzlich berücksichtigen. Markieren ändert keine Vorräte.",
-    shop: "Auf Amazon.de ansehen",
-    search: "Auf Amazon.de suchen",
     source: "Herstelleranleitung",
     watts: "Gemessener Gesamtverbrauch (Mini-PC + Bildschirm), W",
     hours: "Geschätzte Laufzeit ohne Sonne",
-    energyNote:
-      "Richtrechnung: 256 Wh × 70 % ÷ Watt, angenommene 30 % Reserve/Verluste. Eigene Geräte messen: Kälte, Alterung und Leerlauf verkürzen die Laufzeit. Im sächsischen Winter ist tägliches Solarladen nicht garantiert. Diese kleine Station reicht nicht für Elektroheizung oder Wasserkocher.",
     offline:
       "Gespeicherte Angaben sind offline lesbar; Shops benötigen Internet.",
   },
@@ -98,8 +115,6 @@ const copy = {
     title: "Prepare equipment by priority",
     intro:
       "Start with drinking water, familiar food, prescribed medicines and a way to receive public instructions. Buy gradually for your household and existing equipment.",
-    prices:
-      "Amazon.de prices observed on 31 October 2026, displayed VAT, possible delivery charges extra. Offline reference prices: sellers, prices and availability may change. No affiliate links. Search links without a price need checking before purchase.",
     all: "All",
     essential: "Priority 1 · essentials",
     energy: "Priority 2 · power",
@@ -111,13 +126,9 @@ const copy = {
     subtotal: "Indicative remaining total · priced references",
     excluded:
       "One of each remaining reference; add water, food, household quantities and unpriced items. Checking an item does not change your inventory.",
-    shop: "View on Amazon.de",
-    search: "Search Amazon.de",
     source: "Manufacturer manual",
     watts: "Measured total consumption (mini-PC + screen), W",
     hours: "Estimated runtime without sunshine",
-    energyNote:
-      "Illustrative calculation: 256 Wh × 70% ÷ watts, assuming 30% reserve/losses. Measure your setup: cold, ageing and idle consumption reduce runtime. Daily solar charging is not guaranteed during Saxony winters. This small station cannot run electric heating or a kettle.",
     offline:
       "Saved information works offline; shopping links require Internet.",
   },
@@ -126,8 +137,6 @@ const copy = {
     title: "تجهيز المعدات حسب الأولوية",
     intro:
       "ابدأ بمياه الشرب والطعام المعتاد والأدوية الموصوفة وراديو لسماع التعليمات العامة. اشترِ تدريجياً حسب أفراد الأسرة وما تملكه بالفعل.",
-    prices:
-      "أسعار Amazon.de شوهدت في 31 أكتوبر 2026 وتشمل الضريبة المعروضة، وقد تضاف رسوم الشحن. هذه أسعار مرجعية محفوظة دون إنترنت ويمكن أن يتغير السعر والبائع والتوفر. لا توجد روابط عمولة. تحقق من سعر نتائج البحث قبل الشراء.",
     all: "الكل",
     essential: "الأولوية 1 · الأساسيات",
     energy: "الأولوية 2 · الطاقة",
@@ -139,13 +148,9 @@ const copy = {
     subtotal: "المجموع المرجعي المتبقي · المنتجات المسعّرة",
     excluded:
       "قطعة واحدة من كل مرجع متبقٍ؛ أضف الماء والطعام وكميات الأسرة والمواد دون سعر. وضع علامة لا يغير المخزون.",
-    shop: "عرض على Amazon.de",
-    search: "بحث على Amazon.de",
     source: "دليل الشركة المصنعة",
     watts: "الاستهلاك الكلي المقاس للحاسوب والشاشة بالواط",
     hours: "مدة التشغيل التقديرية دون شمس",
-    energyNote:
-      "حساب تقريبي: 256 واط ساعة × 70٪ ÷ الواط، بافتراض احتياطي وخسائر 30٪. قِس أجهزتك؛ البرد وتقادم البطارية واستهلاكها الذاتي يقللون المدة. الشحن الشمسي اليومي غير مضمون في شتاء ساكسونيا. هذه المحطة الصغيرة لا تناسب التدفئة الكهربائية أو غلاية الماء.",
     offline: "المعلومات المحفوظة تعمل دون إنترنت؛ روابط المتاجر تحتاج اتصالاً.",
   },
 };
@@ -157,6 +162,7 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
   const x = equipmentExtraText[lang] || equipmentExtraText.en;
+  const u = equipmentUiText[lang] || equipmentUiText.en;
   const [watts, setWatts] = useState(40);
   const money = (n) =>
     new Intl.NumberFormat(
@@ -168,20 +174,51 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
     .reduce((s, p) => s + (p.priceEur || 0), 0);
   return (
     <section className="equipment-section" data-testid="equipment">
-      <div className="panel padded">
-        <h2>{c.title}</h2>
-        <p>{c.intro}</p>
-        <strong className="equipment-total">
-          {c.subtotal} : {money(remaining)}
-        </strong>
-        <details className="equipment-intro-details">
-          <summary>{x.source}</summary>
-          <Notice>{equipmentPriceNote[lang] || equipmentPriceNote.en}</Notice>
-          <p className="muted">{c.offline}</p>
-          <p>{c.excluded}</p>
-          <p className="equipment-photo-note">{x.photos}</p>
-        </details>
+      <div className="panel padded equipment-hero">
+        <img
+          className="equipment-hero-image"
+          src="/illustrations/equipment-header.webp"
+          alt=""
+          width="1536"
+          height="600"
+        />
+        <div className="equipment-hero-content">
+          <h2>{c.title}</h2>
+          <p>{c.intro}</p>
+          <strong className="equipment-total">
+            {c.subtotal} : {money(remaining)}
+          </strong>
+          <details className="equipment-intro-details">
+            <summary>{x.source}</summary>
+            <Notice>{equipmentPriceNote[lang] || equipmentPriceNote.en}</Notice>
+            <p className="muted">{c.offline}</p>
+            <p>{c.excluded}</p>
+            <p className="equipment-photo-note">{x.photos}</p>
+          </details>
+        </div>
       </div>
+      {filter !== "pharmacy" && (
+        <button
+          className="equipment-pharmacy-jump panel"
+          data-testid="equipment-pharmacy-jump"
+          onClick={() => {
+            setFilter("pharmacy");
+            setQuery("");
+          }}
+        >
+          <img
+            src="/illustrations/firstaid.webp"
+            alt=""
+            width="160"
+            height="120"
+          />
+          <span>
+            <strong>{x.pharmacy}</strong>
+            <span>{u.pharmacyIntro}</span>
+          </span>
+          <span className="equipment-pharmacy-action">{u.pharmacyOpen} →</span>
+        </button>
+      )}
       <label className="equipment-search">
         <Icon name="Search" size={20} />
         <input
@@ -196,6 +233,8 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
         {["all", "essential", "energy", "extra", "pharmacy"].map((f) => (
           <button
             key={f}
+            data-testid={"equipment-filter-" + f}
+            aria-pressed={filter === f}
             className={filter === f ? "active" : ""}
             onClick={() => setFilter(f)}
           >
@@ -242,7 +281,11 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
                   </strong>
                   {p.priceEur != null && (
                     <small>
-                      {c.observed} · {p.observedAt || "—"}
+                      {p.priceMethod === "calculated-vat"
+                        ? u.calculatedVat
+                        : c.observed}{" "}
+                      · {p.priceProvider || shopHost(p.url)} ·{" "}
+                      {p.priceCheckedAt || p.observedAt || "—"}
                       {p.seller && (
                         <>
                           <br />
@@ -251,9 +294,31 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
                       )}
                     </small>
                   )}
+                  {p.availability === "out-of-stock" && (
+                    <span className="equipment-stock">{u.soldOut}</span>
+                  )}
+                  {p.priceKind === "category" && (
+                    <small className="equipment-category-note">
+                      {u.category}
+                    </small>
+                  )}
                   <External href={p.url}>
-                    {p.priceEur != null ? c.shop : c.search}
+                    {p.purchaseKind === "search" ? u.search : u.shop} ·{" "}
+                    {shopHost(p.url)}
                   </External>
+                  {p.alternatives?.length > 0 && (
+                    <div className="equipment-alternatives">
+                      {p.alternatives.map((alternative) => (
+                        <External key={alternative.url} href={alternative.url}>
+                          {alternative.url.includes("/sch/") ||
+                          alternative.url.includes("/s?")
+                            ? u.search + " · "
+                            : ""}
+                          {alternative.label}
+                        </External>
+                      ))}
+                    </div>
+                  )}
                   {p.source && <External href={p.source}>{x.source}</External>}
                   <label className="equipment-owned">
                     <input
@@ -268,7 +333,9 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
             })}
         </div>
       )}
-      {filter === "pharmacy" && <HouseholdPharmacy lang={lang} />}
+      {(filter === "all" || filter === "pharmacy") && (
+        <HouseholdPharmacy lang={lang} />
+      )}
       {filter !== "pharmacy" &&
         !catalog.some(
           (p) =>
@@ -285,24 +352,30 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
         )}
       {filter !== "pharmacy" && (
         <div className="panel padded energy-estimate">
-          <h3>{c.hours} · RIVER 2 256 Wh</h3>
+          <h3>
+            {c.hours} · DELTA 3 Classic {station.capacityWh} Wh
+          </h3>
           <label>
             {c.watts}
             <input
               aria-label={c.watts}
               type="number"
               min="1"
-              max="300"
+              max={station.ratedWatts}
+              data-testid="equipment-watts"
               value={watts}
               onChange={(e) => setWatts(e.target.value)}
             />
           </label>
-          <output>
-            {Number(watts) > 0 && Number(watts) <= 300
-              ? `${((256 * 0.7) / Number(watts)).toFixed(1)} h`
+          <output data-testid="equipment-runtime" aria-live="polite">
+            {Number(watts) > 0 && Number(watts) <= station.ratedWatts
+              ? `${((station.capacityWh * 0.7) / Number(watts)).toFixed(1)} h`
               : "—"}
           </output>
-          <p>{c.energyNote}</p>
+          <p className="equipment-energy-formula">
+            {station.capacityWh} Wh × 70 % ÷ W · {station.ratedWatts} W max
+          </p>
+          <p>{u.energyNote}</p>
         </div>
       )}
     </section>
