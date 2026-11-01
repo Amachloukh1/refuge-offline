@@ -1,4 +1,4 @@
-# REFUGE
+# REFUGE — Your essentials, offline
 
 **An offline preparedness companion for a small computer you control.**
 
@@ -6,9 +6,11 @@ REFUGE brings household planning, practical guidance, local documents, maps, Wik
 
 The project is intended to be **100% free to use**: no subscription, paid feature unlock or mandatory donation. Hardware, electricity, storage and internet preparation have their own costs. The source licensing decision is still pending; see [licensing and attribution](#licensing-and-attribution).
 
-[Getting started](#getting-started) · [Offline preparation](#prepare-an-offline-installation) · [Hardware](#hardware-and-platform-status) · [Privacy](#your-data-stays-under-your-control) · [Release checklist](docs/public-release.md)
+[Screenshots](docs/screenshots.md) · [Install in English](docs/installation.md) · [Getting started](#getting-started) · [Offline preparation](#prepare-an-offline-installation) · [Hardware](#hardware-and-platform-status) · [Privacy](#your-data-stays-under-your-control)
 
-![REFUGE home dashboard in English](docs/media/refuge-home-en.png)
+![REFUGE home dashboard in English](docs/media/refuge-home-en.jpg)
+
+**Prepare online → verify your resources → use locally.** The illustrated interface is included in the source. Large knowledge archives, maps, books, media and the optional AI model are prepared separately.
 
 ## Why REFUGE exists
 
@@ -47,6 +49,20 @@ Arabic uses a right-to-left layout. Documentary content has a separate language 
 
 [Watch the short, silent overview](docs/media/refuge-overview-en.mp4). This is a sequence of real screenshots, not a performance demonstration or a recording of a live emergency.
 
+The [English screenshot tour](docs/screenshots.md) covers emergency guidance, readiness, supplies, practical guides, illustrated books, disasters, health, equipment and Wikipedia. Screenshots show a prepared development installation; its resource counts are examples, not the contents of a fresh clone.
+
+![REFUGE readiness checklist in English](docs/media/refuge-readiness-en.jpg)
+
+Readiness brings together water, food, health, energy, documents and evacuation checks. Confirmations describe what a household has checked manually; illustrations do not establish that a household is ready.
+
+![REFUGE illustrated book library in English](docs/media/refuge-books-en.jpg)
+
+Search by title or author, filter languages and genres, and read installed books locally. Genre artwork creates readable illustrated covers while preserving the actual title and author. An English interface can also browse French, German and Arabic books.
+
+![REFUGE inventory and water planning in English](docs/media/refuge-inventory-en.jpg)
+
+Set a planning duration, record quantities and dates, review rotation, and build a shopping plan. The responsive inventory keeps its wide table inside a scrollable region on smaller screens.
+
 ![REFUGE equipment planning in English](docs/media/refuge-equipment-en.png)
 
 The equipment view connects practical choices with preparation, including power requirements for the computer and its screen.
@@ -84,11 +100,18 @@ REFUGE is a local React application served by Node.js to a browser at **http://1
 
 The project has been developed and exercised on Windows. **Ubuntu 22.04 deployment on the intended mini-PC has not yet been validated.** Linux scripts and runtime preparation exist, but copying a folder is not a successful hardware test. Model response time and memory consumption must be measured on the actual computer; CPU AI can take a substantial time to answer.
 
-See the [offline installation guide](docs/installation-offline.md) and [reliability notes](docs/fiabilite-preparation.md), currently in French, for the prepared configuration and remaining hardware checks.
+Start with the [English installation guide](docs/installation.md). The [detailed prepared installation notes](docs/installation-offline.md) and [reliability notes](docs/fiabilite-preparation.md), currently in French, document the prepared configuration and remaining hardware checks.
 
 ## Getting started
 
 ### Build from the source repository
+
+Install Node.js 22.12+ or 24 and Git, then clone the repository. Access currently requires permission while the repository is private:
+
+```sh
+git clone https://github.com/Amachloukh1/refuge-offline.git
+cd refuge-offline
+```
 
 Use an internet connection for dependency installation and the explicit content download:
 
@@ -105,6 +128,12 @@ Open **http://127.0.0.1:8099**. For frontend development, use `npm run dev`; thi
 **A Git clone is the application code and tracked catalogs, not a complete offline appliance.** Models, runtimes, downloaded PDFs, maps, videos, books and Wikipedia archives are excluded from Git. Missing optional resources remain unavailable until explicitly prepared. Downloading PDFs above does not prepare Wikipedia or the AI engine.
 
 The built application, local server and selected resource files must remain on the computer. Once prepared, the core interface and installed content do not need a CDN, remote font or cloud account. The browser must allow local storage to retain changes.
+
+### Illustrations are included
+
+Page banners, six genre cover artworks, equipment fallbacks and pharmacy illustrations live in `public/illustrations/` and are tracked by Git. `npm run build` copies them into `dist/illustrations/`; no image API key, image generation step or image-hosting account is required during installation. Prepared distribution selection includes both `public/` and `dist/`. Rebuild after updating the source so that a transferred installation includes the latest visuals.
+
+Retailer product photographs are a separate optional cache. If it has not been prepared, the application uses bundled illustrations or icons. See the [installation guide](docs/installation.md#included-illustrations-and-optional-product-photos) for the distinction and transfer checks.
 
 ### Start an already prepared folder
 
@@ -199,5 +228,7 @@ See [Local Studio provenance](docs/local-studio-integration.md), [map and radio 
 The donation screen has an explicit **continue for free** option. A donation does not unlock a feature, and payment is never required to use REFUGE. Public donation addresses and local QR codes are intentional; private keys, wallet recovery phrases and private access credentials must never be included in the project.
 
 Useful contributions also include testing a restored installation without internet, reporting a reproducible bug, reviewing a translation and identifying a better primary source. When reporting a problem, describe the platform, language, installed resources and expected behavior. Remove personal data from logs and screenshots.
+
+See the [contribution guide](CONTRIBUTING.md) for local setup, useful bug reports, translation reviews, content attribution and validation expectations.
 
 The [previous French README](docs/README.fr.md) is retained as a historical reference. Several detailed operational documents remain in French; this English README describes the project scope and separates prepared resources from repository contents.
