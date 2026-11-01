@@ -33,8 +33,7 @@ export default function DonationAccess({
   const [seen, setSeen] = useState(() => hasSeenDonation(browserStorage()));
   const [open, setOpen] = useState(false),
     [welcome, setWelcome] = useState(false);
-  const [coin, setCoin] = useState("btc"),
-    [network, setNetwork] = useState("");
+  const [coin, setCoin] = useState("btc");
   const [copied, setCopied] = useState(false),
     [copyError, setCopyError] = useState(false);
   const [copying, setCopying] = useState(false);
@@ -48,7 +47,6 @@ export default function DonationAccess({
   useEffect(() => {
     setCopied(false);
     setCopyError(false);
-    setNetwork("");
   }, [coin]);
   const remember = () => {
     setSeen(true);
@@ -60,7 +58,7 @@ export default function DonationAccess({
     setWelcome(false);
   };
   const wallet = donationWallets[coin],
-    ready = donationReady(coin, network);
+    ready = donationReady(coin);
   const copy = async () => {
     if (!ready || copying) return;
     setCopying(true);
@@ -163,29 +161,11 @@ export default function DonationAccess({
                   <div className="donation-network">
                     <ShieldCheck size={17} />
                     <strong>
-                      {c.network} :{" "}
-                      {coin === "usdt"
-                        ? network || c.networkPending
-                        : wallet.network}
+                      {c.network} : {wallet.network}
                     </strong>
                   </div>
-                  {coin === "usdt" && wallet.networks.length > 0 && (
-                    <label>
-                      {c.network}
-                      <select
-                        value={network}
-                        disabled={copying}
-                        onChange={(e) => {
-                          setNetwork(e.target.value);
-                          setCopied(false);
-                        }}
-                      >
-                        <option value="">—</option>
-                        {wallet.networks.map((n) => (
-                          <option key={n}>{n}</option>
-                        ))}
-                      </select>
-                    </label>
+                  {coin === "usdt" && (
+                    <p className="donation-muted">{c.usdtNote}</p>
                   )}
                   {ready ? (
                     <div className="donation-qr">
@@ -201,7 +181,7 @@ export default function DonationAccess({
                     </div>
                   ) : (
                     <p className="donation-pending" role="status">
-                      {coin === "usdt" ? c.pendingNote : c.invalid}
+                      {c.invalid}
                     </p>
                   )}
                   <span className="donation-address-label">{c.address}</span>

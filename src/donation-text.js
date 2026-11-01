@@ -17,9 +17,8 @@ export const donationText = {
       "Impossible de copier. Sélectionnez et copiez l’adresse manuellement.",
     address: "Adresse de réception",
     network: "Réseau",
-    networkPending: "Réseaux USDT en attente de confirmation",
-    pendingNote:
-      "N’envoyez pas d’USDT avant que l’auteur confirme les réseaux acceptés. Cette adresse ne signifie pas que tous les réseaux sont acceptés.",
+    usdtNote:
+      "Cette adresse 0x est destinée aux réseaux EVM compatibles avec MetaMask. Vérifiez le jeton USDT et le réseau avant l’envoi ; cette adresse ne convient pas à TRON ou Solana.",
     noPayment:
       "Aucun paiement n’est effectué ici. Envoyez uniquement depuis votre propre portefeuille, en utilisant le réseau indiqué.",
     scan: "Code QR de l’adresse de réception",
@@ -48,9 +47,8 @@ export const donationText = {
     copyFailed: "Could not copy. Select and copy the address manually.",
     address: "Receiving address",
     network: "Network",
-    networkPending: "USDT networks awaiting confirmation",
-    pendingNote:
-      "Do not send USDT before the author confirms accepted networks. This address does not mean all networks.",
+    usdtNote:
+      "This 0x address is for EVM networks compatible with MetaMask. Verify the USDT token and network before sending; do not use this address for TRON or Solana.",
     noPayment:
       "No payment is made here. Send only from your own wallet using the indicated network.",
     scan: "Receiving address QR code",
@@ -80,9 +78,8 @@ export const donationText = {
       "Kopieren nicht möglich. Markieren und kopieren Sie die Adresse manuell.",
     address: "Empfangsadresse",
     network: "Netzwerk",
-    networkPending: "Bestätigung der USDT-Netzwerke steht aus",
-    pendingNote:
-      "Senden Sie kein USDT, bevor der Autor die unterstützten Netzwerke bestätigt hat. Diese Adresse bedeutet nicht, dass alle Netzwerke unterstützt werden.",
+    usdtNote:
+      "Diese 0x-Adresse ist für mit MetaMask kompatible EVM-Netzwerke bestimmt. Vor dem Senden USDT-Token und Netzwerk prüfen; diese Adresse nicht für TRON oder Solana verwenden.",
     noPayment:
       "Hier wird keine Zahlung ausgeführt. Senden Sie ausschließlich aus Ihrer eigenen Wallet über das angegebene Netzwerk.",
     scan: "QR-Code der Empfangsadresse",
@@ -112,9 +109,8 @@ export const donationText = {
     copyFailed: "تعذّر النسخ. حدّد العنوان وانسخه يدويًا.",
     address: "عنوان الاستقبال",
     network: "الشبكة",
-    networkPending: "شبكات USDT بانتظار التأكيد",
-    pendingNote:
-      "لا ترسل USDT قبل أن يؤكد صاحب المشروع الشبكات المقبولة. وجود هذا العنوان لا يعني قبول جميع الشبكات.",
+    usdtNote:
+      "عنوان 0x هذا مخصص لشبكات EVM المتوافقة مع MetaMask. تحقّق من رمز USDT والشبكة قبل الإرسال؛ لا تستخدم هذا العنوان لشبكتي TRON أو Solana.",
     noPayment:
       "لا تُجرى أي عملية دفع هنا. أرسل فقط من محفظتك الخاصة عبر الشبكة المحددة.",
     scan: "رمز QR لعنوان الاستقبال",
@@ -144,9 +140,8 @@ export const donationText = {
       "Не удалось скопировать. Выделите адрес и скопируйте его вручную.",
     address: "Адрес для получения",
     network: "Сеть",
-    networkPending: "Сети USDT ожидают подтверждения",
-    pendingNote:
-      "Не отправляйте USDT, пока автор не подтвердит принимаемые сети. Наличие этого адреса не означает поддержку всех сетей.",
+    usdtNote:
+      "Этот адрес 0x предназначен для сетей EVM, совместимых с MetaMask. Перед отправкой проверьте токен USDT и сеть; не используйте этот адрес для TRON или Solana.",
     noPayment:
       "Здесь платёж не выполняется. Отправляйте средства только из собственного кошелька через указанную сеть.",
     scan: "QR-код адреса для получения",
@@ -175,9 +170,8 @@ export const donationText = {
     copyFailed: "无法复制。请选中地址并手动复制。",
     address: "收款地址",
     network: "网络",
-    networkPending: "USDT 网络尚待确认",
-    pendingNote:
-      "在作者确认接受的网络之前，请勿发送 USDT。此地址并不代表支持所有网络。",
+    usdtNote:
+      "此 0x 地址用于与 MetaMask 兼容的 EVM 网络。发送前请核对 USDT 代币和网络；请勿将此地址用于 TRON 或 Solana。",
     noPayment: "此处不会执行任何付款。请仅从你自己的钱包通过指定网络发送。",
     scan: "收款地址二维码",
     offline: "二维码和地址可离线使用。发送加密货币需要接入区块链网络。",
@@ -205,9 +199,8 @@ export const donationText = {
       "No se ha podido copiar. Selecciona y copia la dirección manualmente.",
     address: "Dirección de recepción",
     network: "Red",
-    networkPending: "Redes de USDT pendientes de confirmación",
-    pendingNote:
-      "No envíes USDT antes de que el autor confirme las redes aceptadas. Esta dirección no implica que se acepten todas las redes.",
+    usdtNote:
+      "Esta dirección 0x es para redes EVM compatibles con MetaMask. Verifica el token USDT y la red antes de enviar; no uses esta dirección para TRON ni Solana.",
     noPayment:
       "Aquí no se realiza ningún pago. Envía únicamente desde tu propia cartera mediante la red indicada.",
     scan: "Código QR de la dirección de recepción",
@@ -238,9 +231,8 @@ export const donationText = {
       "Não foi possível copiar. Selecione e copie o endereço manualmente.",
     address: "Endereço de receção",
     network: "Rede",
-    networkPending: "Redes USDT a aguardar confirmação",
-    pendingNote:
-      "Não envie USDT antes de o autor confirmar as redes aceites. Este endereço não significa que todas as redes sejam aceites.",
+    usdtNote:
+      "Este endereço 0x destina-se a redes EVM compatíveis com a MetaMask. Verifique o token USDT e a rede antes de enviar; não use este endereço para TRON ou Solana.",
     noPayment:
       "Nenhum pagamento é efetuado aqui. Envie apenas a partir da sua própria carteira, utilizando a rede indicada.",
     scan: "Código QR do endereço de receção",

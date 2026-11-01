@@ -13,8 +13,8 @@ export const donationWallets = Object.freeze({
   }),
   usdt: Object.freeze({
     symbol: "USDT",
+    network: "EVM · MetaMask",
     address: "0x8353B9727D7c6eAB8FC998aB58020030415FdC56",
-    networks: Object.freeze([]),
   }),
 });
 export function validDonationAddress(coin, address) {
@@ -34,13 +34,9 @@ export function validDonationAddress(coin, address) {
   }
   return false;
 }
-export function donationReady(coin, network) {
+export function donationReady(coin) {
   const wallet = donationWallets[coin];
-  return Boolean(
-    wallet &&
-    validDonationAddress(coin, wallet.address) &&
-    (coin !== "usdt" || wallet.networks.includes(network)),
-  );
+  return Boolean(wallet && validDonationAddress(coin, wallet.address));
 }
 export function hasSeenDonation(storage) {
   try {

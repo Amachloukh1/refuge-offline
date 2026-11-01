@@ -3,6 +3,16 @@ test.use({ storageState: { cookies: [], origins: [] } });
 test("first-run donation is optional, remembered, and never blocks a direct emergency route", async ({
   page,
 }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        async writeText(value) {
+          window.__refugeDonationClipboard = value;
+        },
+      },
+    });
+  });
   await page.goto("/#emergency");
   await expect(page.locator(".donation-dialog")).toHaveCount(0);
   await page.goto("/#home");
@@ -27,9 +37,29 @@ test("first-run donation is optional, remembered, and never blocks a direct emer
   await expect(page.locator(".donation-address")).toHaveText(
     "7Pv5wAwoh11Bz34jbBNZ63neXexAuLmXY5Lz842RbSyF",
   );
+  await expect(page.locator(".donation-qr svg")).toHaveCount(1);
   await page.getByRole("button", { name: "USDT", exact: true }).click();
-  await expect(page.locator(".donation-qr")).toHaveCount(0);
+  await expect(page.locator(".donation-qr svg")).toHaveCount(1);
+  await expect(page.locator(".donation-network")).toContainText(
+    "EVM · MetaMask",
+  );
+  await expect(page.locator(".donation-address")).toHaveText(
+    "0x8353B9727D7c6eAB8FC998aB58020030415FdC56",
+  );
+  await expect(page.locator(".donation-wallet")).toContainText(
+    "TRON ou Solana",
+  );
+  await expect(page.locator(".donation-wallet select")).toHaveCount(0);
+  const copy = page.getByRole("button", {
+    name: "Copier l’adresse",
+    exact: true,
+  });
+  await expect(copy).toBeEnabled();
+  await copy.click();
   await expect(
-    page.getByRole("button", { name: "Copier l’adresse", exact: true }),
-  ).toBeDisabled();
+    page.getByRole("button", { name: "Adresse copiée", exact: true }),
+  ).toBeVisible();
+  expect(await page.evaluate(() => window.__refugeDonationClipboard)).toBe(
+    "0x8353B9727D7c6eAB8FC998aB58020030415FdC56",
+  );
 });
