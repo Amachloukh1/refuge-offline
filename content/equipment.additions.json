@@ -1,0 +1,252 @@
+[
+  {
+    "id": "water20",
+    "icon": "Droplets",
+    "priority": "essential",
+    "priceEur": 27.95,
+    "url": "https://www.amazon.de/dp/B0B6VNHFC5",
+    "text": {
+      "fr": [
+        "Jerrican alimentaire 20 L avec robinet",
+        "Récipient vendu vide pour stocker de l’eau potable ; rempli, il pèse environ 20 kg, hors récipient.",
+        "Préférer plusieurs bidons de 5 ou 10 L si vous devez les porter. Nettoyer, remplir et renouveler l’eau selon les consignes du fabricant et les recommandations officielles ; vérifier l’étanchéité."
+      ],
+      "de": [
+        "20-L-Trinkwasserkanister mit Hahn",
+        "Leer gelieferter, lebensmittelechter Behälter für Trinkwasser; gefüllt wiegt allein das Wasser etwa 20 kg.",
+        "Zum Tragen eher mehrere 5- oder 10-L-Kanister wählen. Nach Herstellerangaben und offiziellen Empfehlungen reinigen, befüllen und Wasser erneuern; Dichtheit prüfen."
+      ],
+      "en": [
+        "20 L food-safe water container with tap",
+        "Supplied empty for drinking-water storage; the water alone weighs about 20 kg when full.",
+        "Choose several 5 or 10 L containers if you need to carry them. Clean, fill and refresh water following manufacturer instructions and official guidance; check for leaks."
+      ],
+      "ar": [
+        "وعاء مياه غذائي 20 لترًا مع صنبور",
+        "يُباع فارغًا لتخزين مياه الشرب؛ يزن الماء وحده نحو 20 كغ عند امتلائه.",
+        "اختر عدة أوعية بسعة 5 أو 10 لترات إذا كنت ستنقلها يدويًا. نظّفها واملأها وجدّد الماء وفق تعليمات الشركة والإرشادات الرسمية، وتحقق من عدم التسرب."
+      ]
+    },
+    "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/vorsorge_node.html",
+    "seller": "toolsmarket",
+    "observedAt": "2026-11-01"
+  },
+  {
+    "id": "starlink",
+    "icon": "RadioTower",
+    "priority": "extra",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Starlink+Mini+Kit",
+    "text": {
+      "fr": [
+        "Starlink Mini : accès Internet satellite",
+        "Nécessite l’antenne, un abonnement actif, une vue dégagée du ciel et de l’électricité ; ce service n’est pas hors ligne.",
+        "Vérifier le prix du matériel, les frais récurrents et la couverture avant achat. Mesurer la consommation réelle en watts pour dimensionner la batterie ; la disponibilité en crise n’est pas garantie."
+      ],
+      "de": [
+        "Starlink Mini: Satelliteninternet",
+        "Benötigt Antenne, aktives Abonnement, freie Sicht zum Himmel und Strom; der Dienst funktioniert nicht offline.",
+        "Gerätepreis, laufende Kosten und Abdeckung vor dem Kauf prüfen. Den tatsächlichen Verbrauch in Watt für die Akkuplanung messen; Verfügbarkeit in Krisen ist nicht garantiert."
+      ],
+      "en": [
+        "Starlink Mini satellite internet",
+        "Requires the antenna, an active subscription, a clear view of the sky and electricity; this is not an offline service.",
+        "Check hardware price, recurring fees and coverage before buying. Measure actual power draw in watts to size your battery; availability during a crisis is not guaranteed."
+      ],
+      "ar": [
+        "Starlink Mini للإنترنت عبر الأقمار الصناعية",
+        "يتطلب الهوائي واشتراكًا نشطًا ورؤية واضحة للسماء وكهرباء؛ هذه ليست خدمة تعمل دون اتصال.",
+        "تحقق من ثمن الجهاز والرسوم المتكررة والتغطية قبل الشراء. قِس الاستهلاك الفعلي بالواط لتحديد البطارية المناسبة؛ توفر الخدمة أثناء الأزمات غير مضمون."
+      ]
+    },
+    "source": "https://starlink.com/public-files/specification_sheet_mini.pdf"
+  },
+  {
+    "id": "seeds",
+    "icon": "Leaf",
+    "priority": "extra",
+    "priceEur": 7.95,
+    "url": "https://www.amazon.de/dp/B08Y5CB8MX",
+    "text": {
+      "fr": [
+        "Semences : assortiment de 15 variétés",
+        "Un complément à long terme pour balcon ou jardin, pas une autonomie calorique immédiate.",
+        "Choisir laitues, radis ou haricots selon le climat et le calendrier de semis local. Prévoir terre, eau et outils ; suivre les sachets et ne jamais consommer des graines traitées."
+      ],
+      "de": [
+        "Saatgut: Set mit 15 Sorten",
+        "Eine langfristige Ergänzung für Balkon oder Garten, keine sofortige Versorgung mit ausreichend Kalorien.",
+        "Salat, Radieschen oder Bohnen nach Klima und örtlichem Aussaatkalender wählen. Erde, Wasser und Werkzeuge einplanen; Packungsangaben beachten und behandeltes Saatgut niemals essen."
+      ],
+      "en": [
+        "Seeds: set of 15 varieties",
+        "A longer-term addition for a balcony or garden, not an immediate source of calorie self-sufficiency.",
+        "Choose lettuce, radishes or beans to suit your climate and local sowing calendar. Plan soil, water and tools; follow packet instructions and never eat treated seeds."
+      ],
+      "ar": [
+        "بذور: مجموعة من 15 صنفًا",
+        "إضافة على المدى الطويل للشرفة أو الحديقة، وليست مصدرًا فوريًا للاكتفاء بالسعرات الحرارية.",
+        "اختر الخس أو الفجل أو الفاصوليا وفق المناخ ومواعيد الزراعة المحلية. جهّز التربة والماء والأدوات، واتبع تعليمات الأكياس ولا تأكل البذور المعالجة مطلقًا."
+      ]
+    },
+    "source": "https://www.landwirtschaft.de/garten/selbst-anbauen/gemuese-und-kraeuter-vom-eigenen-balkon",
+    "seller": "Goodaro GmbH",
+    "observedAt": "2026-11-01"
+  },
+  {
+    "id": "balcony-solar",
+    "icon": "Sun",
+    "priority": "energy",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Solarpanel+Powerstation+Balkon",
+    "text": {
+      "fr": [
+        "Panneaux solaires pour station sur balcon",
+        "Choisir des panneaux à courant continu compatibles avec l’entrée solaire MPPT de la station : tension, courant et connecteurs.",
+        "Un micro-onduleur réseau standard s’arrête lors d’une coupure : ne pas improviser de réinjection dans une prise. Vérifier fixations, vent, règles locales et accord du bailleur si nécessaire."
+      ],
+      "de": [
+        "Balkon-Solarmodule für eine Powerstation",
+        "Gleichstrommodule passend zum MPPT-Solareingang der Station wählen: Spannung, Strom und Stecker prüfen.",
+        "Ein üblicher Netz-Mikrowechselrichter schaltet bei Stromausfall ab; keine improvisierte Einspeisung über eine Steckdose. Befestigung, Windlast, örtliche Regeln und gegebenenfalls Zustimmung des Vermieters prüfen."
+      ],
+      "en": [
+        "Balcony solar panels for a power station",
+        "Choose DC panels compatible with the station’s MPPT solar input: check voltage, current and connectors.",
+        "A standard grid microinverter shuts down during an outage; never improvise feeding power into a wall socket. Check mounting, wind loads, local rules and landlord consent where required."
+      ],
+      "ar": [
+        "ألواح شمسية للشرفة مع محطة طاقة",
+        "اختر ألواح تيار مستمر متوافقة مع مدخل الشحن الشمسي MPPT للمحطة، من حيث الجهد والتيار والموصلات.",
+        "يتوقف العاكس الشبكي الصغير المعتاد عند انقطاع الكهرباء؛ لا ترتجل تغذية الشبكة عبر مقبس. تحقق من التثبيت وتحمل الرياح والقواعد المحلية وموافقة المؤجر عند الحاجة."
+      ]
+    },
+    "source": "https://www.verbraucherzentrale.de/wissen/energie/erneuerbare-energien/faq-zu-steckersolargeraeten-das-sind-die-haeufigsten-fragen-86652"
+  },
+  {
+    "id": "stove",
+    "icon": "Flame",
+    "priority": "essential",
+    "priceEur": 39.79,
+    "url": "https://www.amazon.de/dp/B0DJ9FFGGV",
+    "text": {
+      "fr": [
+        "Campingaz Camp Bistro 3 : kit réchaud et gril",
+        "Réchaud à cartouche compatible CP250 pour cuisiner exclusivement à l’extérieur.",
+        "Jamais dans une pièce, une tente ou un garage : risque mortel de monoxyde de carbone. Le butane fonctionne moins bien par grand froid ; respecter la notice et les règles locales de stockage des cartouches."
+      ],
+      "de": [
+        "Campingaz Camp Bistro 3: Kocher-Grill-Set",
+        "Kartuschenkocher mit passenden CP250-Kartuschen, ausschließlich zum Kochen im Freien.",
+        "Niemals in Zimmern, Zelten oder Garagen verwenden: Lebensgefahr durch Kohlenmonoxid. Butan funktioniert bei starker Kälte schlechter; Anleitung und örtliche Vorschriften zur Kartuschenlagerung beachten."
+      ],
+      "en": [
+        "Campingaz Camp Bistro 3 stove and grill kit",
+        "A stove using compatible CP250 cartridges, for outdoor cooking only.",
+        "Never use in a room, tent or garage: carbon monoxide can kill. Butane performs poorly in very cold conditions; follow the manual and local cartridge-storage rules."
+      ],
+      "ar": [
+        "طقم موقد وشواية Campingaz Camp Bistro 3",
+        "موقد بخراطيش CP250 المتوافقة، للطهي في الخارج فقط.",
+        "لا تستخدمه أبدًا داخل غرفة أو خيمة أو مرآب: أول أكسيد الكربون قد يقتل. يضعف أداء البوتان في البرد الشديد؛ اتبع دليل الاستخدام وقواعد تخزين الخراطيش المحلية."
+      ]
+    },
+    "source": "https://www.campingaz.de/en/products/camp-bistro-3",
+    "seller": null,
+    "observedAt": "2026-11-01"
+  },
+  {
+    "id": "filter",
+    "icon": "Droplets",
+    "priority": "essential",
+    "priceEur": 57.86,
+    "url": "https://www.amazon.de/dp/B0DT99W4MK",
+    "text": {
+      "fr": [
+        "Katadyn BeFree AC 1 L",
+        "Filtre de secours pour une eau adaptée au produit ; privilégier l’eau potable préemballée et ne pas boire directement l’eau de crue.",
+        "Ne filtre pas les virus et ne garantit pas l’élimination des polluants chimiques ou radioactifs ni du sel. Respecter la notice pour l’entretien, le remplacement et la protection contre le gel."
+      ],
+      "de": [
+        "Katadyn BeFree AC 1 L",
+        "Notfallfilter für laut Hersteller geeignete Wasserquellen; abgepacktes Trinkwasser bevorzugen und Hochwasser niemals direkt trinken.",
+        "Filtert keine Viren und garantiert keine Entfernung chemischer oder radioaktiver Schadstoffe oder von Salz. Anleitung zu Pflege, Austausch und Frostschutz beachten."
+      ],
+      "en": [
+        "Katadyn BeFree AC 1 L",
+        "Backup filter for water sources suitable under the product instructions; prioritize packaged drinking water and never drink floodwater directly.",
+        "Does not filter viruses and does not guarantee removal of chemical or radioactive contaminants or salt. Follow the manual for maintenance, replacement and protection from freezing."
+      ],
+      "ar": [
+        "Katadyn BeFree AC سعة لتر واحد",
+        "مرشح احتياطي لمصادر المياه المناسبة وفق تعليمات المنتج؛ أعطِ الأولوية لمياه الشرب المعبأة ولا تشرب مياه الفيضانات مباشرة.",
+        "لا يرشح الفيروسات ولا يضمن إزالة الملوثات الكيميائية أو المشعة أو الأملاح. اتبع الدليل للصيانة والاستبدال والحماية من التجمد."
+      ]
+    },
+    "source": "https://support.katadyngroup.com/157178-How-can-I-tell-whether-my-BeFree-filter-is-still-working-or-defective",
+    "seller": null,
+    "observedAt": "2026-11-01"
+  },
+  {
+    "id": "masks",
+    "icon": "ShieldCheck",
+    "priority": "essential",
+    "priceEur": 48.99,
+    "url": "https://www.amazon.de/dp/B0BQJLKPRQ",
+    "text": {
+      "fr": [
+        "3M Aura 9320+ FFP2 : lot de 20",
+        "Masques filtrants contre les particules : vérifier marquage CE, fabricant et bonne étanchéité sur votre visage.",
+        "Un FFP2 ne protège ni des gaz ni du monoxyde de carbone. Ne jamais entrer dans la fumée avec ce masque ; suivre les consignes d’ajustement et de remplacement du fabricant."
+      ],
+      "de": [
+        "3M Aura 9320+ FFP2: 20 Stück",
+        "Partikelfiltrierende Masken: CE-Kennzeichnung, Hersteller und dichten Sitz am eigenen Gesicht prüfen.",
+        "FFP2 schützt weder vor Gasen noch vor Kohlenmonoxid. Mit dieser Maske niemals in Rauch gehen; Herstellerangaben zu Sitz und Austausch beachten."
+      ],
+      "en": [
+        "3M Aura 9320+ FFP2: pack of 20",
+        "Particle-filtering masks: check CE marking, manufacturer and a close seal on your face.",
+        "FFP2 does not protect against gases or carbon monoxide. Never enter smoke wearing this mask; follow manufacturer fitting and replacement instructions."
+      ],
+      "ar": [
+        "3M Aura 9320+ FFP2: عبوة 20 كمامة",
+        "كمامات لترشيح الجسيمات: تحقق من علامة CE والشركة المصنعة وإحكامها على وجهك.",
+        "لا تحمي FFP2 من الغازات أو أول أكسيد الكربون. لا تدخل أبدًا إلى الدخان مرتديًا هذه الكمامة؛ اتبع تعليمات الشركة للارتداء والاستبدال."
+      ]
+    },
+    "source": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/hygiene-infektionsschutz-biostoffe/bgw-masken-kompass-tipps-zur-richtigen-maskenwahl/faq-haeufig-gestellte-fragen-zu-masken-78922",
+    "seller": "Tienda Prime Ofertas",
+    "observedAt": "2026-11-01"
+  },
+  {
+    "id": "tools",
+    "icon": "Settings",
+    "priority": "extra",
+    "priceEur": null,
+    "url": "https://www.amazon.de/s?k=Arbeitshandschuhe+Schutzbrille+Multitool",
+    "text": {
+      "fr": [
+        "Petit kit d’outils et de protection",
+        "Gants de travail, lunettes de protection, ruban adhésif, outil multifonction et corde pour de petites tâches courantes.",
+        "Choisir des outils que vous savez utiliser et les garder accessibles. Ne pas intervenir sur une installation électrique sous tension ni sur un circuit de gaz actif ; faire appel à un professionnel."
+      ],
+      "de": [
+        "Kleines Werkzeug- und Schutzset",
+        "Arbeitshandschuhe, Schutzbrille, Klebeband, Multitool und Seil für kleinere Alltagsaufgaben.",
+        "Vertraute Werkzeuge wählen und griffbereit halten. Nicht an spannungsführenden Elektroanlagen oder in Betrieb befindlichen Gasanlagen arbeiten; Fachpersonal hinzuziehen."
+      ],
+      "en": [
+        "Small tool and protection kit",
+        "Work gloves, safety glasses, tape, a multitool and cord for small everyday tasks.",
+        "Choose tools you know how to use and keep them accessible. Do not work on live electrical equipment or active gas systems; call a qualified professional."
+      ],
+      "ar": [
+        "عدة صغيرة للأدوات والحماية",
+        "قفازات عمل ونظارات واقية وشريط لاصق وأداة متعددة الاستخدامات وحبل للمهام اليومية الصغيرة.",
+        "اختر أدوات تعرف استخدامها واجعلها في المتناول. لا تعمل على تجهيزات كهربائية موصولة بالتيار أو أنظمة غاز عاملة؛ استعن بمتخصص مؤهل."
+      ]
+    },
+    "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Notgepaeck/notgepaeck_node.html"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "solar",
+    "url": "https://m.media-amazon.com/images/I/617yJhQzWIL._AC_SX569_.jpg",
+    "page": "https://www.amazon.de/dp/B0BQVYT4WJ",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "radio",
+    "url": "https://m.media-amazon.com/images/I/51A0trhWnoL._AC_SX522_.jpg",
+    "page": "https://www.amazon.de/dp/B06XWZ41RT",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "charger",
+    "url": "https://m.media-amazon.com/images/I/61Ihdg+cSRL._AC_SX522_.jpg",
+    "page": "https://www.amazon.de/dp/B0B5X4PKW1",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "headlamp",
+    "url": "https://m.media-amazon.com/images/I/71t15HpYaML._AC_SX679_.jpg",
+    "page": "https://www.amazon.de/dp/B0FBT74D4R",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "water",
+    "url": "https://m.media-amazon.com/images/I/71Gk9XwtwFL._AC_SX569_.jpg",
+    "page": "https://www.amazon.de/dp/B00O4FRRH6",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "water20",
+    "url": "https://m.media-amazon.com/images/I/61PCsgUglHL._AC_SY741_.jpg",
+    "page": "https://www.amazon.de/dp/B0B6VNHFC5",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "stove",
+    "url": "https://m.media-amazon.com/images/I/611OIzWOIpL._AC_UL320_.jpg",
+    "page": "https://www.amazon.de/dp/B0DJ9FFGGV",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "filter",
+    "url": "https://m.media-amazon.com/images/I/71wNJ7eumUL._AC_UL320_.jpg",
+    "page": "https://www.amazon.de/dp/B0DT99W4MK",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "seeds",
+    "url": "https://m.media-amazon.com/images/I/91oliI0OI3L._AC_UL320_.jpg",
+    "page": "https://www.amazon.de/dp/B08Y5CB8MX",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  },
+  {
+    "id": "masks",
+    "url": "https://m.media-amazon.com/images/I/51dz5k2jAvL._AC_UL320_.jpg",
+    "page": "https://www.amazon.de/dp/B0BQJLKPRQ",
+    "observedAt": "2026-11-01",
+    "credit": "Product photograph from Amazon.de listing; rights remain with its owner. Local reference copy, not a redistribution licence."
+  }
+]

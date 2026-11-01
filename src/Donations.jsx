@@ -3,6 +3,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Heart, Copy, Check, ArrowLeft, ShieldCheck } from "lucide-react";
 import { Modal } from "./components";
 import { donationText } from "./donation-text";
+import { projectMissionText } from "./project-mission-text";
 import {
   donationWallets,
   donationReady,
@@ -106,6 +107,9 @@ export default function DonationAccess({
                   </select>
                 </label>
                 <img className="donation-welcome-image" src={camp} alt="" />
+                <p className="donation-muted">
+                  {(projectMissionText[lang] || projectMissionText.en).intro}
+                </p>
                 <span className="donation-free-tag">REFUGE · 0</span>
                 <h3>{c.title}</h3>
                 <p>{c.intro}</p>

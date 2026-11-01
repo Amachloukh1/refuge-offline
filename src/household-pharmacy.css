@@ -1,0 +1,122 @@
+.household-pharmacy {
+  margin-block: 1.5rem;
+  background: var(--surface, #fffef9);
+  color: var(--ink, #203f34);
+}
+.household-pharmacy-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.household-pharmacy-heading h2 {
+  margin: 0;
+}
+.household-pharmacy-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 3rem;
+  height: 3rem;
+  background: #e8eddf;
+  color: var(--forest, #203f34);
+  border-radius: 50%;
+}
+.household-pharmacy-eyebrow {
+  margin: 0 0 0.3rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted, #647064);
+}
+.household-pharmacy-advice,
+.household-pharmacy-fallback {
+  padding: 1rem;
+  background: #f0f2e7;
+  border-inline-start: 3px solid var(--accent, #315642);
+  border-radius: 0 0.5rem 0.5rem 0;
+  line-height: 1.65;
+}
+.household-pharmacy-list {
+  padding: 0;
+  margin: 1.25rem 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+.household-pharmacy-item {
+  display: flex;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid var(--line, #dedfd2);
+  border-radius: 0.75rem;
+  min-width: 0;
+}
+.household-pharmacy-marker {
+  color: var(--accent, #315642);
+  padding-block-start: 0.15rem;
+  flex: 0 0 auto;
+}
+.household-pharmacy-kind {
+  color: var(--muted, #647064);
+  font-size: 0.75rem;
+}
+.household-pharmacy-item h3 {
+  font-size: 1rem;
+  margin: 0.25rem 0 0.45rem;
+}
+.household-pharmacy-item p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+.household-pharmacy-limits {
+  font-weight: 600;
+}
+.household-pharmacy-footer {
+  padding-block-start: 1rem;
+  margin-block-start: 1.25rem;
+  border-block-start: 1px solid var(--line, #dedfd2);
+}
+.household-pharmacy-footer h3 {
+  font-size: 0.85rem;
+  margin: 0 0 0.6rem;
+}
+.household-pharmacy-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.household-pharmacy-footer a {
+  color: var(--forest, #203f34);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+.household-pharmacy-footer a:focus-visible {
+  outline: 2px solid var(--forest, #203f34);
+  outline-offset: 4px;
+}
+.household-pharmacy-footer > p {
+  color: var(--muted, #647064);
+  font-size: 0.8rem;
+}
+@media (max-width: 650px) {
+  .household-pharmacy-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .household-pharmacy-heading {
+    align-items: flex-start;
+  }
+}
+@media print {
+  .household-pharmacy-item {
+    break-inside: avoid;
+  }
+  .household-pharmacy-footer a::after {
+    content: " (" attr(href) ")";
+  }
+}

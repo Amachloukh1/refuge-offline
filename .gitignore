@@ -17,4 +17,5 @@ content/books/
 content/media/
 content/books.catalog.json
 private/
+public/equipment-photos/
 *.partial

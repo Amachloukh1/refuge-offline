@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { mediaSections, mediaSection } from "./media-navigation";
 import { WeatherRadio } from "./WeatherRadio";
 import DonationAccess from "./Donations";
+import { ProjectMission } from "./ProjectMission";
 const OfflineMaps = lazy(() => import("./OfflineMaps"));
 const Books = lazy(() => import("./Books"));
 const MediaHub = lazy(() => import("./MediaHub"));
@@ -342,7 +343,14 @@ export default function App() {
             <strong>{page === "home" ? t.overview : t[page]}</strong>
           </div>
           <div className="topbar-options">
-            <DonationAccess lang={state.lang} t={t} page={page} languages={languages} onLanguage={value=>update("lang",value)} onEmergency={()=>navigate("emergency")}/>
+            <DonationAccess
+              lang={state.lang}
+              t={t}
+              page={page}
+              languages={languages}
+              onLanguage={(value) => update("lang", value)}
+              onEmergency={() => navigate("emergency")}
+            />
             <button
               className="emergency-shortcut"
               onClick={() => navigate("emergency")}
@@ -488,6 +496,7 @@ export default function App() {
                 bought={state.bought}
                 toggleBought={(id) => toggle("bought", id)}
               />
+              <ProjectMission lang={state.lang} />
               <div className="panel padded preparedness-actions">
                 <button
                   className="button"

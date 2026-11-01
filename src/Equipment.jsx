@@ -2,7 +2,39 @@ import { extraEquipmentText } from "./locales/extra-ui-text.js";
 import { contentLanguage } from "./locale-policy";
 import { useState } from "react";
 import { Icon, Notice, External } from "./components";
-import catalog from "../content/equipment.catalog.json";
+import baseCatalog from "../content/equipment.catalog.json";
+import additions from "../content/equipment.additions.json";
+import imageCatalog from "../content/equipment.images.json";
+import HouseholdPharmacy from "./HouseholdPharmacy";
+import { equipmentExtraText, equipmentPriceNote } from "./equipment-extra-text";
+import "./equipment-showcase.css";
+const catalog = [...additions, ...baseCatalog];
+
+function EquipmentPhoto({ item, title, copy }) {
+  const [failed, setFailed] = useState(false);
+  const photo = imageCatalog.find((image) => image.id === item.id);
+  return (
+    <figure className="equipment-photo">
+      {photo && !failed ? (
+        <img
+          src={"/equipment-photos/" + item.id + ".jpg"}
+          alt={title}
+          width="480"
+          height="260"
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <div className="equipment-illustration" aria-hidden="true">
+          <Icon name={item.icon} size={66} />
+        </div>
+      )}
+      <figcaption>
+        {photo && !failed ? copy.photo : copy.illustration}
+      </figcaption>
+    </figure>
+  );
+}
 
 const copy = {
   fr: {
@@ -123,6 +155,8 @@ export function equipmentLabel(lang) {
 export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
   const c = copy[lang] || copy.fr;
   const [filter, setFilter] = useState("all");
+  const [query, setQuery] = useState("");
+  const x = equipmentExtraText[lang] || equipmentExtraText.en;
   const [watts, setWatts] = useState(40);
   const money = (n) =>
     new Intl.NumberFormat(
@@ -137,90 +171,140 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
       <div className="panel padded">
         <h2>{c.title}</h2>
         <p>{c.intro}</p>
-        <Notice>{c.prices}</Notice>
-        <p className="muted">{c.offline}</p>
         <strong className="equipment-total">
           {c.subtotal} : {money(remaining)}
         </strong>
-        <p>{c.excluded}</p>
+        <details className="equipment-intro-details">
+          <summary>{x.source}</summary>
+          <Notice>{equipmentPriceNote[lang] || equipmentPriceNote.en}</Notice>
+          <p className="muted">{c.offline}</p>
+          <p>{c.excluded}</p>
+          <p className="equipment-photo-note">{x.photos}</p>
+        </details>
       </div>
+      <label className="equipment-search">
+        <Icon name="Search" size={20} />
+        <input
+          type="search"
+          aria-label={x.search}
+          placeholder={x.search}
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
+      </label>
       <div className="tabs section-tabs equipment-filters">
-        {["all", "essential", "energy", "extra"].map((f) => (
+        {["all", "essential", "energy", "extra", "pharmacy"].map((f) => (
           <button
             key={f}
             className={filter === f ? "active" : ""}
             onClick={() => setFilter(f)}
           >
-            {c[f]}
+            {f === "pharmacy" ? x.pharmacy : c[f]}
           </button>
         ))}
       </div>
-      <div className="purchase-grid equipment-grid">
-        {catalog
-          .filter((p) => filter === "all" || p.priority === filter)
-          .map((p) => {
-            const text = p.text[contentLanguage(lang)] || p.text.en;
-            return (
-              <article
-                className="panel padded equipment-card"
-                key={p.id}
-                data-equipment-id={p.id}
-              >
-                <div className="equipment-heading">
-                  <span className="topic-icon">
-                    <Icon name={p.icon} size={25} />
-                  </span>
-                  <span>{c[p.priority]}</span>
-                </div>
-                <h3>{text[0]}</h3>
-                <p>{text[1]}</p>
-                <p className="equipment-detail">{text[2]}</p>
-                <strong className="equipment-price">
-                  {p.priceEur != null ? money(p.priceEur) : c.unknown}
-                </strong>
-                {p.priceEur != null && (
-                  <small>
-                    {c.observed} · 31/10/2026
-                    <br />
-                    {c.seller} : {p.seller}
-                  </small>
-                )}
-                <External href={p.url}>
-                  {p.priceEur != null ? c.shop : c.search}
-                </External>
-                {p.source && <External href={p.source}>{c.source}</External>}
-                <label className="equipment-owned">
-                  <input
-                    type="checkbox"
-                    checked={bought.includes(`equipment-${p.id}`)}
-                    onChange={() => toggleBought(`equipment-${p.id}`)}
-                  />
-                  {c.owned}
-                </label>
-              </article>
-            );
-          })}
-      </div>
-      <div className="panel padded energy-estimate">
-        <h3>{c.hours} · RIVER 2 256 Wh</h3>
-        <label>
-          {c.watts}
-          <input
-            aria-label={c.watts}
-            type="number"
-            min="1"
-            max="300"
-            value={watts}
-            onChange={(e) => setWatts(e.target.value)}
-          />
-        </label>
-        <output>
-          {Number(watts) > 0 && Number(watts) <= 300
-            ? `${((256 * 0.7) / Number(watts)).toFixed(1)} h`
-            : "—"}
-        </output>
-        <p>{c.energyNote}</p>
-      </div>
+      {filter !== "pharmacy" && (
+        <div className="purchase-grid equipment-grid">
+          {catalog
+            .filter((p) => filter === "all" || p.priority === filter)
+            .filter((p) =>
+              Object.values(p.text)
+                .flat()
+                .join(" ")
+                .toLocaleLowerCase()
+                .includes(query.trim().toLocaleLowerCase()),
+            )
+            .map((p) => {
+              const text = p.text[contentLanguage(lang)] || p.text.en;
+              return (
+                <article
+                  className="panel padded equipment-card"
+                  key={p.id}
+                  data-equipment-id={p.id}
+                >
+                  <EquipmentPhoto item={p} title={text[0]} copy={x} />
+                  <div className="equipment-heading">
+                    <span className="topic-icon">
+                      <Icon name={p.icon} size={25} />
+                    </span>
+                    <span>{c[p.priority]}</span>
+                  </div>
+                  {contentLanguage(lang) !== lang && (
+                    <p className="translation-fallback">{x.fallback}</p>
+                  )}
+                  <h3 lang={contentLanguage(lang)}>{text[0]}</h3>
+                  <p lang={contentLanguage(lang)}>{text[1]}</p>
+                  <p className="equipment-detail" lang={contentLanguage(lang)}>
+                    {text[2]}
+                  </p>
+                  <strong className="equipment-price">
+                    {p.priceEur != null ? money(p.priceEur) : c.unknown}
+                  </strong>
+                  {p.priceEur != null && (
+                    <small>
+                      {c.observed} · {p.observedAt || "—"}
+                      {p.seller && (
+                        <>
+                          <br />
+                          {c.seller} : {p.seller}
+                        </>
+                      )}
+                    </small>
+                  )}
+                  <External href={p.url}>
+                    {p.priceEur != null ? c.shop : c.search}
+                  </External>
+                  {p.source && <External href={p.source}>{x.source}</External>}
+                  <label className="equipment-owned">
+                    <input
+                      type="checkbox"
+                      checked={bought.includes(`equipment-${p.id}`)}
+                      onChange={() => toggleBought(`equipment-${p.id}`)}
+                    />
+                    {c.owned}
+                  </label>
+                </article>
+              );
+            })}
+        </div>
+      )}
+      {filter === "pharmacy" && <HouseholdPharmacy lang={lang} />}
+      {filter !== "pharmacy" &&
+        !catalog.some(
+          (p) =>
+            (filter === "all" || p.priority === filter) &&
+            Object.values(p.text)
+              .flat()
+              .join(" ")
+              .toLocaleLowerCase()
+              .includes(query.trim().toLocaleLowerCase()),
+        ) && (
+          <p className="equipment-empty" role="status">
+            {x.empty}
+          </p>
+        )}
+      {filter !== "pharmacy" && (
+        <div className="panel padded energy-estimate">
+          <h3>{c.hours} · RIVER 2 256 Wh</h3>
+          <label>
+            {c.watts}
+            <input
+              aria-label={c.watts}
+              type="number"
+              min="1"
+              max="300"
+              value={watts}
+              onChange={(e) => setWatts(e.target.value)}
+            />
+          </label>
+          <output>
+            {Number(watts) > 0 && Number(watts) <= 300
+              ? `${((256 * 0.7) / Number(watts)).toFixed(1)} h`
+              : "—"}
+          </output>
+          <p>{c.energyNote}</p>
+        </div>
+      )}
     </section>
   );
 }

@@ -1,80 +1,160 @@
 # REFUGE
 
-**Nouveautés :** urgence immédiate, préparation du foyer, contrôle des ressources, rotation des réserves et repas, énergie/mode éco, lieux personnels, provenance IA et restauration. [Fonctionnement et limites](docs/fiabilite-preparation.md) · [Sauvegarde complète et restauration](docs/backup-restore.md).
+**An offline preparedness companion for a small computer you control.**
 
-Application locale de préparation aux crises. Interface FR / DE / EN / AR (droite à gauche), 18 fiches pratiques dont quatre illustrées sur l'autonomie longue durée, bibliothèque PDF indexée, réserves modifiables, plan d'achats, checklist et assistant Local Studio intégré. Carte Saxe, lecture GPS USB sur demande, dix vidéos locales, Wikipédia compacte FR/DE/AR intégrée avec ouverture automatique et météo sauvegardée. Ubuntu 22.04 reste à tester sur le mini-PC.
+REFUGE brings household planning, practical guidance, local documents, maps, Wikipedia and an optional local AI assistant into one multilingual interface. Prepare the computer and its resources while a connection is available, then keep useful information close when the internet is unavailable.
 
-**Installation actuelle, contenu, limites et transfert : [guide hors ligne](docs/installation-offline.md).** Le dépôt GitHub conserve le code et les catalogues ; les gros fichiers locaux doivent être transférés séparément. Un clone seul ne contient pas les modèles ni les archives Wikipédia.
+The project is intended to be **100% free to use**: no subscription, paid feature unlock or mandatory donation. Hardware, electricity, storage and internet preparation have their own costs. The source licensing decision is still pending; see [licensing and attribution](#licensing-and-attribution).
 
-La page **Catastrophes** contient onze fiches détaillées : tsunami, canicule, grand froid, inondation, séisme, tempête, incendie du domicile, feu de forêt, panne prolongée, accident chimique et incident radiologique. Chaque fiche décrit préparation, actions pendant l'événement, vie après, erreurs à éviter et matériel. Sources primaires datées ; traductions non officielles. Elles sont imprimables et accessibles hors ligne. Les raccourcis directs utilisent par exemple `#hazards?view=tsunami`.
+[Getting started](#getting-started) · [Offline preparation](#prepare-an-offline-installation) · [Hardware](#hardware-and-platform-status) · [Privacy](#your-data-stays-under-your-control) · [Release checklist](docs/public-release.md)
 
-## Lancer
+![REFUGE home dashboard in English](docs/media/refuge-home-en.png)
 
-Node.js **22.12+ ou 24** et npm. Préparer avec Internet :
+## Why REFUGE exists
+
+Power cuts, floods, storms, displacement and the disruption caused by war can interrupt the services people usually rely on. Preparing calmly, before a disruption, gives a household more options: stored water, a plan for medication, a meeting point, a charged light and information that does not depend on a working mobile network.
+
+Public authorities also encourage personal preparedness. Germany's [Federal Office of Civil Protection and Disaster Assistance (BBK)](https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/vorsorge_node.html) provides guidance on planning for emergencies. REFUGE follows the practical idea of initial household self-reliance while staying connected to official advice and community help. It has no government endorsement.
+
+The aim is approachable: repurpose a small computer, prepare its contents in advance and make it useful for the whole household. A used mini-PC costing roughly **€50–€200 is a target hardware budget**, not a verified current offer or the price of a complete emergency kit. A screen, storage, battery, radio equipment and other supplies can cost extra.
+
+REFUGE cannot guarantee safety or save a life by itself. It supports preparation; emergency services, current official instructions, practical first-aid training and tested physical supplies remain essential.
+
+## What you can do
+
+| Area                      | Available functions                                                                                       | Preparation or limitation                                                                |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Immediate help            | Emergency page, short first-aid guidance and printable instructions without asking the AI                 | Guidance and translations require human judgment; emergency calls need a working network |
+| Household readiness       | Set household size and duration; check water, food, medication, energy, documents and evacuation supplies | Initial stock is demonstration data; confirmations are manual                            |
+| Inventory and rotation    | Edit quantities and locations, record dates and consumption, plan purchases and no-cook meals             | Food item counts do not establish nutritional autonomy                                   |
+| Equipment                 | Browse categories, selection criteria, buying links and a solar-kit energy estimate                       | Shops need internet; dated prices are examples, not live quotations                      |
+| Practical library         | Read preparedness guides, hazard pages and downloaded PDF references                                      | Sources and review dates matter; translations are unofficial                             |
+| Local AI                  | Ask questions with passages from local guides and PDFs; retain conversations locally                      | Requires a prepared model and engine; responses can be wrong                             |
+| Wikipedia                 | Browse installed compact ZIM archives inside REFUGE                                                       | Reader and archives must be prepared; archive languages differ from interface languages  |
+| Maps and personal places  | View the prepared Saxony map, save places and route notes, print or export GeoJSON                        | No route calculation; USB GPS needs compatible hardware and a satellite fix              |
+| Weather and radio         | Read dated saved forecasts and radio preparation information                                              | Refresh needs internet; receiving radio needs a receiver, antenna and working setup      |
+| Videos, books and media   | Read or play installed resources and manage supported local media                                         | A catalog entry does not mean the file is installed; language and rights vary            |
+| Energy                    | Estimate loads and battery duration; enable economy mode to stop AI work                                  | Estimates depend on entered values; no guaranteed battery runtime or solar production    |
+| Verification and recovery | Check resource presence and optional hashes; export/import data and create verified backups               | Full backups include private data and secrets; test restoration                          |
+
+### Eight interface languages
+
+**English · Français · Deutsch · العربية · Русский · 简体中文 · Español · Português**
+
+Arabic uses a right-to-left layout. Documentary content has a separate language policy: French, German, English and Arabic are supported; **Russian, Simplified Chinese, Spanish and Portuguese fall back to English for documents that have not been translated**. PDFs, videos, books and Wikipedia retain the languages of the files actually installed. Selecting an interface language does not translate an entire archive.
+
+### A look inside
+
+[Watch the short overview](docs/media/refuge-overview-en.mp4) — approximately 13 seconds, silent. This is a sequence of real screenshots, not a performance demonstration or a recording of a live emergency.
+
+![REFUGE equipment planning in English](docs/media/refuge-equipment-en.png)
+
+The equipment view connects practical choices with preparation, including power requirements for the computer and its screen.
+
+The preparation catalog includes a 20 L drinking-water container, outdoor camping stove, water filter, FFP2 masks, garden seeds, balcony solar planning and optional Starlink connectivity. A separate household-pharmacy tab provides a general German shopping discussion list, with official sources and no personal dosing.
+
+Product photos can be prepared for local use with **node scripts/fetch-equipment-images.mjs** before **npm run build**. The app then displays saved images without contacting Amazon. The photo cache is excluded from Git; a fresh clone displays category illustrations until it is prepared. Product owners retain their image rights. Prices are dated observations; unverified prices remain marked for checking.
+
+![REFUGE local Wikipedia archive selection in English](docs/media/refuge-wiki-en.png)
+
+The integrated reader uses local Wikipedia archives. Compact editions can omit images and shorten articles; title-prefix search in the embedded reader is not full-text encyclopedia search.
+
+## Hardware and platform status
+
+REFUGE is a local React application served by Node.js to a browser at **http://127.0.0.1:8099**.
+
+| Component              | Starting point                                                                                                                                  |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Node.js                | **22.12+ or 24**, with npm, for installation and building; Node.js 24 is the documented Windows launcher setup                                  |
+| Computer               | A small x86-64 PC is the intended deployment target; an existing Windows computer can also run the app                                          |
+| Memory for optional AI | **8–16 GB RAM is a target**, depending on model, context, operating system and other applications                                               |
+| Graphics               | The documented local AI configuration runs on CPU; a dedicated GPU is not required for that configuration                                       |
+| Storage                | Allow room for dependencies, selected PDFs/media/maps, ZIM archives, model and backups; a full prepared installation requires tens of gigabytes |
+| Power                  | Computer and screen need electricity; battery capacity and real consumption must be measured                                                    |
+
+The project has been developed and exercised on Windows. **Ubuntu 22.04 deployment on the intended mini-PC has not yet been validated.** Linux scripts and runtime preparation exist, but copying a folder is not a successful hardware test. Model response time and memory consumption must be measured on the actual computer; CPU AI can take a substantial time to answer.
+
+See the [offline installation guide](docs/installation-offline.md) and [reliability notes](docs/fiabilite-preparation.md), currently in French, for the prepared configuration and remaining hardware checks.
+
+## Getting started
+
+### Build from the source repository
+
+Use an internet connection for dependency installation and the explicit content download:
 
 ```sh
 npm ci
 npm run build
 node scripts/fetch-content.mjs
-```
-
-Puis, même sans Internet :
-
-```sh
+node scripts/index-documents.mjs
 npm start
 ```
 
-Ouvrir **http://127.0.0.1:8099**. Les fichiers compilés, le serveur et `content/documents` doivent rester sur le PC. Aucun CDN, police distante, compte cloud ou connexion Internet requis pour ces fonctions. Le navigateur doit autoriser le stockage local pour conserver les modifications ; exporter régulièrement les données.
+Open **http://127.0.0.1:8099**. For frontend development, use `npm run dev`; this is separate from production startup above.
 
-Pour transférer la version actuelle, utiliser le dossier complet avec les ressources décrites dans le guide hors ligne. L'ancienne archive dans `output/` ne contient que la première version avec les PDF et n'est pas une sauvegarde des nouvelles ressources. Le lanceur Ubuntu utilise le runtime Linux préparé et les modèles présents ; aucun `npm install` n'est requis pour démarrer le dossier compilé complet.
+**A Git clone is the application code and tracked catalogs, not a complete offline appliance.** Models, runtimes, downloaded PDFs, maps, videos, books and Wikipedia archives are excluded from Git. Missing optional resources remain unavailable until explicitly prepared. Downloading PDFs above does not prepare Wikipedia or the AI engine.
 
-Sous Ubuntu : `bash scripts/prepare-ubuntu.sh`. Le script ne télécharge pas automatiquement plusieurs Go de modèles. Le modèle et le moteur doivent être préparés sur le mini-PC avant la coupure. Il ne faut pas confondre l'installation sur cet ordinateur Windows avec celle sur le mini-PC Ubuntu.
+The built application, local server and selected resource files must remain on the computer. Once prepared, the core interface and installed content do not need a CDN, remote font or cloud account. The browser must allow local storage to retain changes.
 
-## Réutilisation de Local Studio
+### Start an already prepared folder
 
-Le véritable composant Assistant de `Amachloukh1/ai-local-text-to-image-generator`, branche `feature/nexus-local-studio`, est intégré dans la page Assistant IA. Conversations, corbeille, copie, documents TXT/PDF et affichage progressif utilisent une API embarquée compatible avec son contrat de tâches ; SQLite conserve l'historique sur le PC. Aucun lien ou iframe vers le site distant n'est utilisé pour afficher l'assistant. [Origine du code et adaptation CPU](docs/local-studio-integration.md).
+Windows, with Node.js 24 installed:
 
-Copier `.env.example` en `.env`. Pour **Studio sur le même mini-PC** :
-
-```dotenv
-REFUGE_AI_PROVIDER=studio
-REFUGE_AI_BASE_URL=http://127.0.0.1:8090/local-studio/v1
-REFUGE_AI_MODEL=local-chat-fast
-REFUGE_AI_KEY=VOTRE_CLE_PROJET
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\DEMARRER-WINDOWS.ps1
 ```
 
-Créer une clé limitée au chat et à ce modèle dans l'administration Studio. Ne pas la mettre dans le frontend ou GitHub. Aucun accès aux clés existantes n'a été utilisé. Le Studio doit fonctionner et son modèle doit être disponible ; le modèle `local-glm` de la machine existante dépasse le budget RAM de 8–16 Go d'après ses propres notes de déploiement. Privilégier le modèle rapide 4B et valider sa consommation réelle sur la cible.
-
-Pour **Ollama local**, le modèle par défaut est `qwen3:4b-instruct-2507-q4_K_M`, préparé dans `models` et testé sur CPU. Régler `OLLAMA_NO_CLOUD=1`. Les lanceurs démarrent le moteur portable dédié sur 11479 s'il n'est pas déjà présent. Aucun modèle n'est téléchargé automatiquement au démarrage.
-
-Le bouton **Serveur 2ki.space** est facultatif et distinct. Ajouter `REFUGE_REMOTE_STUDIO_KEY` dans `.env` et éventuellement `REFUGE_REMOTE_STUDIO_MODEL`. Le choix distant transmet les messages au serveur existant ; il demande un réseau. Aucun basculement automatique du mode local vers le serveur public. Le lien public n'est pas une copie locale du moteur. L'API distante réelle n'a pas encore été testée avec une clé projet.
-
-Le moteur reçoit jusqu'à cinq passages pertinents parmi les 18 fiches, les 11 catastrophes et les 193 passages extraits des PDF, avec liens vers les fiches ou pages PDF. C'est une recherche locale avec contexte, sans réentraînement du modèle. Wikipédia se consulte dans sa page intégrée et n'est pas indexée par l'assistant. Le stock d'eau, le nombre d'adultes et la durée sont transmis avec le calcul vérifié. Les références et réponses doivent être contrôlées ; aucune prescription médicale ou identification de nourriture sauvage par l'IA.
-
-## Documents
-
-Sept PDF officiels téléchargés : BBK DE/FR/EN/AR et DRK premiers secours DE-FR/DE-AR/DE-EN. Le catalogue garde URL, date de téléchargement, taille et SHA256. Les documents sont exclus de Git : gratuit à télécharger n'implique pas licence de redistribution. Les flyers DRK sont des éditions anciennes ; vérifier les recommandations actuelles et suivre une formation. Le logiciel ne prétend pas faire valider médicalement ces fichiers.
-
-Pour préparer une autre installation, `node scripts/fetch-content.mjs` télécharge les versions vérifiées. Une empreinte modifiée est refusée pour permettre une vérification éditoriale de la nouvelle édition.
-
-## Services existants facultatifs
-
-`deploy/compose.services.yml` prépare Ollama, Kiwix et Grocy via leurs images officielles ou recommandées par leurs projets. Exemple :
+Ubuntu x86-64, after transferring the complete prepared folder and correct Linux runtimes:
 
 ```sh
-docker compose -f deploy/compose.services.yml --profile local-ai up -d
-docker compose -f deploy/compose.services.yml exec ollama ollama pull qwen3:4b-instruct-2507-q4_K_M
+bash DEMARRER-UBUNTU.sh
 ```
 
-Kiwix demande des fichiers `.zim` dans `content/zim`, téléchargés depuis le catalogue Kiwix. Le profil `library` sert ensuite ces contenus sur localhost:8008. Grocy est disponible avec le profil `grocy` sur localhost:9283 ; son inventaire reste distinct de l'inventaire intégré REFUGE. Ce fichier Compose est préparé mais n'a pas été exécuté sur cet ordinateur. Les images `latest` sont des points de départ : conserver les images exactes préparées et tester avant une installation durable. Open WebUI peut être ajouté séparément avec le même moteur local ; REFUGE ne prétend pas être Open WebUI.
+These launchers expect the prepared portable engine and model layout. They do not download a missing model at startup. The Ubuntu launcher and hardware still need validation on the target computer.
 
-La carte de Saxe, dix vidéos et le lecteur Wikipédia intégré sont préparés et testés localement. Le GPS USB est identifié et sa lecture NMEA fonctionne ; un fix satellite reste à valider dehors. SDR++ est téléchargé ; la réception radio exige un autre récepteur et une antenne. La météo sauvegardée porte sa date ; les alternatives radio et l'estimation des cartes Europe–Afrique sont [documentées ici](docs/radio-gps-meteo-cartes.md).
+## Prepare an offline installation
 
-## Démarrage automatique Ubuntu
+Choose resources while online. Check their language, date, storage requirements and permitted use. Catalogs under `content/` describe expected files and, where available, sizes and hashes; the installed files determine what works offline.
 
-Adapter le chemin du projet dans `deploy/refuge.service`, le copier dans `~/.config/systemd/user/`, puis `systemctl --user daemon-reload` et `systemctl --user enable --now refuge`. Le service démarre avec la session utilisateur ; un démarrage avant connexion demande une configuration système supplémentaire. Node installé avec nvm doit avoir un chemin explicite dans `ExecStart`. Le serveur écoute seulement sur loopback : l'accès depuis d'autres appareils n'est pas activé sans authentification et configuration réseau adaptées.
+For cataloged videos, Wikipedia archives and radio packages, the explicit downloader is:
 
-## Vérifier
+```sh
+node scripts/fetch-offline-assets.mjs --videos --wiki --radio
+```
+
+Pass only the flags you need. These can be large downloads. Wikipedia also needs its prepared Kiwix reader; maps, book/media preparation and platform runtimes have additional steps. Follow the [complete installation and transfer guide](docs/installation-offline.md). This command does not install every feature. `bash scripts/prepare-ubuntu.sh` prepares dependencies, the frontend and PDFs on Ubuntu; it does not prepare the entire AI/media collection.
+
+Before disconnecting, run the application's resource checks, open representative files and verify important hashes. Then disconnect the network, restart the computer and test your workflow: a guide, PDF, video, map, Wikipedia article, data export and, if installed, an AI response. Test battery operation, GPS and radio with real hardware.
+
+Keep a second copy and rehearse a restoration. An old archive can omit newer resources. See [backup and restore](docs/backup-restore.md) and [transfer/distribution notes](docs/partage-refuge.md), currently in French.
+
+## Optional local AI
+
+The assistant integrates the Local Studio assistant interface with a local REFUGE backend. Conversations and tasks are stored in local SQLite. Relevant passages from prepared guides, hazard information and indexed PDFs can be added to a question. This is retrieval and context, not model training. **Wikipedia is browsed separately and is not indexed by the assistant.**
+
+The documented Ollama configuration uses `qwen3:4b-instruct-2507-q4_K_M`. Copy `.env.example` to `.env` and review its settings. Prepare Ollama and the model while online, using its local-only service on port `11479`, the project's `models` folder and `OLLAMA_NO_CLOUD=1`. With that service running, explicitly fetch the model:
+
+```sh
+node scripts/fetch-local-model.mjs
+```
+
+The [offline guide](docs/installation-offline.md) explains engine settings and the portable runtime layout. Model size, RAM use and CPU speed vary. A mock-engine test does not demonstrate a model's quality or performance on your hardware.
+
+An existing Local Studio installation on the **same computer** can be configured instead. A separate remote Studio mode is optional, needs a network and credentials, and sends the chosen question and reference passages to that server. Local mode does not automatically fall back to the remote service. Never put an API key in frontend code or Git. See the [integration and code provenance notes](docs/local-studio-integration.md).
+
+The assistant can produce incorrect instructions and citations. Check source documents, especially for first aid, medication, food safety and hazardous situations. It is not a medical professional or a safe way to identify edible plants or mushrooms.
+
+## Your data stays under your control
+
+Household preferences, inventory, places and other personal settings are stored in the browser. AI history is stored separately by the local server. Browser data is not encrypted or automatically synchronized between devices; use demonstration data when showing the application publicly.
+
+Export personal data regularly. A JSON export covers supported browser state, not the AI database, model or full content library. A full offline backup is different: it can include `.env`, SQLite history and personal exports. Protect it and never upload it as a public release.
+
+The repository ignores local resource folders, `data/`, `models/`, `runtime/`, `private/`, build output and real `.env` files. Ignore rules do not remove already committed files or clean repository history. Public release needs a separate review of tracked files, past commits, screenshots and archives.
+
+The main server binds to loopback. Access from another device requires deliberate network and authentication configuration. The local app is not a public hosting setup.
+
+## Development and verification
 
 ```sh
 npm test
@@ -82,10 +162,32 @@ npm run build
 npx playwright test
 ```
 
-Le test navigateur exige Chrome local et le serveur lancé. Il bloque les requêtes navigateur hors localhost, vérifie les PDF, la recherche, les favoris, le stock, la persistance, l'arabe et le téléphone. Les tests de contrat IA utilisent un moteur simulé ; ils ne prouvent pas la vitesse ou la qualité d'un modèle installé.
+Browser checks need local Chrome and prepared resources for the features exercised. Playwright starts the local server or reuses an existing one. Some browser tests block external requests to exercise offline behavior. AI contract tests use a simulated engine; real inference, complete content availability and target-device operation require separate checks.
 
-Les quantités initiales sont fictives. Le tableau de bord compte les produits alimentaires ; il n'invente pas une autonomie en jours sans les données nutritionnelles nécessaires. Le calcul d'eau suit les quantités saisies. Les données du navigateur ne sont pas chiffrées et ne sont pas partagées entre appareils : utiliser des données fictives pour le plan familial à ce stade.
+| Path             | Purpose                                                    |
+| ---------------- | ---------------------------------------------------------- |
+| `src/`           | React interface, translations, planning and local state    |
+| `server/`        | Local HTTP/API services and AI integration                 |
+| `content/`       | Source catalogs and prepared resource folders              |
+| `scripts/`       | Downloads, preparation, indexing, backup and distribution  |
+| `deploy/`        | Optional Compose services and Ubuntu service configuration |
+| `tests/`, `e2e/` | Node tests and browser scenarios                           |
+| `docs/`          | Installation, sources, limitations and release preparation |
 
-## Équipement et achats
+Optional Docker Compose definitions cover Ollama, Kiwix and Grocy; these are additional deployment choices and have not been validated as the target mini-PC installation. Grocy's stock is separate from REFUGE's inventory.
 
-Préparation → Équipement à acheter (ou #prepare?view=equipment) propose treize références/catégories, dont cinq prix Amazon.de réellement relevés le 31 octobre 2026, des coches persistantes et une estimation énergétique pour le kit solaire. Les articles sans prix vérifié restent explicitement signalés. [Sources et limites des prix](docs/equipement-sources.md). [Trois nouvelles vidéos et contrôles audio](docs/videos-complementaires-sources.md).
+## Licensing and attribution
+
+**There is currently no root software license in this repository.** A public repository is not automatically open source and does not by itself grant broad permission to reuse, modify or redistribute the code. The owner's intention to offer REFUGE free of charge is separate from choosing a software license. The licensing decision and provenance of integrated code must be resolved before presenting a release as open source.
+
+Third-party components, model weights, map data, encyclopedic content, books, PDFs and videos retain their own terms. Source URLs and provenance are recorded in catalogs and documentation; these records still require a distribution review. Free access to a PDF or video is not permission to bundle it in a public archive. Modified Kiwix sources, licenses and required notices must accompany any distribution as required by their terms.
+
+See [Local Studio provenance](docs/local-studio-integration.md), [map and radio sources](docs/radio-gps-meteo-cartes.md), [book sources](docs/books.md), [video sources](docs/videos-survie-sources.md) and the [public release checklist](docs/public-release.md).
+
+## Support the project
+
+The donation screen has an explicit **continue for free** option. A donation does not unlock a feature, and payment is never required to use REFUGE. Public donation addresses and local QR codes are intentional; private keys, wallet recovery phrases and private access credentials must never be included in the project.
+
+Useful contributions also include testing a restored installation without internet, reporting a reproducible bug, reviewing a translation and identifying a better primary source. When reporting a problem, describe the platform, language, installed resources and expected behavior. Remove personal data from logs and screenshots.
+
+The [previous French README](docs/README.fr.md) is retained as a historical reference. Several detailed operational documents remain in French; this English README describes the project scope and separates prepared resources from repository contents.

@@ -1,0 +1,140 @@
+.equipment-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 17px;
+  background: #fffef9;
+  border: 1px solid var(--line, #d7dfd0);
+  border-radius: 10px;
+  margin-block: 18px;
+  color: #60765a;
+}
+.equipment-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+.equipment-search:focus-within {
+  outline: 2px solid #648269;
+  outline-offset: 2px;
+}
+.equipment-photo {
+  margin: -24px -24px 20px;
+  border-bottom: 1px solid #e6e8df;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+.equipment-photo img {
+  width: 100%;
+  height: 205px;
+  object-fit: contain;
+  padding: 21px;
+  display: block;
+  box-sizing: border-box;
+}
+.equipment-photo figcaption {
+  padding: 8px 15px;
+  background: #f6f7f1;
+  color: #7c866d;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.5;
+}
+.equipment-illustration {
+  height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle, #e4ebd7 0, #e4ebd7 63px, transparent 64px), #f7f5ec;
+  color: #637954;
+}
+.equipment-illustration svg {
+  width: 66px;
+  height: 66px;
+  stroke-width: 1.2;
+}
+.equipment-section .equipment-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.equipment-card .equipment-owned {
+  margin-block-start: auto;
+  padding-block-start: 20px;
+}
+.equipment-card .equipment-detail {
+  line-height: 1.85;
+}
+.equipment-photo-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-block: 15px 0;
+}
+.equipment-filters {
+  flex-wrap: wrap;
+}
+.equipment-card .equipment-price {
+  margin-block: 14px 6px;
+}
+.equipment-empty {
+  padding: 22px;
+  background: #f3f5ed;
+  border-radius: 10px;
+}
+@media (max-width: 760px) {
+  .equipment-photo {
+    margin: -20px -20px 18px;
+  }
+  .equipment-photo img,
+  .equipment-illustration {
+    height: 190px;
+  }
+  .equipment-section .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+  .equipment-section .equipment-filters button {
+    white-space: normal;
+  }
+}
+.equipment-intro-details {
+  margin-block-start: 15px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.equipment-intro-details summary {
+  cursor: pointer;
+  color: #55704e;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.equipment-intro-details[open] summary {
+  margin-block-end: 15px;
+}
+.equipment-section {
+  grid-template-columns: minmax(0, 1fr);
+}
+.equipment-section > * {
+  min-width: 0;
+}
+.equipment-section .equipment-filters {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+.equipment-section .energy-estimate {
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.equipment-section .energy-estimate label {
+  min-width: 0;
+  max-width: 100%;
+}

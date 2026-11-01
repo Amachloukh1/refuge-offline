@@ -2,6 +2,8 @@ import { Icon, Button, Notice, Progress } from "./components";
 import { guideData } from "./data.js";
 import { hazards } from "./hazards.js";
 import { preparednessText } from "./preparedness-text.js";
+import { contentLanguage } from "./locale-policy.js";
+import { translations } from "./i18n.js";
 import {
   sanitizeReadiness,
   sanitizeEnergy,
@@ -11,10 +13,15 @@ import {
 
 export function EmergencyNow({ lang, onGuide, onHazard, onHealth }) {
   const t = preparednessText[lang] || preparednessText.en;
-  const locale = preparednessText[lang] ? lang : "en";
+  const locale = contentLanguage(lang);
   const water = guideData.find((guide) => guide.id === "water");
   return (
     <div className="preparedness-page emergency-now">
+      {locale !== lang && (
+        <p className="translation-fallback">
+          {translations[lang]?.documentFallback}
+        </p>
+      )}
       <Notice tone="warning" icon="ShieldCheck">
         <strong>{t.emergency}</strong> <a href="tel:112">112</a>
       </Notice>
@@ -26,8 +33,8 @@ export function EmergencyNow({ lang, onGuide, onHazard, onHealth }) {
             return (
               <section className="panel padded emergency-scenario" key={id}>
                 <Icon name={hazard.icon} />
-                <h2>{content.title}</h2>
-                <p>{content.during[0]}</p>
+                <h2 lang={locale}>{content.title}</h2>
+                <p lang={locale}>{content.during[0]}</p>
                 <Button
                   variant="outline"
                   icon="ArrowRight"
