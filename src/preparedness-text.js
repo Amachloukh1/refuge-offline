@@ -1,3 +1,4 @@
+import {extraPreparednessText} from "./locales/extra-ui-text.js";
 export const preparednessText = {
   en: {
     now: "Emergency now",
@@ -250,3 +251,4 @@ export const preparednessText = {
       "أوقف الذكاء الاصطناعي المحلي مؤقتاً لتقليل الاستهلاك. للإغلاق: احفظ العمل وأوقف خدمة الذكاء الاصطناعي المحلية ثم استخدم إيقاف التشغيل في نظام التشغيل. لا تقطع الطاقة أثناء الحفظ.",
   },
 };
+Object.assign(preparednessText, extraPreparednessText);

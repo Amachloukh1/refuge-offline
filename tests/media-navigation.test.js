@@ -1,6 +1,16 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mediaSection, chooseWikiArchive } from "../src/media-navigation.js";
+import {
+  mediaSection,
+  chooseWikiArchive,
+  wikiReaderLanguage,
+} from "../src/media-navigation.js";
+test("embedded wiki reader receives only installed and supported control languages", () => {
+  for (const lang of ["fr", "de", "en", "ar"])
+    assert.equal(wikiReaderLanguage(lang), lang);
+  for (const lang of ["ru", "zh", "es", "pt", "unknown"])
+    assert.equal(wikiReaderLanguage(lang), "en");
+});
 test("legacy media URLs retain their category in the unified media library", () => {
   for (const section of ["videos", "films", "music", "sport"]) {
     assert.equal(mediaSection("#" + section), section);

@@ -1,3 +1,4 @@
+import {extraMediaText} from "./locales/feature-translations.js";
 export const mediaText = {
   fr: {
     films: "Films",
@@ -211,3 +212,4 @@ export const mediaText = {
       "التشغيل عبر الشبكة يحتاج إلى إنترنت. نزّل الملف لتشغيله دون اتصال.",
   },
 };
+Object.assign(mediaText, extraMediaText);

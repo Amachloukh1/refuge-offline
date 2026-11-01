@@ -12,6 +12,7 @@ export default defineConfig({
   },
   timeout: 30000,
   use: {
+    storageState: {cookies:[],origins:[{origin:"http://127.0.0.1:8099",localStorage:[{name:"refuge.donation.seen.v1",value:"1"}]}]},
     baseURL: "http://127.0.0.1:8099",
     browserName: "chromium",
     channel: "chrome",

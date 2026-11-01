@@ -1,3 +1,4 @@
+import {extraSystemText} from "./locales/extra-ui-text.js";
 import { useEffect, useState } from "react";
 import { Button, Notice } from "./components";
 import { validateState } from "./state-schema";
@@ -301,3 +302,4 @@ export function DataRestore({ lang, onRestore, exportData }) {
     </section>
   );
 }
+Object.assign(texts, extraSystemText);

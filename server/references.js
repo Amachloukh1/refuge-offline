@@ -1,5 +1,6 @@
 import { hazards } from "../src/hazards.js";
 import { normalize } from "../src/planning.js";
+import { contentLanguage } from "../src/locale-policy.js";
 const words = {
   tsunami: "tsunami تسونامي",
   heat: "canicule chaleur chaud heat hot hitze heiss حرارة حر موجة",
@@ -16,6 +17,7 @@ const words = {
     "radiologique nucleaire radiation nuclear strahlung radioaktiv اشعاع نووي",
 };
 export function hazardReferences(query, lang) {
+  const sourceLanguage = contentLanguage(lang);
   const text = normalize(query);
   const scores = hazards
     .map((h) => {
@@ -28,8 +30,8 @@ export function hazardReferences(query, lang) {
     .slice(0, 2);
   return scores
     .map(({ h }) => {
-      const d = h[lang];
-      return `[${h.id}] ${d.title}\n${["before", "during", "after", "avoid", "kit"].map((k) => `${k}: ${d[k].join(" ")}`).join("\n")}\nSources: ${h.sources.map((s) => s.url).join(" ")}\nVerified: ${h.reviewedAt}. Local official instructions take priority.`;
+      const d = h[sourceLanguage];
+      return `[${h.id}] ${d.title}\nSource language: ${sourceLanguage}.\n${["before", "during", "after", "avoid", "kit"].map((k) => `${k}: ${d[k].join(" ")}`).join("\n")}\nSources: ${h.sources.map((s) => s.url).join(" ")}\nVerified: ${h.reviewedAt}. Local official instructions take priority.`;
     })
     .join("\n\n");
 }

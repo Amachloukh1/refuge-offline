@@ -3,6 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import { guideData } from "../src/data.js";
 import { hazards } from "../src/hazards.js";
 import { normalize } from "../src/planning.js";
+import { contentLanguage } from "../src/locale-policy.js";
 const stop = new Set(
   "avec pour dans vous nous votre vos une les des que qui quoi comment est sont mais peut sans sur aux cette cela tous avoir faut fait plus par the and with what how your this that from into for und der die das eine ein mit wie was sie ihr von في من إلى على عن ما كيف هذا هذه التي الذي أو هل هو هي".split(
     " ",
@@ -110,18 +111,19 @@ async function pdfChunks(root) {
   }
 }
 export async function retrieveKnowledge(root, query, lang) {
+  const sourceLanguage = contentLanguage(lang);
   const passages = guideData.map((g) => ({
     id: g.id,
-    title: g.title[lang],
-    text: g.body[lang].join("\n"),
+    title: g.title[sourceLanguage],
+    text: g.body[sourceLanguage].join("\n"),
     href: `#library?view=${g.id}`,
-    language: lang,
+    language: sourceLanguage,
     publisher: g.publisher,
     reviewedAt: g.reviewedAt,
     sources: g.sources || (g.url ? [{ label: g.publisher, url: g.url }] : []),
   }));
   for (const h of hazards) {
-    const d = h[lang];
+    const d = h[sourceLanguage];
     passages.push({
       id: `hazard-${h.id}`,
       title: d.title,
@@ -129,14 +131,14 @@ export async function retrieveKnowledge(root, query, lang) {
         .map((k) => `${k}: ${d[k].join(" ")}`)
         .join("\n"),
       href: `#hazards?view=${h.id}`,
-      language: lang,
+      language: sourceLanguage,
       publisher: h.sources.map((source) => source.label).join(" · "),
       reviewedAt: h.reviewedAt,
       sources: h.sources,
     });
   }
   passages.push(...(await pdfChunks(root)));
-  const ranked = rankPassages(query, passages, lang, 5);
+  const ranked = rankPassages(query, passages, sourceLanguage, 5);
   let size = 0;
   const selected = [];
   for (const p of ranked) {
@@ -146,10 +148,11 @@ export async function retrieveKnowledge(root, query, lang) {
     size += text.length;
   }
   return {
+    sourceLanguage,
     text: selected
       .map(
         (p) =>
-          `[${p.id}] ${p.title}${p.page ? ` — page ${p.page}` : ""} (${p.publisher})\n${p.reviewedAt ? `Content review date: ${p.reviewedAt} (editorial metadata, not clinical validation).` : p.downloadedAt ? `PDF downloaded: ${p.downloadedAt} (download date, not publication or medical review date).` : "Review date not provided."}\nSources: ${(p.sources || []).map((source) => `${source.label}: ${source.url}`).join("; ")}\n${p.text}`,
+          `[${p.id}] ${p.title}${p.page ? ` — page ${p.page}` : ""} (${p.publisher})\nSource language: ${p.language || "not provided"}.\n${p.reviewedAt ? `Content review date: ${p.reviewedAt} (editorial metadata, not clinical validation).` : p.downloadedAt ? `PDF downloaded: ${p.downloadedAt} (download date, not publication or medical review date).` : "Review date not provided."}\nSources: ${(p.sources || []).map((source) => `${source.label}: ${source.url}`).join("; ")}\n${p.text}`,
       )
       .join("\n\n"),
     references: selected.map(
@@ -162,6 +165,7 @@ export async function retrieveKnowledge(root, query, lang) {
         reviewedAt,
         downloadedAt,
         sources,
+        language,
       }) => ({
         id,
         title,
@@ -171,6 +175,7 @@ export async function retrieveKnowledge(root, query, lang) {
         reviewedAt,
         downloadedAt,
         sources,
+        sourceLanguage: language,
       }),
     ),
   };

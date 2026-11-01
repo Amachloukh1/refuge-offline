@@ -1,3 +1,4 @@
+import {extraPlacesText} from "./locales/extra-ui-text.js";
 import { useState } from "react";
 import { Button, Notice } from "./components";
 const labels = {
@@ -261,3 +262,4 @@ export function PersonalPlaces({
     </section>
   );
 }
+Object.assign(labels, extraPlacesText);

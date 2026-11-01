@@ -12,7 +12,7 @@ import {
   Search,
 } from "lucide-react";
 import { wikiText } from "./wiki-text";
-import { chooseWikiArchive } from "./media-navigation";
+import { chooseWikiArchive, wikiReaderLanguage } from "./media-navigation";
 import "./media-hub.css";
 const languageNames = {
   fr: "Français",
@@ -22,6 +22,7 @@ const languageNames = {
 };
 export default function Wikipedia({ lang = "fr" }) {
   const c = wikiText[lang];
+  const readerLanguage = wikiReaderLanguage(lang);
   const [data, setData] = useState(null),
     [selected, setSelected] = useState(null),
     [error, setError] = useState(false),
@@ -51,7 +52,7 @@ export default function Wikipedia({ lang = "fr" }) {
     archive = archives.find((a) => a.filename === selected),
     total = archives.reduce((n, a) => n + a.bytes, 0);
   const source = archive
-    ? `http://127.0.0.1:8108/www/index.html?refugeArchive=${encodeURIComponent(archive.language)}&overrideBrowserLanguage=${lang}`
+    ? `http://127.0.0.1:8108/www/index.html?refugeArchive=${encodeURIComponent(archive.language)}&overrideBrowserLanguage=${readerLanguage}`
     : null;
   useEffect(() => setLoading(true), [source, readerRevision]);
   return (
@@ -191,6 +192,9 @@ export default function Wikipedia({ lang = "fr" }) {
             <Search size={15} />
             {c.help}
           </p>
+          {readerLanguage !== lang && (
+            <p className="translation-fallback">{c.reader} : English</p>
+          )}
           {loading && (
             <p className="wiki-opening" role="status">
               {c.opening}

@@ -11,6 +11,7 @@ import { createGps } from "./gps.js";
 import { createReadiness } from "./readiness.js";
 import { createBooks } from "./books.js";
 import { createMedia } from "./media-library.js";
+import { isInterfaceLanguage } from "../src/locale-policy.js";
 import {
   aiConfig,
   remoteStudioConfig,
@@ -364,6 +365,10 @@ export function createApp({
           json(res, 400, { code: "invalid_messages" });
           return;
         }
+        if (!isInterfaceLanguage(data.language ?? "fr")) {
+          json(res, 400, { code: "invalid_language" });
+          return;
+        }
         if (data.mode && !["local", "remote"].includes(data.mode)) {
           json(res, 400, { code: "invalid_mode" });
           return;
@@ -382,9 +387,7 @@ export function createApp({
         const knowledge = await retrieveKnowledge(
           root,
           data.messages.at(-1).content,
-          ["fr", "de", "en", "ar"].includes(data.language)
-            ? data.language
-            : "fr",
+          data.language ?? "fr",
         );
         const controller = new AbortController();
         res.on("close", () => controller.abort());

@@ -1,3 +1,4 @@
+import {extraHubText} from "./locales/feature-translations.js";
 export const hubText = {
   fr: {
     media: "Médias",
@@ -173,3 +174,4 @@ export const hubText = {
     language: "لغة الفيديو",
   },
 };
+Object.assign(hubText, extraHubText);

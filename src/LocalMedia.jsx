@@ -1,3 +1,4 @@
+import {extraVideoText} from "./locales/extra-ui-text.js";
 import { useCallback, useEffect, useState } from "react";
 import { Icon, Notice, Button, External } from "./components";
 const mediaText = {
@@ -338,3 +339,4 @@ export function LocalVideos({ t, lang = "fr", onPlay }) {
     </>
   );
 }
+Object.assign(mediaText, extraVideoText);

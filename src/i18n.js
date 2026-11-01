@@ -1,3 +1,7 @@
+import { ru } from "./locales/ru.js";
+import { zh } from "./locales/zh.js";
+import { es } from "./locales/es.js";
+import { pt } from "./locales/pt.js";
 import { ar } from "./arabic.js";
 import { fieldText } from "./field-text.js";
 import { offlineText } from "./offline-translations.js";
@@ -914,7 +918,7 @@ Object.assign(ar, {
 });
 for (const [lang, dictionary] of Object.entries({ fr, en, de, ar }))
   Object.assign(dictionary, offlineText[lang]);
-export const translations = { fr, en, de, ar };
+export const translations = { fr, en, de, ar, ru, zh, es, pt };
 for (const [lang, dictionary] of Object.entries(translations))
   Object.assign(dictionary, {
     books: bookText[lang].title,
@@ -968,3 +972,23 @@ for (const [lang, text] of Object.entries(mediaText))
     filmsSub: text.filmsSub,
     musicSub: text.musicSub,
   });
+
+Object.assign(translations, { ru, zh, es, pt });
+Object.assign(languages, {
+  ru: "Русский",
+  zh: "简体中文",
+  es: "Español",
+  pt: "Português",
+});
+const documentFallbackMessages = {
+  fr: "Cette fiche n’est pas encore traduite dans la langue de l’interface ; le texte de référence est affiché en anglais.",
+  en: "This guide has not been translated into the interface language yet; its reference text is shown in English.",
+  de: "Dieser Leitfaden ist noch nicht in die Sprache der Oberfläche übersetzt; der Referenztext wird auf Englisch angezeigt.",
+  ar: "لم تُترجم هذه النشرة إلى لغة الواجهة بعد؛ يظهر النص المرجعي باللغة الإنجليزية.",
+  ru: "Эта памятка пока не переведена на язык интерфейса; справочный текст показан на английском.",
+  zh: "本指南尚未翻译为当前界面语言，参考正文以英语显示。",
+  es: "Esta guía aún no está traducida al idioma de la interfaz; el texto de referencia se muestra en inglés.",
+  pt: "Este guia ainda não está traduzido para o idioma da interface; o texto de referência é apresentado em inglês.",
+};
+for (const [lang, text] of Object.entries(documentFallbackMessages))
+  translations[lang].documentFallback = text;

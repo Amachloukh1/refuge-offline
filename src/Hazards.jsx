@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Icon, Button, Notice, External } from "./components";
 import { normalize } from "./planning";
 import { hazards } from "./hazards.js";
+import { contentLanguage } from "./locale-policy.js";
 export function Hazards({ t, lang, initialId }) {
+  const sourceLanguage = contentLanguage(lang);
   const [selected, setSelected] = useState(initialId || null);
   const [query, setQuery] = useState("");
   const active = hazards.find((h) => h.id === selected);
@@ -12,7 +14,7 @@ export function Hazards({ t, lang, initialId }) {
     window.scrollTo({ top: 0, behavior: "instant" });
   }
   if (active) {
-    const content = active[lang];
+    const content = active[sourceLanguage];
     return (
       <article className="hazard-detail">
         <div className="hazard-toolbar">
@@ -39,12 +41,13 @@ export function Hazards({ t, lang, initialId }) {
             <Icon name={active.icon} size={39} />
           </span>
           <div>
-            <h2>{content.title}</h2>
+            <h2 lang={sourceLanguage}>{content.title}</h2>
             <p>
               {t.hazardVerified} · {active.reviewedAt} · {t.country}
             </p>
           </div>
         </section>
+        {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
         <Notice tone="warning" icon="ShieldCheck">
           {t.hazardPriority}
         </Notice>
@@ -62,7 +65,7 @@ export function Hazards({ t, lang, initialId }) {
                 </span>
                 <h2>{t[`hazard_${key}`]}</h2>
               </div>
-              <ol>
+              <ol lang={sourceLanguage}>
                 {content[key].map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
@@ -75,7 +78,7 @@ export function Hazards({ t, lang, initialId }) {
             <Icon name="Package" />
             {t.hazard_kit}
           </h2>
-          <ul>
+          <ul lang={sourceLanguage}>
             {content.kit.map((item) => (
               <li key={item}>
                 <Icon name="Check" size={17} />
@@ -103,15 +106,16 @@ export function Hazards({ t, lang, initialId }) {
     normalize(
       [
         h.keywords,
-        h[lang].title,
-        ...h[lang].before,
-        ...h[lang].during,
-        ...h[lang].avoid,
+        h[sourceLanguage].title,
+        ...h[sourceLanguage].before,
+        ...h[sourceLanguage].during,
+        ...h[sourceLanguage].avoid,
       ].join(" "),
     ).includes(normalize(query)),
   );
   return (
     <>
+      {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
       <Notice icon="BookOpen">{t.hazardIntro}</Notice>
       <div className="library-toolbar">
         <div className="input-search">
@@ -138,7 +142,7 @@ export function Hazards({ t, lang, initialId }) {
               <Icon name={h.icon} size={29} />
             </span>
             <div>
-              <h2>{h[lang].title}</h2>
+              <h2 lang={sourceLanguage}>{h[sourceLanguage].title}</h2>
               <p>{t.hazardCardText}</p>
             </div>
             <Icon name="ArrowRight" size={20} />

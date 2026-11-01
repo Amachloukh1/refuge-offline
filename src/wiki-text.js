@@ -1,3 +1,4 @@
+import {extraWikiText} from "./locales/feature-translations.js";
 export const wikiText = {
   fr: {
     intro: "Une encyclopédie à portée de main, même quand le réseau disparaît.",
@@ -130,3 +131,4 @@ export const wikiText = {
     load: "جار تحميل الأرشيفات…",
   },
 };
+Object.assign(wikiText, extraWikiText);

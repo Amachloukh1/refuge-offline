@@ -3,24 +3,34 @@ import { Icon, Button, Modal, External, Notice } from "./components";
 import { normalize } from "./planning";
 import { guideData } from "./data";
 import { hazards } from "./hazards.js";
+import { contentLanguage } from "./locale-policy.js";
 export function GuideReader({ guide, lang, t, onClose }) {
+  const sourceLanguage = contentLanguage(lang);
   return (
-    <Modal title={guide.title[lang]} t={t} onClose={onClose}>
+    <Modal
+      title={<span lang={sourceLanguage}>{guide.title[sourceLanguage]}</span>}
+      t={t}
+      onClose={onClose}
+    >
+      {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
       <div className="reader-meta">
         <span>{guide.publisher}</span>
         <span>{t.summary}</span>
         <span>31.10.2026</span>
       </div>
-      <p className="reader-intro">{guide.intro[lang]}</p>
+      <p className="reader-intro" lang={sourceLanguage}>
+        {guide.intro[sourceLanguage]}
+      </p>
       {guide.image && (
         <img
           className="guide-reader-image"
           src={guide.image}
-          alt={guide.title[lang]}
+          alt={guide.title[sourceLanguage]}
+          lang={sourceLanguage}
         />
       )}
-      <ol className="guide-steps">
-        {guide.body[lang].map((text) => (
+      <ol className="guide-steps" lang={sourceLanguage}>
+        {guide.body[sourceLanguage].map((text) => (
           <li key={text}>{text}</li>
         ))}
       </ol>
@@ -48,6 +58,7 @@ export function Library({
   onRead,
   onHazard,
 }) {
+  const sourceLanguage = contentLanguage(lang);
   const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState("all");
   const [favOnly, setFavOnly] = useState(false);
@@ -57,7 +68,11 @@ export function Library({
         (category === "all" || g.category === category) &&
         (!favOnly || favorites.includes(g.id)) &&
         normalize(
-          [g.title[lang], g.intro[lang], g.body[lang].join(" ")].join(" "),
+          [
+            g.title[sourceLanguage],
+            g.intro[sourceLanguage],
+            g.body[sourceLanguage].join(" "),
+          ].join(" "),
         ).includes(normalize(query)),
     )
     .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
@@ -67,15 +82,16 @@ export function Library({
           normalize(
             [
               h.keywords,
-              h[lang].title,
-              ...h[lang].during,
-              ...h[lang].avoid,
+              h[sourceLanguage].title,
+              ...h[sourceLanguage].during,
+              ...h[sourceLanguage].avoid,
             ].join(" "),
           ).includes(normalize(query)),
         )
       : [];
   return (
     <>
+      {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
       <div className="library-toolbar">
         <div className="input-search">
           <Icon name="Search" />
@@ -152,8 +168,8 @@ export function Library({
             <div className="guide-meta">
               {g.publisher} <span>·</span> {g.time} min
             </div>
-            <h2>{g.title[lang]}</h2>
-            <p>{g.intro[lang]}</p>
+            <h2 lang={sourceLanguage}>{g.title[sourceLanguage]}</h2>
+            <p lang={sourceLanguage}>{g.intro[sourceLanguage]}</p>
             <button className="text-button" onClick={() => onRead(g)}>
               {t.read}
               <Icon name="ArrowRight" size={18} />
@@ -167,7 +183,7 @@ export function Library({
           {hazardMatches.map((h) => (
             <button key={h.id} onClick={() => onHazard(h.id)}>
               <Icon name={h.icon} />
-              <strong>{h[lang].title}</strong>
+              <strong lang={sourceLanguage}>{h[sourceLanguage].title}</strong>
               <Icon name="ArrowRight" size={18} />
             </button>
           ))}

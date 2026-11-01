@@ -1,3 +1,5 @@
+import { extraEquipmentText } from "./locales/extra-ui-text.js";
+import { contentLanguage } from "./locale-policy";
 import { useState } from "react";
 import { Icon, Notice, External } from "./components";
 import catalog from "../content/equipment.catalog.json";
@@ -124,7 +126,7 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
   const [watts, setWatts] = useState(40);
   const money = (n) =>
     new Intl.NumberFormat(
-      { fr: "fr-FR", de: "de-DE", en: "en-GB", ar: "ar-DE" }[lang] || "fr-FR",
+      { fr: "fr-FR", de: "de-DE", en: "en-GB", ar: "ar-DE" }[lang] || lang,
       { style: "currency", currency: "EUR" },
     ).format(n);
   const remaining = catalog
@@ -157,7 +159,7 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
         {catalog
           .filter((p) => filter === "all" || p.priority === filter)
           .map((p) => {
-            const text = p.text[lang] || p.text.fr;
+            const text = p.text[contentLanguage(lang)] || p.text.en;
             return (
               <article
                 className="panel padded equipment-card"
@@ -222,3 +224,4 @@ export default function Equipment({ lang = "fr", bought = [], toggleBought }) {
     </section>
   );
 }
+Object.assign(copy, extraEquipmentText);

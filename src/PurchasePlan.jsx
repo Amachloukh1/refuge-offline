@@ -1,4 +1,5 @@
 import { Icon, Notice, External } from "./components";
+import { extraPurchaseNames } from "./locales/purchase-names.js";
 const items = [
   [
     "ups",
@@ -145,7 +146,7 @@ const items = [
   ],
 ];
 export function PurchasePlan({ t, lang, water, bought, toggleBought }) {
-  const index = { fr: 0, de: 1, en: 2, ar: 3 }[lang] ?? 0;
+  const index = { fr: 0, de: 1, en: 2, ar: 3 }[lang] ?? 2;
   return (
     <div className="purchase-plan">
       <figure className="kit-figure">
@@ -167,7 +168,7 @@ export function PurchasePlan({ t, lang, water, bought, toggleBought }) {
         {items.map(([id, icon, q, names]) => (
           <article className="panel padded purchase-card" key={id}>
             <Icon name={icon} size={25} />
-            <h3>{names[index]}</h3>
+            <h3>{extraPurchaseNames[lang]?.[id] || names[index]}</h3>
             <label className="purchase-check">
               <input
                 type="checkbox"

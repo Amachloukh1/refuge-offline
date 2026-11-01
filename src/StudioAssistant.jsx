@@ -4,6 +4,7 @@ import { configureStudio } from "./local-studio/api";
 import { studioText } from "./local-studio/text";
 import { Icon, Notice } from "./components";
 import { guideData } from "./data";
+import { contentLanguage } from "./locale-policy.js";
 import "./local-studio/embedded.css";
 export function Assistant({
   t,
@@ -15,6 +16,7 @@ export function Assistant({
   planning,
   onStatusRefresh,
 }) {
+  const sourceLanguage = contentLanguage(lang);
   const [mode, setMode] = useState("local");
   const [busy, setBusy] = useState(false);
   const labels = { ...t, ...studioText[lang] };
@@ -102,11 +104,12 @@ export function Assistant({
         </section>
         <section className="panel padded">
           <h2>{t.library}</h2>
+          {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
           <div className="chat-guides">
             {guideData.slice(0, 3).map((g) => (
               <button key={g.id} onClick={() => onRead(g)}>
                 <Icon name={g.icon} size={18} />
-                {g.title[lang]}
+                <span lang={sourceLanguage}>{g.title[sourceLanguage]}</span>
               </button>
             ))}
           </div>

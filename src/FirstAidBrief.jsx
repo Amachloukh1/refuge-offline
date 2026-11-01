@@ -1,4 +1,5 @@
-import { External } from "./components";
+import { External, Notice } from "./components";
+import { contentLanguage } from "./locale-policy.js";
 const steps = {
   bleeding: {
     url: "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/blutungen-und-blutstillung/blutungen/",
@@ -60,10 +61,12 @@ const steps = {
 };
 export function FirstAidBrief({ kind, lang, t }) {
   const entry = steps[kind];
+  const sourceLanguage = contentLanguage(lang);
   return entry ? (
     <section className="first-aid-brief">
-      <ol>
-        {(entry[lang] || entry.fr).map((s) => (
+      {sourceLanguage !== lang && <Notice>{t.documentFallback}</Notice>}
+      <ol lang={sourceLanguage}>
+        {entry[sourceLanguage].map((s) => (
           <li key={s}>{s}</li>
         ))}
       </ol>

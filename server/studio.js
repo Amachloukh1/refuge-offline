@@ -4,6 +4,7 @@ import { mkdirSync, chmodSync } from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { validatePlanning } from "./knowledge.js";
+import { isInterfaceLanguage } from "../src/locale-policy.js";
 const id = () => randomUUID().replaceAll("-", "");
 const fail = (status, detail) => Object.assign(new Error(detail), { status });
 export function createStudio({ root, generate }) {
@@ -215,7 +216,7 @@ export function createStudio({ root, generate }) {
           p.content.length > 4000 ||
           p.model !== "local-chat-fast" ||
           !["local", "remote"].includes(p.mode || "local") ||
-          !["fr", "de", "en", "ar"].includes(p.language || "fr")
+          !isInterfaceLanguage(p.language ?? "fr")
         )
           throw fail(400, "Message invalide");
         conversation(p.conversation_id);
@@ -254,7 +255,7 @@ export function createStudio({ root, generate }) {
         const jid = id();
         const payload = {
           messages: chosen,
-          language: p.language || "fr",
+          language: p.language ?? "fr",
           planning: p.planning,
           mode: p.mode || "local",
         };

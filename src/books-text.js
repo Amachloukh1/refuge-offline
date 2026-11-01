@@ -1,3 +1,4 @@
+import {extraBookText,extraBookGenres} from "./locales/feature-translations.js";
 const keys = [
   "title",
   "subtitle",
@@ -310,3 +311,5 @@ export const bookGenres = Object.fromEntries(
     Object.fromEntries(genreKeys.map((k, i) => [k, names[i]])),
   ]),
 );
+Object.assign(bookText, extraBookText);
+Object.assign(bookGenres, extraBookGenres);

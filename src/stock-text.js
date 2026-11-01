@@ -1,3 +1,4 @@
+import {extraStockText} from "./locales/extra-ui-text.js";
 const texts = {
   fr: {
     date: "Date",
@@ -183,3 +184,4 @@ const texts = {
   },
 };
 export const stockText = (lang) => texts[lang] || texts.fr;
+Object.assign(texts, extraStockText);

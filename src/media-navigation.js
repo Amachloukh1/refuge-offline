@@ -1,4 +1,7 @@
 export const mediaSections = ["videos", "films", "music", "sport"];
+export function wikiReaderLanguage(lang) {
+  return ["fr", "de", "en", "ar"].includes(lang) ? lang : "en";
+}
 export function mediaSection(hash) {
   const [name, query = ""] = String(hash).replace(/^#/, "").split("?");
   if (mediaSections.includes(name)) return name;

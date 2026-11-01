@@ -1,3 +1,4 @@
+import {extraStudioText} from "../locales/extra-ui-text.js";
 export const studioText = {
   fr: {
     noLocalReferences:
@@ -172,3 +173,4 @@ export const studioText = {
       "تحفظ المحادثات في قاعدة بيانات هذا الجهاز. تسمح السلة باستعادتها؛ التخزين غير مشفر.",
   },
 };
+Object.assign(studioText, extraStudioText);
