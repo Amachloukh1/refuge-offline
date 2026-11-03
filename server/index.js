@@ -3,13 +3,15 @@ import { createWikiServer } from "./wiki.js";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { existsSync } from "node:fs";
+import { localNetwork } from "./network.js";
 const port = Number(process.env.REFUGE_PORT || 8099);
 if (!Number.isInteger(port) || port < 1024 || port > 65535)
   throw new Error("Invalid REFUGE_PORT");
-const server = createApp();
-server.listen(port, "127.0.0.1", () =>
+const network = localNetwork();
+const server = createApp({ network });
+server.listen(port, network.listenHost, () =>
   console.log(
-    `REFUGE : http://127.0.0.1:${port} — accès local, aucun service Internet requis.`,
+    `REFUGE : http://${network.lanHost || "127.0.0.1"}:${port} — accès local, aucun service Internet requis.`,
   ),
 );
 server.on("error", () => {
@@ -24,9 +26,9 @@ if (
     path.join(root, "content/wiki-reader/kiwix-js-4.4.0/dist/index.html"),
   )
 ) {
-  const wiki = createWikiServer(root);
-  wiki.listen(8108, "127.0.0.1", () =>
-    console.log("Kiwix local : http://127.0.0.1:8108"),
+  const wiki = createWikiServer(root, { network });
+  wiki.listen(8108, network.listenHost, () =>
+    console.log(`Kiwix local : http://${network.lanHost || "127.0.0.1"}:8108`),
   );
   wiki.on("error", () =>
     console.error("Le lecteur Kiwix ne peut pas utiliser le port 8108."),

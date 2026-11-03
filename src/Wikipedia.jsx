@@ -12,7 +12,7 @@ import {
   Search,
 } from "lucide-react";
 import { wikiText } from "./wiki-text";
-import { chooseWikiArchive, wikiReaderLanguage } from "./media-navigation";
+import { chooseWikiArchive, wikiReaderLanguage, wikiReaderOrigin } from "./media-navigation";
 import "./media-hub.css";
 const languageNames = {
   fr: "Français",
@@ -52,7 +52,7 @@ export default function Wikipedia({ lang = "fr" }) {
     archive = archives.find((a) => a.filename === selected),
     total = archives.reduce((n, a) => n + a.bytes, 0);
   const source = archive
-    ? `http://127.0.0.1:8108/www/index.html?refugeArchive=${encodeURIComponent(archive.language)}&overrideBrowserLanguage=${readerLanguage}`
+    ? `${wikiReaderOrigin(window.location.hostname)}/www/index.html?refugeArchive=${encodeURIComponent(archive.language)}&overrideBrowserLanguage=${readerLanguage}`
     : null;
   useEffect(() => setLoading(true), [source, readerRevision]);
   return (

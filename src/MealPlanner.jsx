@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createLocalId } from "./local-id.js";
 import { Button, Notice } from "./components";
 import { stockText } from "./stock-text";
 import { dateStatus, validateMeal } from "./stock-rotation";
@@ -43,7 +44,7 @@ export function MealPlanner({ t, lang, stock, meals = [], setMeals }) {
       return;
     }
     const meal = {
-      id: id || crypto.randomUUID(),
+      id: id || createLocalId(),
       name: name.trim(),
       ingredients: lines,
     };

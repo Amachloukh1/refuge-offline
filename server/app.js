@@ -11,6 +11,7 @@ import { createGps } from "./gps.js";
 import { createReadiness } from "./readiness.js";
 import { createBooks } from "./books.js";
 import { createMedia } from "./media-library.js";
+import { localNetwork } from "./network.js";
 import { isInterfaceLanguage } from "../src/locale-policy.js";
 import {
   aiConfig,
@@ -68,6 +69,7 @@ export function createApp({
   root = project,
   config = aiConfig(),
   remote = remoteStudioConfig(),
+  network = localNetwork(),
 } = {}) {
   let active = false;
   let aiPaused = false;
@@ -83,9 +85,9 @@ export function createApp({
     res.setHeader("Referrer-Policy", "no-referrer");
     res.setHeader(
       "Content-Security-Policy",
-      "default-src 'self'; script-src 'self'; worker-src 'self' blob:; frame-src http://127.0.0.1:8108 https://players.brightcove.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' https://download.blender.org https://incompetech.com/music/royalty-free/mp3-royaltyfree/; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'",
+      `default-src 'self'; script-src 'self'; worker-src 'self' blob:; frame-src ${network.wikiOrigin(req.headers.host)} https://players.brightcove.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' https://download.blender.org https://incompetech.com/music/royalty-free/mp3-royaltyfree/; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'none'; form-action 'self'`,
     );
-    const address = serverAddress(req.headers.host);
+    const address = network.allows(req);
     if (!address) {
       json(res, 403, { code: "local_only" });
       return;
@@ -484,16 +486,4 @@ export function createApp({
   server.on("close", () => books.cancel());
   server.on("close", () => media.cancel());
   return server;
-}
-function serverAddress(host) {
-  try {
-    const url = new URL(`http://${host}`);
-    return (
-      ["127.0.0.1", "localhost", "[::1]"].includes(url.hostname) &&
-      url.username === "" &&
-      url.password === ""
-    );
-  } catch {
-    return false;
-  }
 }

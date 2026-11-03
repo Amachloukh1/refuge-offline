@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createLocalId } from "./local-id.js";
 import { Icon, Button, Progress, Notice, Modal, External } from "./components";
 import { validStock } from "./planning";
 import { PurchasePlan } from "./PurchasePlan";
@@ -58,7 +59,7 @@ export function Inventory({
     const f = new FormData(e.currentTarget);
     const item = {
       ...editing,
-      id: editing.id || crypto.randomUUID(),
+      id: editing.id || createLocalId(),
       name: String(f.get("name")).trim(),
       quantity: Number(f.get("quantity")),
       unit: f.get("unit"),

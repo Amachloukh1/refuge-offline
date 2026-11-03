@@ -4,7 +4,13 @@ import {
   mediaSection,
   chooseWikiArchive,
   wikiReaderLanguage,
+  wikiReaderOrigin,
 } from "../src/media-navigation.js";
+test("Wikipedia uses the mini-PC address when accessed over the LAN", () => {
+  assert.equal(wikiReaderOrigin("192.168.178.50"), "http://192.168.178.50:8108");
+  assert.equal(wikiReaderOrigin("localhost"), "http://127.0.0.1:8108");
+  assert.equal(wikiReaderOrigin("[::1]"), "http://127.0.0.1:8108");
+});
 test("embedded wiki reader receives only installed and supported control languages", () => {
   for (const lang of ["fr", "de", "en", "ar"])
     assert.equal(wikiReaderLanguage(lang), lang);

@@ -3,11 +3,11 @@ import path from "node:path";
 import { serveLocalFile } from "./files.js";
 import { loadList } from "./resources.js";
 import { stat } from "node:fs/promises";
-export function createWikiServer(root) {
+import { localNetwork } from "./network.js";
+export function createWikiServer(root, { network = localNetwork() } = {}) {
   const directory = path.join(root, "content/wiki-reader/kiwix-js-4.4.0/dist");
   return http.createServer(async (req, res) => {
-    const host = req.headers.host?.split(":")[0];
-    if (!["127.0.0.1", "localhost"].includes(host)) {
+    if (!network.allows(req)) {
       res.writeHead(403);
       res.end();
       return;

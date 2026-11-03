@@ -57,6 +57,12 @@ node scripts/prepare-map-assets.mjs
 
 Cette commande extrait la région par requêtes partielles ; ne pas télécharger le fichier planète entier. La disponibilité future du snapshot n'est pas garantie : conserver l'extrait vérifié, catalogué dans `content/maps.catalog.json`. Respecter ODbL et les crédits OpenStreetMap/Protomaps. Les droits propres aux PDF et vidéos restent ceux des éditeurs ; le téléchargement gratuit n'est pas une licence de redistribution.
 
+## Accès depuis le réseau local
+
+Par défaut, REFUGE reste accessible uniquement sur l'ordinateur qui l'exécute. Pour autoriser les appareils d'un réseau local de confiance, définir par exemple `REFUGE_LAN_HOST=192.168.178.50` dans `.env`, puis redémarrer le serveur. Utiliser l'adresse IPv4 privée réelle du mini-PC : `http://192.168.178.50:8099`. Le lecteur Wikipédia utilise le même ordinateur sur le port 8108, tout en gardant une origine séparée. Les autres noms d'hôtes et les requêtes provenant d'adresses publiques restent refusés. L'IA continue à communiquer avec son moteur local sur l'interface loopback.
+
+Les appareils du réseau autorisé partagent l'accès à l'application ; ce mode ne constitue pas un hébergement public avec comptes individuels. Ne pas rediriger ces ports depuis Internet. Les boutons utilisant les permissions du navigateur, comme le presse-papiers ou la géolocalisation, peuvent être limités sur une adresse HTTP du réseau local. Les réserves et lieux personnels peuvent être ajoutés même lorsque `crypto.randomUUID` n'est pas disponible.
+
 ## Validation effectuée
 
 22 tests Node réussis ; huit parcours Chrome réussis : inventaire/persistance/arabe, catastrophes, carte et vidéos effectivement lues, bouton audio, météo sauvegardée, plan d'achats, fiches illustrées, message GPS sans fix, Local Studio CPU réel et lecture d'un article du ZIM français automatiquement ouvert dans la page. Les parcours hors ligne bloquent les requêtes navigateur externes. Compilation réussie, audit npm de production sans vulnérabilité connue lors du contrôle.

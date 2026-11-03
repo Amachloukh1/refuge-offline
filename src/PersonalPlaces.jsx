@@ -1,5 +1,6 @@
 import {extraPlacesText} from "./locales/extra-ui-text.js";
 import { useState } from "react";
+import { createLocalId } from "./local-id.js";
 import { Button, Notice } from "./components";
 const labels = {
   fr: [
@@ -110,7 +111,7 @@ export function PersonalPlaces({
     e.preventDefault();
     const p = {
       ...draft,
-      id: crypto.randomUUID(),
+      id: createLocalId(),
       name: draft.name.trim(),
       latitude: Number(draft.latitude),
       longitude: Number(draft.longitude),

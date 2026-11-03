@@ -1,4 +1,8 @@
 export const mediaSections = ["videos", "films", "music", "sport"];
+export function wikiReaderOrigin(hostname = "127.0.0.1") {
+  const host = ["localhost", "::1", "[::1]"].includes(hostname) ? "127.0.0.1" : hostname;
+  return `http://${host}:8108`;
+}
 export function wikiReaderLanguage(lang) {
   return ["fr", "de", "en", "ar"].includes(lang) ? lang : "en";
 }
