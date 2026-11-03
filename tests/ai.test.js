@@ -2,6 +2,29 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { aiConfig, validateMessages, completeChat } from "../server/ai.js";
 
+test("CPU inference timeout is bounded and configurable for slow local hardware", async (t) => {
+  assert.equal(aiConfig({}).requestTimeoutMs, 180000);
+  const config = aiConfig({ REFUGE_AI_TIMEOUT_MS: "600000" });
+  assert.equal(config.requestTimeoutMs, 600000);
+  for (const value of ["NaN", "0", "29999", "900001", "Infinity", "30000.5"])
+    assert.throws(() => aiConfig({ REFUGE_AI_TIMEOUT_MS: value }));
+  const requested = [];
+  t.mock.method(AbortSignal, "timeout", (milliseconds) => {
+    requested.push(milliseconds);
+    return new AbortController().signal;
+  });
+  const parent = new AbortController();
+  const fetcher = async (_url, options) => {
+    assert.equal(options.signal.aborted, parent.signal.aborted);
+    return new Response(JSON.stringify({ message: { content: "Réponse locale" } }));
+  };
+  const messages = [{ role: "user", content: "Préparation" }];
+  await completeChat(config, messages, "fr", fetcher);
+  parent.abort();
+  await completeChat(config, messages, "fr", fetcher, parent.signal);
+  assert.deepEqual(requested, [600000, 600000]);
+});
+
 test("an explicitly empty retrieval never falls back to unrelated default guides", async () => {
   let system;
   await completeChat(

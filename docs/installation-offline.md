@@ -40,6 +40,8 @@ Le dernier téléchargement représente environ 12 Go. Les empreintes SHA256 et 
 
 Installer Ollama depuis sa source officielle, démarrer `ollama serve` avec `OLLAMA_HOST=127.0.0.1:11479`, `OLLAMA_MODELS` pointant vers le dossier `models` du projet et `OLLAMA_NO_CLOUD=1`. Puis lancer `node scripts/fetch-local-model.mjs` pour préparer explicitement Qwen3 4B Instruct 2507. Les lanceurs fournis attendent le moteur portable dans `runtime`.
 
+Sur un CPU peu puissant, la lecture des passages documentaires peut dépasser le délai par défaut de trois minutes avant le premier mot. Dans ce cas, régler `REFUGE_AI_TIMEOUT_MS=600000` dans `.env`, puis redémarrer REFUGE. Cette valeur est un délai total en millisecondes, autorisé entre 30000 et 900000 ; elle ne rend pas le calcul plus rapide. L'annulation d'une réponse reste disponible. Vérifier une vraie conversation avec références locales sur le matériel cible, en plus du simple statut du moteur.
+
 Pour le lecteur : télécharger les sources officielles Kiwix JS 4.4.0 dans `content/wiki-reader/kiwix-js-4.4.0`, puis `npm ci --prefix content/wiki-reader/kiwix-js-4.4.0` et `npm run build-src --prefix content/wiki-reader/kiwix-js-4.4.0` pendant la préparation. Conserver le dossier `dist` généré et ses licences.
 
 Avant cette compilation, appliquer `node scripts/prepare-wiki-reader.mjs`. Ce script conserve les avis GPL-3.0 de Kiwix, ajoute le chargement des seuls ZIM du catalogue local par HTTP Range et choisit le rendu restreint pour le lecteur intégré. Les sources modifiées restent dans le dossier Kiwix du transfert. Le service séparé limite l'accès des pages encyclopédiques aux données de REFUGE.

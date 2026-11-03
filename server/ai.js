@@ -33,11 +33,19 @@ export function aiConfig(env = process.env) {
     model.toLowerCase().includes("cloud")
   )
     throw new Error("Invalid local model");
+  const requestTimeoutMs = Number(env.REFUGE_AI_TIMEOUT_MS || 180000);
+  if (
+    !Number.isInteger(requestTimeoutMs) ||
+    requestTimeoutMs < 30000 ||
+    requestTimeoutMs > 900000
+  )
+    throw new Error("Invalid local inference timeout (30000–900000 ms)");
   return {
     provider,
     base: url.href.replace(/\/$/, ""),
     model,
     key: env.REFUGE_AI_KEY || "",
+    requestTimeoutMs,
   };
 }
 export function remoteStudioConfig(env = process.env) {
@@ -148,13 +156,12 @@ export async function completeChat(
         }
       : { max_tokens: 768, temperature: 0.2 }),
   };
+  const timeout = AbortSignal.timeout(config.requestTimeoutMs ?? 180000);
   const response = await fetcher(endpoint, {
     method: "POST",
     headers: headers(config),
     redirect: "error",
-    signal: signal
-      ? AbortSignal.any([signal, AbortSignal.timeout(180000)])
-      : AbortSignal.timeout(180000),
+    signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
     body: JSON.stringify(payload),
   });
   if (!response.ok) throw new Error("engine_unavailable");
