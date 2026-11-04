@@ -78,10 +78,11 @@ const mediaText = {
 export function LocalVideos({ t, lang = "fr", onPlay }) {
   const c = mediaText[lang] || mediaText.fr;
   const [data, setData] = useState(null);
-  const [soundOnly, setSoundOnly] = useState(true);
+  const [soundOnly, setSoundOnly] = useState(false);
   const [query, setQuery] = useState("");
   const [language, setLanguage] = useState("all");
   const [topic, setTopic] = useState("all");
+  const [publisher, setPublisher] = useState("all");
   const [tab, setTab] = useState("installed");
   const [error, setError] = useState(false);
   const [loadedAt, setLoadedAt] = useState(null);
@@ -122,13 +123,43 @@ export function LocalVideos({ t, lang = "fr", onPlay }) {
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
-  const filtered = (data?.videos || []).filter(
+  const videos = data?.videos ?? [];
+  const filterText = {
+    fr: ["Source", "Toutes les sources", "Réinitialiser", "Vidéos affichées"],
+    de: ["Quelle", "Alle Quellen", "Zurücksetzen", "Angezeigte Videos"],
+    en: ["Source", "All sources", "Reset filters", "Videos shown"],
+    ar: ["المصدر", "كل المصادر", "إعادة ضبط", "الفيديوهات المعروضة"],
+  }[lang] || ["Source", "All sources", "Reset filters", "Videos shown"];
+  const topics = {
+    firstaid: c[6],
+    outdoors: c[7],
+    preparation: c[8],
+    cooking: t.cooking,
+    fitness: ({ fr: "Sport à la maison", de: "Sport zu Hause", ar: "الرياضة في المنزل" })[lang] || "Exercise at home",
+    repairs: ({ fr: "Bricolage", de: "Heimwerken", ar: "أعمال يدوية وإصلاحات" })[lang] || "DIY and repairs",
+    hygiene: ({ fr: "Eau et hygiène", de: "Wasser und Hygiene", ar: "الماء والنظافة" })[lang] || "Water and hygiene",
+    disasters: ({ fr: "Catastrophes", de: "Katastrophen", ar: "الكوارث" })[lang] || "Disasters",
+  };
+  const videoTopic = (video) => {
+    if (video.publisher === "Sikana") {
+      if (video.description === "Eau, hygiène et assainissement") return "hygiene";
+      if (video.description === "Se préparer à une catastrophe majeure") return "disasters";
+    }
+    return video.category || "preparation";
+  };
+  const topicCounts = new Map();
+  for (const video of videos) {
+    const key = videoTopic(video);
+    topicCounts.set(key, (topicCounts.get(key) || 0) + 1);
+  }
+  const filtered = videos.filter(
     (v) =>
       (!soundOnly || v.audioAudible === true) &&
       (language === "all" || v.language === language) &&
-      (topic === "all" || (v.category || "preparation") === topic) &&
+      (publisher === "all" || v.publisher === publisher) &&
+      (topic === "all" || videoTopic(v) === topic) &&
       normal(`${v.title} ${v.description} ${v.publisher}`).includes(
-        normal(query),
+        normal(query.trim()),
       ),
   );
   return (
@@ -188,7 +219,7 @@ export function LocalVideos({ t, lang = "fr", onPlay }) {
                 onChange={(e) => setLanguage(e.target.value)}
               >
                 <option value="all">{c[4]}</option>
-                {[...new Set((data?.videos || []).map((v) => v.language))]
+                {[...new Set(videos.map((v) => v.language).filter(Boolean))]
                   .sort()
                   .map((l) => (
                     <option key={l} value={l}>
@@ -205,18 +236,32 @@ export function LocalVideos({ t, lang = "fr", onPlay }) {
             <label>
               {c[5]}
               <select value={topic} onChange={(e) => setTopic(e.target.value)}>
-                {[
-                  ["all", 5],
-                  ["firstaid", 6],
-                  ["outdoors", 7],
-                  ["preparation", 8],
-                ].map(([v, i]) => (
+                <option value="all">{c[5]}</option>
+                {[...topicCounts.keys()].sort((a, b) =>
+                  (topics[a] || a).localeCompare(topics[b] || b, lang)
+                ).map((v) => (
                   <option key={v} value={v}>
-                    {c[i]}
+                    {topics[v] || v} ({topicCounts.get(v)})
                   </option>
                 ))}
               </select>
             </label>
+            <label>
+              {filterText[0]}
+              <select value={publisher} onChange={(e) => setPublisher(e.target.value)}>
+                <option value="all">{filterText[1]}</option>
+                {[...new Set(videos.map((v) => v.publisher).filter(Boolean))].sort().map((name) => (
+                  <option key={name}>{name}</option>
+                ))}
+              </select>
+            </label>
+            <Button variant="outline" onClick={() => {
+              setQuery("");
+              setLanguage("all");
+              setTopic("all");
+              setPublisher("all");
+              setSoundOnly(false);
+            }}>{filterText[2]}</Button>
           </div>
         )}
       </section>
@@ -241,7 +286,7 @@ export function LocalVideos({ t, lang = "fr", onPlay }) {
                 "repairs",
                 "Package",
                 "videoRepairs",
-                "https://www.sikana.tv/fr",
+                "https://www.sikana.tv/fr/diy",
               ],
             ].map(([id, icon, description, url]) => (
               <article className="panel" key={id}>
@@ -265,17 +310,20 @@ export function LocalVideos({ t, lang = "fr", onPlay }) {
           <div className="filter-row">
             <button
               className={"filter " + (soundOnly ? "active" : "")}
+              aria-pressed={soundOnly}
               onClick={() => setSoundOnly(true)}
             >
               {t.withSound}
             </button>
             <button
               className={"filter " + (!soundOnly ? "active" : "")}
+              aria-pressed={!soundOnly}
               onClick={() => setSoundOnly(false)}
             >
               {t.allVideos}
             </button>
           </div>
+          {data && <p role="status">{filterText[3]} : {filtered.length} / {videos.length}</p>}
           <div className="guide-grid local-video-grid">
             {filtered.map((v) => (
               <article key={v.id} className="panel local-video">

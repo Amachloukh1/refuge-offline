@@ -4,6 +4,7 @@ import {
   Film,
   Music2,
   Dumbbell,
+  BookOpen,
   Activity,
   PersonStanding,
   Search,
@@ -18,7 +19,8 @@ import { hubText } from "./media-hub-text";
 import { mediaSections } from "./media-navigation";
 import "./media-hub.css";
 const Entertainment = lazy(() => import("./Entertainment"));
-const icons = { videos: Video, films: Film, music: Music2, sport: Dumbbell };
+const Quran = lazy(() => import("./Quran"));
+const icons = { videos: Video, films: Film, music: Music2, sport: Dumbbell, quran: BookOpen };
 const nhs = "https://www.nhs.uk/better-health/get-active/home-workout-videos/";
 const sikana = "https://www.sikana.tv/fr/sport/50-gym-exercises-for-seniors/";
 export const sportsVideos = [
@@ -266,12 +268,12 @@ export default function MediaHub({
               aria-pressed={active === key}
             >
               <Icon size={18} />
-              {c[key]}
-              <span className="hub-count">
+              {key === "quran" ? ({ fr: "Coran", ar: "القرآن" }[lang] || "Quran") : c[key]}
+              {key !== "quran" && <span className="hub-count">
                 {key === "sport"
                   ? sportsVideos.length
                   : (availability?.[key] ?? "—")}
-              </span>
+              </span>}
             </button>
           );
         })}
@@ -288,6 +290,9 @@ export default function MediaHub({
         </p>
       )}
       {active === "videos" && <LocalVideos t={t} lang={lang} onPlay={onFilm} />}
+      {active === "quran" && (
+        <Suspense fallback={<p>…</p>}><Quran lang={lang} /></Suspense>
+      )}
       {active === "sport" && <Sports lang={lang} onPlay={onFilm} />}
       {["films", "music"].includes(active) && (
         <Suspense fallback={<p>…</p>}>

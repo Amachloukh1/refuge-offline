@@ -210,7 +210,7 @@ export function createApp({
         ["GET", "HEAD"].includes(req.method)
       ) {
         const match = pathname.match(
-          /^\/books\/((?:pg-\d+|hw-\d{8}))\.(txt|pdf)$/,
+          /^\/books\/((?:pg-\d+|hw-\d{8}|quran-clear))\.(txt|pdf)$/,
         );
         if (!match) {
           json(res, 404, { code: "not_found" });
@@ -311,17 +311,30 @@ export function createApp({
         await studio.handle(req, res, pathname, body, json);
         return;
       }
+      if (["/api/maps/search", "/api/maps/route"].includes(pathname) && req.method === "GET") {
+        try {
+          const [status, body] = await mapDirections(new URL(req.url, "http://localhost"));
+          json(res, status, body);
+        } catch (error) {
+          json(res, error.message === "rate" ? 429 : 502, { code: "map_service_unavailable" });
+        }
+        return;
+      }
       if (pathname === "/api/resources" && req.method === "GET") {
         json(res, 200, await resources(root));
         return;
       }
       if (
-        /^\/assets\/(maps|videos|zim)\//.test(pathname) &&
+        /^\/assets\/(maps|videos|zim|quran)\//.test(pathname) &&
         ["GET", "HEAD"].includes(req.method)
       ) {
         const parts = pathname.slice("/assets/".length).split("/");
         const kind = parts.shift();
-        if (!["maps", "videos", "zim"].includes(kind)) {
+        if (kind === "quran" && !/^(catalog\.json|(?:alafasy|alhussary)-\d{3}\.mp3)$/.test(parts.join("/"))) {
+          json(res, 404, { code: "not_found" });
+          return;
+        }
+        if (!["maps", "videos", "zim", "quran"].includes(kind)) {
           json(res, 404, { code: "not_found" });
           return;
         }
@@ -487,3 +500,4 @@ export function createApp({
   server.on("close", () => media.cancel());
   return server;
 }
+import { mapDirections } from "./map-directions.js";

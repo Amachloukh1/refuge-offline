@@ -1,0 +1,14 @@
+.quran-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+.quran-controls { display: grid; gap: 1rem; min-width: 0; }
+.quran-controls label { display: grid; gap: .35rem; min-width: 0; }
+.quran-controls :is(input, select, audio) { width: 100%; min-width: 0; }
+.quran-pagination { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem; margin-block-end: .8rem; }
+.quran-reader canvas { display: block; width: 100%; height: auto; }
+@media (max-width: 740px) {
+  .quran-layout { grid-template-columns: minmax(0, 1fr); }
+}

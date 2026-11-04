@@ -65,4 +65,4 @@ export function contributorsOldEnough(rdf, year = new Date().getUTCFullYear()) {
   );
 }
 export const validBookId = (id) =>
-  typeof id === "string" && /^(pg-[1-9]\d{0,6}|hw-\d{8})$/.test(id);
+  typeof id === "string" && /^(pg-[1-9]\d{0,6}|hw-\d{8}|quran-clear)$/.test(id);

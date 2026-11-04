@@ -70,3 +70,8 @@ Les appareils du réseau autorisé partagent l'accès à l'application ; ce mode
 IA finale Qwen3 réelle sur CPU : question avec stock et sources en environ 76 secondes, calcul correct de 56 L manquants pour 4 adultes/10 jours/24 L disponibles, RAM du modèle chargé environ 3,2 Go et VRAM nulle. Ce sont des mesures de ce PC, pas des garanties sur le mini-PC. RAM et vitesse à mesurer sur Ubuntu. Les réponses et traductions restent à vérifier dans les références, surtout pour les premiers secours.
 
 Sources logicielles : [Ollama](https://github.com/ollama/ollama), [Qwen3](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507), [Kiwix JS](https://github.com/kiwix/kiwix-js), [PMTiles](https://github.com/protomaps/go-pmtiles), [SDR++](https://github.com/AlexandreRouma/SDRPlusPlus), [Open-Meteo](https://open-meteo.com/en/docs).
+# Installed content and online map tools
+
+The Maps page lists the installed PMTiles archives from the local catalogue. Each archive can be browsed offline. Address lookup and route calculation use Nominatim and the FOSSGIS OSRM service after an explicit search or route request. These tools require internet access and send the search terms or route coordinates to those providers.
+
+Media → Quran reads its local catalogue and MP3 files from `content/quran/`. The Quran PDF uses the same local reader as Books, with the installed book ID `quran-clear`. A fresh Git checkout needs the locally installed content to play the recordings and open the PDF. The media files, books, maps and Wikipedia archives are separate from the Git repository.
